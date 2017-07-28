@@ -16,19 +16,16 @@
     
     
 
-    <meta name="description" content="转录调控shell编程入门本页一定程度上参考了Vivek Gite及其他贡献者
-Shell变量及环境变量赋值与取用12345678910111213var1_Name=varValue   # 将varValue赋值给叫var1_Name的变量，变量名称只能有字母，下划线和数字组成，且不能以数字开头。 变量名是区分大小写的A=1234               # 1234赋给A， , 等号两边">
+    <meta name="description" content="shell编程入门本页一定程度上参考了Vivek Gite及其他贡献者">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux之shell | Sunshine's Life">
 <meta property="og:url" content="http://yoursite.com/2016/07/27/linux之shell/index.html">
 <meta property="og:site_name" content="Sunshine's Life">
-<meta property="og:description" content="转录调控shell编程入门本页一定程度上参考了Vivek Gite及其他贡献者
-Shell变量及环境变量赋值与取用12345678910111213var1_Name=varValue   # 将varValue赋值给叫var1_Name的变量，变量名称只能有字母，下划线和数字组成，且不能以数字开头。 变量名是区分大小写的A=1234               # 1234赋给A， , 等号两边">
-<meta property="og:updated_time" content="2017-07-27T16:37:36.292Z">
+<meta property="og:description" content="shell编程入门本页一定程度上参考了Vivek Gite及其他贡献者">
+<meta property="og:updated_time" content="2017-07-28T05:56:20.823Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux之shell | Sunshine's Life">
-<meta name="twitter:description" content="转录调控shell编程入门本页一定程度上参考了Vivek Gite及其他贡献者
-Shell变量及环境变量赋值与取用12345678910111213var1_Name=varValue   # 将varValue赋值给叫var1_Name的变量，变量名称只能有字母，下划线和数字组成，且不能以数字开头。 变量名是区分大小写的A=1234               # 1234赋给A， , 等号两边">
+<meta name="twitter:description" content="shell编程入门本页一定程度上参考了Vivek Gite及其他贡献者">
     
     
     
@@ -215,7 +212,7 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h2 id="转录调控shell编程入门"><a href="#转录调控shell编程入门" class="headerlink" title="转录调控shell编程入门"></a>转录调控shell编程入门</h2><p>本页一定程度上参考了<a href="https://bash.cyberciti.biz/guide/Main_Page" target="_blank" rel="external">Vivek Gite及其他贡献者</a></p>
+    <h2 id="shell编程入门"><a href="#shell编程入门" class="headerlink" title="shell编程入门"></a>shell编程入门</h2><p>本页一定程度上参考了<a href="https://bash.cyberciti.biz/guide/Main_Page" target="_blank" rel="external">Vivek Gite及其他贡献者</a><br><a id="more"></a></p>
 <h3 id="Shell变量及环境"><a href="#Shell变量及环境" class="headerlink" title="Shell变量及环境"></a>Shell变量及环境</h3><h4 id="变量赋值与取用"><a href="#变量赋值与取用" class="headerlink" title="变量赋值与取用"></a>变量赋值与取用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var1_Name=varValue   <span class="comment"># 将varValue赋值给叫var1_Name的变量，变量名称只能有字母，下划线和数字组成，且不能以数字开头。 变量名是区分大小写的</span></span><br><span class="line">A=1234               <span class="comment"># 1234赋给A， , 等号两边不能有空格</span></span><br><span class="line">var1=NovoTRedia</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var1_Name</span>      <span class="comment"># $符号接变量名就能调出值</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var1</span>+Name      <span class="comment"># $后边直到非变量名允许的字符为止，都会被当作变量名</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var1&#125;</span>_Name    <span class="comment"># 使用花括号限定变量名的范围</span></span><br><span class="line"></span><br><span class="line">Whome=/TJPROJ1/RNA/wanghong</span><br><span class="line">ls <span class="variable">$Whome</span></span><br><span class="line"></span><br><span class="line">goWhome=<span class="string">"cd <span class="variable">$Whome</span>"</span></span><br><span class="line"><span class="variable">$goWhome</span></span><br></pre></td></tr></table></figure>
 <h4 id="定义不可变的变量"><a href="#定义不可变的变量" class="headerlink" title="定义不可变的变量"></a>定义不可变的变量</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">readonly</span> Whome=/TJPROJ1/RNA/wanghong   <span class="comment">#使用readonly</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$Whome</span></span><br><span class="line"></span><br><span class="line">Whome=somethingelse   <span class="comment">#一旦定义，则不再能更改，整个脚本中都一样</span></span><br></pre></td></tr></table></figure>
 <h4 id="declare"><a href="#declare" class="headerlink" title="declare"></a>declare</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
