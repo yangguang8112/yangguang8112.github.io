@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      lncRNA之命令行 | Sunshine&#39;s Life 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="杨光">
+    
+    
+
+    <meta name="description" content="Linux入门Linux简介Linux系统是一类自由开源的电脑操作系统，因其内核为Linux而得名。内核是一个电脑程序，组成操作系统的核心，链接系统硬件和应用程序。Linux系统是自由和开源的，有很多的发行版本。因为Linux免费、开源、稳定性好、安全性高、有活力的社区支持，绝大多数生物信息工具均是基于Linux系统的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="lncRNA之命令行 | Sunshine's Life">
+<meta property="og:url" content="http://yoursite.com/2016/07/28/linux之命令行/index.html">
+<meta property="og:site_name" content="Sunshine's Life">
+<meta property="og:description" content="Linux入门Linux简介Linux系统是一类自由开源的电脑操作系统，因其内核为Linux而得名。内核是一个电脑程序，组成操作系统的核心，链接系统硬件和应用程序。Linux系统是自由和开源的，有很多的发行版本。因为Linux免费、开源、稳定性好、安全性高、有活力的社区支持，绝大多数生物信息工具均是基于Linux系统的。">
+<meta property="og:updated_time" content="2017-07-28T07:19:53.098Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="lncRNA之命令行 | Sunshine's Life">
+<meta name="twitter:description" content="Linux入门Linux简介Linux系统是一类自由开源的电脑操作系统，因其内核为Linux而得名。内核是一个电脑程序，组成操作系统的核心，链接系统硬件和应用程序。Linux系统是自由和开源的，有很多的发行版本。因为Linux免费、开源、稳定性好、安全性高、有活力的社区支持，绝大多数生物信息工具均是基于Linux系统的。">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Sunshine&#39;s Life</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/yangguang8112" title="Handsome boy on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+
+
+    <!-- China social icon -->
+    
+    <!--
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+    -->
+      <li class="navigation__item">
+        <a href="http://weibo.com/1994YG?refer_flag=1001030101_&is_hot=1" title="一起下厕所">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">lncRNA之命令行</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-07-28" class="post-meta__date date">2016-07-28</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/算法-编程/">算法/编程</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="Linux入门"><a href="#Linux入门" class="headerlink" title="Linux入门"></a>Linux入门</h2><h3 id="Linux简介"><a href="#Linux简介" class="headerlink" title="Linux简介"></a>Linux简介</h3><p><a href="https://en.wikipedia.org/wiki/Linux" target="_blank" rel="external">Linux系统</a>是一类自由开源的电脑操作系统，因其内核为Linux而得名。内核是一个电脑程序，组成操作系统的核心，链接系统硬件和应用程序。Linux系统是自由和开源的，有很多的<a href="https://en.wikipedia.org/wiki/Linux_distribution" target="_blank" rel="external">发行版本</a>。因为Linux免费、开源、稳定性好、安全性高、有活力的社区支持，绝大多数生物信息工具均是基于Linux系统的。<br><a id="more"></a></p>
+<h3 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h3><p>将多个计算机（节点）连接在一起组成<strong>集群</strong>，我们可以登录到其中某个节点，通过这个节点向其它节点投递任务。我们的集群是基于Linux系统的，把它看作一个远程的linux系统的电脑即可，集群的登录和使用详见[[入职:集群练习账号|集群练习账号]]页面的介绍。</p>
+<p>往后所有的代码皆在集群上使用，务必尝试每一个代码，留意观察效果。</p>
+<h3 id="Linux初体验"><a href="#Linux初体验" class="headerlink" title="Linux初体验"></a>Linux初体验</h3><h4 id="工作目录"><a href="#工作目录" class="headerlink" title="工作目录"></a>工作目录</h4><p>登录之后，可以查看目前所在的目录，一般为为你的 HOME目录，也可能不是，先看看：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="目录下内容查看"><a href="#目录下内容查看" class="headerlink" title="目录下内容查看"></a>目录下内容查看</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ls       <span class="comment"># 查看当前工作目录下的文件和文件夹</span></span><br><span class="line">ls <span class="_">-l</span>    <span class="comment"># 展示更多的信息,分9列，第一列第一个字符如果是d代表文件夹，是-代表是文件，往后的每三个字符为一组，一次代表文件所有者、所有者所在组、组外成员的权限，r代表能读，w代表能写(能编辑和删除)，x代表可执行。第五列展示文件大小，第9列为文件/夹名称</span></span><br><span class="line">ls /     <span class="comment"># 查看 / 下的文件夹</span></span><br><span class="line">ls /home </span><br><span class="line"></span><br><span class="line">ls -la   <span class="comment"># a表示全部，列出隐藏文件及文件夹， .表示目录本身，..表示上一层目录</span></span><br><span class="line"></span><br><span class="line">ls -lha  <span class="comment"># h表示大小一栏转为便于人类识别的形式，加上单位。 默认情况下单位为字节。</span></span><br></pre></td></tr></table></figure>
+<p>ls -l 的结果各部分意思如下：</p>
+<skcanvas><br>- type: meta<br>  size: [500, 160]<br>- type: text<br>  points: ‘83,66.55000305175781’<br>  text: “-rw-r–r–\t1\twanghong\tRNA\t40\tAug\t3\t09:47\tinput.txt”<br>- type: text<br>  points: ‘83,85.54999923706054’<br>  text: “drwxr-xr-x\t3\twanghong\tRNA\t50\tJul\t29\t15:55\ttest1”<br>- type: arrow<br>  points: ‘83.1400146484375,85.55000305175781:73.1400146484375,104.55000305175781’<br>- type: text<br>  points: ‘34.1400146484375,117.55000305175781’<br>  text: 文件夹<br>- type: arrow<br>  points: ‘80.1400146484375,57.55000305175781:52.1400146484375,25.550018310546875’<br>- type: text<br>  points: ‘7.1400146484375,17.550003051757812’<br>  text: 类型：-表示文件，l表示链接，d表示文件夹<br>- type: line<br>  points: ‘93.1400146484375,90.55000305175781:113.1400146484375,90.55000305175781’<br>- type: arrow<br>  points: ‘101.1400146484375,90.55000305175781:77.1400146484375,132.5500030517578’<br>- type: text<br>  points: ‘45.1400146484375,147.5500030517578’<br>  text: user权限<br>- type: line<br>  points: ‘117.1400146484375,88.55000305175781:130.1400146484375,88.55000305175781’<br>- type: line<br>  points: ‘136.1400146484375,86.55000305175781:146.1400146484375,86.55000305175781’<br>- type: arrow<br>  points: ‘125.1400146484375,86.55001831054687:126.1400146484375,105.55001831054687’<br>- type: text<br>  points: ‘93.1400146484375,123.55000305175781’<br>  text: group权限<br>- type: arrow<br>  points: ‘143.1400146484375,87.55000305175781:174.1400146484375,132.5500030517578’<br>- type: text<br>  points: ‘124.1400146484375,145.5500030517578’<br>  text: other权限<br>- type: arrow<br>  points: ‘175.1400146484375,51.55000305175781:173.1400146484375,38.550018310546875’<br>- type: text<br>  points: ‘159.1400146484375,34.55000305175781’<br>  text: user<br>- type: arrow<br>  points: ‘246.1400146484375,89.55000305175781:241.1400146484375,114.55000305175781’<br>- type: text<br>  points: ‘218.1400146484375,128.5500030517578’<br>  text: group<br>- type: line<br>  points: ‘286.1400146484375,88.55000305175781:362.1400146484375,88.55000305175781’<br>- type: arrow<br>  points: ‘324.1400146484375,90.55000305175781:325.1400146484375,117.55000305175781’<br>- type: text<br>  points: ‘298.1400146484375,131.5500030517578’<br>  text: 最后修改时间<br>- type: arrow<br>  points: ‘161.1400146484375,89.55000305175781:216.1400146484375,140.5500030517578’<br>- type: text<br>  points: ‘220.1400146484375,149.5500030517578’<br>  text: 链接数<br>- type: arrow<br>  points: ‘389.1400146484375,92.55000305175781:399.1400146484375,109.55000305175781’<br>- type: text<br>  points: ‘392.1400146484375,128.5500030517578’<br>  text: 名称<br>- type: arrow<br>  points: ‘261.1400146484375,50.55000305175781:273.1400146484375,35.55000305175781’<br>- type: text<br>  points: ‘273.1400146484375,34.55000305175781’<br>  text: 大小<br></skcanvas><br>链接数，对于文件，则表示硬链接的数目；对于文件夹，则是其子文件夹数+2。对于硬链接和软连接，后文会说到。对于权限，-表示无权限，w表示可写，r表示可读，x表示可执行。这些后文会有涉及。<br><br>#### 切换目录<br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">PWD=`<span class="built_in">pwd</span>`   <span class="comment"># 这里先将目前的路径存为变量PWD，先不用理解这个命令的意思</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$PWD</span>   <span class="comment"># 查看变量的值</span></span><br><span class="line"><span class="built_in">pwd</span>  </span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /home    <span class="comment"># 切换到 /home</span></span><br><span class="line"><span class="built_in">pwd</span>         </span><br><span class="line">ls</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span>          <span class="comment"># 后边不加参数的时候，默认切换到HOME目录</span></span><br><span class="line"><span class="built_in">pwd</span></span><br><span class="line">ls</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ~        <span class="comment">#~指代用户的HOME目录</span></span><br><span class="line"><span class="built_in">pwd</span></span><br><span class="line">ls</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ..       <span class="comment"># 切换到上一级目录 .. 指上一级目录</span></span><br><span class="line">ls </span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$PWD</span>     <span class="comment">#切换回原来的目录</span></span><br></pre></td></tr></table></figure><br><br>#### 文件夹和文件操作<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">mkdir  wanghong <span class="comment"># 创建以你的名字为名的文件夹，这里改成的名字</span></span><br><span class="line"><span class="built_in">cd</span> wanghong     <span class="comment"># 进入刚创建的文件夹</span></span><br><span class="line">ls              <span class="comment"># 什么也没有</span></span><br><span class="line"></span><br><span class="line">mkdir <span class="built_in">test</span>1/<span class="built_in">test</span>2    <span class="comment"># 报错</span></span><br><span class="line">mkdir -p  <span class="built_in">test</span>1/<span class="built_in">test</span>2    <span class="comment"># 这样可以创建test2文件夹并且创建其所在的文件夹</span></span><br><span class="line"></span><br><span class="line">ls</span><br><span class="line"></span><br><span class="line">ls <span class="built_in">test</span>1</span><br><span class="line"></span><br><span class="line">touch <span class="built_in">test</span>1.txt   <span class="comment">#touch命令来创建一个新的文件，这个文件是空的</span></span><br><span class="line"></span><br><span class="line">ls </span><br><span class="line"></span><br><span class="line">ls <span class="_">-l</span>              <span class="comment"># 留意文件和文件夹第一列第一个字符的区别</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cp <span class="built_in">test</span>1.txt Test1.txt   <span class="comment"># 复制文件  Linux是区分大小写的</span></span><br><span class="line">ls <span class="_">-l</span></span><br><span class="line">cp <span class="built_in">test</span>1  Test1          <span class="comment"># 报错</span></span><br><span class="line">cp -r <span class="built_in">test</span>1  Test1       <span class="comment"># 复制文件夹，包括文件夹中的内容</span></span><br><span class="line">ls <span class="_">-l</span></span><br><span class="line"></span><br><span class="line">mv  Test1.txt  Test2.txt   <span class="comment"># 文件重命名</span></span><br><span class="line">ls <span class="_">-l</span></span><br><span class="line">mv  Test2.txt  ./<span class="built_in">test</span>1     <span class="comment">#移动文件的位置</span></span><br><span class="line">ls <span class="_">-l</span> </span><br><span class="line">ls <span class="_">-l</span> <span class="built_in">test</span>1</span><br><span class="line"></span><br><span class="line">mv Test1  Test2  </span><br><span class="line">ls <span class="_">-l</span></span><br><span class="line"></span><br><span class="line">rm <span class="built_in">test</span>1.txt       <span class="comment"># 删除文件</span></span><br><span class="line">ls <span class="_">-l</span></span><br><span class="line">ls <span class="_">-l</span> <span class="built_in">test</span>1</span><br><span class="line"></span><br><span class="line">rm <span class="built_in">test</span>1/<span class="built_in">test</span>2     <span class="comment"># 报错</span></span><br><span class="line">rm -r <span class="built_in">test</span>1/<span class="built_in">test</span>2  <span class="comment"># 删除文件夹</span></span><br><span class="line">ls <span class="_">-l</span></span><br><span class="line">ls <span class="_">-l</span> <span class="built_in">test</span>1</span><br><span class="line"></span><br><span class="line">rmdir <span class="built_in">test</span>1        <span class="comment"># 删除文件夹</span></span><br><span class="line">ls <span class="_">-l</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#用如下一行命令先创建一个2列12行的文件，看不懂这一行命令没有关系，先不要纠结</span></span><br><span class="line"><span class="built_in">echo</span> <span class="_">-e</span> <span class="string">'1\ta\n2\tb\n3\tc\n4\td\n5\te\n6\tf\n7\tg\n8\th\n9\ti\n10\tj\n11\tk\n12\tl'</span> &gt; <span class="built_in">test</span>1.tsv  <span class="comment">#看不懂不要纠结</span></span><br><span class="line"><span class="built_in">echo</span> <span class="_">-e</span> <span class="string">'1\tA\n2\tB\n3\tC\n4\tD\n5\tE\n6\tF\n7\tG\n8\tH\n9\tI\n10\tJ\n11\tK\n12\tL'</span> &gt; <span class="built_in">test</span>2.tsv  <span class="comment">#看不懂不要纠结</span></span><br><span class="line"></span><br><span class="line">cat <span class="built_in">test</span>1.tsv   <span class="comment">#查看文件的所有内容，不要用于大文件，不然可能会很卡</span></span><br><span class="line"></span><br><span class="line">cat <span class="built_in">test</span>1.tsv &gt; test.tsv <span class="comment"># &gt; 为重定向，把输到stdout (屏幕)上的重定向到文件</span></span><br><span class="line">cat test.tsv</span><br><span class="line">cat <span class="built_in">test</span>2.tsv &gt; test.tsv <span class="comment">#原来文件将被覆盖</span></span><br><span class="line">cat test.tsv</span><br><span class="line"></span><br><span class="line">cat <span class="built_in">test</span>1.tsv &gt; test.tsv <span class="comment"># &gt; 为重定向，把输到stdout (屏幕)上的重定向到文件</span></span><br><span class="line">cat test.tsv</span><br><span class="line">cat <span class="built_in">test</span>2.tsv &gt;&gt; test.tsv <span class="comment"># &gt;&gt; 为将内容追加到文件末尾</span></span><br><span class="line">cat test.tsv</span><br><span class="line"></span><br><span class="line">cat <span class="built_in">test</span>1.tsv <span class="built_in">test</span>2.tsv <span class="built_in">test</span>1.tsv <span class="built_in">test</span>2.tsv <span class="built_in">test</span>1.tsv <span class="built_in">test</span>2.tsv &gt; test.tsv  <span class="comment">#多个文件合并为一个文件</span></span><br><span class="line"></span><br><span class="line">wc <span class="_">-l</span> test.tsv   <span class="comment">#产看文件有多少行</span></span><br><span class="line"></span><br><span class="line">less test.tsv  <span class="comment">#查看文件，用上下箭头控制； 按q退出</span></span><br><span class="line"></span><br><span class="line">more test.tsv  <span class="comment">#用回车键(Enter)往后翻</span></span><br><span class="line"></span><br><span class="line">head test.tsv   <span class="comment">#查看前边几行，自己数是几行</span></span><br><span class="line">head -n 5 test.tsv  <span class="comment"># 产看前边5行，可以改成其它的数字</span></span><br><span class="line"></span><br><span class="line">tail test.tsv   <span class="comment">#查看末尾几行，自己数是几行</span></span><br><span class="line">tail -n 5 test.tsv  <span class="comment"># 产看末尾5行，可以改成其它的数字</span></span><br><span class="line"></span><br><span class="line">tail -n 20 test.tsv  &gt;  Test.tsv  <span class="comment">#重定向</span></span><br><span class="line">cat Test.tsv</span><br><span class="line">wc <span class="_">-l</span> Test.tsv</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">l <span class="_">-l</span></span><br><span class="line">gzip test.tsv       <span class="comment">#压缩文件成为 gz格式的</span></span><br><span class="line">l <span class="_">-l</span>                <span class="comment">#留意文件大小的变化</span></span><br><span class="line"></span><br><span class="line">gunzip test.tsv.gz  </span><br><span class="line"></span><br><span class="line">tar -czvf test.tar.gz  <span class="built_in">test</span>1.tsv <span class="built_in">test</span>2.tsv test.tsv <span class="comment">#多个文件压缩到一个压缩包里</span></span><br><span class="line">less test.tar.gz         <span class="comment">#查看压缩包里的内容</span></span><br><span class="line">tar -xzvf test.tar.gz    <span class="comment">#解压缩</span></span><br></pre></td></tr></table></figure><br><br>#### 常用命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">ls --help   <span class="comment"># 查看帮助信息</span></span><br><span class="line"></span><br><span class="line">man ls       <span class="comment"># 查看手册，信息更全面</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> --help    <span class="comment">#不是所有的命令都可以用&lt;nowiki&gt;--hlep &lt;/nowiki&gt;查看帮助信息</span></span><br><span class="line">man <span class="built_in">cd</span>       <span class="comment">#man更好用，信息也会更全面</span></span><br><span class="line"></span><br><span class="line">man man       <span class="comment">#man本身也有手册</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">who      <span class="comment"># 查看谁在线</span></span><br><span class="line">whoami   <span class="comment"># 查看自己现在以那个用于登录</span></span><br><span class="line"></span><br><span class="line">date     <span class="comment">#查看现在的时间</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 1   <span class="comment"># echo 用来展示变量的值或者值本身，字符等本身就是值</span></span><br><span class="line"><span class="built_in">echo</span> q   <span class="comment"># </span></span><br><span class="line"><span class="built_in">echo</span> DATE</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$DATE</span>    <span class="comment"># $符号用于取出变量的值，这里DATE这个变量没有定义，所以echo出来的是空的</span></span><br><span class="line"><span class="built_in">echo</span> date </span><br><span class="line"><span class="built_in">echo</span> `date`   <span class="comment"># `` 号之中加命令，能够将命令的结果存为变量</span></span><br><span class="line">DATE=`date`   <span class="comment">#讲date的结果赋值给DATE</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$DATE</span></span><br><span class="line">`date`</span><br></pre></td></tr></table></figure><br><br>### 文件的权限<br>上文中已经提到，文件具有可写（w）、可读（r）、可执行（x）等权限，通过chmod命令来设置。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"Hi RNA"</span> &gt; test.txt  <span class="comment">#示例文件</span></span><br><span class="line">cat test.txt  </span><br><span class="line">ls <span class="_">-l</span> test.txt     <span class="comment"># 初始的是 rw-r--r--</span></span><br><span class="line"></span><br><span class="line">chmod =x test.txt  <span class="comment"># 将user、group、other的权限都设成x， 体会等号的用法</span></span><br><span class="line">ls <span class="_">-l</span> test.txt    </span><br><span class="line"></span><br><span class="line">chmod u=w test.txt  <span class="comment"># 将user的权限都设成w， 体会指定u、g、o的效果</span></span><br><span class="line">ls <span class="_">-l</span> test.txt </span><br><span class="line">   </span><br><span class="line">chmod u+r test.txt  <span class="comment"># 将user的权限增加r， 体会+的作用</span></span><br><span class="line">ls <span class="_">-l</span> test.txt    </span><br><span class="line"></span><br><span class="line">chmod o-x test.txt  <span class="comment"># 将other的权限减少x，体会-的作用</span></span><br><span class="line">ls <span class="_">-l</span> test.txt    </span><br><span class="line"></span><br><span class="line">chmod 111 test.txt  <span class="comment"># 将user、group、other的权限都设成x；可以用数字代表权限</span></span><br><span class="line">ls <span class="_">-l</span> test.txt    </span><br><span class="line">cat test.txt     <span class="comment">#不可读了</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Hi Hong"</span> &gt; test.txt     <span class="comment">#不可写了</span></span><br><span class="line"></span><br><span class="line">chmod 222 test.txt  <span class="comment"># 将user、group、other的权限都设成w</span></span><br><span class="line">ls <span class="_">-l</span> test.txt    </span><br><span class="line">cat test.txt   <span class="comment">#不可读</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Hi Hong"</span> &gt;&gt; test.txt     <span class="comment">#可写</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">chmod 444 test.txt  <span class="comment"># 将user、group、other的权限都设成r</span></span><br><span class="line">ls <span class="_">-l</span> test.txt    </span><br><span class="line">cat test.txt   <span class="comment">#可读</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Hi Hong"</span> &gt;&gt; test.txt     <span class="comment">#不可写</span></span><br><span class="line"></span><br><span class="line">chmod 731 test.txt  <span class="comment"># 将user、group、other的权限分别设成rwx、-wx、--x</span></span><br><span class="line">ls <span class="_">-l</span> test.txt    </span><br><span class="line"></span><br><span class="line">mkdir -p <span class="built_in">test</span>1/<span class="built_in">test</span>2</span><br><span class="line">chmod 111 <span class="built_in">test</span>1</span><br><span class="line">ls <span class="_">-l</span> </span><br><span class="line">ls <span class="_">-l</span> <span class="built_in">test</span>1   <span class="comment">#没有权限了</span></span><br><span class="line"></span><br><span class="line">chmod 777 <span class="built_in">test</span>1   <span class="comment">#最宽松权限，要慎重使用</span></span><br><span class="line">ls <span class="_">-l</span> </span><br><span class="line">ls <span class="_">-l</span> <span class="built_in">test</span>1   <span class="comment">#看看 test1里的文件夹test2并没有跟着变化</span></span><br><span class="line"></span><br><span class="line">chmod -R 775 <span class="built_in">test</span>1   <span class="comment"># -R 实现递归，就是文件夹中的文件已经文件夹都会跟着改变，直到最底层</span></span><br><span class="line">ls <span class="_">-l</span> </span><br><span class="line">ls <span class="_">-l</span> <span class="built_in">test</span>1   <span class="comment">#看看 test1里的文件夹test2 跟着变化了</span></span><br></pre></td></tr></table></figure><br><br>1代表x，2代表w，4代表r。是rwx这个数序上的二进制数字的十进制值。<br><skcanvas><br>- type: meta<br>  size: [300, 90]<br>- type: text<br>  points: ‘60.13999938964844,25.040000915527343’<br>  text: ‘-rwx’<br>- type: text<br>  points: ‘88.13999938964844,25.040000915527343’<br>  text: r–r–<br>- type: line<br>  points: ‘67.13999938964844,27.040000915527343:86.13999938964844,27.040000915527343’<br>- type: arrow<br>  points: ‘65.13999938964844,30.040000915527343:46.13999938964844,45.040000915527344’<br>- type: arrow<br>  points: ‘75.13999938964844,27.040000915527343:74.13999938964844,46.040000915527344’<br>- type: arrow<br>  points: ‘85.13999938964844,27.040000915527343:97.13999938964844,48.040000915527344’<br>- type: text<br>  points: ‘34.13999938964844,64.04000091552734’<br>  text: ‘2’<br>- type: text<br>  points: ‘68.13999938964844,64.04000091552734’<br>  text: ‘2’<br>- type: text<br>  points: ‘98.13999938964844,66.04000091552734’<br>  text: ‘2’<br>- type: text<br>  points: ‘108.13999938964844,59.040008544921875’<br>  text: ‘0’<br>- type: text<br>  points: ‘75.13999938964844,58.040008544921875’<br>  text: ‘1’<br>- type: text<br>  points: ‘42.13999938964844,59.040008544921875’<br>  text: ‘2’<br>- type: text<br>  points: ‘171.13999938964844,31.040000915527343’<br>  text: ‘r-x:  4 + 0 + 1 = 5’<br>- type: text<br>  points: ‘167.13999938964844,54.040008544921875’<br>  text: ‘rwx:  4+2+1=7’<br>- type: text<br>  points: ‘171.13999938964844,71.04000854492187’<br>  text: ‘–x:  0 + 0 + 1 = 1’<br></skcanvas>
+
+
+<h3 id="相对路径与绝对路径"><a href="#相对路径与绝对路径" class="headerlink" title="相对路径与绝对路径"></a>相对路径与绝对路径</h3><p>从根目录出发的的绝对路径，比如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls <span class="_">-l</span> /home</span><br><span class="line"></span><br><span class="line"><span class="built_in">pwd</span>  <span class="comment">#pwd返回当前目录的绝对路径</span></span><br></pre></td></tr></table></figure></p>
+<p>从当前目录出发的是相对路径，比如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">ls <span class="_">-l</span> ./<span class="built_in">test</span>1.txt  </span><br><span class="line">ls <span class="_">-l</span> <span class="built_in">test</span>1.txt  <span class="comment"># ./ 可以省略</span></span><br><span class="line">ls <span class="_">-l</span> <span class="built_in">test</span>1/<span class="built_in">test</span>2  </span><br><span class="line">ls <span class="_">-l</span> ..</span><br><span class="line">ls <span class="_">-l</span> ./../</span><br><span class="line"></span><br><span class="line"><span class="built_in">pwd</span></span><br><span class="line"><span class="built_in">cd</span> .           <span class="comment">#  . 代表当前工作目录</span></span><br><span class="line"><span class="built_in">pwd</span>            </span><br><span class="line"><span class="built_in">cd</span> ./          <span class="comment">#依然在当前目录</span></span><br><span class="line"><span class="built_in">pwd</span></span><br><span class="line"><span class="built_in">cd</span> ./././././  </span><br><span class="line"><span class="built_in">pwd</span>            <span class="comment">#绝对路径并未改变</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ..          <span class="comment">#.. 表示上一级目录，省略了当前路径</span></span><br><span class="line"><span class="built_in">pwd</span></span><br><span class="line"><span class="built_in">cd</span> ./..</span><br><span class="line"><span class="built_in">cd</span> ./../</span><br></pre></td></tr></table></figure></p>
+<h3 id="硬链接与软连接"><a href="#硬链接与软连接" class="headerlink" title="硬链接与软连接"></a>硬链接与软连接</h3><p>数据在硬盘里的存储单元就是文件，文件都有文件名和数据。数据包括用户数据(user data) + 元数据 (metadata)。 用户数据就是文件的真实内容，元数据为文件的附加属性，文件大小、创建时间、所有者等信息。元数据中的索引节点(inode)号才是文件的唯一标识。为了方便文件的共享，Linux中引入了软连接和硬链接两种，硬链接是指具有相同inode号的文件，而软连接则是指向另一个文件的特殊文件，其特殊性在于，当你对软连接文件进行一些操作时，实际上是对指向的文件进行操作。这样当删掉硬链接中的某一个时，对另一个没有影响，而删除了软连接的源文件之后，这个软连接就成了死链接。 不能对文件夹创建硬链接。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">rm <span class="built_in">test</span>1.txt <span class="built_in">test</span>2.txt <span class="built_in">test</span>3.txt   <span class="comment"># 如果这些文件存在，先删除了，如果不存在，报错也无所谓，</span></span><br><span class="line">touch <span class="built_in">test</span>1.txt</span><br><span class="line"><span class="built_in">stat</span> <span class="built_in">test</span>1.txt    <span class="comment">#stat 命令查看文件的附加属性，包括文件名， inode号等等的。</span></span><br><span class="line">ls -i <span class="built_in">test</span>1.txt   <span class="comment"># -i 能够同时展示inode号</span></span><br><span class="line">ls -li <span class="built_in">test</span>1.txt  <span class="comment"># 增加的第一列是inode号</span></span><br><span class="line"></span><br><span class="line">ln <span class="built_in">test</span>1.txt <span class="built_in">test</span>2.txt     <span class="comment"># 对test1.txt创建一个硬链接叫test2.txt</span></span><br><span class="line">ls -li                     <span class="comment"># inode号同</span></span><br><span class="line"></span><br><span class="line">ln <span class="_">-s</span> <span class="built_in">test</span>1.txt <span class="built_in">test</span>3.txt  <span class="comment"># 加-s后，对test1.txt创建一个软链接叫test3.txt</span></span><br><span class="line">ls -li                     <span class="comment"># inode号不同</span></span><br><span class="line"></span><br><span class="line">ln <span class="_">-s</span> `<span class="built_in">pwd</span>`/<span class="built_in">test</span>1.txt <span class="built_in">test</span>4.txt</span><br><span class="line">ls -li                     <span class="comment">#看一下使用绝对路径的情况</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">stat</span> <span class="built_in">test</span>1.txt <span class="built_in">test</span>2.txt <span class="built_in">test</span>3.txt <span class="built_in">test</span>4.txt  <span class="comment"># 硬链接除了文件名以外，其它的信息都是相同的，软连接则是一个新的文件</span></span><br><span class="line"></span><br><span class="line">mkdir <span class="built_in">test</span>1   <span class="comment">#如果上文已经创建，这里报错是正常的</span></span><br><span class="line"></span><br><span class="line">mv <span class="built_in">test</span>2.txt  <span class="built_in">test</span>1</span><br><span class="line">mv <span class="built_in">test</span>3.txt  <span class="built_in">test</span>1</span><br><span class="line">mv <span class="built_in">test</span>4.txt  <span class="built_in">test</span>1</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> <span class="built_in">test</span>1</span><br><span class="line">ls -li       <span class="comment"># 可以看到test3.txt变成了死链接，因此制作软连接的时候，最好使用绝对路径</span></span><br><span class="line"><span class="built_in">stat</span> ../<span class="built_in">test</span>1.txt <span class="built_in">test</span>2.txt <span class="built_in">test</span>3.txt <span class="built_in">test</span>4.txt  </span><br><span class="line"></span><br><span class="line">rm ../<span class="built_in">test</span>1.txt</span><br><span class="line">ls -li    <span class="comment">#删除源文件之后，软连接变成了死链接</span></span><br></pre></td></tr></table></figure>
+<h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><p>很多linux的命令输出直接达到屏幕上，也就是输出到stdout，这些输出可以直接作为一些命令的输入，也就是stdin。 这时候中间用<nowiki> | </nowiki> 链接，也就是管道。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="_">-e</span> <span class="string">'1\ta\n2\tb\n3\tc\n4\td\n5\te\n6\tf\n7\tg\n8\th\n9\ti\n10\tj\n11\tk\n12\tl'</span> &gt; <span class="built_in">test</span>1.tsv </span><br><span class="line"><span class="built_in">echo</span> <span class="_">-e</span> <span class="string">'1\tA\n2\tB\n3\tC\n4\tD\n5\tE\n6\tF\n7\tG\n8\tH\n9\tI\n10\tJ\n11\tK\n12\tL'</span> &gt; <span class="built_in">test</span>2.tsv</span><br><span class="line"></span><br><span class="line">cat <span class="built_in">test</span>1.tsv <span class="built_in">test</span>2.tsv | less</span><br><span class="line"></span><br><span class="line">cat <span class="built_in">test</span>1.tsv <span class="built_in">test</span>2.tsv | wc <span class="_">-l</span>    <span class="comment">#统计总行数</span></span><br><span class="line">wc <span class="_">-l</span> <span class="built_in">test</span>1.tsv <span class="built_in">test</span>2.tsv </span><br><span class="line"></span><br><span class="line">cat <span class="built_in">test</span>1.tsv <span class="built_in">test</span>2.tsv | wc -c</span><br><span class="line"></span><br><span class="line">ls <span class="_">-l</span> | less</span><br></pre></td></tr></table></figure>
+<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><p>grep (<strong>g</strong>lobal <strong>r</strong>egular <strong>e</strong>xpression <strong>p</strong>rinter) 是一个非常常用的命令。逐行对文件进行指定模式的搜索。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="_">-e</span> <span class="string">'ACT TAG AGG TAG\nATG TTT\nAAA GGG\nCCC\nATG'</span> &gt; input.txt  <span class="comment">#示例文件</span></span><br><span class="line">cat input.txt</span><br><span class="line"></span><br><span class="line">grep ATG input.txt      <span class="comment"># 返回包含ATG的行</span></span><br><span class="line"></span><br><span class="line">grep -c ATG input.txt   <span class="comment"># 返回包含ATG的行的总行数</span></span><br><span class="line"></span><br><span class="line">grep ^C input.txt       <span class="comment"># ^表示开头</span></span><br><span class="line"></span><br><span class="line">grep T$ input.txt       <span class="comment"># $表示结尾</span></span><br><span class="line"></span><br><span class="line">ls <span class="_">-l</span> | grep ^d   <span class="comment"># 列出所有文件夹</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h3><p>根据特定的列对文件进行排序.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="_">-e</span> <span class="string">'chr1\t1\t100\nchr2\t4\t10\nchr1\t4\t10\nchr3\t3\t40'</span> &gt; <span class="built_in">test</span>1.bed</span><br><span class="line"></span><br><span class="line">sort <span class="built_in">test</span>1.bed                  <span class="comment"># 不分列</span></span><br><span class="line">sort -k2 <span class="built_in">test</span>1.bed              <span class="comment"># 按照第2列排序</span></span><br><span class="line">sort -k2n <span class="built_in">test</span>1.bed             <span class="comment"># 按照第2列排序，但当做数字</span></span><br><span class="line">sort -k2,2n <span class="built_in">test</span>1.bed           <span class="comment"># 这和上一条也是一样的，根据第2列到第2列排序。 -km,n 根据第m到第n列排序</span></span><br><span class="line">sort -k1 <span class="built_in">test</span>1.bed              <span class="comment"># 按照第1列排序 </span></span><br><span class="line">sort -k1,1 -k2,2n <span class="built_in">test</span>1.bed     <span class="comment"># 先按第一列排，再按第二列排 </span></span><br><span class="line">sort -k2,2n -k1,1 <span class="built_in">test</span>1.bed     <span class="comment"># 按照第二排序，再按第一列排</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="uniq"><a href="#uniq" class="headerlink" title="uniq"></a>uniq</h3><p>uniq总是要接着sort使用，因为它只会对相邻的元素判断是否重复。<br><code bash=""><br>echo -e ‘chr1\nchr2\nchr1\nchr3\nchr4\nchr1\nchr5\nchr2\nchr6\nchr3’ &gt; test1.txt<br>cat test1.txt<br>uniq test1.txt<br>sort test1.txt | uniq            # 看看sort之后uniq的效果<br>cat test1.txt  | uniq<br>cat test1.txt  | sort | uniq<br>sort test1.txt | uniq -c         # -c统计各元素的重复次数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">### sed </span><br><span class="line">sed (**s**tream **ed**itor)用来对输入文件或者数据流进行编辑，逐行进行编辑，sed没有交互模式。通常我们用来做替换。</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">echo -e &apos;ACT TAG AGG TAG\n TTT\nAAA GGG\nCCC\nATG&apos; &gt; input.txt  #产生一个示例文件</span><br><span class="line">cat input.txt  #查看一下文件</span><br><span class="line"></span><br><span class="line">sed &apos;&apos; input.txt  # 不加指令的时候会把每一行输出来</span><br><span class="line"></span><br><span class="line">sed -n &apos;&apos; input.txt  # -n 表示安静地进行，告诉它做什么，它才做，这里就是抑制了默认的情况</span><br><span class="line"></span><br><span class="line">sed -n &apos;p&apos; input.txt  # p 表示打印</span><br><span class="line"></span><br><span class="line">sed &apos;s/TAG/!STOP!/&apos;  input.txt   # s/x/y/ 表示将x替换成为y</span><br><span class="line"></span><br><span class="line">sed &apos;s/TAG/!STOP!/ g&apos;  input.txt  # g 表示全局之后替换所有的</span><br><span class="line"></span><br><span class="line">sed &apos;s/T/U/g&apos; input.txt   # 这是一个将DNA序列转成RNA列的例子</span><br><span class="line"></span><br><span class="line">sed &apos;s/T/U/ 2&apos; input.txt   # 只对第二次出现的模式进行操作</span><br><span class="line"></span><br><span class="line">sed -n &apos;s/T/U/g&apos; input.txt   # -n  </span><br><span class="line"></span><br><span class="line">sed -n &apos;s/T/U/gp&apos;  input.txt   # p </span><br><span class="line"></span><br><span class="line">sed -e &apos;s/T/U/g&apos; -e &apos;s/A/a/g&apos;  input.txt  #当想使用多个命令的时候，使用 -e， 每个-e后边跟一个命令，可以有很多</span><br><span class="line"></span><br><span class="line">echo -e &quot;s/T/U/g\ns/A/a/g&quot; &gt; edit.sed  #可以把多条命令放在一个文件中作为脚本使用</span><br><span class="line">cat edit.sed   #看看脚本里的内容</span><br><span class="line"></span><br><span class="line">sed -f edit.sed  input.txt   #通过-f加脚本文件使用脚本文件中的命令</span><br><span class="line"></span><br><span class="line">sed -n &apos;3,4 p&apos; input.txt     # m,n 这种中模式是定位用的，这里就是第3到第4行， 动作是p</span><br><span class="line">sed &apos;3,4 p&apos; input.txt        # 看看不加-n的效果，这样可以用来重复一些行</span><br><span class="line"></span><br><span class="line">sed  &apos;3,4 d&apos; input.txt  # d 表示delete</span><br><span class="line"></span><br><span class="line">sed -n &apos;/^A/=&apos; input.txt  #返回以A开头的行。 ^表示开头， 而 = 表示行号</span><br><span class="line"></span><br><span class="line">sed &apos;/^A/=&apos; input.txt  #思考一下不加-n时候的效果  </span><br><span class="line"></span><br><span class="line">cat input.txt    # 如上的操作原文件未受到影响</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sed &apos;y/ACGT/acgt/&apos; input.txt   # y/.../.../ 字符转换，字符依次对应</span><br><span class="line"></span><br><span class="line">sed &apos;y/ACGT/acg/&apos; input.txt   # 报错</span><br><span class="line"></span><br><span class="line">sed &apos;/^A/y/ACGT/acgt/&apos; input.txt    #只对以A开头的行进行转换， /^A/</span><br><span class="line">sed &apos;/^A/!y/ACGT/acgt/&apos; input.txt    #不对以A开头的行进行转换，/^A/! ，注意叹号！</span><br><span class="line"></span><br><span class="line">sed &apos;2,4y/ACGT/acgt/&apos; input.txt    #只对2-4行进行</span><br><span class="line">sed &apos;2,4!y/ACGT/acgt/&apos; input.txt    #不对2-4行进行</span><br><span class="line"></span><br><span class="line">sed -i &apos;s/T/U/g&apos; input.txt   # 加参数 -i 的时候在原文件上进行编辑</span><br><span class="line"></span><br><span class="line">cat input.txt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sed -i &apos;1iAddThisBeforeThe1stLine&apos; input.txt   #在第一行前加入一行</span><br><span class="line"></span><br><span class="line">cat input.txt</span><br><span class="line"></span><br><span class="line">sed -i &apos;$iAddThisBeforeTheLastLine&apos; input.txt   #在第最后前加入一行</span><br><span class="line"></span><br><span class="line">cat input.txt</span><br></pre></td></tr></table></figure></code></p>
+<h3 id="AWK"><a href="#AWK" class="headerlink" title="AWK"></a>AWK</h3><p>AWK实际是一个编程语言，我们这里只讲一些简单的用法。 AWK可以和sed一样，对文件进行逐行处理，不同的是每一行可以被分为不同的域(field), 每行则是一个区（region）。而且，可以自定义区的分隔符，这样就不局限于逐行处理了，可以把多行当作一个region，每行当作一个field。这样AWK实际上是逐区进行操作， $0表示整个region，$1表示当前region的第一个field， $n表示第n个field. NR是当前区的序号。<br>AWK的基本语法结构为:<br><strong>awk ‘/pattern/ {action}’ 输入文件</strong>  </p>
+<h4 id="AWK初体验"><a href="#AWK初体验" class="headerlink" title="AWK初体验"></a>AWK初体验</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="_">-e</span> <span class="string">'1\ta B\n25\tb c\n3\tfc df\n84\td ok\n15\txye rte\n6\tzf erhyhy\n7\tag hhh\n48\th ADF\n39\ti ERF\n10\tj B\n11\tK OKK\n12\tl BEST'</span> &gt; test.tsv</span><br><span class="line"></span><br><span class="line">cat test.tsv    <span class="comment">#查看一下，第一列和第二列之间制表符分割，第三列和第</span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'/a/ &#123;print&#125;'</span> test.tsv      <span class="comment"># 包含a的行被print出来</span></span><br><span class="line">awk <span class="string">'/a/'</span> test.tsv              <span class="comment"># 默认的action是print $0</span></span><br><span class="line">awk <span class="string">'&#123;print $3&#125;'</span> test.tsv       <span class="comment"># 默认的域分割符是制表符和空格，不区分此二者</span></span><br><span class="line">awk <span class="string">'&#123;print &#125;'</span> test.tsv         <span class="comment"># print 是默认print $0</span></span><br><span class="line">awk <span class="string">'/a/ &#123;print $1&#125;'</span> test.tsv      <span class="comment"># 包含a的行被print出来</span></span><br><span class="line"></span><br><span class="line">awk -v FS=<span class="string">"\t"</span> <span class="string">'&#123;print $1&#125;'</span> test.tsv   <span class="comment"># 指定FS: Field Separator</span></span><br><span class="line">awk -v FS=<span class="string">"\t"</span> <span class="string">'&#123;print $2&#125;'</span> test.tsv</span><br><span class="line">awk -v FS=<span class="string">"\t"</span> <span class="string">'&#123;print $3&#125;'</span> test.tsv</span><br><span class="line"></span><br><span class="line">awk -v FS=<span class="string">"[ ]"</span> <span class="string">'&#123;print $1&#125;'</span> test.tsv  <span class="comment"># 以空格作为FS的写法， 注意这里的空格以两个方括号括起来</span></span><br><span class="line"></span><br><span class="line">awk -v RS=<span class="string">"[ ]"</span> <span class="string">'&#123;print &#125;'</span> test.tsv    <span class="comment"># 以空格作为RS：Region Separator的情况，可以看到，逐region print出来的</span></span><br><span class="line"></span><br><span class="line">awk -v FS=<span class="string">"\t"</span> -v OFS=<span class="string">","</span> <span class="string">'&#123;print $1, $2&#125;'</span> test.tsv   <span class="comment"># 指定OFS: Out Field Separator</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS="\t"; OFS="," &#125; &#123;print $1, $2&#125;'</span> test.tsv   <span class="comment"># 另一种指定FS和OFS的方法, 使用BEGIN语句</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;FS="\t"; OFS="," &#125; &#123;print $1, $2&#125; END&#123;print "Done"&#125;'</span> test.tsv   <span class="comment"># 使用END语句</span></span><br><span class="line"></span><br><span class="line">awk -v FS=<span class="string">"\t"</span> -v OFS=<span class="string">","</span> <span class="string">'&#123;print $0&#125;'</span> test.tsv   <span class="comment"># 理解一下，$0整个打印的时候</span></span><br><span class="line"></span><br><span class="line">awk -v FS=<span class="string">"\t"</span> -v ORS=<span class="string">","</span> <span class="string">'&#123;print $1, $2&#125;'</span> test.tsv   <span class="comment"># 指定ORS: Out Region Separator</span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'&#123;if($1 &gt; 20) print&#125;'</span>  test.tsv   <span class="comment"># 使用命令</span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'$1 &gt; 20'</span>  test.tsv               <span class="comment"># 使用模式匹配</span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'$1 ~ /e/'</span> test.tsv      <span class="comment"># 对第1列进行模式匹配</span></span><br><span class="line">awk <span class="string">'$2 ~ /e/'</span> test.tsv      <span class="comment"># 对第2列进行模式匹配</span></span><br><span class="line">awk <span class="string">'$3 ~ /e/'</span> test.tsv      <span class="comment"># 对第3列进行模式匹配 </span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'&#123;if($3~/e/) print&#125;'</span> test.tsv </span><br><span class="line">awk <span class="string">'$1 &gt; 10 &#123;if($3~/e/) print&#125;'</span> test.tsv </span><br><span class="line"></span><br><span class="line">awk <span class="string">'$3~/e/ &amp;&amp; $1 &gt; 10'</span> test.tsv       <span class="comment"># 体会这两种方式都能实现这种效果</span></span><br><span class="line">awk <span class="string">'&#123;if($3~/e/ &amp;&amp; $1 &gt; 10 ) print&#125;'</span> test.tsv   <span class="comment"># </span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'&#123;if(NR%2==0) $1=$1+100; print&#125;'</span> test.tsv   <span class="comment"># % 表示求余， NR表示region的序号，NR除以2余0的行都加100</span></span><br><span class="line">awk <span class="string">'&#123;if(NR%2==0) &#123;print $1+100&#125;; print&#125;'</span> test.tsv   <span class="comment">#看看这样的效果</span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'$3 ~ /e/ &#123;x++&#125; END&#123;print x&#125;'</span> test.tsv   <span class="comment"># 简单的编程，第三列包含e的行数</span></span><br><span class="line">awk <span class="string">'&#123;if($3 ~ /e/) x++&#125; END&#123;print x&#125;'</span> test.tsv   <span class="comment"># 好吧，我觉得记住这种方法就OK了</span></span><br><span class="line"></span><br><span class="line">awk <span class="string">'&#123;x+=$1&#125; END&#123;print x&#125;'</span> test.tsv   <span class="comment">#求第一列的和</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#思考一下，怎么求，所有含有e的行的第一列的和？</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">awk <span class="string">'BEGIN&#123;print 10%3&#125;'</span>   <span class="comment">#可以这样来试一些代码，后边不用跟文件</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;if("A"&gt;"a") &#123;print "Yes" &#125;else&#123; print "No"&#125;&#125;'</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;if(100&gt;10) &#123;print "Yes" &#125;else&#123; print "No"&#125;&#125;'</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;print 100/3&#125;'</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;print int(100/3)&#125;'</span>   <span class="comment">#AWK里没有整除，可以这样实现整除</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;printf("%0.6f\n", 10.63)&#125;'</span>  <span class="comment"># %s 表示字符串；%i表示整数；%e表示科学计数；%f为浮点数，%g选择浮点数和科学计数中占空间更少的</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;printf("%.2f\n", 10.639876)&#125;'</span>   <span class="comment">#控制输出的样式</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;printf("%s: %.2f and %g \n", "The numbers are", 10.639876, 0.000000123)&#125;'</span>  </span><br><span class="line">awk <span class="string">'BEGIN&#123;printf("%s: %.2f and %g \n", "The numbers are", 10.639876, 0.123)&#125;'</span>  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ls <span class="_">-l</span> | awk <span class="string">'$5 &gt; 100'</span>             <span class="comment"># awk也可以接受stdin；列出特定大小的文件</span></span><br><span class="line">ls <span class="_">-l</span> | awk <span class="string">'/.gz$/'</span>               <span class="comment"># 列出gz文件</span></span><br></pre></td></tr></table></figure>
+<h4 id="AWK编程"><a href="#AWK编程" class="headerlink" title="AWK编程"></a>AWK编程</h4><p>这块如果暂时吃力，可以跳过。</p>
+<h3 id="vi"><a href="#vi" class="headerlink" title="vi"></a>vi</h3><h5 id="将代码粘贴到集群的文件"><a href="#将代码粘贴到集群的文件" class="headerlink" title="将代码粘贴到集群的文件"></a>将代码粘贴到集群的文件</h5><p>在这个阶段，只需要知道怎么通过vi把在自己的电脑上编辑好的代码粘贴到集群上的文件就好了。 </p>
+<ul>
+<li><p>如下代码，回车之后就进入了编辑界面，这时候在命令模式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi test.txt       <span class="comment"># test.txt 改成你想要的文件名</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>按键盘上的 i 进入输入模式，这样就能往文件里输入内容了</p>
+</li>
+<li>将剪切板上的内容粘贴进去。比如putty是单击使用鼠标右键来实现粘贴</li>
+<li>如果需要做一些微小的修改，可以用方向键控制光标所在的位置，退格键可以逐个删除。需要修改的太多则可以将原来的文件删除，在自己电脑上编辑好了之后再整个粘贴进去。</li>
+<li>粘贴好了之后，进入命令模式。从编辑模式进入名模式按退出（ESC）键</li>
+<li>输入命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 保存， 注意后边不能加 # 这样的注释</span></span><br><span class="line">:w    </span><br><span class="line"><span class="comment"># 退出 </span></span><br><span class="line">:q     </span><br><span class="line"><span class="comment"># 保存并退出</span></span><br><span class="line">:wq    </span><br><span class="line"><span class="comment"># 强制退出，不保存</span></span><br><span class="line">:q!</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="更多编辑技巧"><a href="#更多编辑技巧" class="headerlink" title="更多编辑技巧"></a>更多编辑技巧</h5><ul>
+<li>命名模式下：按两次d删除整行</li>
+<li>命名模式下：:n 跳到第n行，:$ 跳到最后一行</li>
+<li>命令模式下：/pattern   向下查找</li>
+<li>命令模式下：？pattern   向上查找</li>
+<li>命令模式下：:set number  显示行号</li>
+<li>命令模式下：:set nonumber  不显示行号</li>
+</ul>
+<h3 id="Shell-脚本"><a href="#Shell-脚本" class="headerlink" title="Shell 脚本"></a>Shell 脚本</h3><p>见[[入职:转录调控shell编程入门]]</p>
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3>
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'youngguang'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5ed7e5c6530f805ef5b2f6d9c187ded6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

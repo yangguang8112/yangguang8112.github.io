@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      linux之shell | Sunshine&#39;s Life 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="杨光">
+    
+    
+
+    <meta name="description" content="shell编程入门本页一定程度上参考了Vivek Gite及其他贡献者">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux之shell | Sunshine's Life">
+<meta property="og:url" content="http://yoursite.com/2016/08/15/linux之shell/index.html">
+<meta property="og:site_name" content="Sunshine's Life">
+<meta property="og:description" content="shell编程入门本页一定程度上参考了Vivek Gite及其他贡献者">
+<meta property="og:updated_time" content="2017-07-28T07:10:01.380Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux之shell | Sunshine's Life">
+<meta name="twitter:description" content="shell编程入门本页一定程度上参考了Vivek Gite及其他贡献者">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Sunshine&#39;s Life</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/yangguang8112" title="Handsome boy on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+
+
+    <!-- China social icon -->
+    
+    <!--
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+    -->
+      <li class="navigation__item">
+        <a href="http://weibo.com/1994YG?refer_flag=1001030101_&is_hot=1" title="一起下厕所">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">linux之shell</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-08-15" class="post-meta__date date">2016-08-15</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/算法-编程/">算法/编程</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="shell编程入门"><a href="#shell编程入门" class="headerlink" title="shell编程入门"></a>shell编程入门</h2><p>本页一定程度上参考了<a href="https://bash.cyberciti.biz/guide/Main_Page" target="_blank" rel="external">Vivek Gite及其他贡献者</a><br><a id="more"></a></p>
+<h3 id="Shell变量及环境"><a href="#Shell变量及环境" class="headerlink" title="Shell变量及环境"></a>Shell变量及环境</h3><h4 id="变量赋值与取用"><a href="#变量赋值与取用" class="headerlink" title="变量赋值与取用"></a>变量赋值与取用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var1_Name=varValue   <span class="comment"># 将varValue赋值给叫var1_Name的变量，变量名称只能有字母，下划线和数字组成，且不能以数字开头。 变量名是区分大小写的</span></span><br><span class="line">A=1234               <span class="comment"># 1234赋给A， , 等号两边不能有空格</span></span><br><span class="line">var1=NovoTRedia</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var1_Name</span>      <span class="comment"># $符号接变量名就能调出值</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var1</span>+Name      <span class="comment"># $后边直到非变量名允许的字符为止，都会被当作变量名</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var1&#125;</span>_Name    <span class="comment"># 使用花括号限定变量名的范围</span></span><br><span class="line"></span><br><span class="line">Whome=/TJPROJ1/RNA/wanghong</span><br><span class="line">ls <span class="variable">$Whome</span></span><br><span class="line"></span><br><span class="line">goWhome=<span class="string">"cd <span class="variable">$Whome</span>"</span></span><br><span class="line"><span class="variable">$goWhome</span></span><br></pre></td></tr></table></figure>
+<h4 id="定义不可变的变量"><a href="#定义不可变的变量" class="headerlink" title="定义不可变的变量"></a>定义不可变的变量</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">readonly</span> Whome=/TJPROJ1/RNA/wanghong   <span class="comment">#使用readonly</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$Whome</span></span><br><span class="line"></span><br><span class="line">Whome=somethingelse   <span class="comment">#一旦定义，则不再能更改，整个脚本中都一样</span></span><br></pre></td></tr></table></figure>
+<h4 id="declare"><a href="#declare" class="headerlink" title="declare"></a>declare</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="算式展开"><a href="#算式展开" class="headerlink" title="算式展开"></a>算式展开</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> $((1+5))           <span class="comment"># $(())的用法</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $((x++))</span><br><span class="line"><span class="built_in">echo</span> $((x++))</span><br><span class="line"><span class="built_in">echo</span> $((x++))</span><br><span class="line"><span class="built_in">echo</span> $((x++))           <span class="comment"># 看一下每次的值的变化，这是++的用法</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $((x--))</span><br><span class="line"><span class="built_in">echo</span> $((x--))</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$x</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $((10%3))     <span class="comment">#取模</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $((10**3))     <span class="comment">#指数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $((10/3))     <span class="comment">#除法，整除</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $((10 - 3))  <span class="comment"># 减法</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $((10 * 3))  <span class="comment"># 乘法</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $((10 &gt;= 9)) <span class="comment">#比较， &gt;=, &gt;, &lt;, &lt;=, ==, !=, </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $((10 &amp;&amp;  3))  <span class="comment">#逻辑运算， AND， 逻辑值分为0和非零</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $((10 &amp;&amp;  -3))</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $((10 &amp;&amp;  0))</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $((10 ||  3))  <span class="comment">#逻辑运算， OR</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $((10 || -3))</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $((10 ||  0))</span><br></pre></td></tr></table></figure>
+<h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="条件执行"><a href="#条件执行" class="headerlink" title="条件执行"></a>条件执行</h3><h4 id="bash语言结构"><a href="#bash语言结构" class="headerlink" title="bash语言结构"></a>bash语言结构</h4><h5 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h5><p>| example | return | True/False |<br>| echo $( ( 5 &gt; 12 ) ) | 0 | False |<br>| echo $( ( 5 == 10 ) ) | 0 | False |<br>| echo $( ( 5 != 2 ) ) | 1 | True |<br>在shell里，0表示false，1或者非零值表示true</p>
+<h4 id="test命令"><a href="#test命令" class="headerlink" title="test命令"></a>test命令</h4><p>语法：test condition\<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#test命令返回布尔值</span></span><br><span class="line"><span class="built_in">test</span> 5 <span class="_">-eq</span> 5 &amp;&amp; <span class="built_in">echo</span> Yes || <span class="built_in">echo</span> No   <span class="comment">#  &amp;&amp;与(AND),执行命令1后才会继续执行命令2</span></span><br><span class="line"><span class="built_in">test</span> 5 <span class="_">-eq</span> 15 &amp;&amp; <span class="built_in">echo</span> Yes || <span class="built_in">echo</span> No   <span class="comment">#  ||或(OR),执行命令1不成功则执行命令2</span></span><br><span class="line"><span class="built_in">test</span> 5 <span class="_">-ne</span> 10 &amp;&amp; <span class="built_in">echo</span> Yes || <span class="built_in">echo</span> No</span><br><span class="line"><span class="built_in">test</span> <span class="_">-f</span> /etc/resolv.conf &amp;&amp; <span class="built_in">echo</span> <span class="string">"File /etc/resolv.conf found."</span> || <span class="built_in">echo</span> <span class="string">"File /etc/resolv.conf not found."</span></span><br><span class="line"><span class="built_in">test</span> <span class="_">-f</span> /etc/resolv1.conf &amp;&amp; <span class="built_in">echo</span> <span class="string">"File /etc/resolv1.conf found."</span> || <span class="built_in">echo</span> <span class="string">"File /etc/resolv1.conf not found."</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="if结构"><a href="#if结构" class="headerlink" title="if结构"></a>if结构</h4><p>语法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> condition</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">     <span class="built_in">command</span>1 </span><br><span class="line">     <span class="built_in">command</span>2</span><br><span class="line">     ...</span><br><span class="line">     <span class="built_in">command</span>N </span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">"Enter a password"</span> pass</span><br><span class="line"><span class="keyword">if</span> <span class="built_in">test</span> <span class="string">"<span class="variable">$pass</span>"</span> == <span class="string">"novo2017"</span></span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">     <span class="built_in">echo</span> <span class="string">"Password verified."</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<h4 id="If-else-fi"><a href="#If-else-fi" class="headerlink" title="If..else..fi"></a>If..else..fi</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##!/bin/bash</span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">"Enter a password"</span> pass</span><br><span class="line"><span class="keyword">if</span> <span class="built_in">test</span> <span class="string">"<span class="variable">$pass</span>"</span> = <span class="string">"novo2017"</span></span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">     <span class="built_in">echo</span> <span class="string">"Password verified."</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">     <span class="built_in">echo</span> <span class="string">"Access denied."</span>	</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<h4 id="if-elif-fi"><a href="#if-elif-fi" class="headerlink" title="if..elif..fi"></a>if..elif..fi</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">"Enter a number : "</span> n</span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$n</span> <span class="_">-gt</span> 0 ]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"<span class="variable">$n</span> is a positive."</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$n</span> <span class="_">-lt</span> 0 ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"<span class="variable">$n</span> is a negative."</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$n</span> <span class="_">-eq</span> 0 ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"<span class="variable">$n</span> is zero number."</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"Oops! <span class="variable">$n</span> is not a number."</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<h4 id="命令的结束状态"><a href="#命令的结束状态" class="headerlink" title="命令的结束状态"></a>命令的结束状态</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">date	<span class="comment">#执行一个命令</span></span><br><span class="line"><span class="built_in">echo</span> $?	<span class="comment">#打印该命令结束后的状态，这里会输出0</span></span><br><span class="line">date2017	<span class="comment">#执行一个不存在的命令</span></span><br><span class="line"><span class="built_in">echo</span> $?	<span class="comment">#打印该命令结束后的状态，这里会输出</span></span><br><span class="line">ls no_this_dir	<span class="comment">#</span></span><br><span class="line"><span class="built_in">echo</span> $?	<span class="comment">#打印该命令结束后的状态，这里会输出</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># set var </span></span><br><span class="line">PASSWD_FILE=/etc/passwd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获得用户名</span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">"Enter a user name : "</span> username</span><br><span class="line"></span><br><span class="line">grep <span class="string">"^<span class="variable">$username</span>"</span> <span class="variable">$PASSWD_FILE</span> &gt; /dev/null</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存grep命令的结束状态</span></span><br><span class="line"><span class="comment"># 如果找到该用户名则返回0</span></span><br><span class="line"><span class="comment"># 如果没找到则返回非零</span></span><br><span class="line">status=$?</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">test</span> <span class="variable">$status</span> <span class="_">-eq</span> 0</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"User '<span class="variable">$username</span>' found in <span class="variable">$PASSWD_FILE</span> file."</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"User '<span class="variable">$username</span>' not found in <span class="variable">$PASSWD_FILE</span> file."</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<h4 id="数值比较"><a href="#数值比较" class="headerlink" title="数值比较"></a>数值比较</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">num1 <span class="_">-eq</span> num2	<span class="comment">#num1等于num2</span></span><br><span class="line">num1 -ge num2 	<span class="comment">#num1大于或等于num2</span></span><br><span class="line">num1 <span class="_">-gt</span> num2 	<span class="comment">#num1大于num2</span></span><br><span class="line">num1 -le num2 	<span class="comment">#num1小于或等于num2</span></span><br><span class="line">num1 <span class="_">-lt</span> num2 	<span class="comment">#num1小于num2</span></span><br><span class="line">num1 <span class="_">-ne</span> num2 	<span class="comment">#num1不等于num2</span></span><br></pre></td></tr></table></figure>
+<h4 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">STRING1 = STRING2	<span class="comment">#两字符串相等</span></span><br><span class="line">STRING1 != STRING2 	<span class="comment">#两字符串不相等</span></span><br><span class="line"><span class="built_in">test</span> -z STRING 	<span class="comment">#字符串长度为0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">read</span> <span class="_">-s</span> -p <span class="string">"Enter your password "</span> pass</span><br><span class="line"><span class="built_in">echo</span> </span><br><span class="line"><span class="keyword">if</span> <span class="built_in">test</span> -z <span class="variable">$pass</span> </span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"No password was entered!!! Cannot verify an empty password!!!"</span>	</span><br><span class="line">    <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">test</span> <span class="string">"<span class="variable">$pass</span>"</span> != <span class="string">"tom"</span></span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Wrong password!"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<h4 id="文件属性比较"><a href="#文件属性比较" class="headerlink" title="文件属性比较"></a>文件属性比较</h4><h5 id="d-dir"><a href="#d-dir" class="headerlink" title="-d dir"></a>-d dir</h5><p>如果文件存在且为目录则为true<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">DEST=<span class="string">"/backup"</span></span><br><span class="line">SRC=<span class="string">"/home"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 确定要备份的目录存在</span></span><br><span class="line">[ ! <span class="_">-d</span> <span class="string">"<span class="variable">$DEST</span>"</span> ] &amp;&amp; mkdir -p <span class="string">"<span class="variable">$DEST</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果原目录不存在则退出...</span></span><br><span class="line">[ ! <span class="_">-d</span> <span class="string">"<span class="variable">$SRC</span>"</span> ] &amp;&amp; &#123; <span class="built_in">echo</span> <span class="string">"<span class="variable">$SRC</span> directory not found. Cannot make backup to <span class="variable">$DEST</span>"</span>; <span class="built_in">exit</span> 1; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用打包压缩进行备份</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Backup directory <span class="variable">$DEST</span>..."</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Source directory <span class="variable">$SRC</span>..."</span></span><br><span class="line">tar -zcf <span class="string">"<span class="variable">$DEST</span>/backup.tar.gz"</span> <span class="string">"<span class="variable">$SRC</span>"</span> 2&gt;/dev/null</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过命令执行结束状态将备份状态打印在屏幕上</span></span><br><span class="line">[ $? <span class="_">-eq</span> 0 ] &amp;&amp; <span class="built_in">echo</span> <span class="string">"Backup done!"</span> || <span class="built_in">echo</span> <span class="string">"Backup failed"</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="f-file"><a href="#f-file" class="headerlink" title="-f file"></a>-f file</h5><p>如果file存在且是一个常规文件则为true<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ ! <span class="_">-f</span> /path/to/file ] &amp;&amp; <span class="built_in">echo</span> <span class="string">"File not found!"</span></span><br><span class="line"><span class="comment"># ! 非(NO)</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="如何传参"><a href="#如何传参" class="headerlink" title="如何传参"></a>如何传参</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"这个是脚本的名字 : <span class="variable">$0</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"这是第一个参数 : <span class="variable">$1</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"这是第二个参数 : <span class="variable">$2</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"这是第三个参数 : <span class="variable">$3</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"这是传参的个数 : <span class="variable">$#</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"所有的参数 (\$* version) : $*"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"所有的参数 (\$@ version) : <span class="variable">$@</span>"</span></span><br></pre></td></tr></table></figure>
+<h5 id="The-Difference-Between-and"><a href="#The-Difference-Between-and" class="headerlink" title="The Difference Between $@ and $*"></a>The Difference Between $@ and $*</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line"><span class="comment">### 循环 </span></span><br><span class="line"><span class="comment">#### for循环</span></span><br><span class="line">语法：</span><br><span class="line">``` bash</span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> item1 item2 ... itemN</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">        <span class="built_in">command</span>1</span><br><span class="line">        <span class="built_in">command</span>2</span><br><span class="line">        ....</span><br><span class="line">        ...</span><br><span class="line">        <span class="built_in">command</span>N</span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line"><span class="comment">#c语言形式</span></span><br><span class="line"><span class="keyword">for</span> (( EXP1; EXP2; EXP3 ))<span class="comment">#EXP1 初始化，EXP2 条件判断，EXP3 计算表达式</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">command</span>1</span><br><span class="line">	<span class="built_in">command</span>2</span><br><span class="line">	<span class="built_in">command</span>3</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> 1 2 3 4 5</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"Welcome <span class="variable">$i</span> times."</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h5 id="使用字符串的for循环"><a href="#使用字符串的for循环" class="headerlink" title="使用字符串的for循环"></a>使用字符串的for循环</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="keyword">for</span> car <span class="keyword">in</span> bmw ford toyota nissan</span><br><span class="line">   <span class="keyword">do</span></span><br><span class="line">   <span class="built_in">echo</span> <span class="string">"Value of car is: <span class="variable">$car</span>"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h5 id="使用变量的for循环"><a href="#使用变量的for循环" class="headerlink" title="使用变量的for循环"></a>使用变量的for循环</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">files=<span class="string">"/etc/passwd /etc/group /etc/shadow /etc/gshdow"</span></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> <span class="variable">$files</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	[  <span class="_">-f</span> <span class="variable">$f</span> ] &amp;&amp; <span class="built_in">echo</span> <span class="string">"<span class="variable">$f</span> file found"</span> || <span class="built_in">echo</span> <span class="string">"*** Error - <span class="variable">$f</span> file missing."</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h5 id="使用命令行结果的for循环"><a href="#使用命令行结果的for循环" class="headerlink" title="使用命令行结果的for循环"></a>使用命令行结果的for循环</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Printing file names in /tmp directory:"</span></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> $(ls /tmp/*)</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$f</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h4 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h4><p>语法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> [ condition ]</span><br><span class="line">   <span class="keyword">do</span></span><br><span class="line">   	<span class="built_in">command</span>1</span><br><span class="line">   	<span class="built_in">command</span>2</span><br><span class="line">   	..</span><br><span class="line">   	....</span><br><span class="line">   	<span class="built_in">command</span>N</span><br><span class="line">   <span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># n赋值1</span></span><br><span class="line">n=1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直到$n等于5，循环结束</span></span><br><span class="line"><span class="keyword">while</span> [ <span class="variable">$n</span> -le 5 ]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"Welcome <span class="variable">$n</span> times."</span></span><br><span class="line">	n=$(( n+1 ))	 <span class="comment"># $n递增</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h5 id="读取一个文件"><a href="#读取一个文件" class="headerlink" title="读取一个文件"></a>读取一个文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">file=/etc/resolv.conf</span><br><span class="line"><span class="keyword">while</span> <span class="built_in">read</span> -r line</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">        <span class="comment"># file中的行已经赋给$line</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$line</span></span><br><span class="line"><span class="keyword">done</span> &lt; <span class="string">"<span class="variable">$file</span>"</span></span><br></pre></td></tr></table></figure>
+<h4 id="until循环"><a href="#until循环" class="headerlink" title="until循环"></a>until循环</h4><h4 id="select循环"><a href="#select循环" class="headerlink" title="select循环"></a>select循环</h4><h4 id="break语句退出循环"><a href="#break语句退出循环" class="headerlink" title="break语句退出循环"></a>break语句退出循环</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">match=<span class="variable">$1</span>  <span class="comment"># fileName</span></span><br><span class="line">found=0   <span class="comment"># set to 1 if file found in the for loop</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># show usage</span></span><br><span class="line">[ <span class="variable">$#</span> <span class="_">-eq</span> 0 ] &amp;&amp; &#123; <span class="built_in">echo</span> <span class="string">"Usage: <span class="variable">$0</span> fileName"</span>; <span class="built_in">exit</span> 1; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Try to find file in /etc</span></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> /etc/*</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> [ <span class="variable">$f</span> == <span class="string">"<span class="variable">$match</span>"</span> ]</span><br><span class="line">	<span class="keyword">then</span></span><br><span class="line">	 	<span class="built_in">echo</span> <span class="string">"<span class="variable">$match</span> file found!"</span></span><br><span class="line">	 	found=1 <span class="comment"># file found</span></span><br><span class="line">		<span class="built_in">break</span>   <span class="comment"># break the for looop</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># noop file not found</span></span><br><span class="line">[ <span class="variable">$found</span> <span class="_">-ne</span> 1 ] &amp;&amp; <span class="built_in">echo</span> <span class="string">"<span class="variable">$match</span> file not found in /etc directory"</span></span><br></pre></td></tr></table></figure>
+<h4 id="continue继续"><a href="#continue继续" class="headerlink" title="continue继续"></a>continue继续</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	[ condition1 ] &amp;&amp; <span class="built_in">continue</span></span><br><span class="line">	cmd1</span><br><span class="line">	cmd2</span><br><span class="line">	[ condition2 ] &amp;&amp; <span class="built_in">break</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h3 id="一些专题"><a href="#一些专题" class="headerlink" title="一些专题"></a>一些专题</h3><h3 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h3>
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'youngguang'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5ed7e5c6530f805ef5b2f6d9c187ded6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

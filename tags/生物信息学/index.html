@@ -193,6 +193,44 @@ classes that you can use:
     <li>
 
       <h2 class="post-list__post-title post-title">
+        <a href="/2017/03/09/测序错误率/" title="link to 测序错误率">测序错误率</a>
+      </h2>
+
+      <div class="post-list__meta">
+
+        <time datetime="2017-03-09" class="post-list__meta--date date">2017-03-09</time> 
+      </div>
+
+      <div class="excerpt">
+        
+      </div>
+
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+
+      <h2 class="post-list__post-title post-title">
+        <a href="/2017/03/01/标准化方法比较/" title="link to 标准化方法比较">标准化方法比较</a>
+      </h2>
+
+      <div class="post-list__meta">
+
+        <time datetime="2017-03-01" class="post-list__meta--date date">2017-03-01</time> 
+      </div>
+
+      <div class="excerpt">
+        
+          <p>RNA-seq定量得到每个基因或转录本原始的readcount值，除了基因真实表达水平，readcount值还受到其它因素的影响，主要是基因长度和测序深度，所以不能对其进行直接比较。举个例子，比较样本A中基因a与基因b的表达水平，如果基因a的原始readcount值为2000，基因b的原始readcount值为1000，能说基因a的表达水平比基因b的表达水平高吗？（先不考虑是否显著差异）不能！由于是同一个样本，可以不考虑测序深度带来的影响，但还有基因长度因素，在基因a和基因b都表达一份的情况下，两个基因转录后的mRNA被随机打断成一定长度的片段，基因长度越长，那打断的片段就越多，最终落在长度长的基因上的reads就越多。如果基因a的长度为20000，基因b的长度为1000，那实际上基因b比基因a的表达水平要高得多。再比较基因a在样本A和样本B之间的表达水平，由于是同一个基因在不同样本间的比较，可以不考虑基因长度的影响。如果基因a在样本A中的原始readcount值为2000，在样本B中的原始readcount值为4000，那能说基因a在样本B中的表达水平高吗？不能！如果样本A被测了10M的reads，样本B被测了20M的reads，在理想情况下，基因a在样本A和样本B中的表达水平应该是相当的。当然，这是在理想的情况下，实际上，随着测序数据量的增加，所有基因的readcount值并不会严格按照数据量增加的比例增加，往往是高表达的基因（如管家基因）在疯狂增长，而低表达基因增长很少，如果用常规方法校正测序深度的影响，即每个基因在各样本中的readcount值除以各样本所有基因的reads总和，那一些高表达基因，实际上在处理和对照间没有差异，就有可能被这种校正方法假阳性低认为是上调表达。一些实际上没有差异的低表达基因，就有可能被假阳性地认为是下调表达。<br>
+        
+      </div>
+
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+
+      <h2 class="post-list__post-title post-title">
         <a href="/2017/02/28/融合基因/" title="link to 融合基因">融合基因</a>
       </h2>
 
@@ -213,6 +251,26 @@ classes that you can use:
     <li>
 
       <h2 class="post-list__post-title post-title">
+        <a href="/2016/12/08/PCA/" title="link to PCA">PCA</a>
+      </h2>
+
+      <div class="post-list__meta">
+
+        <time datetime="2016-12-08" class="post-list__meta--date date">2016-12-08</time> 
+      </div>
+
+      <div class="excerpt">
+        
+          <h4 id="主成份分析是什么"><a href="#主成份分析是什么" class="headerlink" title="主成份分析是什么"></a>主成份分析是什么</h4><p>主成份分析 (Principal Component Analysis, PCA) 是一种<a href="https://en.wikipedia.org/wiki/Multivariate_statistics">元分析技术</a> (其它常用的还有回归分析、聚类分析、因子分析等等), 由Karl Pearson于1901年发明。PCA的核心思想在于，在尽可能保留数据的差异的前题下，降低数据的维度，也就是抽象出更少的互不相关的变量来描述各数据。可以想象，数据集是一群在多维空间中的点，在保持这一群点的相对空间位置不变的情况下，旋转到一个新的坐标系（坐标轴就是各PC），使得各点在新的坐标轴上的坐标（投影）的方差最大，而投影方差最大的坐标轴即为PC1，其次为PC2，……，此可以通过此<a href="http://setosa.io/ev/principal-component-analysis/">在线的演示</a>增加理解。主成份分析可通过求取协方差矩阵的本征向量实现，本征值最大的本征向量即为PC1, 比如R的princomp函数采样的就是这种方法；也可通过奇异值分解（singular value decomposition，SVD）来实现，比如R的prcomp函数。</p>
+        
+      </div>
+
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+
+      <h2 class="post-list__post-title post-title">
         <a href="/2016/11/28/lncRNA筛选/" title="link to lncRNA筛选">lncRNA筛选</a>
       </h2>
 
@@ -224,6 +282,24 @@ classes that you can use:
       <div class="excerpt">
         
           <h2 id="基础筛选"><a href="#基础筛选" class="headerlink" title="基础筛选"></a>基础筛选</h2><p>lncRNA的筛选是lncRNA分析流程中的关键步骤<br>梳理一下流程中的筛选步骤,还有4种编码潜能预测软件<br>
+        
+      </div>
+
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+
+      <h2 class="post-list__post-title post-title">
+        <a href="/2016/11/21/碱基含量分布/" title="link to 碱基含量分布">碱基含量分布</a>
+      </h2>
+
+      <div class="post-list__meta">
+
+        <time datetime="2016-11-21" class="post-list__meta--date date">2016-11-21</time> 
+      </div>
+
+      <div class="excerpt">
         
       </div>
 
