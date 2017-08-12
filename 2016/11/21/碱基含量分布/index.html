@@ -16,19 +16,16 @@
     
     
 
-    <meta name="description" content="碱基含量分布关于碱基含量分布 (Per Base Sequence Content)图在FastQC帮助文档中有比较详细的说明，这里结合个人的见解浅析。
-原理我们假设测序不存在任何偏好，那么被测双链DNA上的任何位置都可能是测序的起点，所有碱基都有同样的机会出现在reads的任意位置上。换句话说，把所有reads对齐了看，被测DNA上的各个碱基出现在reads某个位置的机会是均等。 这样，体现在碱">
+    <meta name="description" content="关于碱基含量分布 (Per Base Sequence Content)图在FastQC帮助文档中有比较详细的说明，这里结合个人的见解浅析。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="碱基含量分布 | Sunshine's Life">
 <meta property="og:url" content="http://yoursite.com/2016/11/21/碱基含量分布/index.html">
 <meta property="og:site_name" content="Sunshine's Life">
-<meta property="og:description" content="碱基含量分布关于碱基含量分布 (Per Base Sequence Content)图在FastQC帮助文档中有比较详细的说明，这里结合个人的见解浅析。
-原理我们假设测序不存在任何偏好，那么被测双链DNA上的任何位置都可能是测序的起点，所有碱基都有同样的机会出现在reads的任意位置上。换句话说，把所有reads对齐了看，被测DNA上的各个碱基出现在reads某个位置的机会是均等。 这样，体现在碱">
-<meta property="og:updated_time" content="2017-07-29T13:07:18.000Z">
+<meta property="og:description" content="关于碱基含量分布 (Per Base Sequence Content)图在FastQC帮助文档中有比较详细的说明，这里结合个人的见解浅析。">
+<meta property="og:updated_time" content="2017-08-12T12:18:01.700Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="碱基含量分布 | Sunshine's Life">
-<meta name="twitter:description" content="碱基含量分布关于碱基含量分布 (Per Base Sequence Content)图在FastQC帮助文档中有比较详细的说明，这里结合个人的见解浅析。
-原理我们假设测序不存在任何偏好，那么被测双链DNA上的任何位置都可能是测序的起点，所有碱基都有同样的机会出现在reads的任意位置上。换句话说，把所有reads对齐了看，被测DNA上的各个碱基出现在reads某个位置的机会是均等。 这样，体现在碱">
+<meta name="twitter:description" content="关于碱基含量分布 (Per Base Sequence Content)图在FastQC帮助文档中有比较详细的说明，这里结合个人的见解浅析。">
     
     
     
@@ -215,7 +212,7 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h2 id="碱基含量分布"><a href="#碱基含量分布" class="headerlink" title="碱基含量分布"></a>碱基含量分布</h2><p>关于碱基含量分布 (Per Base Sequence Content)图在<a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/4%20Per%20Base%20Sequence%20Content.html" target="_blank" rel="external">FastQC帮助文档</a>中有比较详细的说明，这里结合个人的见解浅析。</p>
+    <p>关于碱基含量分布 (Per Base Sequence Content)图在<a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/4%20Per%20Base%20Sequence%20Content.html" target="_blank" rel="external">FastQC帮助文档</a>中有比较详细的说明，这里结合个人的见解浅析。<br><a id="more"></a></p>
 <h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>我们假设测序不存在任何偏好，那么被测双链DNA上的任何位置都可能是测序的起点，所有碱基都有同样的机会出现在reads的任意位置上。换句话说，把所有reads对齐了看，被测DNA上的各个碱基出现在reads某个位置的机会是均等。 这样，体现在碱基含量分布图上就是任何位置的各碱基的含量将等于被测DNA上各碱基的含量，也就是我们能看到四条平行甚至重叠的线。通常情况下G≡C、A=T互补，因此G和C的线理想情况下应该是重叠的，A和T的也应该是。</p>
 <h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>当然，现实的情况并不是那么理想，因此四条线往往不是标准的直线，不平行或者不重叠。 对于任何位置A和T、或者G和C之间含量差超过10%，FastQC将标记为警告，超过20%将报告为失败。</p>
 <h4 id="G和C、A和T线分离"><a href="#G和C、A和T线分离" class="headerlink" title="G和C、A和T线分离"></a>G和C、A和T线分离</h4><h5 id="BS文库"><a href="#BS文库" class="headerlink" title="BS文库"></a>BS文库</h5><p>对于BS文库，重亚硫酸盐处理将没有甲基化的C转化成为T，这样C的含量激烈下降而T的含量剧烈增加，结果就会出现A和T、G和C分离，这样就是正常的。但是四条线理想情况下应该是平的并且相互平行。有时候看到起始位置不平，这就说明转化的效率和别的位置不一样。</p>

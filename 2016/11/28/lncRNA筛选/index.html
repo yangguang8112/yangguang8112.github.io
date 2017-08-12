@@ -16,16 +16,16 @@
     
     
 
-    <meta name="description" content="基础筛选lncRNA的筛选是lncRNA分析流程中的关键步骤梳理一下流程中的筛选步骤,还有4种编码潜能预测软件">
+    <meta name="description" content="lncRNA的筛选是lncRNA分析流程中的关键步骤梳理一下流程中的筛选步骤,还有4种编码潜能预测软件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lncRNA筛选 | Sunshine's Life">
 <meta property="og:url" content="http://yoursite.com/2016/11/28/lncRNA筛选/index.html">
 <meta property="og:site_name" content="Sunshine's Life">
-<meta property="og:description" content="基础筛选lncRNA的筛选是lncRNA分析流程中的关键步骤梳理一下流程中的筛选步骤,还有4种编码潜能预测软件">
-<meta property="og:updated_time" content="2017-07-28T05:53:44.000Z">
+<meta property="og:description" content="lncRNA的筛选是lncRNA分析流程中的关键步骤梳理一下流程中的筛选步骤,还有4种编码潜能预测软件">
+<meta property="og:updated_time" content="2017-08-12T12:11:01.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lncRNA筛选 | Sunshine's Life">
-<meta name="twitter:description" content="基础筛选lncRNA的筛选是lncRNA分析流程中的关键步骤梳理一下流程中的筛选步骤,还有4种编码潜能预测软件">
+<meta name="twitter:description" content="lncRNA的筛选是lncRNA分析流程中的关键步骤梳理一下流程中的筛选步骤,还有4种编码潜能预测软件">
     
     
     
@@ -212,7 +212,7 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h2 id="基础筛选"><a href="#基础筛选" class="headerlink" title="基础筛选"></a>基础筛选</h2><p>lncRNA的筛选是lncRNA分析流程中的关键步骤<br>梳理一下流程中的筛选步骤,还有4种编码潜能预测软件<br><a id="more"></a></p>
+    <p>lncRNA的筛选是lncRNA分析流程中的关键步骤<br>梳理一下流程中的筛选步骤,还有4种编码潜能预测软件<br><a id="more"></a></p>
 <h3 id="链方向，exon，长度筛选"><a href="#链方向，exon，长度筛选" class="headerlink" title="链方向，exon，长度筛选"></a>链方向，exon，长度筛选</h3><p>1.去除无链方向的转录本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'&#123;if ($7 != ".")&#123;print $0&#125;&#125;'</span> merged.gtf &gt; step0_stranded_merged.gtf</span><br></pre></td></tr></table></figure></p>
 <p>2.去除但外显子及长度筛选<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python /PUBLIC/<span class="built_in">source</span>/RNA/lncRNA/filter/version5/exon_length_filter.py --gtf step0_stranded_merged.gtf --out_dir outdir --single_exon no/yes</span><br><span class="line"><span class="comment">#结果文件为：exonfilter:step1_exon_filter.gtf ,长度筛选：step2_length_filter.gtf；其中single_exon参数，植物选yes，动物选no；</span></span><br><span class="line"><span class="comment">#同时输出assembled_tr_info.json拼接转录本信息的json文件，用于后续提取转录本信息</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="已知注释筛选"><a href="#已知注释筛选" class="headerlink" title="已知注释筛选"></a>已知注释筛选</h3><p>1.去除有已知数据库注释的lncRNA（如物种无已知数据库注释，则不做该部分筛除）:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/PUBLIC/<span class="built_in">source</span>/RNA/lncRNA/softwares/cufflinks-2.2.1_patched//cuffcompare -T -C -r gencode_v24.gtf -R step2_length_filter.gtf -o lnc_database_compare</span><br><span class="line"><span class="comment">#-r 已知lnc数据库中的注释文件；-R 通过exon及长度筛选的转录本注释文件 -o 输出文件前缀 </span></span><br><span class="line">python /PUBLIC/<span class="built_in">source</span>/RNA/lncRNA/filter/version5/annotated_transcript_filter.py --input_gtf step2_length_filter.gtf --compared_gtf lnc_database_compare.combined.gtf --output_gtf tmp_step3_1_lncRNA_filter.gtf --ref_gtf gencode_v24.gtf --compare_flag lncRNA</span><br><span class="line"><span class="comment">#-input_gtf 通过exon及长度筛选的转录本注释文件 ;--compared_gtf cuffcompare输出的所有转录本的combine注释文件 ；--ref_gtf 已知lnc数据库中的注释文件 ； --compare_flag 本次筛除的注释转录本类型</span></span><br></pre></td></tr></table></figure></p>

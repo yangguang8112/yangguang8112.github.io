@@ -203,7 +203,7 @@ classes that you can use:
 
       <div class="excerpt">
         
-          <h4 id="主成份分析是什么"><a href="#主成份分析是什么" class="headerlink" title="主成份分析是什么"></a>主成份分析是什么</h4><p>主成份分析 (Principal Component Analysis, PCA) 是一种<a href="https://en.wikipedia.org/wiki/Multivariate_statistics">元分析技术</a> (其它常用的还有回归分析、聚类分析、因子分析等等), 由Karl Pearson于1901年发明。PCA的核心思想在于，在尽可能保留数据的差异的前题下，降低数据的维度，也就是抽象出更少的互不相关的变量来描述各数据。可以想象，数据集是一群在多维空间中的点，在保持这一群点的相对空间位置不变的情况下，旋转到一个新的坐标系（坐标轴就是各PC），使得各点在新的坐标轴上的坐标（投影）的方差最大，而投影方差最大的坐标轴即为PC1，其次为PC2，……，此可以通过此<a href="http://setosa.io/ev/principal-component-analysis/">在线的演示</a>增加理解。主成份分析可通过求取协方差矩阵的本征向量实现，本征值最大的本征向量即为PC1, 比如R的princomp函数采样的就是这种方法；也可通过奇异值分解（singular value decomposition，SVD）来实现，比如R的prcomp函数。</p>
+          <p>主成份分析 (Principal Component Analysis, PCA) 是一种<a href="https://en.wikipedia.org/wiki/Multivariate_statistics">元分析技术</a> (其它常用的还有回归分析、聚类分析、因子分析等等), 由Karl Pearson于1901年发明。PCA的核心思想在于，在尽可能保留数据的差异的前题下，降低数据的维度，也就是抽象出更少的互不相关的变量来描述各数据。可以想象，数据集是一群在多维空间中的点，在保持这一群点的相对空间位置不变的情况下，旋转到一个新的坐标系（坐标轴就是各PC），使得各点在新的坐标轴上的坐标（投影）的方差最大，而投影方差最大的坐标轴即为PC1，其次为PC2，……，此可以通过此<a href="http://setosa.io/ev/principal-component-analysis/">在线的演示</a>增加理解。主成份分析可通过求取协方差矩阵的本征向量实现，本征值最大的本征向量即为PC1, 比如R的princomp函数采样的就是这种方法；也可通过奇异值分解（singular value decomposition，SVD）来实现，比如R的prcomp函数。</p>
         
       </div>
 

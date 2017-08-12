@@ -193,24 +193,6 @@ classes that you can use:
     <li>
 
       <h2 class="post-list__post-title post-title">
-        <a href="/2017/08/11/测试测试/" title="link to 测试测试">测试测试</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-08-11" class="post-list__meta--date date">2017-08-11</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
         <a href="/2017/03/17/Python建站——项目管理系统/" title="link to Python建站——项目管理系统">Python建站——项目管理系统</a>
       </h2>
 
@@ -238,6 +220,8 @@ classes that you can use:
       </div>
 
       <div class="excerpt">
+        
+          <h3 id="为什么read1和read2前几个碱基的错误率较高？"><a href="#为什么read1和read2前几个碱基的错误率较高？" class="headerlink" title="为什么read1和read2前几个碱基的错误率较高？"></a>为什么read1和read2前几个碱基的错误率较高？</h3><p><del>测序仪先测完read1全长，才跳转测read2，测序仪自身在刚启动或关闭时不太稳定，图像识别质量比较差，尤其是第一个碱基与最后一个碱基，测序质量最差，紧挨着的几个碱基测序质量也偏高，一是测序仪从刚开始的不稳定到稳定，有一个过渡的过程。另外接头空载，也会导致错误率上升。(ILLUMILA工程师的说法)</del><br>
         
       </div>
 
@@ -313,7 +297,7 @@ classes that you can use:
 
       <div class="excerpt">
         
-          <p>RNA-seq定量得到每个基因或转录本原始的readcount值，除了基因真实表达水平，readcount值还受到其它因素的影响，主要是基因长度和测序深度，所以不能对其进行直接比较。举个例子，比较样本A中基因a与基因b的表达水平，如果基因a的原始readcount值为2000，基因b的原始readcount值为1000，能说基因a的表达水平比基因b的表达水平高吗？（先不考虑是否显著差异）不能！由于是同一个样本，可以不考虑测序深度带来的影响，但还有基因长度因素，在基因a和基因b都表达一份的情况下，两个基因转录后的mRNA被随机打断成一定长度的片段，基因长度越长，那打断的片段就越多，最终落在长度长的基因上的reads就越多。如果基因a的长度为20000，基因b的长度为1000，那实际上基因b比基因a的表达水平要高得多。再比较基因a在样本A和样本B之间的表达水平，由于是同一个基因在不同样本间的比较，可以不考虑基因长度的影响。如果基因a在样本A中的原始readcount值为2000，在样本B中的原始readcount值为4000，那能说基因a在样本B中的表达水平高吗？不能！如果样本A被测了10M的reads，样本B被测了20M的reads，在理想情况下，基因a在样本A和样本B中的表达水平应该是相当的。当然，这是在理想的情况下，实际上，随着测序数据量的增加，所有基因的readcount值并不会严格按照数据量增加的比例增加，往往是高表达的基因（如管家基因）在疯狂增长，而低表达基因增长很少，如果用常规方法校正测序深度的影响，即每个基因在各样本中的readcount值除以各样本所有基因的reads总和，那一些高表达基因，实际上在处理和对照间没有差异，就有可能被这种校正方法假阳性低认为是上调表达。一些实际上没有差异的低表达基因，就有可能被假阳性地认为是下调表达。<br>
+          <p>RNA-seq定量得到每个基因或转录本原始的readcount值，除了基因真实表达水平，readcount值还受到其它因素的影响，主要是基因长度和测序深度，所以不能对其进行直接比较。举个例子，比较样本A中基因a与基因b的表达水平，如果基因a的原始readcount值为2000，基因b的原始readcount值为1000，能说基因a的表达水平比基因b的表达水平高吗？（先不考虑是否显著差异）不能！由于是同一个样本，可以不考虑测序深度带来的影响，但还有基因长度因素，在基因a和基因b都表达一份的情况下，两个基因转录后的mRNA被随机打断成一定长度的片段，基因长度越长，那打断的片段就越多，最终落在长度长的基因上的reads就越多。
         
       </div>
 
@@ -333,7 +317,7 @@ classes that you can use:
 
       <div class="excerpt">
         
-          <h3 id="添加融合基因分析内容"><a href="#添加融合基因分析内容" class="headerlink" title="添加融合基因分析内容"></a>添加融合基因分析内容</h3><h4 id="tophat-fusion软件分析说明"><a href="#tophat-fusion软件分析说明" class="headerlink" title="tophat-fusion软件分析说明"></a>tophat-fusion软件分析说明</h4><p>TopHat-Fusion可以从单端或双端的RNA-seq数据中识别融合基因。它将首次未比对到基因组上的reads进行打断，通过重新比对寻找候选的融合基因，后续采用多重规则进行过滤和筛选。该算法不依赖于已知的基因注释信息，这使其具有更高的敏感性，除了鉴定已知基因的融合，它还可以发现来自新基因或已知基因新剪切体的融合产物<br>
+          <h4 id="tophat-fusion软件分析说明"><a href="#tophat-fusion软件分析说明" class="headerlink" title="tophat-fusion软件分析说明"></a>tophat-fusion软件分析说明</h4><p>TopHat-Fusion可以从单端或双端的RNA-seq数据中识别融合基因。它将首次未比对到基因组上的reads进行打断，通过重新比对寻找候选的融合基因，后续采用多重规则进行过滤和筛选。该算法不依赖于已知的基因注释信息，这使其具有更高的敏感性，除了鉴定已知基因的融合，它还可以发现来自新基因或已知基因新剪切体的融合产物<br>
         
       </div>
 
@@ -352,6 +336,8 @@ classes that you can use:
       </div>
 
       <div class="excerpt">
+        
+          <p>经常在一些文章中看到如下这样的图：<br><img src="\img\guo_2014_nature13544_fig1a.png"><br>这个图里，显然是把每个基因相应的部分都分成了相同的份数，也就是分成了一个个bin，在统计每个bin里所有基因的甲基化位点数的总和，然后再计算成甲基化水平。<br>
         
       </div>
 
