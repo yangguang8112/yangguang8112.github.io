@@ -7,7 +7,7 @@
     
 
     <title>
-      机器学习——学习笔记 | Sunshine&#39;s Life 
+      lncScore:编码潜能预测 | Sunshine&#39;s Life 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,19 +16,16 @@
     
     
 
-    <meta name="description" content="此学习笔记是在学习Andrew Ng的courser课程的时候为了记录所作.
-单变量线性回归 (Linear Regression with One Variable)">
+    <meta name="description" content="这篇文献主要介绍了lncScore，用python写的一个脚本,主要是依赖一个机器学习第三方库scikit-learn。它能够通过开放阅读框,外显子和最大编码子序列等11个特征参数对lncRNA进行筛选。为了加快lncScore的运行速度，主要采用多线程&amp;gt;分析，只需花费2分钟的时间就能够对64,756个转录本进行分类。文章里用gencode数据库里的lncRNA数据做了验证此工具与CPAT,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习——学习笔记 | Sunshine's Life">
-<meta property="og:url" content="http://yoursite.com/2017/03/04/机器学习——学习笔记/index.html">
+<meta property="og:title" content="lncScore:编码潜能预测 | Sunshine's Life">
+<meta property="og:url" content="http://yoursite.com/2017/07/08/lncScore-编码潜能预测/index.html">
 <meta property="og:site_name" content="Sunshine's Life">
-<meta property="og:description" content="此学习笔记是在学习Andrew Ng的courser课程的时候为了记录所作.
-单变量线性回归 (Linear Regression with One Variable)">
-<meta property="og:updated_time" content="2017-08-20T14:48:55.274Z">
+<meta property="og:description" content="这篇文献主要介绍了lncScore，用python写的一个脚本,主要是依赖一个机器学习第三方库scikit-learn。它能够通过开放阅读框,外显子和最大编码子序列等11个特征参数对lncRNA进行筛选。为了加快lncScore的运行速度，主要采用多线程&amp;gt;分析，只需花费2分钟的时间就能够对64,756个转录本进行分类。文章里用gencode数据库里的lncRNA数据做了验证此工具与CPAT,">
+<meta property="og:updated_time" content="2017-08-20T15:17:10.478Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习——学习笔记 | Sunshine's Life">
-<meta name="twitter:description" content="此学习笔记是在学习Andrew Ng的courser课程的时候为了记录所作.
-单变量线性回归 (Linear Regression with One Variable)">
+<meta name="twitter:title" content="lncScore:编码潜能预测 | Sunshine's Life">
+<meta name="twitter:description" content="这篇文献主要介绍了lncScore，用python写的一个脚本,主要是依赖一个机器学习第三方库scikit-learn。它能够通过开放阅读框,外显子和最大编码子序列等11个特征参数对lncRNA进行筛选。为了加快lncScore的运行速度，主要采用多线程&amp;gt;分析，只需花费2分钟的时间就能够对64,756个转录本进行分类。文章里用gencode数据库里的lncRNA数据做了验证此工具与CPAT,">
     
     
     
@@ -189,12 +186,12 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title">机器学习——学习笔记</h1>
+    <h1 class="post-title">lncScore:编码潜能预测</h1>
 
     
 
     <div class="post-meta">
-      <time datetime="2017-03-04" class="post-meta__date date">2017-03-04</time> 
+      <time datetime="2017-07-08" class="post-meta__date date">2017-07-08</time> 
 
       <span class="post-meta__tags tags">
 
@@ -203,7 +200,7 @@ classes that you can use:
           
              &#8226; 标签:
             <font class="tags">
-              <a class="tags-link" href="/tags/机器学习/">机器学习</a>
+              <a class="tags-link" href="/tags/文献/">文献</a>
             </font>
           
 
@@ -215,8 +212,11 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <p>此学习笔记是在学习Andrew Ng的courser课程的时候为了记录所作.</p>
-<h3 id="单变量线性回归-Linear-Regression-with-One-Variable"><a href="#单变量线性回归-Linear-Regression-with-One-Variable" class="headerlink" title="单变量线性回归 (Linear Regression with One Variable)"></a>单变量线性回归 (Linear Regression with One Variable)</h3>
+    <p>这篇文献主要介绍了lncScore，用python写的一个脚本,主要是依赖一个机器学习第三方库scikit-learn。它能够通过开放阅读框,外显子和最大编码子序列等11个特征参数对lncRNA进行筛选。为了加快lncScore的运行速度，主要采用多线程&gt;分析，只需花费2分钟的时间就能够对64,756个转录本进行分类。<br>文章里用gencode数据库里的lncRNA数据做了验证<br>此工具与CPAT, CNCI 和 PLEK类似，我们的lncRNA流程里的编码潜能预测软件用的是CPC CNCI Pfam，貌似CPC也是这个团队开发的。有时间把这几个软件都看一下。<br><a id="more"></a></p>
+<h4 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h4><h5 id="安装-scikit-learn"><a href="#安装-scikit-learn" class="headerlink" title="安装 scikit-learn"></a>安装 scikit-learn</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install scipy</span><br><span class="line">pip install sklearn</span><br></pre></td></tr></table></figure>
+<h5 id="下载-lncScore"><a href="#下载-lncScore" class="headerlink" title="下载 lncScore"></a>下载 lncScore</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/WGLab/lncScore.git</span><br></pre></td></tr></table></figure>
+<h4 id="测试数据集"><a href="#测试数据集" class="headerlink" title="测试数据集"></a>测试数据集</h4><h5 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">python lncScore.py \</span><br><span class="line">	<span class="_">-f</span> <span class="built_in">test</span>/human_test.fa \  <span class="comment">#fa文件;</span></span><br><span class="line">	-g <span class="built_in">test</span>/human_test.gtf \  <span class="comment">#gtf文件;</span></span><br><span class="line">	-o result \  <span class="comment">#输出结果文件名;</span></span><br><span class="line">	-p 1 \  <span class="comment">#指定线程数;</span></span><br><span class="line">	-x dat/Human_Hexamer.tsv \  <span class="comment">#hexamer频率表,通过tools/make_hexamer_tab.py准备;</span></span><br><span class="line">	-t dat/Human_training.dat \  <span class="comment">#参考数据集,通过tools/make_TrainingDat.py准备;</span></span><br></pre></td></tr></table></figure>
+
   </section>
 
   
