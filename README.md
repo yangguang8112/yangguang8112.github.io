@@ -11,7 +11,9 @@ hexo new <post title>
 
 ## Installation
 ```
+npm install hexo
 npm install
+npm install hexo-deployer-git
 ```
 
 ## Deploy
