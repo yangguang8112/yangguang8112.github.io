@@ -72,7 +72,7 @@ disqus_shortname: youngguang
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git 
-  repository: git@github.com:yangguang8112/yangguang8112.github.io.git 
+  repository: https://github.com/yangguang8112/yangguang8112.github.io.git 
   branch: master 
 
 # Social
