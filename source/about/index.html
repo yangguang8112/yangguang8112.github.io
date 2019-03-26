@@ -37,13 +37,12 @@
                 </li>
                 <li class="someRight">
                     <dt><i class="icon-bookmark"></i>Application</dt>
-                    <dd>生物信息分析工程师</dd>
+                    <dd>硕士研究生</dd>
                 </li>
             </ul>
             <div class="note">
-                <p>2.5年生物信息分析经验。熟练使用Python，Shell，R等脚本语言。熟练使用Linux操作系统。</p>
-                <p>工作中主要负责RNA计算流程的维护更新。阅读、分享文献，更新流程或发现新的分析点。工作之余会参加数据竞赛，对机器学习算法有兴趣。</p>
-                <p>熟悉常用的python第三方库，熟悉Flask框架，了解PHP的laravel框架。</p>
+                <p>2.5年生物信息和PHP开发经验。熟练使用Python，Shell，R等脚本语言。熟练使用Linux操作系统。</p>
+                <p>工作中主要负责RNA计算流程的开发维护更新，自动化报告平台维护。阅读、分享生信文献，更新流程或发现新的分析点。工作之余会参加数据竞赛，对机器学习算法有兴趣。</p>
             </div>
         </div>
         <div class="main">
@@ -59,7 +58,7 @@
                 <li>
                     <dt><i class="icon-bookmark"></i>Experience. 项目与工作经验</dt>
 
-                    <h3><img src="\img\logo2.png" data-action="zoom"/><span>莲和医疗（2017.9 - ）</span></h3>
+                    <h3><img src="\img\logo2.png" data-action="zoom"/><span>莲和医疗（2017.9 - 2019.3）</span></h3>
           					<ul class="exp">
                                   <li>
                                   	<div class="circle"></div>
@@ -67,11 +66,13 @@
           								基因变异可视化平台
           								<a href="http://60.205.203.207:8080/171125_TPNB500134_0155_AHYW5LBGX3/LH-2002259/17/7577548/C/T" target="_blank"><i class="icon-link"></i>Site</a>
           							</h4>
-                                      <p>根据GATK等软件获得的变异位点，获取其附近所有reads，reads回帖参考序列。用于在算法判断模糊的时候人工进一步判断。基于Python 2.7  Flask框架</p>
+                                      <p>二代测序产生150bp长度的reads，选取可疑基因突变位点附近的一些reads，标记出在该位点的碱基变化情况，按突变类型排列，突变类型相同的按在基因组上的位置从左至右打印出来。</p>
+                                        <p>后台用samtools读取BWA比对产生的bam文件，参考基因组按染色体准备好，提高web端响应速度。前端通过get方式传参，传入样本编号、突变位点以及突变类型。基于Python 2.7  Flask框架。</p>
                                   </li>
                                   <li>
                                   	<div class="circle"></div>
                                       <h4>自动化报告平台</h4>
+                                      <p>根据不同的样本类型配置对应的计算流程启动后台计算程序，并监控计算过程。</P>
                                       <p>计算流程产生的数据入库，对不同流程的结果配置对应的报告模板，调用数据接口，自动生成肿瘤检测报告。基于PHP的laravel框架</p>
                                   </li>
                               </ul>
@@ -82,13 +83,8 @@
                             <div class="circle"></div>
                             <h4>lncRNA分析流程</h4>
                             <p>负责科技服务<a href="http://www.novogene.com/tech/service/lncRNA/product/" target="_blank">lncRNA</a>流程开发、维护与升级。利用五步法对lncRNA进行准确筛选，高效预测靶基因，并完成对转录本中mRNA的分析，以及lncRNA和mRNA的比较分析、共表达网络构建。
-能熟练解读结题报告,独立解决售后以及个性化分析。涉及Python，R，Shell等脚本。</p>
+能熟练解读结题报告,独立解决售后以及个性化分析。编写python脚本控制任务投递，处理数据流。用R的ggplot2将结果可视化。最后通过Django静态模板生成结题报告。</p>
 
-                        </li>
-                        <li>
-                        	<div class="circle"></div>
-                            <h4>其他流程</h4>
-                            <p>熟悉转录组以及miRNA,circRNA的流程脚本,熟练掌握其项目执行</p>
                         </li>
                         <li>
                         	<div class="circle"></div>
@@ -110,14 +106,14 @@
                     <ul class="exp">
                         <li>
                             <div class="circle"></div>
-                            <h4>自动打卡提醒</h4>
-                            <p>利用python的urllib2库爬取考勤系统打卡详情,模拟登录微信网页端发送提醒打卡消息.并可交互式获得当天打卡详情</p>
+                            <h4>自动打卡提醒<a href="https://yangguang8112.github.io/2017/06/05/%E5%BE%AE%E4%BF%A1%E6%8F%90%E9%86%92%E6%89%93%E5%8D%A1%E5%B0%8F%E5%B7%A5%E5%85%B7/" target="_blank"><i class="icon-link"></i>Site</a></h4>
+                            <p>利用python的urllib2库爬取考勤系统打卡详情,模拟登录微信网页端发送提醒打卡消息。添加微信发送关键词，将姓名和工号添加进数据库。每天定时提醒是通过crontab定时执行考勤系统爬虫脚本来实现，并可交互式获得当天打卡详情。</p>
                         </li>
                         <li>
                             <div class="circle"></div>
                             <h4>
                                 Sunshine个人博客
-                                <a href="http://aureus.group" target="_blank"><i class="icon-link"></i>Site</a>
+                                <a href="https://yangguang8112.github.io" target="_blank"><i class="icon-link"></i>Site</a>
                             </h4>
                             <p>Hexo 主题开发，记录项目开发、软件测试、文献阅读以及个人生活
                             </p>
@@ -125,11 +121,10 @@
 						<li>
                             <div class="circle"></div>
                             <h4>
-                                <span>参加 天池精准医疗大赛——人工智能辅助糖尿病遗传风险预测</span>
+                                <span>参加 天池精准医疗大赛——人工智能辅助糖尿病遗传风险预测<a href="https://yangguang8112.github.io/2018/05/01/%E5%A4%A9%E6%B1%A0%E7%B2%BE%E5%87%86%E5%8C%BB%E7%96%97%E5%A4%A7%E8%B5%9B%E2%80%94%E2%80%94%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%B3%96%E5%B0%BF%E7%97%85%E9%81%97%E4%BC%A0%E9%A3%8E%E9%99%A9%E9%A2%84%E6%B5%8B%E5%A4%8D%E7%9B%98/" target="_blank"><i class="icon-link"></i>Site</a></span>
                             </h4>
                             <p><a href="https://tianchi.aliyun.com/competition/information.htm?spm=5176.100067.5678.2.297c6650Y7GYWG&raceId=231638" target="_blank">天池精准医疗大赛</a>是阿里云和青梧桐基因联合举办的比赛</p>
-                            <P>初赛为根据体检基本信息预测血糖值，复赛为体检信息加基因测序结果分类是否有妊娠期糖尿病风险</P>
-                            <p>最终获得了TOP2%（44/2522）的成绩</p>
+                            <P>初赛为根据体检基本信息预测血糖值，复赛为体检信息加基因测序结果分类是否有妊娠期糖尿病风险。初赛对于缺失严重的数据（乙肝抗原抗体相关数据，乙肝病毒与糖尿病的相关性不大）直接删掉，缺少性别的用男性补全，删掉年龄小于16以及血糖大于18的异常数据。用LightGBM模型训练数据。</P>
                         </li>
                     </ul>
                 </li>
@@ -140,20 +135,20 @@
                         <li>
                             <div class="circle"></div>
                             <h4>Python</h4>
-                            <p>能够编写模块化的 Python脚本，完成数据处理</p>
-                            <p>熟悉第三方库调用</p>
-                            <p>Python串写流程</p>
+                            <p>能够编写模块化的Python脚本，完成数据处理</p>
+                            <p>熟悉第三方库调用，熟练使用numpy、pandas等常用数据处理库，熟悉flask框架实现前后端交互</p>
+                            <p>能编写简单的爬虫爬取基因疾病相关数据库</p>
                         </li>
                         <li>
                             <div class="circle"></div>
                             <h4>Linux / Shell</h4>
-                            <p>熟悉 linux 操作系统,能熟练进行软件安装,用户管理以及集群管理</p>
+                            <p>熟悉 linux 操作系统,能熟练进行软件安装,能在linux环境中进行程序开发数据处理</p>
                             <p>编写Shell批处理脚本,提高工作效率</p>
                         </li>
                         <li>
                             <div class="circle"></div>
                             <h4>R</h4>
-                            <p>熟悉ggplot2包,能用R重复出文献中的统计图</p>
+                            <p>熟悉ggplot2包,能用R可视化二代测序分析结果，能重复文献中的统计图</p>
                         </li>
 						<li>
                             <div class="circle"></div>
