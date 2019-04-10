@@ -37,14 +37,13 @@
                 </li>
                 <li class="someRight">
                     <dt><i class="icon-bookmark"></i>Application</dt>
-                    <dd>华东师范大学硕士研究生</dd>
-                    <dd>计算机技术专业</dd>
-                    <dd>生物信息学方向</dd>
+                    <dd>Python开发</dd>
+                    <dd>生信数据工程师</dd>
                 </li>
             </ul>
             <div class="note">
                 <p>2.5年生物信息学分析经验。熟练使用Python，Shell，R等脚本语言。熟练使用Linux操作系统。</p>
-                <p>工作中主要负责RNA计算流程的开发维护更新，自动化报告平台维护。阅读、分享生信文献，更新流程或发现新的分析点。工作之余会参加数据竞赛，对机器学习算法有兴趣。希望能在生物信息学领域更深入的学习。</p>
+                <p>工作中主要负责RNA计算流程的开发维护更新，自动化报告平台维护。阅读、分享生信文献，更新流程或发现新的分析点。工作之余会参加数据竞赛，对机器学习算法感兴趣。</p>
             </div>
         </div>
         <div class="main">
@@ -66,7 +65,7 @@
                                   	<div class="circle"></div>
                                       <h4>
           								基因变异可视化平台
-          								<a href="http://60.205.203.207:8080/171125_TPNB500134_0155_AHYW5LBGX3/LH-2002259/17/7577548/C/T" target="_blank"><i class="icon-link"></i>Site</a>
+          								<a href="http://60.205.203.207:8080/bampath/LH-2002259/17/7577548/C/T" target="_blank"><i class="icon-link"></i>Site</a>
           							</h4>
                                       <p>二代测序产生150bp长度的reads，选取可疑基因突变位点附近的一些reads，标记出在该位点的碱基变化情况，按突变类型排列，突变类型相同的按在基因组上的位置从左至右打印出来。</p>
                                         <p>后台用samtools读取BWA比对产生的bam文件，参考基因组按染色体准备好，提高web端响应速度。前端通过get方式传参，传入样本编号、突变位点以及突变类型。基于Python 2.7  Flask框架。</p>
