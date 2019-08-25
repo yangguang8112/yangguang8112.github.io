@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>杨光的简历</title>
-    <meta name="description" content="2.5年生物信息分析经验。熟练掌握python，shell，R等脚本语言。熟练掌握linux操作系统。工作中主要负责。定期阅读、分享文献，更新流程或发现新的分析点。">
-    <meta name="keywords" content="杨光,生物信息,工作,简历">
+    <meta name="description" content="熟练使用Python，Shell，R等脚本语言。熟练使用Linux操作系统。
+    熟练使用numpy，pandas，sklearn，matplotlib等python库进行数据分析。熟悉flask框架，了解web后端开发。
+    阅读生信最新文献，了解前沿研究方向。
+    工作之余会参加数据竞赛，对机器学习算法有兴趣，了解逻辑回归，决策树，k-means等常用算法。">
+    <meta name="keywords" content="杨光,机器学习,python,nlp,工作,简历">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="dist/css/style.min.css">
     <link rel="stylesheet" href="dist/css/fontello.min.css">
@@ -14,10 +17,8 @@
                     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
                 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
         ga('create', 'UA-48084758-4', 'auto');
         ga('send', 'pageview');
-
     </script>
 </head>
 <body>
@@ -37,13 +38,14 @@
                 </li>
                 <li class="someRight">
                     <dt><i class="icon-bookmark"></i>Application</dt>
-                    <dd>Python开发</dd>
+                    <dd>Python</dd>
+			<dd>机器学习</dd>
                     <dd>生信数据工程师</dd>
                 </li>
             </ul>
             <div class="note">
-                <p>2.5年生物信息学分析经验。熟练使用Python，Shell，R等脚本语言。熟练使用Linux操作系统。</p>
-                <p>工作中主要负责RNA计算流程的开发维护更新，自动化报告平台维护。阅读、分享生信文献，更新流程或发现新的分析点。工作之余会参加数据竞赛，对机器学习算法感兴趣。</p>
+                <p>熟练使用Python，Shell，R等脚本语言。熟练使用Linux操作系统。熟练使用numpy,pandas，matplotlib，sklearn等python库进行数据分析。熟悉flask框架，了解web后端开发。</p>
+                <p>阅读行业最新文献，了解前沿研究方向。工作之余会参加数据竞赛，对机器学习算法有兴趣，了解逻辑回归，决策树，k-means等常用算法。</p>
             </div>
         </div>
         <div class="main">
@@ -53,22 +55,27 @@
                     <dd><strong>个人信息:</strong> <span>杨光 / 男</span></dd>
                     <dd><strong>出生日期:</strong> <span>1994年8月</span></dd>
                     <dd><strong>毕业院校:</strong> <span>吉林大学</span></dd>
-                    <dd><strong>工作年限:</strong> <span>2.5年</span></dd>
+                    <dd><strong>工作年限:</strong> <span>3年</span></dd>
                     <dd><strong>博客:</strong> <a href="https://yangguang8112.github.io" target="_blank">https://yangguang8112.github.io</a></dd>
                 </li>
                 <li>
                     <dt><i class="icon-bookmark"></i>Experience. 项目与工作经验</dt>
 
-                    <h3><img src="\img\logo2.png" data-action="zoom"/><span>莲和医疗（2017.9 - 2019.3）</span></h3>
+                    <h3><img src="\img\logo2.png" data-action="zoom"/><span>莲和医疗（2016.7 - ）</span></h3>
           					<ul class="exp">
                                   <li>
                                   	<div class="circle"></div>
-                                      <h4>
-          								基因变异可视化平台
-          								<a href="http://60.205.203.207:8080/bampath/LH-2002259/17/7577548/C/T" target="_blank"><i class="icon-link"></i>Site</a>
-          							</h4>
+                                      <h4>基因变异可视化接口
+        <a href="http://60.205.203.207:8080/bampath/LH-2002259/17/7577548/C/T" target="_blank"><i class="icon-link"></i>Site</a>
+          			      </h4>
                                       <p>二代测序产生150bp长度的reads，选取可疑基因突变位点附近的一些reads，标记出在该位点的碱基变化情况，按突变类型排列，突变类型相同的按在基因组上的位置从左至右打印出来。</p>
-                                        <p>后台用samtools读取BWA比对产生的bam文件，参考基因组按染色体准备好，提高web端响应速度。前端通过get方式传参，传入样本编号、突变位点以及突变类型。基于Python 2.7  Flask框架。</p>
+                                      <p>后台用samtools读取BWA比对产生的bam文件，参考基因组按染色体准备好，提高web端响应速度。前端通过get方式传参，传入样本编号、突变位点以及突变类型。基于Python 2.7  Flask框架。</p>
+                                  </li>
+				  <li>
+                                    <div class="circle"></div>
+                                      <h4>临床癌症辅助诊断模型</h4>
+                                      <p>从实验组（肝癌）与对照组（健康）中找出显著差异表达的基因作为特征向量建立逻辑回归模型，对未知血样是否患病进行判断。</P>
+                                      <p>使用bowtie2进行序列比对，deseq2做基因表达量归一化和差异分析，按FDR和fold change筛选差异基因作为特征向量建立逻辑回归模型（glmnet）。</p>
                                   </li>
                                   <li>
                                   	<div class="circle"></div>
@@ -77,7 +84,7 @@
                                       <p>计算流程产生的数据入库，对不同流程的结果配置对应的报告模板，调用数据接口，并根据显著变异位点推荐用药以及关联相关临床试验，自动生成肿瘤检测报告。基于PHP的laravel框架</p>
                                   </li>
                               </ul>
-
+<!--
                     <h3><img src="img\logo.png" data-action="zoom"/><span>诺禾致源（2016.7 - 2017.8）</span></h3>
                     <ul class="exp">
                         <li>
@@ -88,11 +95,6 @@
 
                         </li>
                         <li>
-                        	<div class="circle"></div>
-                            <h4>生物信息分析软件</h4>
-                            <p>熟练使用 BWA/Tophat2/Hisat2/Cufflinks/StringTie/GATK/samtools 等生物信息分析开源软件</p>
-                        </li>
-                        <li>
                             <div class="circle"></div>
                             <h4>HPC集群管理</h4>
                             <p>负责监控集群存储资源使用情况</p>
@@ -100,14 +102,14 @@
                             <p>自动挂起任务,数据盘存储低于最低限度时挂起所有job</p>
                         </li>
                     </ul>
-
+-->
 
 
                     <h3>个人项目</h3>
                     <ul class="exp">
                         <li>
                             <div class="circle"></div>
-                            <h4>自动打卡提醒<a href="https://yangguang8112.github.io/2017/06/05/%E5%BE%AE%E4%BF%A1%E6%8F%90%E9%86%92%E6%89%93%E5%8D%A1%E5%B0%8F%E5%B7%A5%E5%85%B7/" target="_blank"><i class="icon-link"></i>Site</a></h4>
+                            <h4>打卡提醒<a href="https://yangguang8112.github.io/2017/06/05/%E5%BE%AE%E4%BF%A1%E6%8F%90%E9%86%92%E6%89%93%E5%8D%A1%E5%B0%8F%E5%B7%A5%E5%85%B7/" target="_blank"><i class="icon-link"></i>Site</a></h4>
                             <p>利用python的urllib2库爬取考勤系统打卡详情,模拟登录微信网页端发送提醒打卡消息。添加微信发送关键词，将姓名和工号添加进数据库。每天定时提醒是通过crontab定时执行考勤系统爬虫脚本来实现，并可交互式获得当天打卡详情。</p>
                         </li>
                         <li>
@@ -119,13 +121,21 @@
                             <p>Hexo 主题开发，记录项目开发、软件测试、文献阅读以及个人生活
                             </p>
                         </li>
-						<li>
+			<li>
                             <div class="circle"></div>
                             <h4>
                                 <span>参加 天池精准医疗大赛——人工智能辅助糖尿病遗传风险预测<a href="https://yangguang8112.github.io/2018/05/01/%E5%A4%A9%E6%B1%A0%E7%B2%BE%E5%87%86%E5%8C%BB%E7%96%97%E5%A4%A7%E8%B5%9B%E2%80%94%E2%80%94%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%B3%96%E5%B0%BF%E7%97%85%E9%81%97%E4%BC%A0%E9%A3%8E%E9%99%A9%E9%A2%84%E6%B5%8B%E5%A4%8D%E7%9B%98/" target="_blank"><i class="icon-link"></i>Site</a></span>
                             </h4>
                             <p><a href="https://tianchi.aliyun.com/competition/information.htm?spm=5176.100067.5678.2.297c6650Y7GYWG&raceId=231638" target="_blank">天池精准医疗大赛</a>是阿里云和青梧桐基因联合举办的比赛</p>
                             <P>初赛为根据体检基本信息预测血糖值，复赛为体检信息加基因测序结果分类是否有妊娠期糖尿病风险。初赛对于缺失严重的数据（乙肝抗原抗体相关数据，乙肝病毒与糖尿病的相关性不大）直接删掉，缺少性别的用男性补全，删掉年龄小于16以及血糖大于18的异常数据。用LightGBM模型训练数据。</P>
+                        </li>
+			<li>
+                            <div class="circle"></div>
+                            <h4>
+                                <span>参加瑞金医院MMC人工智能辅助构建知识图谱大赛<a href="https://tianchi.aliyun.com/competition/entrance/231687/information" target="_blank"><i class="icon-link"></i>Site</a></span>
+                            </h4>
+                            <p>初赛提供与糖尿病相关的学术论文以及糖尿病临床指南，要求在学术论文和临床指南的基础上，做实体的标注，实体类别共十五类。</p>
+                            <P>采用基于字的BiLSTM-CRF模型。把赛题数据换成BIO方式标注。首先使用Word Embedding将文字向量化，然后用双向LSTM计算上下文之间的关系，最后用CRF做句子级的序列标注。</P>
                         </li>
                     </ul>
                 </li>
