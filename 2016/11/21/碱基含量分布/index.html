@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      碱基含量分布 | Sunshine&#39;s Life 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="杨光">
+    
+    
+
+    <meta name="description" content="关于碱基含量分布 (Per Base Sequence Content)图在FastQC帮助文档中有比较详细的说明，这里结合个人的见解浅析。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="碱基含量分布 | Sunshine's Life">
+<meta property="og:url" content="http://yoursite.com/2016/11/21/碱基含量分布/index.html">
+<meta property="og:site_name" content="Sunshine's Life">
+<meta property="og:description" content="关于碱基含量分布 (Per Base Sequence Content)图在FastQC帮助文档中有比较详细的说明，这里结合个人的见解浅析。">
+<meta property="og:updated_time" content="2021-03-28T16:37:27.600Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="碱基含量分布 | Sunshine's Life">
+<meta name="twitter:description" content="关于碱基含量分布 (Per Base Sequence Content)图在FastQC帮助文档中有比较详细的说明，这里结合个人的见解浅析。">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Sunshine&#39;s Life</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/yangguang8112" title="Handsome boy on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+
+
+    <!-- China social icon -->
+    
+    <!--
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+    -->
+      <li class="navigation__item">
+        <a href="http://weibo.com/1994YG?refer_flag=1001030101_&is_hot=1" title="一起下厕所">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">碱基含量分布</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-11-21" class="post-meta__date date">2016-11-21</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/生物信息学/">生物信息学</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>关于碱基含量分布 (Per Base Sequence Content)图在<a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/4%20Per%20Base%20Sequence%20Content.html" target="_blank" rel="external">FastQC帮助文档</a>中有比较详细的说明，这里结合个人的见解浅析。<br><a id="more"></a></p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>我们假设测序不存在任何偏好，那么被测双链DNA上的任何位置都可能是测序的起点，所有碱基都有同样的机会出现在reads的任意位置上。换句话说，把所有reads对齐了看，被测DNA上的各个碱基出现在reads某个位置的机会是均等。 这样，体现在碱基含量分布图上就是任何位置的各碱基的含量将等于被测DNA上各碱基的含量，也就是我们能看到四条平行甚至重叠的线。通常情况下G≡C、A=T互补，因此G和C的线理想情况下应该是重叠的，A和T的也应该是。</p>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>当然，现实的情况并不是那么理想，因此四条线往往不是标准的直线，不平行或者不重叠。 对于任何位置A和T、或者G和C之间含量差超过10%，FastQC将标记为警告，超过20%将报告为失败。</p>
+<h4 id="G和C、A和T线分离"><a href="#G和C、A和T线分离" class="headerlink" title="G和C、A和T线分离"></a>G和C、A和T线分离</h4><h5 id="BS文库"><a href="#BS文库" class="headerlink" title="BS文库"></a>BS文库</h5><p>对于BS文库，重亚硫酸盐处理将没有甲基化的C转化成为T，这样C的含量激烈下降而T的含量剧烈增加，结果就会出现A和T、G和C分离，这样就是正常的。但是四条线理想情况下应该是平的并且相互平行。有时候看到起始位置不平，这就说明转化的效率和别的位置不一样。</p>
+<h5 id="起始六个碱基"><a href="#起始六个碱基" class="headerlink" title="起始六个碱基"></a>起始六个碱基</h5><p>对于RNA测序，使用随机引物反转，这时候6个碱基就可能是有偏好的，这时候6个碱基的组成就不平衡，会看到严重的分离抖动的问题</p>
+<h5 id="末尾的一些碱基"><a href="#末尾的一些碱基" class="headerlink" title="末尾的一些碱基"></a>末尾的一些碱基</h5><p>有时候会看到末端的出现不平行，这可能是因为测穿了，测到了接头导致这部分的来源和其它部分的来源不一样，因而导致偏差。</p>
+<h5 id="链特异库"><a href="#链特异库" class="headerlink" title="链特异库"></a>链特异库</h5><p>在链特异建库的情况下，G和C、A和T可能不再完全相等，因此可能会导致G和C、A和T的线不再重叠。一般情况下，即便是链特异建库，G和C的含量、A和T的含量也是相近的，当然不排除会有些物种的转录组中碱基含量本身就分离的问题。</p>
+<h5 id="外源污染"><a href="#外源污染" class="headerlink" title="外源污染"></a>外源污染</h5><p>可能受到一些本身就不平衡的外源的污染，比如一些单链的病毒什么的。</p>
+<h4 id="G、C、A或T线不平"><a href="#G、C、A或T线不平" class="headerlink" title="G、C、A或T线不平"></a>G、C、A或T线不平</h4><p>当测序结果中有大量的相同的读段的时候，也就是duplicate rate很高的时候，测序的偏好可能导致GC线不平，因为每个这些读段每个位点只能是一种碱基，相应的位置的碱基含量就会向这种reads的方向偏离。</p>
+<p>导致duplicate rate高的原因可能是：</p>
+<h5 id="过多PCR循环"><a href="#过多PCR循环" class="headerlink" title="过多PCR循环"></a>过多PCR循环</h5><p>过多的PCR循环可能会导致偏好更明显，从而导致重复率高</p>
+<h5 id="空载"><a href="#空载" class="headerlink" title="空载"></a>空载</h5><p>这样导致大量出现接头 (adapter) 的序列。通常我们会过滤掉含接头的序列，因此如果index用得没错，那么clean reads可能不存在这个问题。</p>
+<h5 id="样本原因"><a href="#样本原因" class="headerlink" title="样本原因"></a>样本原因</h5><p>比如rRNA含量过高或者某种特殊的组织里某个RNA表达量过高，这时候也容易出现大量的duplicates。</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'youngguang'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5ed7e5c6530f805ef5b2f6d9c187ded6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

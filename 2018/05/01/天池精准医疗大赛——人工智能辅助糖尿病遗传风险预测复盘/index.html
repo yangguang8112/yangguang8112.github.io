@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      天池精准医疗大赛——人工智能辅助糖尿病遗传风险预测复盘 | Sunshine&#39;s Life 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="杨光">
+    
+    
+
+    <meta name="description" content="初赛赛题大赛初赛数据共包含两个文件，训练文件d_train.csv和测试文件d_test.csv，每个文件第一行是字段名，之后每一行代表一个个体。文件共包含42个字段，包含数值型、字符型、日期型等众多数据类型，部分字段内容在部分人群中有缺失，其中第一列为个体ID号。训练文件的最后一列为标签列，既需要预测的目标血糖值。
+数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="天池精准医疗大赛——人工智能辅助糖尿病遗传风险预测复盘 | Sunshine's Life">
+<meta property="og:url" content="http://yoursite.com/2018/05/01/天池精准医疗大赛——人工智能辅助糖尿病遗传风险预测复盘/index.html">
+<meta property="og:site_name" content="Sunshine's Life">
+<meta property="og:description" content="初赛赛题大赛初赛数据共包含两个文件，训练文件d_train.csv和测试文件d_test.csv，每个文件第一行是字段名，之后每一行代表一个个体。文件共包含42个字段，包含数值型、字符型、日期型等众多数据类型，部分字段内容在部分人群中有缺失，其中第一列为个体ID号。训练文件的最后一列为标签列，既需要预测的目标血糖值。
+数据">
+<meta property="og:image" content="http://yoursite.com/\img\天池医疗赛p1.png">
+<meta property="og:updated_time" content="2021-03-28T16:37:27.595Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="天池精准医疗大赛——人工智能辅助糖尿病遗传风险预测复盘 | Sunshine's Life">
+<meta name="twitter:description" content="初赛赛题大赛初赛数据共包含两个文件，训练文件d_train.csv和测试文件d_test.csv，每个文件第一行是字段名，之后每一行代表一个个体。文件共包含42个字段，包含数值型、字符型、日期型等众多数据类型，部分字段内容在部分人群中有缺失，其中第一列为个体ID号。训练文件的最后一列为标签列，既需要预测的目标血糖值。
+数据">
+<meta name="twitter:image" content="http://yoursite.com/\img\天池医疗赛p1.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Sunshine&#39;s Life</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/yangguang8112" title="Handsome boy on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+
+
+    <!-- China social icon -->
+    
+    <!--
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+    -->
+      <li class="navigation__item">
+        <a href="http://weibo.com/1994YG?refer_flag=1001030101_&is_hot=1" title="一起下厕所">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">天池精准医疗大赛——人工智能辅助糖尿病遗传风险预测复盘</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-05-01" class="post-meta__date date">2018-05-01</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="初赛"><a href="#初赛" class="headerlink" title="初赛"></a>初赛</h3><h4 id="赛题"><a href="#赛题" class="headerlink" title="赛题"></a>赛题</h4><p>大赛初赛数据共包含两个文件，训练文件d_train.csv和测试文件d_test.csv，每个文件第一行是字段名，之后每一行代表一个个体。文件共包含42个字段，包含数值型、字符型、日期型等众多数据类型，部分字段内容在部分人群中有缺失，其中第一列为个体ID号。训练文件的最后一列为标签列，既需要预测的目标血糖值。</p>
+<h4 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h4><p><img src="\img\天池医疗赛p1.png"><br><a id="more"></a></p>
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>对于缺失严重的数据（乙肝抗原抗体相关数据，乙肝病毒与糖尿病的相关性不大）直接删掉，缺少性别的用男性补全，删掉年龄小于16以及血糖大于18的异常数据<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_feat</span><span class="params">(train, test)</span>:</span></span><br><span class="line">    train_id = train.id.values.copy()</span><br><span class="line">    test_id = test.id.values.copy()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 去除异常值</span></span><br><span class="line">    train = train[train[<span class="string">'old'</span>]&gt;=<span class="number">16</span>]</span><br><span class="line">    train = train[train[<span class="string">'xuetang'</span>]&lt;=<span class="number">18</span>]</span><br><span class="line"></span><br><span class="line">    data = pd.concat([train, test])</span><br><span class="line"><span class="comment">## 补全性别缺失值</span></span><br><span class="line">    data[<span class="string">'male'</span>] = data[<span class="string">'male'</span>].map(&#123;<span class="string">'男'</span>: <span class="number">1</span>, <span class="string">'女'</span>: <span class="number">0</span>,<span class="string">'??'</span>:<span class="number">1</span>&#125;)</span><br><span class="line"><span class="comment">## 删除数据严重缺失的列，以及与血糖值无关的体检日期</span></span><br><span class="line">    data.drop([<span class="string">'yigan_biaomian_kangyuan'</span>, <span class="string">'yigan_biaomian_kangti'</span>, <span class="string">'yigan_e_kangyuan'</span>, <span class="string">'yigan_e_kangti'</span>, <span class="string">'yigan_hexin_kangti'</span>,<span class="string">'date'</span>], axis=<span class="number">1</span>, inplace=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line">    train_feat = data[data.id.isin(train_id)]</span><br><span class="line">    test_feat = data[data.id.isin(test_id)]</span><br><span class="line">    <span class="keyword">del</span> train_feat[<span class="string">'id'</span>]</span><br><span class="line">    <span class="keyword">del</span> test_feat[<span class="string">'id'</span>]</span><br><span class="line">    <span class="keyword">return</span> train_feat, test_feat</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">evalerror</span><span class="params">(pred, df)</span>:</span></span><br><span class="line">    label = df.get_label().values.copy()</span><br><span class="line">    score = mean_squared_error(label, pred) * <span class="number">0.5</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="string">'mse'</span>, score, <span class="keyword">False</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xiaoshu</span><span class="params">(array)</span>:</span></span><br><span class="line">    new_list = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> array:</span><br><span class="line">        j = sum(i)/<span class="number">5</span></span><br><span class="line">        new_list.append(round(j, <span class="number">3</span>))</span><br><span class="line">    <span class="keyword">return</span> np.array(new_list)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">to_csv</span><span class="params">(DF,file_name)</span>:</span></span><br><span class="line">    pd.DataFrame(DF).to_csv(file_name, index = <span class="keyword">False</span>, header = <span class="keyword">None</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入数据</span></span><br><span class="line">train = pd.read_csv(<span class="string">'d_train_20180102_b.csv'</span>)</span><br><span class="line">test = pd.read_csv(<span class="string">'d_test_B_20180128.csv'</span>)</span><br><span class="line"><span class="comment"># 清理数据</span></span><br><span class="line">train_feat, test_feat = make_feat(train, test)</span><br><span class="line">predictors = [f <span class="keyword">for</span> f <span class="keyword">in</span> test_feat.columns <span class="keyword">if</span> f <span class="keyword">not</span> <span class="keyword">in</span> [<span class="string">'xuetang'</span>]]</span><br><span class="line"></span><br><span class="line">params = &#123;<span class="string">'learning_rate'</span>: <span class="number">0.01</span>,<span class="string">'boosting_type'</span>: <span class="string">'gbdt'</span>,<span class="string">'objective'</span>: <span class="string">'regression'</span>,<span class="string">'metric'</span>: <span class="string">'mse'</span>,<span class="string">'sub_feature'</span>: <span class="number">0.9</span>,<span class="string">'num_leaves'</span>: <span class="number">16</span>,<span class="string">'colsample_bytree'</span>: <span class="number">0.9</span>,<span class="string">'verbose'</span>: <span class="number">-1</span>&#125;</span><br><span class="line">cores = []</span><br><span class="line">train_preds = np.zeros(train_feat.shape[<span class="number">0</span>])</span><br><span class="line">test_preds = np.zeros((test_feat.shape[<span class="number">0</span>], <span class="number">5</span>))</span><br><span class="line"><span class="comment"># 开始5折训练</span></span><br><span class="line">kf = KFold(len(train_feat), n_folds=<span class="number">5</span>, shuffle=<span class="keyword">True</span>, random_state=<span class="number">520</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i, (train_index, test_index) <span class="keyword">in</span> enumerate(kf):</span><br><span class="line">    train_feat1 = train_feat.iloc[train_index]</span><br><span class="line">    train_feat2 = train_feat.iloc[test_index]</span><br><span class="line">    lgb_train1 = lgb.Dataset(train_feat1[predictors], train_feat1[<span class="string">'xuetang'</span>], categorical_feature=[<span class="string">'male'</span>])</span><br><span class="line">    lgb_train2 = lgb.Dataset(train_feat2[predictors], train_feat2[<span class="string">'xuetang'</span>])</span><br><span class="line">    gbm = lgb.train(params,lgb_train1,num_boost_round=<span class="number">3000</span>,valid_sets=lgb_train2,verbose_eval=<span class="number">100</span>,feval=evalerror,early_stopping_rounds=<span class="number">150</span>)</span><br><span class="line">    feat_imp = pd.Series(gbm.feature_importance(), index=predictors).sort_values(ascending=<span class="keyword">False</span>)</span><br><span class="line">    train_preds[test_index] += gbm.predict(train_feat2[predictors])</span><br><span class="line">    test_preds[:, i] = gbm.predict(test_feat[predictors])</span><br><span class="line"><span class="comment"># 导出结果</span></span><br><span class="line">to_csv(xiaoshu(test_preds), <span class="string">'result_B.csv'</span>)</span><br></pre></td></tr></table></figure>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'youngguang'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5ed7e5c6530f805ef5b2f6d9c187ded6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

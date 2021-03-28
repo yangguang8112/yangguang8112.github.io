@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      PCA | Sunshine&#39;s Life 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="杨光">
+    
+    
+
+    <meta name="description" content="主成份分析 (Principal Component Analysis, PCA) 是一种元分析技术 (其它常用的还有回归分析、聚类分析、因子分析等等), 由Karl Pearson于1901年发明。PCA的核心思想在于，在尽可能保留数据的差异的前题下，降低数据的维度，也就是抽象出更少的互不相关的变量来描述各数据。可以想象，数据集是一群在多维空间中的点，在保持这一群点的相对空间位置不变的情况下，旋">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PCA | Sunshine's Life">
+<meta property="og:url" content="http://yoursite.com/2016/12/08/PCA/index.html">
+<meta property="og:site_name" content="Sunshine's Life">
+<meta property="og:description" content="主成份分析 (Principal Component Analysis, PCA) 是一种元分析技术 (其它常用的还有回归分析、聚类分析、因子分析等等), 由Karl Pearson于1901年发明。PCA的核心思想在于，在尽可能保留数据的差异的前题下，降低数据的维度，也就是抽象出更少的互不相关的变量来描述各数据。可以想象，数据集是一群在多维空间中的点，在保持这一群点的相对空间位置不变的情况下，旋">
+<meta property="og:updated_time" content="2021-03-28T16:37:27.586Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PCA | Sunshine's Life">
+<meta name="twitter:description" content="主成份分析 (Principal Component Analysis, PCA) 是一种元分析技术 (其它常用的还有回归分析、聚类分析、因子分析等等), 由Karl Pearson于1901年发明。PCA的核心思想在于，在尽可能保留数据的差异的前题下，降低数据的维度，也就是抽象出更少的互不相关的变量来描述各数据。可以想象，数据集是一群在多维空间中的点，在保持这一群点的相对空间位置不变的情况下，旋">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Sunshine&#39;s Life</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/yangguang8112" title="Handsome boy on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+
+
+    <!-- China social icon -->
+    
+    <!--
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+    -->
+      <li class="navigation__item">
+        <a href="http://weibo.com/1994YG?refer_flag=1001030101_&is_hot=1" title="一起下厕所">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">PCA</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-12-08" class="post-meta__date date">2016-12-08</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/生物信息学/">生物信息学</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>主成份分析 (Principal Component Analysis, PCA) 是一种<a href="https://en.wikipedia.org/wiki/Multivariate_statistics" target="_blank" rel="external">元分析技术</a> (其它常用的还有回归分析、聚类分析、因子分析等等), 由Karl Pearson于1901年发明。PCA的核心思想在于，在尽可能保留数据的差异的前题下，降低数据的维度，也就是抽象出更少的互不相关的变量来描述各数据。可以想象，数据集是一群在多维空间中的点，在保持这一群点的相对空间位置不变的情况下，旋转到一个新的坐标系（坐标轴就是各PC），使得各点在新的坐标轴上的坐标（投影）的方差最大，而投影方差最大的坐标轴即为PC1，其次为PC2，……，此可以通过此<a href="http://setosa.io/ev/principal-component-analysis/" target="_blank" rel="external">在线的演示</a>增加理解。主成份分析可通过求取协方差矩阵的本征向量实现，本征值最大的本征向量即为PC1, 比如R的princomp函数采样的就是这种方法；也可通过奇异值分解（singular value decomposition，SVD）来实现，比如R的prcomp函数。</p>
+<a id="more"></a>
+<h4 id="怎么做主成份分析"><a href="#怎么做主成份分析" class="headerlink" title="怎么做主成份分析"></a>怎么做主成份分析</h4><p>首先让我们来产生一组示例数据, 相当于20个样本，各250个基因的表达值。每列是一个样本，每行是一个基因。每50行的基因表达的均值和方差不同，即是分成5簇。<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">DATA &lt;- matrix(data = c(rnorm(<span class="number">10</span>^<span class="number">3</span>, mean = <span class="number">1</span>, sd = <span class="number">1</span>),   <span class="comment">#这里可以改变sd看看最后图的效果</span></span><br><span class="line">                        rnorm(<span class="number">10</span>^<span class="number">3</span>, mean = <span class="number">2</span>, sd = <span class="number">2</span>), </span><br><span class="line">                        rnorm(<span class="number">10</span>^<span class="number">3</span>, mean = <span class="number">3</span>, sd = <span class="number">3</span>), </span><br><span class="line">                        rnorm(<span class="number">10</span>^<span class="number">3</span>, mean = <span class="number">4</span>, sd = <span class="number">4</span>), </span><br><span class="line">                        rnorm(<span class="number">10</span>^<span class="number">3</span>, mean = <span class="number">5</span>, sd = <span class="number">5</span>)), </span><br><span class="line">                nrow = <span class="number">250</span>, </span><br><span class="line">                ncol = <span class="number">20</span>, </span><br><span class="line">                byrow = <span class="literal">T</span>)                               <span class="comment"># 如果这里是byrow=F，则可将样本分成5簇</span></span><br><span class="line"></span><br><span class="line">rownames(DATA) &lt;- sprintf(<span class="string">"%s%d"</span>, rep(letters[<span class="number">1</span>:<span class="number">5</span>], each=<span class="number">50</span>), rep(<span class="number">1</span>:<span class="number">50</span>, times=<span class="number">5</span>))</span><br><span class="line">colnames(DATA) &lt;- sprintf(<span class="string">"%s%d"</span>, rep(LETTERS[<span class="number">1</span>:<span class="number">5</span>], each=<span class="number">4</span>), rep(<span class="number">1</span>:<span class="number">4</span>, times=<span class="number">5</span>))</span><br></pre></td></tr></table></figure></p>
+<p>我们这里描述基因之间差异，也就是将样本看成自变量。使用R的prcomp函数<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pca &lt;- prcomp(DATA, scale=<span class="literal">T</span>)  </span><br><span class="line">names(pca)</span><br><span class="line">[<span class="number">1</span>] <span class="string">"sdev"</span>     <span class="string">"rotation"</span> <span class="string">"center"</span>   <span class="string">"scale"</span>    <span class="string">"x"</span></span><br></pre></td></tr></table></figure></p>
+<p>得到的结果为list，含有5个元素：pca$sdev 为各主成份的标准差，其平方为方差,即本征值，可用于碎石图及计算解释方差的百分比；pca$rotation是本征向量(eigenvectors)矩阵；pca$center 为对数据进行centering所减去的值，也就是列的均值； pca$scale是进行scaling所除以的值，也就是标准差，当scale=F的时候则无这项；pca$x PCs的值，也就是原数据在个PC上的投影。平时的作图用到的是x和sdev。</p>
+<p>可以通过一些有用的函数来查看<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">summary(pca)  </span><br><span class="line">plot(pca)     <span class="comment"># screeplot(pca)  #碎石图</span></span><br></pre></td></tr></table></figure></p>
+<p>快速查看各主成份作图<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PCs &lt;- data.frame(pca$x)</span><br><span class="line">PCs$colours &lt;- rep(brewer.pal(<span class="number">5</span>, <span class="string">"Set1"</span>), each=<span class="number">50</span>)</span><br><span class="line">pairs(PCs[,<span class="number">1</span>:<span class="number">5</span>], col=PCs$colours)</span><br></pre></td></tr></table></figure></p>
+<p>可以通过ggplot2作比较漂亮的图<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line"><span class="keyword">library</span>(RColorBrewer)</span><br><span class="line">PCs &lt;- data.frame(pca$x)</span><br><span class="line">PCs$cluster &lt;- substr(rownames(pca$x),<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">ggplot() +</span><br><span class="line">    geom_point(data=PCs, aes(x=PC1, y=PC2, colour=cluster)) +</span><br><span class="line">    xlab(sprintf(<span class="string">"PC1: %.2f%%"</span>, (<span class="number">100</span>*(pca$sdev)^<span class="number">2</span>)[<span class="number">1</span>]/sum((pca$sdev)^<span class="number">2</span>))) +</span><br><span class="line">    ylab(sprintf(<span class="string">"PC2: %.2f%%"</span>, (<span class="number">100</span>*(pca$sdev)^<span class="number">2</span>)[<span class="number">2</span>]/sum((pca$sdev)^<span class="number">2</span>)))</span><br></pre></td></tr></table></figure></p>
+<p>只需要将表达矩阵转置之后用于prcomp函数，即可针对样本进行PCA分析，也就是把基因看作自变量，每个样本基因数那么多维空间中的一个点，可尝试如下两段代码，看看效果<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line"><span class="keyword">library</span>(RColorBrewer)</span><br><span class="line"></span><br><span class="line">DATA &lt;- matrix(data = c(rnorm(<span class="number">10</span>^<span class="number">3</span>, mean = <span class="number">1</span>, sd = <span class="number">1</span>),   </span><br><span class="line">                        rnorm(<span class="number">10</span>^<span class="number">3</span>, mean = <span class="number">2</span>, sd = <span class="number">2</span>), </span><br><span class="line">                        rnorm(<span class="number">10</span>^<span class="number">3</span>, mean = <span class="number">3</span>, sd = <span class="number">3</span>), </span><br><span class="line">                        rnorm(<span class="number">10</span>^<span class="number">3</span>, mean = <span class="number">4</span>, sd = <span class="number">4</span>), </span><br><span class="line">                        rnorm(<span class="number">10</span>^<span class="number">3</span>, mean = <span class="number">5</span>, sd = <span class="number">5</span>)), </span><br><span class="line">                nrow = <span class="number">250</span>, </span><br><span class="line">                ncol = <span class="number">20</span>, </span><br><span class="line">                byrow = <span class="literal">T</span>)                              </span><br><span class="line">rownames(DATA) &lt;- sprintf(<span class="string">"%s%d"</span>, rep(letters[<span class="number">1</span>:<span class="number">5</span>], each=<span class="number">50</span>), rep(<span class="number">1</span>:<span class="number">50</span>, times=<span class="number">5</span>))</span><br><span class="line">colnames(DATA) &lt;- sprintf(<span class="string">"%s%d"</span>, rep(LETTERS[<span class="number">1</span>:<span class="number">5</span>], each=<span class="number">4</span>), rep(<span class="number">1</span>:<span class="number">4</span>, times=<span class="number">5</span>))</span><br><span class="line"></span><br><span class="line">pca &lt;- prcomp(t(DATA), scale=<span class="literal">T</span>)  </span><br><span class="line"></span><br><span class="line">PCs &lt;- data.frame(pca$x)</span><br><span class="line">PCs$cluster &lt;- substr(rownames(pca$x),<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">ggplot() +</span><br><span class="line">    geom_point(data=PCs, aes(x=PC1, y=PC2, colour=cluster)) +</span><br><span class="line">    xlab(sprintf(<span class="string">"PC1: %.2f%%"</span>, (<span class="number">100</span>*(pca$sdev)^<span class="number">2</span>)[<span class="number">1</span>]/sum((pca$sdev)^<span class="number">2</span>))) +</span><br><span class="line">    ylab(sprintf(<span class="string">"PC2: %.2f%%"</span>, (<span class="number">100</span>*(pca$sdev)^<span class="number">2</span>)[<span class="number">2</span>]/sum((pca$sdev)^<span class="number">2</span>)))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">DATA &lt;- matrix(data = c(rnorm(<span class="number">10</span>^<span class="number">3</span>, mean = <span class="number">1</span>, sd = <span class="number">1</span>),   </span><br><span class="line">                        rnorm(<span class="number">10</span>^<span class="number">3</span>, mean = <span class="number">2</span>, sd = <span class="number">2</span>), </span><br><span class="line">                        rnorm(<span class="number">10</span>^<span class="number">3</span>, mean = <span class="number">3</span>, sd = <span class="number">3</span>), </span><br><span class="line">                        rnorm(<span class="number">10</span>^<span class="number">3</span>, mean = <span class="number">4</span>, sd = <span class="number">4</span>), </span><br><span class="line">                        rnorm(<span class="number">10</span>^<span class="number">3</span>, mean = <span class="number">5</span>, sd = <span class="number">5</span>)), </span><br><span class="line">                nrow = <span class="number">250</span>, </span><br><span class="line">                ncol = <span class="number">20</span>, </span><br><span class="line">                byrow = <span class="literal">F</span>)                               <span class="comment"># byrow=F，将样本分成5簇</span></span><br><span class="line"></span><br><span class="line">rownames(DATA) &lt;- sprintf(<span class="string">"%s%d"</span>, rep(letters[<span class="number">1</span>:<span class="number">5</span>], each=<span class="number">50</span>), rep(<span class="number">1</span>:<span class="number">50</span>, times=<span class="number">5</span>))</span><br><span class="line">colnames(DATA) &lt;- sprintf(<span class="string">"%s%d"</span>, rep(LETTERS[<span class="number">1</span>:<span class="number">5</span>], each=<span class="number">4</span>), rep(<span class="number">1</span>:<span class="number">4</span>, times=<span class="number">5</span>))</span><br><span class="line"></span><br><span class="line">pca &lt;- prcomp(t(DATA), scale=<span class="literal">T</span>)  </span><br><span class="line"></span><br><span class="line">PCs &lt;- data.frame(pca$x)</span><br><span class="line">PCs$cluster &lt;- substr(rownames(pca$x),<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">ggplot() +</span><br><span class="line">    geom_point(data=PCs, aes(x=PC1, y=PC2, colour=cluster)) +</span><br><span class="line">    xlab(sprintf(<span class="string">"PC1: %.2f%%"</span>, (<span class="number">100</span>*(pca$sdev)^<span class="number">2</span>)[<span class="number">1</span>]/sum((pca$sdev)^<span class="number">2</span>))) +</span><br><span class="line">    ylab(sprintf(<span class="string">"PC2: %.2f%%"</span>, (<span class="number">100</span>*(pca$sdev)^<span class="number">2</span>)[<span class="number">2</span>]/sum((pca$sdev)^<span class="number">2</span>)))</span><br></pre></td></tr></table></figure></p>
+<h4 id="保留主成份的问题"><a href="#保留主成份的问题" class="headerlink" title="保留主成份的问题"></a>保留主成份的问题</h4>
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'youngguang'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5ed7e5c6530f805ef5b2f6d9c187ded6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
