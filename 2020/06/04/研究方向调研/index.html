@@ -28,7 +28,7 @@ document level : 输入一篇document统计整个d">
 问题定义
 sentence level : 输入一篇document按句子分割，然后对每个包含有两个目标实体(例如同时含有基因和疾病)的句子做关系分类
 document level : 输入一篇document统计整个d">
-<meta property="og:updated_time" content="2021-06-29T09:42:31.770Z">
+<meta property="og:updated_time" content="2021-06-29T12:23:40.620Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="研究方向调研 | Sunshine's Life">
 <meta name="twitter:description" content="我所在的项目组主要是做代谢病的基因突变位点致病性预测的工作，对预测到的相关基因和突变位点做验证需要查阅大量文献，我负责后面这块文献中基因、突变、疾病等生物医学相关实体的关系提取。
@@ -219,14 +219,14 @@ classes that you can use:
     <p>我所在的项目组主要是做代谢病的基因突变位点致病性预测的工作，对预测到的相关基因和突变位点做验证需要查阅大量文献，我负责后面这块文献中基因、突变、疾病等生物医学相关实体的关系提取。</p>
 <h3 id="问题定义"><a href="#问题定义" class="headerlink" title="问题定义"></a>问题定义</h3><ol>
 <li>sentence level : 输入一篇document按句子分割，然后对每个包含有两个目标实体(例如同时含有基因和疾病)的句子做关系分类</li>
-<li>document level : 输入一篇document统计整个document里两类目标实体的个数，然后对所有的关系可能(两类个数之积)做关系分类<a href="#refer-anchor-1"><sup><strong>1</strong></sup></a></li>
-<li>三元组(细粒度) : (Gene;Function change;disease)其中Function change有四种表示:Loss of Function(LOF),Gain of Function(GOF)表示功能激活和失活,Regulation(REG)表示未知或者功能无变化,Complex(COM)表示疾病和基因间的关系比较复杂<a href="#refer-anchor-2"><sup>2</sup></a></li>
+<li>document level : 输入一篇document统计整个document里两类目标实体的个数，然后对所有的关系可能(两类个数之积)做关系分类<a href="#refer-anchor-1"><sup>[1]</sup></a></li>
+<li>三元组(细粒度) : (Gene;Function change;disease)其中Function change有四种表示:Loss of Function(LOF),Gain of Function(GOF)表示功能激活和失活,Regulation(REG)表示未知或者功能无变化,Complex(COM)表示疾病和基因间的关系比较复杂<a href="#refer-anchor-2"><sup>[2]</sup></a></li>
 </ol>
-<h3 id="sentence-level"><a href="#sentence-level" class="headerlink" title="sentence level"></a>sentence level</h3><p>使用biobert的预训练模型在GAD数据集(基因-疾病)上微调完成sentence level的关系抽取<a href="#refer-anchor-3"><sup>3</sup></a><br>GAD数据集示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this study proposes that A/A genotype at position -607 in @GENE$ gene can be used as a new genetic maker in Thai population for predicting @DISEASE$ development.       1</span><br><span class="line">@GENE$ methylation occurs frequently in human colonic @DISEASE$ and cancers and is closely associated with K-ras mutations.     0</span><br><span class="line">In conclusion, @GENE$ 8092C &gt; A polymorphism may modify the associations between cumulative cigarette smoking and @DISEASE$ risk.       1</span><br></pre></td></tr></table></figure></p>
+<h3 id="sentence-level"><a href="#sentence-level" class="headerlink" title="sentence level"></a>sentence level</h3><p>使用biobert的预训练模型在GAD数据集(基因-疾病)上微调完成sentence level的关系抽取<a href="#refer-anchor-3"><sup>[3]</sup></a><br>GAD数据集示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this study proposes that A/A genotype at position -607 in @GENE$ gene can be used as a new genetic maker in Thai population for predicting @DISEASE$ development.       1</span><br><span class="line">@GENE$ methylation occurs frequently in human colonic @DISEASE$ and cancers and is closely associated with K-ras mutations.     0</span><br><span class="line">In conclusion, @GENE$ 8092C &gt; A polymorphism may modify the associations between cumulative cigarette smoking and @DISEASE$ risk.       1</span><br></pre></td></tr></table></figure></p>
 <p>后续可优化方向↓↓↓↓↓↓↓↓↓↓</p>
-<h4 id="数据集扩充"><a href="#数据集扩充" class="headerlink" title="数据集扩充"></a>数据集扩充</h4><p>利用一些突变数据库比如 ClinVar 和COSMIC 含有的关系对扩充Mutation-gene relation sentence 数据集<a href="#refer-anchor-1"><sup>1</sup></a>利用PharmGKB 扩充Mutation-drug relation sentence 数据集。基本方法就是用已知关系对到文本中比对，至少同时含有的句子作为候选句，然后经过一系列筛选得到最终的正负句子集。</p>
-<h4 id="结构化模型4"><a href="#结构化模型4" class="headerlink" title="结构化模型4"></a>结构化模型<a href="#refer-anchor-4"><sup>4</sup></a></h4><h4 id="指代消解"><a href="#指代消解" class="headerlink" title="指代消解"></a>指代消解</h4><p>有时候两个关系的实体不是在一个句子中出现，有一种情况就是代词代指了上文中的某个实体。</p>
-<h3 id="document-level"><a href="#document-level" class="headerlink" title="document level"></a>document level</h3><p><a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2029-1" target="_blank" rel="external">Deep learning of mutation-gene-drug relations from the literature</a>这篇文章中提到的方法是在整个document的尺度上做一些特征工程，比如实体之间的距离和出现的频率。同时也给出了一个doc-level的关系语料库<a href="#refer-anchor-5"><sup>5</sup></a><br>doc-level其实也比较符合生物文献知识提取的需求，只需要知道一篇文章里确定了哪些实体间的关系，在这个尺度上也能避免处理复杂关系的问题。但是难点在于如何做语义上的特征提取，上述文献中提到的方法是用的传统机器学习。</p>
+<h4 id="数据集扩充"><a href="#数据集扩充" class="headerlink" title="数据集扩充"></a>数据集扩充</h4><p>利用一些突变数据库比如 ClinVar 和COSMIC 含有的关系对扩充Mutation-gene relation sentence 数据集<a href="#refer-anchor-1"><sup>[1]</sup></a>利用PharmGKB 扩充Mutation-drug relation sentence 数据集。基本方法就是用已知关系对到文本中比对，至少同时含有的句子作为候选句，然后经过一系列筛选得到最终的正负句子集。</p>
+<h4 id="结构化模型-4"><a href="#结构化模型-4" class="headerlink" title="结构化模型[4]"></a>结构化模型<a href="#refer-anchor-4"><sup>[4]</sup></a></h4><h4 id="指代消解"><a href="#指代消解" class="headerlink" title="指代消解"></a>指代消解</h4><p>有时候两个关系的实体不是在一个句子中出现，有一种情况就是代词代指了上文中的某个实体。</p>
+<h3 id="document-level"><a href="#document-level" class="headerlink" title="document level"></a>document level</h3><p><a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2029-1" target="_blank" rel="external">Deep learning of mutation-gene-drug relations from the literature</a>这篇文章中提到的方法是在整个document的尺度上做一些特征工程，比如实体之间的距离和出现的频率。同时也给出了一个doc-level的关系语料库<a href="#refer-anchor-5"><sup>[5]</sup></a><br>doc-level其实也比较符合生物文献知识提取的需求，只需要知道一篇文章里确定了哪些实体间的关系，在这个尺度上也能避免处理复杂关系的问题。但是难点在于如何做语义上的特征提取，上述文献中提到的方法是用的传统机器学习。</p>
 <h3 id="三元组-细粒度"><a href="#三元组-细粒度" class="headerlink" title="三元组(细粒度)"></a>三元组(细粒度)</h3><p>有一些根据已有数据库做张量分解的工作，没有细看<a href="https://www.aimspress.com/article/10.3934/mbe.2019067/fulltext.html" target="_blank" rel="external">GOF/LOF knowledge inference with tensor decomposition in support of high order link discovery for gene, mutation and disease</a></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>以上已经做的和后面可能要做的都是基于工作考虑，至于学术方面，最近浏览了几篇今年的ACL有一些启发。<br><a href="https://arxiv.org/abs/1909.03227" target="_blank" rel="external">A Novel Cascade Binary Tagging Framework for Relational Triple Extraction</a>这篇文章考虑一个句子中可能含有多种三元组关系，提出了一个新的命名实体标注结构，使后续关系抽取检测到多重关系的性能提高。<br><a href="https://arxiv.org/abs/2004.03186" target="_blank" rel="external">More Data, More Relations, More Context and More Openness: A Review and Outlook for Relation Extraction</a>这篇综述里提到了关系抽取的四个发展方向：</p>
 <ol>
@@ -235,7 +235,7 @@ classes that you can use:
 <li>处理更复杂的上下文</li>
 <li>面向更多开放域</li>
 </ol>
-<p>$^3$</p>
+<p>$km^3$</p>
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><div id="refer-anchor-1"></div></p>
 <ul>
 <li>[1] <a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2029-1" target="_blank" rel="external">Deep learning of mutation-gene-drug relations from the literature</a><div id="refer-anchor-2"></div></li>
@@ -323,5 +323,20 @@ var _hmt = _hmt || [];
   <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
 <![endif]-->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
