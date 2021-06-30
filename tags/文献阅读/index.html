@@ -193,6 +193,107 @@ classes that you can use:
     <li>
 
       <h2 class="post-list__post-title post-title">
+        <a href="/2021/06/15/Knowledge-Enhanced-Contextual-Word-Representations/" title="link to Knowledge Enhanced Contextual Word Representations">Knowledge Enhanced Contextual Word Representations</a>
+      </h2>
+
+      <div class="post-list__meta">
+
+        <time datetime="2021-06-15" class="post-list__meta--date date">2021-06-15</time> 
+      </div>
+
+      <div class="excerpt">
+        
+      </div>
+
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+
+      <h2 class="post-list__post-title post-title">
+        <a href="/2021/05/20/KEPLER/" title="link to KEPLER">KEPLER</a>
+      </h2>
+
+      <div class="post-list__meta">
+
+        <time datetime="2021-05-20" class="post-list__meta--date date">2021-05-20</time> 
+      </div>
+
+      <div class="excerpt">
+        
+          <blockquote>
+<p>KEPLER: A Unified Model for Knowledge Embedding and Pre-trained Language Representation</p>
+</blockquote>
+<p>这篇论文提出一种模型能统一知识embedding和预训练语言表示（Knowledge Embeddingand Pre-trained LanguagE Representation (KEPLER)）<br>
+        
+      </div>
+
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+
+      <h2 class="post-list__post-title post-title">
+        <a href="/2021/04/22/K-ADAPTER/" title="link to K-ADAPTER">K-ADAPTER</a>
+      </h2>
+
+      <div class="post-list__meta">
+
+        <time datetime="2021-04-22" class="post-list__meta--date date">2021-04-22</time> 
+      </div>
+
+      <div class="excerpt">
+        
+          <p>大多数之前的工作通过多任务学习来注入知识和更新模型参数以增强预训练语言模型。不管他们用了哪些方法做知识注入，遇到的共同问题就是对前面知识的灾难性遗忘。figure1a<br>figure1b是我们提出的K-ADAPTER，不同类型的知识被注入到不同的袖珍神经网络模型（比如本文中的adapter），他们之间互相独立，而不是直接注入到预训练模型。这样既能固定预训练模型的原始表示，又支持继续知识注入。adapter是一个含有特定知识的模型，是独立于预训练模型之外的插件。<br>
+        
+      </div>
+
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+
+      <h2 class="post-list__post-title post-title">
+        <a href="/2021/03/10/CoLAKE/" title="link to CoLAKE">CoLAKE</a>
+      </h2>
+
+      <div class="post-list__meta">
+
+        <time datetime="2021-03-10" class="post-list__meta--date date">2021-03-10</time> 
+      </div>
+
+      <div class="excerpt">
+        
+          <p>提出了一个方法可以同时做语言和知识的表征，并且在需要知识的任务中有较好的表现，在一些NLU（不太需要知识）的任务也没有降很多。<br>把输入的句子看成是一个全连接的graph，即word graph。然后根据句子中的实体到知识图谱中找一级三元组，只找对应实体的第一层邻居。然后将句子中的实体作为锚点（ancher node），以锚节点为中心抽出sub-knowledge-graph，然后根据锚点将sub-knowledge-graph和word graph合并。这是示意图是这样的，实际操作起来，在输入的时候这些node也是序列摆放，他们的graph结构是通过position embedding和mask矩阵来体现的。<br>
+        
+      </div>
+
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+
+      <h2 class="post-list__post-title post-title">
+        <a href="/2021/01/30/RoBERTa/" title="link to RoBERTa">RoBERTa</a>
+      </h2>
+
+      <div class="post-list__meta">
+
+        <time datetime="2021-01-30" class="post-list__meta--date date">2021-01-30</time> 
+      </div>
+
+      <div class="excerpt">
+        
+          <p>主要是训练方法上的创新，该paper认为bert的训练明显不够，他们对超参调优和训练集大小的影响的仔细评估。提出RoBERTa这个recipe来提高BERT的训练效果。<br>
+        
+      </div>
+
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+
+      <h2 class="post-list__post-title post-title">
         <a href="/2020/08/06/A-Novel-Cascade-Binary-Tagging-Framework-for-Relational-Triple-Extraction/" title="link to A Novel Cascade Binary Tagging Framework for Relational Triple Extraction">A Novel Cascade Binary Tagging Framework for Relational Triple Extraction</a>
       </h2>
 
@@ -202,6 +303,8 @@ classes that you can use:
       </div>
 
       <div class="excerpt">
+        
+          <p>以一个新的角度去提取关系三元组，以前的工作都是把关系看作一个离散的标签，而本文的框架(CasRel)则将一个句子里的关系建模为subjects到objects的函数。这个方法还能自然解决关系重叠的问题。<br>
         
       </div>
 

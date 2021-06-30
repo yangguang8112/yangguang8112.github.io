@@ -7,7 +7,7 @@
     
 
     <title>
-      A Novel Cascade Binary Tagging Framework for Relational Triple Extraction | Sunshine&#39;s Life 
+      K-ADAPTER | Sunshine&#39;s Life 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,20 +16,18 @@
     
     
 
-    <meta name="description" content="以一个新的角度去提取关系三元组，以前的工作都是把关系看作一个离散的标签，而本文的框架(CasRel)则将一个句子里的关系建模为subjects到objects的函数。这个方法还能自然解决关系重叠的问题。">
+    <meta name="description" content="大多数之前的工作通过多任务学习来注入知识和更新模型参数以增强预训练语言模型。不管他们用了哪些方法做知识注入，遇到的共同问题就是对前面知识的灾难性遗忘。figure1afigure1b是我们提出的K-ADAPTER，不同类型的知识被注入到不同的袖珍神经网络模型（比如本文中的adapter），他们之间互相独立，而不是直接注入到预训练模型。这样既能固定预训练模型的原始表示，又支持继续知识注入。adapt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A Novel Cascade Binary Tagging Framework for Relational Triple Extraction | Sunshine's Life">
-<meta property="og:url" content="http://yoursite.com/2020/08/06/A-Novel-Cascade-Binary-Tagging-Framework-for-Relational-Triple-Extraction/index.html">
+<meta property="og:title" content="K-ADAPTER | Sunshine's Life">
+<meta property="og:url" content="http://yoursite.com/2021/04/22/K-ADAPTER/index.html">
 <meta property="og:site_name" content="Sunshine's Life">
-<meta property="og:description" content="以一个新的角度去提取关系三元组，以前的工作都是把关系看作一个离散的标签，而本文的框架(CasRel)则将一个句子里的关系建模为subjects到objects的函数。这个方法还能自然解决关系重叠的问题。">
-<meta property="og:image" content="http://yoursite.com/\img\20200730-085539.png">
-<meta property="og:image" content="http://yoursite.com/\img\20200730-091202.png">
-<meta property="og:image" content="http://yoursite.com/\img\20200730-110830.png">
-<meta property="og:updated_time" content="2021-06-30T04:57:33.730Z">
+<meta property="og:description" content="大多数之前的工作通过多任务学习来注入知识和更新模型参数以增强预训练语言模型。不管他们用了哪些方法做知识注入，遇到的共同问题就是对前面知识的灾难性遗忘。figure1afigure1b是我们提出的K-ADAPTER，不同类型的知识被注入到不同的袖珍神经网络模型（比如本文中的adapter），他们之间互相独立，而不是直接注入到预训练模型。这样既能固定预训练模型的原始表示，又支持继续知识注入。adapt">
+<meta property="og:image" content="http://yoursite.com/\img\20210422-103225.png">
+<meta property="og:updated_time" content="2021-06-30T04:54:54.460Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="A Novel Cascade Binary Tagging Framework for Relational Triple Extraction | Sunshine's Life">
-<meta name="twitter:description" content="以一个新的角度去提取关系三元组，以前的工作都是把关系看作一个离散的标签，而本文的框架(CasRel)则将一个句子里的关系建模为subjects到objects的函数。这个方法还能自然解决关系重叠的问题。">
-<meta name="twitter:image" content="http://yoursite.com/\img\20200730-085539.png">
+<meta name="twitter:title" content="K-ADAPTER | Sunshine's Life">
+<meta name="twitter:description" content="大多数之前的工作通过多任务学习来注入知识和更新模型参数以增强预训练语言模型。不管他们用了哪些方法做知识注入，遇到的共同问题就是对前面知识的灾难性遗忘。figure1afigure1b是我们提出的K-ADAPTER，不同类型的知识被注入到不同的袖珍神经网络模型（比如本文中的adapter），他们之间互相独立，而不是直接注入到预训练模型。这样既能固定预训练模型的原始表示，又支持继续知识注入。adapt">
+<meta name="twitter:image" content="http://yoursite.com/\img\20210422-103225.png">
     
     
     
@@ -190,12 +188,12 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title">A Novel Cascade Binary Tagging Framework for Relational Triple Extraction</h1>
+    <h1 class="post-title">K-ADAPTER</h1>
 
     
 
     <div class="post-meta">
-      <time datetime="2020-08-06" class="post-meta__date date">2020-08-06</time> 
+      <time datetime="2021-04-22" class="post-meta__date date">2021-04-22</time> 
 
       <span class="post-meta__tags tags">
 
@@ -216,14 +214,20 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <p>以一个新的角度去提取关系三元组，以前的工作都是把关系看作一个离散的标签，而本文的框架(CasRel)则将一个句子里的关系建模为subjects到objects的函数。这个方法还能自然解决关系重叠的问题。<br><a id="more"></a><br><a href="https://kexue.fm/archives/6671" target="_blank" rel="external">https://kexue.fm/archives/6671</a> 这篇博客是在这篇文献之前写的，思想都差不多，可以参考</p>
-<h3 id="主要原理剖析及说明"><a href="#主要原理剖析及说明" class="headerlink" title="主要原理剖析及说明"></a>主要原理剖析及说明</h3><p><img src="\img\20200730-085539.png"></p>
-<p>CasRel框架主要由三个部分组成，分别是BERT Encoder, Subject Tagger和Relation-Specific Object Taggers<br>其中BERT Encoder是基于多层双向Transformer的语言表示模型。主要的作用就是将句子中的token表示(编码)成向量。这里面具体是先用了WordPiece来做embbedding<br><img src="\img\20200730-091202.png"><br>其中S表示输入句子在sub-words(具体是属于WordPiece Embedding)中索引的one-hot向量组成的矩阵，Ws表示sub-words的词嵌入矩阵，Wp是位置的词嵌入矩阵，p是指在输入句子中的位置索引。hα是隐变量(隐藏的状态向量??)，也就是输入句子在第α层的Transformer blocks(总共N层)的语义表示。<br>一个Subject Tagger和一组Relation-Specific Object Taggers构成了Cascade Decoder. 首先我们从输入的句子中识别所有的subjects，然后检查每一个候选的subject在所有的关系类型中是否有有联系的object</p>
-<p>其中Subject Tagger是用来识别输入句子中尽可能多的subjects，它的输入是N层BERT encoder产生的hN向量。<br><img src="\img\20200730-110830.png"></p>
-<h3 id="主要实验结果"><a href="#主要实验结果" class="headerlink" title="主要实验结果"></a>主要实验结果</h3><h6 id="代码、实现、复现、配置"><a href="#代码、实现、复现、配置" class="headerlink" title="代码、实现、复现、配置"></a>代码、实现、复现、配置</h6><p>NYT 训练了8个epoch或者更多后的测试结果(因为colab显示原因，看不到输出了，反正最后也没跑完)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Partial Match</span><br><span class="line">0it [00:00, ?it/s]2020-08-02 10:05:15.442952: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10</span><br><span class="line">5000it [02:27, 33.86it/s]</span><br><span class="line">correct_num:7309.0000000001</span><br><span class="line">predict_num:8374.0000000001</span><br><span class="line">gold_num:8110.0000000001</span><br><span class="line">0.8728206352997389	0.9012330456226892	0.8867993205532653</span><br></pre></td></tr></table></figure></p>
-<p>NYT数据量太大了，在colab上用16G显卡(Tesla P100)跑一个epoch需要四十分钟到一个小时；所以只跑了WebNLG数据.这是在WebNLG数据集上batch_size=6,epoch_num=100,max_len=100，实际训练到57个epoch就停止了.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Epoch 57/100</span><br><span class="line">836/836 [==============================] - 113s 136ms/step - loss: 0.0050</span><br><span class="line">500it [00:13, 37.20it/s]</span><br><span class="line">correct_num:1023.0000000001</span><br><span class="line">predict_num:1137.0000000001</span><br><span class="line">gold_num:1113.0000000001</span><br><span class="line">f1: 0.9093, precision: 0.8997, recall: 0.9191, best f1: 0.9172</span><br><span class="line"></span><br><span class="line">Epoch 00057: early stopping</span><br></pre></td></tr></table></figure></p>
-<p>下面是在总的测试集上的分数，如果需要按paper里面的分overlap类型和实体个数跑，可以直接在run.py里改脚本。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">correct_num:1450.0000000001</span><br><span class="line">predict_num:1591.0000000001</span><br><span class="line">gold_num:1581.0000000001</span><br><span class="line">0.9113764927718472	0.9171410499683796	0.9142496847414935</span><br></pre></td></tr></table></figure></p>
-
+    <p>大多数之前的工作通过多任务学习来注入知识和更新模型参数以增强预训练语言模型。不管他们用了哪些方法做知识注入，遇到的共同问题就是对前面知识的灾难性遗忘。figure1a<br>figure1b是我们提出的K-ADAPTER，不同类型的知识被注入到不同的袖珍神经网络模型（比如本文中的adapter），他们之间互相独立，而不是直接注入到预训练模型。这样既能固定预训练模型的原始表示，又支持继续知识注入。adapter是一个含有特定知识的模型，是独立于预训练模型之外的插件。<br><a id="more"></a></p>
+<h3 id="模型-K-ADAPTER"><a href="#模型-K-ADAPTER" class="headerlink" title="模型 K-ADAPTER"></a>模型 K-ADAPTER</h3><h4 id="Adapter-Structure"><a href="#Adapter-Structure" class="headerlink" title="Adapter Structure"></a>Adapter Structure</h4><p><img src="\img\20210422-103225.png"><br>adapter的结构如上，一个adapter模型是由K个adapter layer组成，每个layer包含N个transformer和两个projection layer。与预训练模型的连接方式：每个adapter layer和预训练模型的不同的transformer layer连接，具体是，一个adapter layer的输入为上一个adapter layer的输出特征连接上预训练模型中transformer layer的隐藏特征。对于每一个adapter，连接预训练模型和adapter的最后一个隐藏层特征作为这个adapter模型的输出特征。</p>
+<h3 id="训练方法"><a href="#训练方法" class="headerlink" title="训练方法"></a>训练方法</h3><p>不同的adapter用不同的预训练任务分别训练。</p>
+<h4 id="Pre-training-settings"><a href="#Pre-training-settings" class="headerlink" title="Pre-training settings"></a>Pre-training settings</h4><p>使用RoBERTa<sub>LARGE</sub> (L=24, H=1024, A=16, 355M params)作为预训练模型。<br>adapter结构中，N表示transformer层数，Ha表示transformer隐藏层维数，Aa表示self-attention的head数，Hd和Hu分别表示down-projection和up-projection的隐藏层维数。在adapter中N = 2, Ha = 768, Aa = 12, Hu = 1024 and Hd = 768. adapter被插到RoBERTa的{0,11,23}这些层，不共享参数，每个adapter的参数大约42M。</p>
+<h4 id="Factual-Adapter"><a href="#Factual-Adapter" class="headerlink" title="Factual Adapter"></a>Factual Adapter</h4><p>从T-REx抽取一个子数据集T-REx-rc，T-REx是一个大尺度的对齐数据集，对齐Wikipedia abstracts and Wikidata triples，舍弃少于50个实体对的关系，文章收集了430个关系和5.5M句子。使用关系分类任务来训练。已经把实体标注了，只分类关系。</p>
+<blockquote>
+<p>Specifically,the last hidden features of RoBERTa and facAdapter are concatenated as the input representation, and the pooling layer is applied to the input representations of the given entities. Then, we concatenate two entity representations to perform relation classification.</p>
+</blockquote>
+<h4 id="Linguistic-Adapter"><a href="#Linguistic-Adapter" class="headerlink" title="Linguistic Adapter"></a>Linguistic Adapter</h4><p>Linguistic知识是蕴含在句法、语义信息中的。这次我们构造一个1M例子组成的数据集，</p>
+<blockquote>
+<p>In particular, we run the off-the-shell dependency parser from Stanford Parser3 on a part of Book Corpus (Zhu et al., 2015).</p>
+</blockquote>
+<p>使用依赖关系预测任务来训练linAdapter，就是预测输入句子每个token的head index（我估计就是那些语法标签吧）。具体地，也是连接RoBERTa and linAdapter的最后一层隐藏特征作为输入，应用在一个线性层linear layer对每个token做一个分类。</p>
+<h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3>
   </section>
 
   
