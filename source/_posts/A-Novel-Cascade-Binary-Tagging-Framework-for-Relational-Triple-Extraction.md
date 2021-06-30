@@ -3,10 +3,9 @@ title: A Novel Cascade Binary Tagging Framework for Relational Triple Extraction
 date: 2020-08-6 15:55:55
 tags: 文献阅读
 ---
-https://kexue.fm/archives/6671 这篇博客是在这篇文献之前写的，思想都差不多，可以参考
-### 主要创新思想
 以一个新的角度去提取关系三元组，以前的工作都是把关系看作一个离散的标签，而本文的框架(CasRel)则将一个句子里的关系建模为subjects到objects的函数。这个方法还能自然解决关系重叠的问题。
-
+<!--more-->
+https://kexue.fm/archives/6671 这篇博客是在这篇文献之前写的，思想都差不多，可以参考
 ### 主要原理剖析及说明
 
 <img src="\img\20200730-085539.png">
