@@ -45,7 +45,7 @@
                 </li>
             </ul>
             <div class="note">
-                <p>熟练使用Python，Shell，R等脚本语言，了解C/C++可以读一些生信软件比如BWA源码，熟练使用Linux操作系统，熟悉flask框架，了解web后端开发。了解pytorch深度学习框架，对于文本数据会基本的预处理方法，拆分数据训练模型。</p>
+                <p>熟练使用Python，Shell，R等脚本语言，了解C/C++可以读一些生信软件比如BWA源码，熟练使用Linux操作系统，熟悉flask框架，了解web后端开发。熟练使用pytorch深度学习框架，对于文本数据会基本的预处理方法，拆分数据训练模型。</p>
                 <p>了解CNN,word embedding、self-attention、transformer等深度学习方法，阅读NLP最新文献，了解前沿研究方向。</p>
                 <p>2019年开始在读华东师范大学计算机技术专业非全日制研究生预计2022年毕业，研究方向为生物医学领域文献的命名实体识别和关系抽取方法的研究。</p>
             </div>
@@ -58,12 +58,13 @@
                     <dd><strong>出生日期:</strong> <span>1994年8月</span></dd>
                     <dd><strong>教育背景:</strong> <span>吉林大学生物技术专业&#12288;&#12288;&#12288;&#12288;2012-2016&#12288;本科</span></dd>
                     <dd><strong>        </strong> <span>&#12288;&#12288;&#12288;&#12288;&#160;&nbsp;&#xA0;华东师范大学计算机技术专业&#12288;2019-2022&#12288;非全日制硕士</span></dd>
-                    <dd><strong>工作年限:</strong> <span>4.99年</span></dd>
+                    <dd><strong>工作年限:</strong> <span id="WorkYear">XX</span><span>年</span></dd>
                     <dd><strong>博客:</strong> <a href="https://yangguang8112.github.io" target="_blank">https://yangguang8112.github.io</a></dd>
                 </li>
                 <li>
                     <dt><i class="icon-bookmark"></i>Experience. 项目与工作经验</dt>
-                    <h3><img src="\img\20190131092907932.png" data-action="zoom"/><span>华大基因（2019.10 - ）</span></h3>
+                    <!-- <h3><img src="\img\20190131092907932.png" data-action="zoom"/><span>华大基因（2019.10 - ）</span></h3> -->
+                    <h3><img src="\img\ecnu.jpg" data-action="zoom"/><span>华东师范大学（2019.10 - ）</span></h3>
           					<ul class="exp">
                                   <li>
                                   	<div class="circle"></div>
@@ -73,12 +74,12 @@
                                       <p>使用biobert预训练模型在实体标注和关系抽取任务上微调，然后对感兴趣方向的文献进行实体标注和关系抽取，最后将结果高亮处理展示在网页上，提供查询接口方便查找关注的生物医学实体。</p>
                                       <p>微调任务使用的数据集较小，与研究方向文献的分布有差异。此项目后续还有许多优化方向，比如在特定研究方向语料上的继续预训练；引入特定研究方向知识的继续预训练；和研究方向相关的生物数据库指导下的远程监督学习拓展关系抽取类型等。</p>
                                   </li>
-                                  <li>
+                                  <!-- <li>
                                   	<div class="circle"></div>
                                       <h4>下机数据监控及可视化</h4>
                                       <p>整合上游实验室样本信息（包括从样本取出后的各种实验操作记录）和下游生信分析结果以及计算资源消耗记录。</P>
                                       <p>前端可视化显示目前数据下机实时情况，自动化质控检出离群/异常值。数据库数据来源丰富，以便回溯排查造成异常值的原因。</p>
-                                  </li>
+                                  </li> -->
                               </ul>
 
                     <h3><img src="\img\logo2.png" data-action="zoom"/><span>莲和医疗（2017.9 - 2019.8）</span></h3>
@@ -228,4 +229,14 @@
     </footer>
     <script src="lib/zoom.min.js"></script>
 </body>
+<script>
+    var now = new Date()
+    var target = new Date('2016/07/04')
+    var d = now-target
+    d = d/1000
+    var day = d/(24*60*60)
+    var work_year = (day/365).toFixed(2)
+    console.log('不知不觉中杨光已经工作'+work_year+'年了！！！！')
+    document.getElementById("WorkYear").innerHTML=work_year
+</script>
 </html>
