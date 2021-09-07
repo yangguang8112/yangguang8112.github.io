@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      KEPLER | Sunshine&#39;s Life 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="杨光">
+    
+    
+
+    <meta name="description" content="KEPLER: A Unified Model for Knowledge Embedding and Pre-trained Language Representation
+
+这篇论文提出一种模型能统一知识embedding和预训练语言表示（Knowledge Embeddingand Pre-trained LanguagE Representation (KEPLER)）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KEPLER | Sunshine's Life">
+<meta property="og:url" content="http://yoursite.com/2021/05/20/KEPLER/index.html">
+<meta property="og:site_name" content="Sunshine's Life">
+<meta property="og:description" content="KEPLER: A Unified Model for Knowledge Embedding and Pre-trained Language Representation
+
+这篇论文提出一种模型能统一知识embedding和预训练语言表示（Knowledge Embeddingand Pre-trained LanguagE Representation (KEPLER)）">
+<meta property="og:image" content="http://yoursite.com/\img\20210520-152509.png">
+<meta property="og:image" content="http://yoursite.com/\img\20210525-t1-161804.png">
+<meta property="og:image" content="http://yoursite.com/\img\20210525-t2-161823.png">
+<meta property="og:image" content="http://yoursite.com/\img\20210525-t3-165112.png">
+<meta property="og:image" content="http://yoursite.com/\img\20210526-t4-153450.png">
+<meta property="og:updated_time" content="2021-09-07T12:57:38.484Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="KEPLER | Sunshine's Life">
+<meta name="twitter:description" content="KEPLER: A Unified Model for Knowledge Embedding and Pre-trained Language Representation
+
+这篇论文提出一种模型能统一知识embedding和预训练语言表示（Knowledge Embeddingand Pre-trained LanguagE Representation (KEPLER)）">
+<meta name="twitter:image" content="http://yoursite.com/\img\20210520-152509.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Sunshine&#39;s Life</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/yangguang8112" title="Handsome boy on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+
+
+    <!-- China social icon -->
+    
+    <!--
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+    -->
+      <li class="navigation__item">
+        <a href="http://weibo.com/1994YG?refer_flag=1001030101_&is_hot=1" title="一起下厕所">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">KEPLER</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2021-05-20" class="post-meta__date date">2021-05-20</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/文献阅读/">文献阅读</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <blockquote>
+<p>KEPLER: A Unified Model for Knowledge Embedding and Pre-trained Language Representation</p>
+</blockquote>
+<p>这篇论文提出一种模型能统一知识embedding和预训练语言表示（Knowledge Embeddingand Pre-trained LanguagE Representation (KEPLER)）<br><a id="more"></a></p>
+<h5 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h5><ol>
+<li>提出KEPLER，一个知识增强的PLM，联合优化了KE和MLM；</li>
+<li>通过encoding文本描述作为实体embedding，KEPLER表现出它作为一个KE模型的高效；</li>
+<li>还提出了Wikidata5M，一个新的KG数据集，这将会推动大尺度KG的研究，inductive KE,以及KG和NLP之间的交互</li>
+</ol>
+<h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><p><img src="\img\20210520-152509.png"></p>
+<h4 id="Encoder"><a href="#Encoder" class="headerlink" title="Encoder"></a>Encoder</h4><p>用的transformer和bert那篇文章里的一样。输入N个tokens的seq，输出每个token的向量表示。tokenizer可以把原始文本转化成tokens序列，这里用的是和RoBERTa里一样的tokenizer(the Byte-Pair Encoding(BPE))<br>这里encoder没有像一些其他知识增强的工作一样去修改transformer，去额外加一些实体链接层或者知识集成层，减少了额外推理开销，下游应用也和使用RoBERTa一样简单。</p>
+<h4 id="Knowledge-Embedding"><a href="#Knowledge-Embedding" class="headerlink" title="Knowledge Embedding"></a>Knowledge Embedding</h4><p>定义KGs：用三原组(h,r,t)描述关系事实，一个KG(knowledge graph)是实体为节点、关系为边的graph。传统的KE模型都是给每个实体和关系分配一个d维向量，然后定义一个打分函数去训练embeddings和predicting links<br>KEPLER里，通过实体对应的文本把实体编码成向量，而不是使用stored embeddings<br>三个方法：</p>
+<ol>
+<li>entity descriptions as embeddings</li>
+<li>entity and relation descriptions as embeddings</li>
+<li>entity embeddings conditioned on relations</li>
+</ol>
+<h4 id="Masked-Language-Modeling"><a href="#Masked-Language-Modeling" class="headerlink" title="Masked Language Modeling"></a>Masked Language Modeling</h4><p>MLM继承自BERT和RoBERTa。初始化预训练使用RoBERTaBASE的checkpoint。当在训练KE objective时候保持MLM也作为objectives之一避免灾难性遗忘。在后面5.1节中证明，只用KE作为目标会导致NLP任务有较差的结果</p>
+<h4 id="Training-Objectives"><a href="#Training-Objectives" class="headerlink" title="Training Objectives"></a>Training Objectives</h4><p>如图2中所示，总的KE loss加上MLM loss就是训练的总的loss，这样在保留PLMs的句法语义理解的同时也把把KGs融入到text encoder里了。注意，这里两个任务只共享text encoder，对于每个mini-batch，KE和MLM的text data采样不一定相同。这样可以让MLM看到更多不一样的text而不仅仅是对于实体的描述。</p>
+<h4 id="Variants-and-Implementations"><a href="#Variants-and-Implementations" class="headerlink" title="Variants and Implementations"></a>Variants and Implementations</h4><h3 id="数据-Wikidata5M"><a href="#数据-Wikidata5M" class="headerlink" title="数据 Wikidata5M"></a>数据 Wikidata5M</h3><h4 id="Data-Collection"><a href="#Data-Collection" class="headerlink" title="Data Collection"></a>Data Collection</h4><p>对于Wikidata中的每一个实体，把它对齐到它的Wikipedia页面并且提取第一节作为它的描述。没有页面和描述少于五个words的实体舍弃。检索Wikidata中的所有relational facts，当它的头实体和尾实体都存在且它的关系在Wikidata中有页面时被认定为有效。<br><img src="\img\20210525-t1-161804.png"><br><img src="\img\20210525-t2-161823.png"></p>
+<h4 id="Data-Split"><a href="#Data-Split" class="headerlink" title="Data Split"></a>Data Split</h4><p>两种数据分割方式</p>
+<h5 id="transductive-setting"><a href="#transductive-setting" class="headerlink" title="transductive setting"></a>transductive setting</h5><p>就是表1里展示的那样，大多数的KG数据集也是采用的这样的方法。其中实体是共享的，三元组集合在训练集、验证集和测试集中是不相交的。在这种情况下KE模型只能对训练集中的实体学到有效的embeddings</p>
+<h5 id="inductive-setting"><a href="#inductive-setting" class="headerlink" title="inductive setting"></a>inductive setting</h5><p>是表三里展示的那样<br><img src="\img\20210525-t3-165112.png"><br>实体和三元组在训练集、验证集和测试集中是相互分离的，随机抽取一些连通子图作为验证集和测试集。 <strong>这里没看懂</strong><br>Wikidata5M包含有大量的实体和三元组，但是验证集和测试集很小是因为受到了连接预测标准评价方法的限制（貌似是KE score的计算需要数据集中总的实体数和三元组数相乘再乘2），所以为了evaluation就限制了测试集三元组的大小。 <strong>这样表明大数据量的KE急需要一个更有效的评估方法。</strong></p>
+<h4 id="Benchmark"><a href="#Benchmark" class="headerlink" title="Benchmark"></a>Benchmark</h4><p>用一些以前的KE模型跑了Wikidata5M，有三种评价指标，不是很懂，大概就是计算测试集里每一个三元组，先固定头实体预测尾实体，然后反过来。<br><img src="\img\20210526-t4-153450.png"></p>
+<h3 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h3><h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3>
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'youngguang'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5ed7e5c6530f805ef5b2f6d9c187ded6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

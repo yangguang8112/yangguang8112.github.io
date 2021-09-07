@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      A Novel Cascade Binary Tagging Framework for Relational Triple Extraction | Sunshine&#39;s Life 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="杨光">
+    
+    
+
+    <meta name="description" content="以一个新的角度去提取关系三元组，以前的工作都是把关系看作一个离散的标签，而本文的框架(CasRel)则将一个句子里的关系建模为subjects到objects的函数。这个方法还能自然解决关系重叠的问题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Novel Cascade Binary Tagging Framework for Relational Triple Extraction | Sunshine's Life">
+<meta property="og:url" content="http://yoursite.com/2020/08/06/A-Novel-Cascade-Binary-Tagging-Framework-for-Relational-Triple-Extraction/index.html">
+<meta property="og:site_name" content="Sunshine's Life">
+<meta property="og:description" content="以一个新的角度去提取关系三元组，以前的工作都是把关系看作一个离散的标签，而本文的框架(CasRel)则将一个句子里的关系建模为subjects到objects的函数。这个方法还能自然解决关系重叠的问题。">
+<meta property="og:image" content="http://yoursite.com/\img\20200730-085539.png">
+<meta property="og:image" content="http://yoursite.com/\img\20200730-091202.png">
+<meta property="og:image" content="http://yoursite.com/\img\20200730-110830.png">
+<meta property="og:updated_time" content="2021-09-07T12:57:38.481Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A Novel Cascade Binary Tagging Framework for Relational Triple Extraction | Sunshine's Life">
+<meta name="twitter:description" content="以一个新的角度去提取关系三元组，以前的工作都是把关系看作一个离散的标签，而本文的框架(CasRel)则将一个句子里的关系建模为subjects到objects的函数。这个方法还能自然解决关系重叠的问题。">
+<meta name="twitter:image" content="http://yoursite.com/\img\20200730-085539.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Sunshine&#39;s Life</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/yangguang8112" title="Handsome boy on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+
+
+    <!-- China social icon -->
+    
+    <!--
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+    -->
+      <li class="navigation__item">
+        <a href="http://weibo.com/1994YG?refer_flag=1001030101_&is_hot=1" title="一起下厕所">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">A Novel Cascade Binary Tagging Framework for Relational Triple Extraction</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2020-08-06" class="post-meta__date date">2020-08-06</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/文献阅读/">文献阅读</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>以一个新的角度去提取关系三元组，以前的工作都是把关系看作一个离散的标签，而本文的框架(CasRel)则将一个句子里的关系建模为subjects到objects的函数。这个方法还能自然解决关系重叠的问题。<br><a id="more"></a><br><a href="https://kexue.fm/archives/6671" target="_blank" rel="external">https://kexue.fm/archives/6671</a> 这篇博客是在这篇文献之前写的，思想都差不多，可以参考</p>
+<h3 id="主要原理剖析及说明"><a href="#主要原理剖析及说明" class="headerlink" title="主要原理剖析及说明"></a>主要原理剖析及说明</h3><p><img src="\img\20200730-085539.png"></p>
+<p>CasRel框架主要由三个部分组成，分别是BERT Encoder, Subject Tagger和Relation-Specific Object Taggers<br>其中BERT Encoder是基于多层双向Transformer的语言表示模型。主要的作用就是将句子中的token表示(编码)成向量。这里面具体是先用了WordPiece来做embbedding<br><img src="\img\20200730-091202.png"><br>其中S表示输入句子在sub-words(具体是属于WordPiece Embedding)中索引的one-hot向量组成的矩阵，Ws表示sub-words的词嵌入矩阵，Wp是位置的词嵌入矩阵，p是指在输入句子中的位置索引。hα是隐变量(隐藏的状态向量??)，也就是输入句子在第α层的Transformer blocks(总共N层)的语义表示。<br>一个Subject Tagger和一组Relation-Specific Object Taggers构成了Cascade Decoder. 首先我们从输入的句子中识别所有的subjects，然后检查每一个候选的subject在所有的关系类型中是否有有联系的object</p>
+<p>其中Subject Tagger是用来识别输入句子中尽可能多的subjects，它的输入是N层BERT encoder产生的hN向量。<br><img src="\img\20200730-110830.png"></p>
+<h3 id="主要实验结果"><a href="#主要实验结果" class="headerlink" title="主要实验结果"></a>主要实验结果</h3><h6 id="代码、实现、复现、配置"><a href="#代码、实现、复现、配置" class="headerlink" title="代码、实现、复现、配置"></a>代码、实现、复现、配置</h6><p>NYT 训练了8个epoch或者更多后的测试结果(因为colab显示原因，看不到输出了，反正最后也没跑完)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Partial Match</span><br><span class="line">0it [00:00, ?it/s]2020-08-02 10:05:15.442952: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10</span><br><span class="line">5000it [02:27, 33.86it/s]</span><br><span class="line">correct_num:7309.0000000001</span><br><span class="line">predict_num:8374.0000000001</span><br><span class="line">gold_num:8110.0000000001</span><br><span class="line">0.8728206352997389	0.9012330456226892	0.8867993205532653</span><br></pre></td></tr></table></figure></p>
+<p>NYT数据量太大了，在colab上用16G显卡(Tesla P100)跑一个epoch需要四十分钟到一个小时；所以只跑了WebNLG数据.这是在WebNLG数据集上batch_size=6,epoch_num=100,max_len=100，实际训练到57个epoch就停止了.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Epoch 57/100</span><br><span class="line">836/836 [==============================] - 113s 136ms/step - loss: 0.0050</span><br><span class="line">500it [00:13, 37.20it/s]</span><br><span class="line">correct_num:1023.0000000001</span><br><span class="line">predict_num:1137.0000000001</span><br><span class="line">gold_num:1113.0000000001</span><br><span class="line">f1: 0.9093, precision: 0.8997, recall: 0.9191, best f1: 0.9172</span><br><span class="line"></span><br><span class="line">Epoch 00057: early stopping</span><br></pre></td></tr></table></figure></p>
+<p>下面是在总的测试集上的分数，如果需要按paper里面的分overlap类型和实体个数跑，可以直接在run.py里改脚本。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">correct_num:1450.0000000001</span><br><span class="line">predict_num:1591.0000000001</span><br><span class="line">gold_num:1581.0000000001</span><br><span class="line">0.9113764927718472	0.9171410499683796	0.9142496847414935</span><br></pre></td></tr></table></figure></p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'youngguang'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5ed7e5c6530f805ef5b2f6d9c187ded6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

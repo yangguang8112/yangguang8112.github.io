@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      K-ADAPTER | Sunshine&#39;s Life 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="杨光">
+    
+    
+
+    <meta name="description" content="大多数之前的工作通过多任务学习来注入知识和更新模型参数以增强预训练语言模型。不管他们用了哪些方法做知识注入，遇到的共同问题就是对前面知识的灾难性遗忘。figure1afigure1b是我们提出的K-ADAPTER，不同类型的知识被注入到不同的袖珍神经网络模型（比如本文中的adapter），他们之间互相独立，而不是直接注入到预训练模型。这样既能固定预训练模型的原始表示，又支持继续知识注入。adapt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="K-ADAPTER | Sunshine's Life">
+<meta property="og:url" content="http://yoursite.com/2021/04/22/K-ADAPTER/index.html">
+<meta property="og:site_name" content="Sunshine's Life">
+<meta property="og:description" content="大多数之前的工作通过多任务学习来注入知识和更新模型参数以增强预训练语言模型。不管他们用了哪些方法做知识注入，遇到的共同问题就是对前面知识的灾难性遗忘。figure1afigure1b是我们提出的K-ADAPTER，不同类型的知识被注入到不同的袖珍神经网络模型（比如本文中的adapter），他们之间互相独立，而不是直接注入到预训练模型。这样既能固定预训练模型的原始表示，又支持继续知识注入。adapt">
+<meta property="og:image" content="http://yoursite.com/\img\20210422-103225.png">
+<meta property="og:updated_time" content="2021-09-07T12:57:38.483Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="K-ADAPTER | Sunshine's Life">
+<meta name="twitter:description" content="大多数之前的工作通过多任务学习来注入知识和更新模型参数以增强预训练语言模型。不管他们用了哪些方法做知识注入，遇到的共同问题就是对前面知识的灾难性遗忘。figure1afigure1b是我们提出的K-ADAPTER，不同类型的知识被注入到不同的袖珍神经网络模型（比如本文中的adapter），他们之间互相独立，而不是直接注入到预训练模型。这样既能固定预训练模型的原始表示，又支持继续知识注入。adapt">
+<meta name="twitter:image" content="http://yoursite.com/\img\20210422-103225.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Sunshine&#39;s Life</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/yangguang8112" title="Handsome boy on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+
+
+    <!-- China social icon -->
+    
+    <!--
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+    -->
+      <li class="navigation__item">
+        <a href="http://weibo.com/1994YG?refer_flag=1001030101_&is_hot=1" title="一起下厕所">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">K-ADAPTER</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2021-04-22" class="post-meta__date date">2021-04-22</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/文献阅读/">文献阅读</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>大多数之前的工作通过多任务学习来注入知识和更新模型参数以增强预训练语言模型。不管他们用了哪些方法做知识注入，遇到的共同问题就是对前面知识的灾难性遗忘。figure1a<br>figure1b是我们提出的K-ADAPTER，不同类型的知识被注入到不同的袖珍神经网络模型（比如本文中的adapter），他们之间互相独立，而不是直接注入到预训练模型。这样既能固定预训练模型的原始表示，又支持继续知识注入。adapter是一个含有特定知识的模型，是独立于预训练模型之外的插件。<br><a id="more"></a></p>
+<h3 id="模型-K-ADAPTER"><a href="#模型-K-ADAPTER" class="headerlink" title="模型 K-ADAPTER"></a>模型 K-ADAPTER</h3><h4 id="Adapter-Structure"><a href="#Adapter-Structure" class="headerlink" title="Adapter Structure"></a>Adapter Structure</h4><p><img src="\img\20210422-103225.png"><br>adapter的结构如上，一个adapter模型是由K个adapter layer组成，每个layer包含N个transformer和两个projection layer。与预训练模型的连接方式：每个adapter layer和预训练模型的不同的transformer layer连接，具体是，一个adapter layer的输入为上一个adapter layer的输出特征连接上预训练模型中transformer layer的隐藏特征。对于每一个adapter，连接预训练模型和adapter的最后一个隐藏层特征作为这个adapter模型的输出特征。</p>
+<h3 id="训练方法"><a href="#训练方法" class="headerlink" title="训练方法"></a>训练方法</h3><p>不同的adapter用不同的预训练任务分别训练。</p>
+<h4 id="Pre-training-settings"><a href="#Pre-training-settings" class="headerlink" title="Pre-training settings"></a>Pre-training settings</h4><p>使用RoBERTa<sub>LARGE</sub> (L=24, H=1024, A=16, 355M params)作为预训练模型。<br>adapter结构中，N表示transformer层数，Ha表示transformer隐藏层维数，Aa表示self-attention的head数，Hd和Hu分别表示down-projection和up-projection的隐藏层维数。在adapter中N = 2, Ha = 768, Aa = 12, Hu = 1024 and Hd = 768. adapter被插到RoBERTa的{0,11,23}这些层，不共享参数，每个adapter的参数大约42M。</p>
+<h4 id="Factual-Adapter"><a href="#Factual-Adapter" class="headerlink" title="Factual Adapter"></a>Factual Adapter</h4><p>从T-REx抽取一个子数据集T-REx-rc，T-REx是一个大尺度的对齐数据集，对齐Wikipedia abstracts and Wikidata triples，舍弃少于50个实体对的关系，文章收集了430个关系和5.5M句子。使用关系分类任务来训练。已经把实体标注了，只分类关系。</p>
+<blockquote>
+<p>Specifically,the last hidden features of RoBERTa and facAdapter are concatenated as the input representation, and the pooling layer is applied to the input representations of the given entities. Then, we concatenate two entity representations to perform relation classification.</p>
+</blockquote>
+<h4 id="Linguistic-Adapter"><a href="#Linguistic-Adapter" class="headerlink" title="Linguistic Adapter"></a>Linguistic Adapter</h4><p>Linguistic知识是蕴含在句法、语义信息中的。这次我们构造一个1M例子组成的数据集，</p>
+<blockquote>
+<p>In particular, we run the off-the-shell dependency parser from Stanford Parser3 on a part of Book Corpus (Zhu et al., 2015).</p>
+</blockquote>
+<p>使用依赖关系预测任务来训练linAdapter，就是预测输入句子每个token的head index（我估计就是那些语法标签吧）。具体地，也是连接RoBERTa and linAdapter的最后一层隐藏特征作为输入，应用在一个线性层linear layer对每个token做一个分类。</p>
+<h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3>
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'youngguang'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5ed7e5c6530f805ef5b2f6d9c187ded6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
