@@ -39,15 +39,19 @@
                 <li class="someRight">
                     <dt><i class="icon-bookmark"></i>Keywords</dt>
                     <dd>Python</dd>
-                    <dd>机器学习</dd>
+                    <!-- <dd>机器学习</dd> -->
                     <dd>深度学习</dd>
                     <dd>自然语言处理</dd>
+                    <dd>空间转录组</dd>
                 </li>
             </ul>
             <div class="note">
-                <p>熟练使用Python，Shell，R等脚本语言，了解C/C++可以读一些生信软件比如BWA源码，熟练使用Linux操作系统，熟悉flask框架，了解web后端开发。熟练使用pytorch深度学习框架，对于文本数据会基本的预处理方法，拆分数据训练模型。</p>
+                <p>
+                    熟练使用Python，Shell，R等脚本语言，了解C/C++可以读一些生信软件比如BWA源码，熟练使用Linux操作系统，熟悉flask框架，了解web后端开发。
+                    熟练使用pytorch深度学习框架，对于文本数据会基本的预处理方法，拆分数据训练模型。
+                </p>
                 <p>了解CNN,word embedding、self-attention、transformer等深度学习方法，阅读NLP最新文献，了解前沿研究方向。</p>
-                <p>2019年开始在读华东师范大学计算机技术专业非全日制研究生预计2022年毕业，研究方向为生物医学领域文献的命名实体识别和关系抽取方法的研究。</p>
+                <p>2019年开始在读华东师范大学计算机技术专业非全日制研究生预计2022年毕业，研究方向为生物医学领域文献的命名实体识别和关系抽取。</p>
             </div>
         </div>
         <div class="main">
@@ -63,16 +67,37 @@
                 </li>
                 <li>
                     <dt><i class="icon-bookmark"></i>Experience. 项目与工作经验</dt>
-                    <!-- <h3><img src="\img\20190131092907932.png" data-action="zoom"/><span>华大基因（2019.10 - ）</span></h3> -->
-                    <h3><img src="\img\ecnu.jpg" data-action="zoom"/><span>华东师范大学（2019.10 - ）</span></h3>
+                    <h3><img src="\img\20190131092907932.png" data-action="zoom"/><span>华大基因（2019.10 - ）</span></h3>
+                    <!-- <h3><img src="\img\ecnu.jpg" data-action="zoom"/><span>华东师范大学（2019.10 - ）</span></h3> -->
           					<ul class="exp">
                                   <li>
+                                    <div class="circle"></div>
+                                      <h4>单细胞/空间转录组</h4>
+                                        <p>
+                                          参与“人垂体单细胞空间转录组”项目。基于华大Stereo-seq平台，使用聚类、细胞注释、亚群分析、伪时序分析和细胞通讯等方法得出垂体组织中一些关于细胞异质性和细胞分化的生物学结论，目前文章在投。
+                                        </P>
+                                        <p>
+                                          调研空间转录组方向文献，特别是深度学习在空间转录组数据表示学习上的应用，包括有形态学数据、基因表达数据以及空间结构数据。
+                                        </p>
+                                  </li>
+                                  <li>
                                   	<div class="circle"></div>
-                                      <h4>生物医学文献实体标注和关系抽取
-        <a href="http://119.45.157.76:5555/relaxtra" target="_blank"><i class="icon-link"></i>Site</a>
-          			      </h4>
-                                      <p>使用biobert预训练模型在实体标注和关系抽取任务上微调，然后对感兴趣方向的文献进行实体标注和关系抽取，最后将结果高亮处理展示在网页上，提供查询接口方便查找关注的生物医学实体。</p>
-                                      <p>微调任务使用的数据集较小，与研究方向文献的分布有差异。此项目后续还有许多优化方向，比如在特定研究方向语料上的继续预训练；引入特定研究方向知识的继续预训练；和研究方向相关的生物数据库指导下的远程监督学习拓展关系抽取类型等。</p>
+                                    <h4>生物医学文献实体标注和关系抽取
+                                        <a href="http://1.116.113.90:5555/relaxtra" target="_blank"><i class="icon-link"></i>Site</a>
+          			                </h4>
+                                    <p>
+                                        使用BioBERT预训练模型在实体标注和关系抽取任务上微调，然后对感兴趣方向的文献进行实体标注和关系抽取，最后将结果高亮处理展示在网页上，
+                                        提供查询接口方便查找关注的生物医学实体。
+                                    </p>
+                                    <p>
+                                        微调任务使用的数据集较小，与研究方向文献的分布有差异。此项目后续还有许多优化方向，比如在特定研究方向语料上的继续预训练；
+                                        引入特定研究方向知识的继续预训练；和研究方向相关的生物数据库指导下的远程监督学习拓展关系抽取类型等。
+                                    </p>
+                                  </li>
+                                  <li>
+                                    <div class="circle"></div>
+                                      <h4>人重分析流程容器化</h4>
+                                      <p>为了方便项目合作时的流程环境迁移，使用singularity容器化人重分析流程。</P>
                                   </li>
                                   <!-- <li>
                                   	<div class="circle"></div>
@@ -80,9 +105,15 @@
                                       <p>整合上游实验室样本信息（包括从样本取出后的各种实验操作记录）和下游生信分析结果以及计算资源消耗记录。</P>
                                       <p>前端可视化显示目前数据下机实时情况，自动化质控检出离群/异常值。数据库数据来源丰富，以便回溯排查造成异常值的原因。</p>
                                   </li> -->
-                              </ul>
+                                  <li>
+                                    <div class="circle"></div>
+                                      <h4>临床癌症辅助诊断模型</h4>
+                                      <p>从实验组（肝癌）与对照组（健康）中找出显著差异表达的基因作为特征向量建立逻辑回归模型，对未知血样是否患病进行判断。</P>
+                                      <p>使用bowtie2进行序列比对，deseq2做基因表达量归一化和差异分析，按FDR和fold change筛选差异基因作为特征向量建立逻辑回归模型（glmnet）。</p>
+                                  </li>
+                            </ul>
 
-                    <h3><img src="\img\logo2.png" data-action="zoom"/><span>莲和医疗（2017.9 - 2019.8）</span></h3>
+                    <h3><img src="\img\logo2.png" data-action="zoom"/><span>莲和医疗（2017.9 - 2019.5）</span></h3>
           					<ul class="exp">
                                   <li>
                                   	<div class="circle"></div>
@@ -95,11 +126,6 @@
                                       <p>后台用samtools读取BWA比对产生的bam文件，参考基因组按染色体准备好，提高web端响应速度。前端通过get方式传参，传入样本编号、突变位点以及突变类型。基于Python 2.7  Flask框架。</p>
                                   </li>
                                   <li>
-                                    <div class="circle"></div>
-                                      <h4>临床癌症辅助诊断模型</h4>
-                                      <p>从实验组（肝癌）与对照组（健康）中找出显著差异表达的基因作为特征向量建立逻辑回归模型，对未知血样是否患病进行判断。</P>
-                                      <p>使用bowtie2进行序列比对，deseq2做基因表达量归一化和差异分析，按FDR和fold change筛选差异基因作为特征向量建立逻辑回归模型（glmnet）。</p>
-                                  </li>
                                   <li>
                                   	<div class="circle"></div>
                                       <h4>自动化报告平台</h4>
@@ -141,7 +167,7 @@
 
 
 
-                    <h3>个人项目</h3>
+                    <h3>其他项目</h3>
                     <ul class="exp">
                         <li>
                             <div class="circle"></div>
@@ -150,13 +176,21 @@
                         </li>
                         <li>
                             <div class="circle"></div>
+                            <h4>谷歌学术文献全文爬虫<a href="https://github.com/yangguang8112/bio-extract" target="_blank"><i class="icon-link"></i>Site</a></h4>
+                            <p>
+                                基于谷歌学术关键词搜索的半自动文献爬虫。通过在谷歌学术中搜索感兴趣的生物医学领域关键词（比如一系列突变、某种疾病或者一系列基因），批量获取目标文献的链接，
+                                然后通过sci-hub下载所有的文献。使用sqlite3记录爬取过程中关键词状态和文献下载状态，记录文献ID避免重复请求sci-hub
+                            </p>
+                        </li>
+                        <!-- <li>
+                            <div class="circle"></div>
                             <h4>
                                 Sunshine个人博客
                                 <a href="https://yangguang8112.github.io" target="_blank"><i class="icon-link"></i>Site</a>
                             </h4>
                             <p>Hexo 主题开发，记录项目开发、软件测试、文献阅读以及生活感悟
                             </p>
-                        </li>
+                        </li> -->
 			<li>
                             <div class="circle"></div>
                             <h4>
