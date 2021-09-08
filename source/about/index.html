@@ -48,9 +48,9 @@
             <div class="note">
                 <p>
                     熟练使用Python，Shell，R等脚本语言，了解C/C++可以读一些生信软件比如BWA源码，熟练使用Linux操作系统，熟悉flask框架，了解web后端开发。
-                    熟练使用pytorch深度学习框架，对于文本数据会基本的预处理方法，拆分数据训练模型。
+                    熟练使用pytorch深度学习框架，熟悉文本数据的预处理方法，拆分数据训练模型。
                 </p>
-                <p>了解CNN,word embedding、self-attention、transformer等深度学习方法，阅读NLP最新文献，了解前沿研究方向。</p>
+                <p>熟悉CNN,word embedding、self-attention、transformer等深度学习方法，阅读NLP最新文献，了解前沿研究动态。</p>
                 <p>2019年开始在读华东师范大学计算机技术专业非全日制研究生预计2022年毕业，研究方向为生物医学领域文献的命名实体识别和关系抽取。</p>
             </div>
         </div>
@@ -74,10 +74,10 @@
                                     <div class="circle"></div>
                                       <h4>单细胞/空间转录组</h4>
                                         <p>
-                                          参与“人垂体单细胞空间转录组”项目。基于华大Stereo-seq平台，使用聚类、细胞注释、亚群分析、伪时序分析和细胞通讯等方法得出垂体组织中一些关于细胞异质性和细胞分化的生物学结论，目前文章在投。
+                                          参与“垂体单细胞空间转录组”项目。基于华大Stereo-seq平台，使用聚类、细胞注释、亚群分析、伪时序分析和细胞通讯等方法得出垂体组织中一些关于细胞异质性和细胞分化的生物学结论，目前文章在投。
                                         </P>
                                         <p>
-                                          调研空间转录组方向文献，特别是深度学习在空间转录组数据表示学习上的应用，包括有形态学数据、基因表达数据以及空间结构数据。
+                                          调研空间转录组方向文献。特别是深度学习在空间转录组数据的表示学习上的应用，比如使用CNN处理形态学数据，GCN和变分自编码器处理空间结构数据和基因表达数据。
                                         </p>
                                   </li>
                                   <li>
@@ -86,8 +86,8 @@
                                         <a href="http://1.116.113.90:5555/relaxtra" target="_blank"><i class="icon-link"></i>Site</a>
           			                </h4>
                                     <p>
-                                        使用BioBERT预训练模型在实体标注和关系抽取任务上微调，然后对感兴趣方向的文献进行实体标注和关系抽取，最后将结果高亮处理展示在网页上，
-                                        提供查询接口方便查找关注的生物医学实体。
+                                        采用自然语言处理的方法来自动识别文献中基因突变实体，以辅助“ACMG数据解读流程”中的人工阅读文献寻找解读证据的步骤。
+                                        最终使用BioBERT预训练模型在实体标注和关系抽取任务上微调，然后对感兴趣方向的文献进行实体标注和关系抽取，最后将结果高亮处理展示在网页上，提供查询接口方便查找关注的生物医学实体以及对应的文献来源。
                                     </p>
                                     <p>
                                         微调任务使用的数据集较小，与研究方向文献的分布有差异。此项目后续还有许多优化方向，比如在特定研究方向语料上的继续预训练；
@@ -113,7 +113,7 @@
                                   </li>
                             </ul>
 
-                    <h3><img src="\img\logo2.png" data-action="zoom"/><span>莲和医疗（2017.9 - 2019.5）</span></h3>
+                    <h3><img src="\img\logo2.png" data-action="zoom"/><span>莲和医疗（2017.9 - 2019.4）</span></h3>
           					<ul class="exp">
                                   <li>
                                   	<div class="circle"></div>
@@ -175,8 +175,14 @@
                     <ul class="exp">
                         <li>
                             <div class="circle"></div>
-                            <h4>打卡提醒<a href="https://yangguang8112.github.io/2017/06/05/%E5%BE%AE%E4%BF%A1%E6%8F%90%E9%86%92%E6%89%93%E5%8D%A1%E5%B0%8F%E5%B7%A5%E5%85%B7/" target="_blank"><i class="icon-link"></i>Site</a></h4>
-                            <p>利用python的urllib2库爬取考勤系统打卡详情,模拟登录微信网页端发送提醒打卡消息。添加微信发送关键词，将姓名和工号添加进数据库。每天定时提醒是通过crontab定时执行考勤系统爬虫脚本来实现，并可交互式获得当天打卡详情。</p>
+                            <h4>
+                                <span>CCKS 2021：表型-药物-分子多层次知识图谱的链接预测<a href="https://www.biendata.xyz/competition/ccks_2021_kg_link_prediction/leaderboard/" target="_blank"><i class="icon-link"></i>Site</a></span>
+                            </h4>
+                            <p>
+                                主要目的是学习知识表示相关的方法。一个数据样本是由头实体、尾实体和关系类型组成的三元组，测试数据需要根据头实体（或尾实体）和关系类型预测尾实体（或头实体）。
+                                使用TransE系列算法对三元组进行表示学习然后通过表示的向量相似度预测目标实体；
+                                把三元组看成序列文本，使用类似BERT的结构对训练集进行从头预训练，每个样本分别mask头实体和尾实体形成两个训练样本，效果比TransE好很多。
+                            </p>
                         </li>
                         <li>
                             <div class="circle"></div>
@@ -195,7 +201,7 @@
                             <p>Hexo 主题开发，记录项目开发、软件测试、文献阅读以及生活感悟
                             </p>
                         </li> -->
-			<li>
+			            <li>
                             <div class="circle"></div>
                             <h4>
                                 <span>参加 天池精准医疗大赛——人工智能辅助糖尿病遗传风险预测<a href="https://yangguang8112.github.io/2018/05/01/%E5%A4%A9%E6%B1%A0%E7%B2%BE%E5%87%86%E5%8C%BB%E7%96%97%E5%A4%A7%E8%B5%9B%E2%80%94%E2%80%94%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%B3%96%E5%B0%BF%E7%97%85%E9%81%97%E4%BC%A0%E9%A3%8E%E9%99%A9%E9%A2%84%E6%B5%8B%E5%A4%8D%E7%9B%98/" target="_blank"><i class="icon-link"></i>Site</a></span>
@@ -203,12 +209,11 @@
                             <p><a href="https://tianchi.aliyun.com/competition/information.htm?spm=5176.100067.5678.2.297c6650Y7GYWG&raceId=231638" target="_blank">天池精准医疗大赛</a>是阿里云和青梧桐基因联合举办的比赛</p>
                             <P>初赛为根据体检基本信息预测血糖值，复赛为体检信息加基因测序结果分类是否有妊娠期糖尿病风险。初赛对于缺失严重的数据（乙肝抗原抗体相关数据，乙肝病毒与糖尿病的相关性不大）直接删掉，缺少性别的用男性补全，删掉年龄小于16以及血糖大于18的异常数据。用LightGBM模型训练数据。</P>
                         </li>
-			<li>
+			            
+                        <li>
                             <div class="circle"></div>
-                            <h4>
-                                <span>CCKS 2021：表型-药物-分子多层次知识图谱的链接预测<a href="https://www.biendata.xyz/competition/ccks_2021_kg_link_prediction/leaderboard/" target="_blank"><i class="icon-link"></i>Site</a></span>
-                            </h4>
-                            <p>主要目的是学习知识表示相关的方法，目前使用openKE框架跑了transE系列的算法，下一步改进方向是在链接预测的时候添加实体类型和关系类型的约束。</p>
+                            <h4>打卡提醒<a href="https://yangguang8112.github.io/2017/06/05/%E5%BE%AE%E4%BF%A1%E6%8F%90%E9%86%92%E6%89%93%E5%8D%A1%E5%B0%8F%E5%B7%A5%E5%85%B7/" target="_blank"><i class="icon-link"></i>Site</a></h4>
+                            <p>利用python的urllib2库爬取考勤系统打卡详情,模拟登录微信网页端发送提醒打卡消息。添加微信发送关键词，将姓名和工号添加进数据库。每天定时提醒是通过crontab定时执行考勤系统爬虫脚本来实现，并可交互式获得当天打卡详情。</p>
                         </li>
                     </ul>
                 </li>
