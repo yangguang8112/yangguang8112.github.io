@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>杨光的简历</title>
-    <meta name="description" content="熟练使用Python，Shell，R等脚本语言。熟练使用Linux操作系统。
+    <meta name="description" content="熟练使用Python，Shell，R等脚本语言，熟悉C/C++。熟练使用Linux操作系统。
     熟练使用numpy，pandas，sklearn，matplotlib等python库进行数据分析。熟悉flask框架，了解web后端开发。
     阅读NLP最新文献，了解前沿研究方向。
-    2019年开始在读华东师范大学计算机技术专业非全日制研究生预计2022年毕业，研究方向为生物医学领域实体标注和关系抽取。">
-    <meta name="keywords" content="杨光,机器学习,python,nlp,工作,简历">
+    2019年开始在读华东师范大学计算机技术专业非全日制研究生预计2022年毕业，研究方向为生物医学领域命名实体识别和关系抽取。">
+    <meta name="keywords" content="杨光,机器学习,Python,NLP,工作,简历">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="dist/css/style.min.css">
     <link rel="stylesheet" href="dist/css/fontello.min.css">
@@ -39,19 +39,21 @@
                 <li class="someRight">
                     <dt><i class="icon-bookmark"></i>Keywords</dt>
                     <dd>Python</dd>
+                    <dd>自然语言处理</dd>
                     <!-- <dd>机器学习</dd> -->
                     <dd>深度学习</dd>
-                    <dd>自然语言处理</dd>
-                    <dd>空间转录组</dd>
+                    <dd>基因组学</dd>
+                    <dd>Web开发</dd>
                 </li>
             </ul>
             <div class="note">
                 <p>
-                    熟练使用Python，Shell，R等脚本语言，了解C/C++可以读一些生信软件比如BWA源码，熟练使用Linux操作系统，熟悉flask框架，了解web后端开发。
-                    熟练使用pytorch深度学习框架，熟悉文本数据的预处理方法，拆分数据训练模型。
+                    熟练使用Python，Shell，R等脚本语言，熟悉C/C++，熟练使用Linux操作系统，熟悉Flask框架、web后端开发。
+                    熟练使用pytorch深度学习框架，熟悉文本数据的预处理方法，训练模型。
                 </p>
                 <p>熟悉CNN,word embedding、self-attention、transformer等深度学习方法，阅读NLP最新文献，了解前沿研究动态。</p>
                 <p>2019年开始在读华东师范大学计算机技术专业非全日制研究生预计2022年毕业，研究方向为生物医学领域文献的命名实体识别和关系抽取。</p>
+                <p>对生物医学领域知识获取以及基于深度学习的基因组学方向感兴趣。</p>
             </div>
         </div>
         <div class="main">
@@ -70,6 +72,13 @@
                     <h3><img src="\img\20190131092907932.png" data-action="zoom"/><img src="\img\sjtu-logo.jpg" data-action="zoom"/><span>华大基因&上海交大（2019.10 - ）</span></h3>
                     <!-- <h3><img src="\img\ecnu.jpg" data-action="zoom"/><span>华东师范大学（2019.10 - ）</span></h3> -->
           					<ul class="exp">
+                                  <li>
+                                    <div class="circle"></div>
+                                      <h4>NGS生产质控系统</h4>
+                                        <p>
+                                          基于Flask和React开发，主要用于管理NGS测序样本质量数据。主要分为两大功能模块：数据管理可视化和样本分类模型的训练和管理。
+                                        </P>
+                                  </li>
                                   <li>
                                     <div class="circle"></div>
                                       <h4>单细胞/空间转录组</h4>
@@ -105,16 +114,17 @@
                                       <p>整合上游实验室样本信息（包括从样本取出后的各种实验操作记录）和下游生信分析结果以及计算资源消耗记录。</P>
                                       <p>前端可视化显示目前数据下机实时情况，自动化质控检出离群/异常值。数据库数据来源丰富，以便回溯排查造成异常值的原因。</p>
                                   </li> -->
+                                  
+                            </ul>
+
+                    <h3><img src="\img\logo2.png" data-action="zoom"/><span>莲和医疗（2017.9 - 2019.4）</span></h3>
+          					<ul class="exp">
                                   <li>
                                     <div class="circle"></div>
                                       <h4>临床癌症辅助诊断模型</h4>
                                       <p>从实验组（肝癌）与对照组（健康）中找出显著差异表达的基因作为特征向量建立逻辑回归模型，对未知血样是否患病进行判断。</P>
                                       <p>使用bowtie2进行序列比对，deseq2做基因表达量归一化和差异分析，按FDR和fold change筛选差异基因作为特征向量建立逻辑回归模型（glmnet）。</p>
                                   </li>
-                            </ul>
-
-                    <h3><img src="\img\logo2.png" data-action="zoom"/><span>莲和医疗（2017.9 - 2019.4）</span></h3>
-          					<ul class="exp">
                                   <li>
                                   	<div class="circle"></div>
                                       <h4>基因变异可视化接口
@@ -204,10 +214,11 @@
 			            <li>
                             <div class="circle"></div>
                             <h4>
-                                <span>参加 天池精准医疗大赛——人工智能辅助糖尿病遗传风险预测<a href="https://yangguang8112.github.io/2018/05/01/%E5%A4%A9%E6%B1%A0%E7%B2%BE%E5%87%86%E5%8C%BB%E7%96%97%E5%A4%A7%E8%B5%9B%E2%80%94%E2%80%94%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%B3%96%E5%B0%BF%E7%97%85%E9%81%97%E4%BC%A0%E9%A3%8E%E9%99%A9%E9%A2%84%E6%B5%8B%E5%A4%8D%E7%9B%98/" target="_blank"><i class="icon-link"></i>Site</a></span>
+                                <span>天池精准医疗大赛——人工智能辅助糖尿病遗传风险预测<a href="https://yangguang8112.github.io/2018/05/01/%E5%A4%A9%E6%B1%A0%E7%B2%BE%E5%87%86%E5%8C%BB%E7%96%97%E5%A4%A7%E8%B5%9B%E2%80%94%E2%80%94%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%BE%85%E5%8A%A9%E7%B3%96%E5%B0%BF%E7%97%85%E9%81%97%E4%BC%A0%E9%A3%8E%E9%99%A9%E9%A2%84%E6%B5%8B%E5%A4%8D%E7%9B%98/" target="_blank"><i class="icon-link"></i>Site</a></span>
                             </h4>
                             <p><a href="https://tianchi.aliyun.com/competition/information.htm?spm=5176.100067.5678.2.297c6650Y7GYWG&raceId=231638" target="_blank">天池精准医疗大赛</a>是阿里云和青梧桐基因联合举办的比赛</p>
-                            <P>初赛为根据体检基本信息预测血糖值，复赛为体检信息加基因测序结果分类是否有妊娠期糖尿病风险。初赛对于缺失严重的数据（乙肝抗原抗体相关数据，乙肝病毒与糖尿病的相关性不大）直接删掉，缺少性别的用男性补全，删掉年龄小于16以及血糖大于18的异常数据。用LightGBM模型训练数据。</P>
+                            <p>初赛为根据体检基本信息预测血糖值，复赛为体检信息加基因测序结果分类是否有妊娠期糖尿病风险。</p>
+                            <!-- <p>初赛对于缺失严重的数据（乙肝抗原抗体相关数据，乙肝病毒与糖尿病的相关性不大）直接删掉，缺少性别的用男性补全，删掉年龄小于16以及血糖大于18的异常数据。用LightGBM模型训练数据。</p> -->
                         </li>
 			            
                         <li>
@@ -224,9 +235,17 @@
                         <li>
                             <div class="circle"></div>
                             <h4>Python</h4>
-                            <p>能够编写模块化的Python脚本，完成数据处理</p>
-                            <p>熟练使用numpy、pandas等常用数据处理库，熟悉flask框架实现前后端交互，熟悉pytorch框架</p>
+                            <p>熟练使用Python面向对象编程</p>
+                            <p>熟练使用numpy、pandas、sklearn等常用数据处理库</p>
+                            <p>熟悉Flask框架实现应用部署</p>
+                            <p>熟练使用pytorch</p>
                             <p>能编写爬虫爬取文献、基因疾病相关数据库</p>
+                        </li>
+                        <li>
+                            <div class="circle"></div>
+                            <h4>C/C++</h4>
+                            <p>熟悉C++服务器编程</p>
+                            <!-- <p>经典生信软件优化</p> -->
                         </li>
                         <li>
                             <div class="circle"></div>
@@ -237,21 +256,21 @@
                         <li>
                             <div class="circle"></div>
                             <h4>R</h4>
-                            <p>熟悉ggplot2包,能用R可视化二代测序分析结果，能重复文献中的统计图</p>
+                            <p>熟悉ggplot2包,能用R可视化生信分析结果，能重复文献中的统计图</p>
                         </li>
-						<li>
+						<!-- <li>
                             <div class="circle"></div>
                             <h4>PHP</h4>
                             <p>了解laravel框架</p>
                             <p>修改模板配置接口自动化生成检测报告</p>
-                        </li>
+                        </li> -->
                     </ul>
                     <h3>前端</h3>
                     <ul class="exp">
                         <li>
                             <div class="circle"></div>
-                            <h4>HTML / CSS</h4>
-                            <p>能够编写语义化的 HTML，模块化的 CSS，完成简单的布局</p>
+                            <h4>HTML / CSS / JavaScript / React</h4>
+                            <!-- <p>能够编写语义化的 HTML，模块化的 CSS，完成简单的布局</p> -->
                         </li>
                     </ul>
                 </li>
