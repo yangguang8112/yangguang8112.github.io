@@ -5,15 +5,16 @@ title: >-
 date: 2022-02-21 14:34:05
 tags: 文献阅读
 ---
-![20220214-001909.png](https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776903484921341677769034376.png)
 
-<!--more-->
 ### 主要分为三个部分
 
 - LTMG预处理单细胞表达矩阵“转换”信号；
 - 一个以细胞聚类任务收敛为目的的迭代过程，包括三个部分。1.Feature autoencoder，两个输入：来自第一步的正则化矩阵；初始化迭代来自预处理过的表达矩阵，之后输入就来自迭代最后一部分重构的表达矩阵。2.使用上一步自编码器得到的细胞的embedding构建cell graph然后作为Graph autoencoder的输入，然后使用graph embedding做细胞聚类。3.Cluster autoencoder，重构基因表达值，每个细胞类型中的细胞都有一个单独的cluster自编码器。
 - Imputation autoencoder
 
+<!--more-->
+
+![20220214-001909.png](https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776903484921341677769034376.png)
 ## 实验设计
 两个任务+解决一个科学问题
 
