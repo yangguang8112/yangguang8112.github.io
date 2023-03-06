@@ -57,7 +57,8 @@
     <%- css('css/highlight') %>
     <%- css('css/archive.css') %>
     <%- css('css/china-social-icon.css') %>
-
+    <!-- 临时修改方案，这行代码会是页面加载的时候强制把http转换成https，以解决博客是https要加载公式js库的时候浏览器阻止http的访问 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 <body>
 
