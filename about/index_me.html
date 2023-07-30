@@ -153,6 +153,28 @@
                                         
                                 </li>
                                 <li>
+                                    <div class="circle"></div>
+                                    <h4>生物医学文献结构化抽取系统
+                                        <a href="http://1.116.113.90:5555/relaxtra" target="_blank"><i class="icon-link"></i>Demo</a>
+                                        <my_span>NLP</my_span>
+                                        <my_span>Bert</my_span>
+                                        <my_span>Neo4j</my_span>
+                                        <my_span>LangChain</my_span>
+                                        <my_span>chatGLM</my_span>
+                                    </h4>
+                                    <p>
+                                        通过使用BioBERT预训练模型，结合实体标注和关系抽取任务的微调，实现了高效的实体标注和关系抽取，以辅助“ACMG数据解读流程”中的人工阅读文献寻找解读证据的步骤。
+                                    </p>
+                                    <p>
+                                        基于Flask开发查询系统将结果高亮处理展示在网页上，方便查找关注的生物医学实体以及对应的文献来源。另外通过neo4j的查询将识别的命名实体关联到生物医学知识图谱PrimeKG上，可视化实体间的多种关系。
+                                        最后基于LangChain优化查询以及通过大语言模型生成query相关的实验证据。
+                                    </p>
+                                    <!-- <p>
+                                        微调任务使用的数据集较小，与研究方向文献的分布有差异。此项目后续还有许多优化方向，比如在特定研究方向语料上的继续预训练；
+                                        引入特定研究方向知识的继续预训练；和研究方向相关的生物数据库指导下的远程监督学习拓展关系抽取类型等。
+                                    </p> -->
+                                </li>
+                                <li>
                                 <div class="circle"></div>
                                     <h4>NGS生产质控系统
                                     <a href="http://47.102.108.185:6868" target="_blank"><i class="icon-link"></i>Demo</a>
@@ -192,25 +214,6 @@
                                         调研空间转录组方向文献。特别是深度学习在空间转录组数据的表示学习上的应用，比如使用CNN处理形态学数据，GCN和变分自编码器处理空间结构数据和基因表达数据。
                                     </p>
                                 </li> -->
-                                <li>
-                                <div class="circle"></div>
-                                <h4>生物医学文献实体标注和关系抽取系统
-                                    <a href="http://1.116.113.90:5555/relaxtra" target="_blank"><i class="icon-link"></i>Demo</a>
-                                    <my_span>NLP</my_span>
-                                    <my_span>Bert</my_span>
-                                    <my_span>Neo4j</my_span>
-                                    <my_span>TensorRT</my_span>
-                                </h4>
-                                <p>
-                                    通过使用BioBERT预训练模型，结合实体标注和关系抽取任务的微调，实现了高效的实体标注和关系抽取，以辅助“ACMG数据解读流程”中的人工阅读文献寻找解读证据的步骤。
-                                    并基于Flask开发查询系统将结果高亮处理展示在网页上，方便查找关注的生物医学实体以及对应的文献来源。另外通过neo4j的查询将识别的命名实体关联到生物医学知识图谱PrimeKG上，可视化实体间的多种关系。
-                                    为了实现高效的推理处理，使用了TensorRT对训练好的BioBERT模型进行部署。
-                                </p>
-                                <!-- <p>
-                                    微调任务使用的数据集较小，与研究方向文献的分布有差异。此项目后续还有许多优化方向，比如在特定研究方向语料上的继续预训练；
-                                    引入特定研究方向知识的继续预训练；和研究方向相关的生物数据库指导下的远程监督学习拓展关系抽取类型等。
-                                </p> -->
-                                </li>
                                 <!-- <li>
                                 <div class="circle"></div>
                                     <h4>生信分析流程容器化</h4>

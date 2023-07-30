@@ -152,6 +152,28 @@
                                         
                                 </li>
                                 <li>
+                                    <div class="circle"></div>
+                                    <h4>生物医学文献结构化抽取系统
+                                        <a href="http://1.116.113.90:5555/relaxtra" target="_blank"><i class="icon-link"></i>Demo</a>
+                                        <my_span>NLP</my_span>
+                                        <my_span>Bert</my_span>
+                                        <my_span>Neo4j</my_span>
+                                        <my_span>LangChain</my_span>
+                                        <my_span>chatGLM</my_span>
+                                    </h4>
+                                    <p>
+                                        通过使用BioBERT预训练模型，结合实体标注和关系抽取任务的微调，实现了高效的实体标注和关系抽取，以辅助“ACMG数据解读流程”中的人工阅读文献寻找解读证据的步骤。
+                                    </p>
+                                    <p>
+                                        基于Flask开发查询系统将结果高亮处理展示在网页上，方便查找关注的生物医学实体以及对应的文献来源。另外通过neo4j的查询将识别的命名实体关联到生物医学知识图谱PrimeKG上，可视化实体间的多种关系。
+                                        最后基于LangChain优化查询以及通过大语言模型生成query相关的实验证据。
+                                    </p>
+                                    <!-- <p>
+                                        微调任务使用的数据集较小，与研究方向文献的分布有差异。此项目后续还有许多优化方向，比如在特定研究方向语料上的继续预训练；
+                                        引入特定研究方向知识的继续预训练；和研究方向相关的生物数据库指导下的远程监督学习拓展关系抽取类型等。
+                                    </p> -->
+                                    </li>
+                                <li>
                                 <div class="circle"></div>
                                     <h4>NGS生产质控系统
                                     <a href="http://47.102.108.185:6868" target="_blank"><i class="icon-link"></i>Demo</a>
@@ -177,25 +199,6 @@
                                         调研空间转录组方向文献。特别是深度学习在空间转录组数据的表示学习上的应用，比如使用CNN处理形态学数据，GCN和变分自编码器处理空间结构数据和基因表达数据。
                                     </p>
                                 </li> -->
-                                <li>
-                                <div class="circle"></div>
-                                <h4>生物医学文献结构化抽取系统
-                                    <a href="http://1.116.113.90:5555/relaxtra" target="_blank"><i class="icon-link"></i>Demo</a>
-                                    <my_span>NLP</my_span>
-                                    <my_span>Bert</my_span>
-                                    <my_span>Neo4j</my_span>
-                                    <my_span>TensorRT</my_span>
-                                </h4>
-                                <p>
-                                    通过使用BioBERT预训练模型，结合实体标注和关系抽取任务的微调，实现了高效的实体标注和关系抽取，以辅助“ACMG数据解读流程”中的人工阅读文献寻找解读证据的步骤。
-                                    并基于Flask开发查询系统将结果高亮处理展示在网页上，方便查找关注的生物医学实体以及对应的文献来源。另外通过neo4j的查询将识别的命名实体关联到生物医学知识图谱PrimeKG上，可视化实体间的多种关系。
-                                    为了实现高效的推理处理，使用了TensorRT对训练好的BioBERT模型进行部署。
-                                </p>
-                                <!-- <p>
-                                    微调任务使用的数据集较小，与研究方向文献的分布有差异。此项目后续还有许多优化方向，比如在特定研究方向语料上的继续预训练；
-                                    引入特定研究方向知识的继续预训练；和研究方向相关的生物数据库指导下的远程监督学习拓展关系抽取类型等。
-                                </p> -->
-                                </li>
                                 <li>
                                     <div class="circle"></div>
                                     <h4>T2D表型异质性和病程可视化
@@ -226,7 +229,7 @@
 
                     <h3><img src="\img\logo2.png" data-action="zoom"/><span>莲和医疗（2017.9 - 2019.3）</span></h3>
           					<ul class="exp">
-                                  <li>
+                                  <!-- <li>
                                     <div class="circle"></div>
                                       <h4>
                                         基于表观组学的肿瘤早筛方法研究
@@ -235,7 +238,7 @@
                                     </h4>
                                       <p>我们使用实验组（肝癌）和对照组（健康）的血样进行基因表达分析，找出显著差异表达的基因作为特征向量，然后利用逻辑回归模型对未知血样是否患病进行判断。
                                         在分析过程中，我们使用了bowtie2进行序列比对，deseq2做基因表达量归一化和差异分析，按FDR和fold change筛选差异基因作为特征向量，并使用glmnet建立逻辑回归模型。</P>
-                                  </li>
+                                  </li> -->
                                   <li>
                                   	<div class="circle"></div>
                                         <h4>
@@ -252,6 +255,7 @@
                                       <h4>
                                         自动化报告平台
                                         <my_span>PHP</my_span>
+                                        <my_span>laravel</my_span>
                                     </h4>
                                       <p>根据不同的样本类型配置对应的计算流程启动后台计算程序，并监控计算过程。</P>
                                       <p>计算流程产生的数据入库，对不同流程的结果配置对应的报告模板，调用数据接口，并根据显著变异位点推荐用药以及关联相关临床试验，自动生成肿瘤检测报告。基于PHP的laravel框架</p>
@@ -271,18 +275,22 @@
                         <li>
                             <div class="circle"></div>
                             <h4>
-                                lncRNA分析流程
-                                <my_span>RNA-seq</my_span>
+                                lncRNA数据分析流程
+                                <my_span>Linux</my_span>
+                                <my_span>Shell</my_span>
                                 <my_span>Python</my_span>
                                 <my_span>R</my_span>
                             </h4>
                             <p>
+                                熟悉Linux的开发环境，编写python脚本控制任务投递，处理数据流。用R的ggplot2将结果可视化。最后通过Django静态模板生成结题报告。
+                            </p>
+                            <!-- <p>
                                 负责科技服务<a href="http://www.novogene.com/tech/service/lncRNA/product/" target="_blank">lncRNA</a>流程开发、维护与更新。利用五步法对lncRNA进行准确筛选，高效预测靶基因，并完成对转录本中mRNA的分析，以及lncRNA和mRNA的比较分析、共表达网络构建。
                                 能熟练解读结题报告,独立解决售后以及个性化分析。编写python脚本控制任务投递，处理数据流。用R的ggplot2将结果可视化。最后通过Django静态模板生成结题报告。
                             </p>
                             <p>
                                 熟练使用 BWA/Tophat2/Hisat2/Cufflinks/StringTie/GATK/samtools 等生物信息分析开源软件
-                            </p>
+                            </p> -->
                         </li>
                         <!-- <li>
                             <div class="circle"></div>
