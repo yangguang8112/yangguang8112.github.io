@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Sunshine's Life
+title: 二十一世纪是生命科学的
 subtitle:
 description:
 author: 杨光
@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://yangguang8112.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
