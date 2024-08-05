@@ -50,6 +50,13 @@
         .main my_span {
             color: #01579B;
         }
+        dt my_span {
+            font-size: 12px;
+            /* border: 1px solid #b4d130; */
+            padding: 1px 3px;
+            border-radius: 5px;
+            margin-left: 7px;
+        }
         h3 my_span,
         h4 my_span,
         h5 my_span {
@@ -93,7 +100,7 @@
                 <li class="someRight">
                     <dt><i class="icon-bookmark"></i>Keywords</dt>
                     <dd>AI for Science</dd>
-                    <dd>语言模型</dd>
+                    <dd>Language Model</dd>
                     <dd>深度学习</dd>
                     <dd>生物信息学</dd>
                     <dd>Python</dd>
@@ -136,7 +143,7 @@
                     
                 </li>
                 <li>
-                    <dt><i class="icon-bookmark"></i>Competitions. 竞赛获奖</dt>
+                    <dt><i class="icon-bookmark"></i>Competitions. 算法比赛 <my_span><a href="https://yangguang8112.github.io/CompTrack" target="_blank"><i class="icon-link"></i>Full List</a></my_span></dt>
                     <ul class="exp">
                         <li>
                             <div class="circle"></div>
@@ -164,8 +171,9 @@
                                 <my_span>GNN</my_span>
                             </h4>
                             <p>
-                                赛题为单细胞空间转录组细胞聚类的算法优化。赛题数据包括单细胞的基因表达矩阵及其对应的空间位置信息，我使用单细胞预训练语言模型编码基因表达矩阵，并融合GNN对细胞空间位置进行特征抽取，进行图结构和表达矩阵的自监督训练，学习细胞的表示。最终在决赛中排名第五名，获得了优胜奖。<a href="https://yangguang8112.github.io/2024/07/05/2024-Mammoth-International-Contest-On-Omics-Sciences-in-Europe/" target="_blank">详情可查看这篇博客</a>
+                                赛题为单细胞空间转录组细胞聚类的算法优化。赛题数据包括单细胞的基因表达矩阵及其对应的空间位置信息，我使用单细胞预训练语言模型编码基因表达矩阵，并融合GNN对细胞空间位置进行特征抽取，进行图结构和表达矩阵的自监督训练，学习细胞的表示。最终在决赛中排名第五名，获得了优胜奖。
                             </p>
+                            <!-- <p><a href="https://yangguang8112.github.io/2024/07/05/2024-Mammoth-International-Contest-On-Omics-Sciences-in-Europe/" target="_blank">详情可查看这篇博客</a></p> -->
                         </li>
                         <!-- <li>
                             <div class="circle"></div>
@@ -188,19 +196,21 @@
                                 <my_span>ProteinMPNN</my_span>
                                 <my_span>RFdiffusion</my_span>
                             </h4>
-                            <p>参与开发计算生物平台，集成了多种基于深度学习的计算生物相关模型，包括蛋白质结构预测、设计，蛋白质语言模型和序列设计。开发了预训练模型微调框架，支持亲和力预测等定制化优化任务，能够融合序列和结构特征。</p>
+                            <p>参与计算生物平台建设赋能公司药物研发相关任务，比如抗体亲和力成熟、稳定性改造、酶活性改造等。平台集成了多种基于深度学习的计算生物相关模型，包括蛋白质结构预测和设计，蛋白质语言模型。开发了预训练模型微调框架，支持亲和力预测等定制化优化任务，能够融合序列和结构特征。</p>
                         </li>
                         <li>
                             <div class="circle"></div>
                             <h4>
                                 生物医学文献平台
                                 <my_span>NLP</my_span>
+                                <my_span>NER</my_span>
                                 <my_span>KG</my_span>
                                 <my_span>LLM</my_span>
+                                <my_span>RAG</my_span>
                                 <my_span>LoRA</my_span>
                             </h4>
                             <p>
-                                参与开发生物医学文献平台，主要负责从文献中提取信息，包括基因、疾病、药物、研究对象、研究目的等。基于这些抽取的标签，开发了多种应用功能，如自动生成研究报告、单篇文献问答，以及基因与疾病的多跳关系查询。
+                                参与开发生物医学文献平台，主要负责从文献中提取信息，包括基因、疾病、药物、研究对象、研究目的等。并基于RAG和标签结果，开发多种下游应用，如自动生成研究报告、单篇文献问答，以及靶点、适应症挖掘。
                             </p>
                         </li>
                     </ul>
@@ -269,7 +279,7 @@
                                             调研空间转录组方向文献， 特别关注深度学习在空间转录组数据表示学习方面的应用，比如基于transformer的单细胞基因表达数据的预训练方法。
                                         </p>
                                         <p>
-                                            参与“垂体单细胞空间转录组”项目。基于华大基因Stereo-seq平台，使用聚类、细胞注释、亚群分析、伪时序分析和细胞通讯等方法得出垂体组织中一些关于细胞异质性和细胞分化的生物学结论，目前文章在投。
+                                            参与“垂体单细胞空间转录组”研究项目。基于华大基因Stereo-seq平台，使用聚类、细胞注释、亚群分析、伪时序分析和细胞通讯等方法得出垂体组织中一些关于细胞异质性和细胞分化的生物学结论，目前文章在投。
                                         </P>
                                 </li>
                                 <li>
@@ -329,14 +339,15 @@
                             <div class="circle"></div>
                             <h4>
                                 lncRNA数据分析流程
+                                <my_span>lncRNA-Seq</my_span>
                                 <my_span>Linux</my_span>
                                 <my_span>Shell</my_span>
                                 <my_span>Python</my_span>
                                 <my_span>R</my_span>
                             </h4>
-                            <p>
+                            <!-- <p>
                                 熟悉Linux的开发环境，编写python脚本控制任务投递，处理数据流。用R的ggplot2将结果可视化。最后通过Django静态模板生成结题报告。
-                            </p>
+                            </p> -->
                             <p>
                                 负责科技服务<a href="http://www.novogene.com/tech/service/lncRNA/product/" target="_blank">lncRNA</a>流程开发、维护与更新。利用五步法对lncRNA进行准确筛选，高效预测靶基因，并完成对转录本中mRNA的分析，以及lncRNA和mRNA的比较分析、共表达网络构建。
                                 能熟练解读结题报告,独立解决售后以及个性化分析。编写python脚本控制任务投递，处理数据流。用R的ggplot2将结果可视化。最后通过Django静态模板生成结题报告。
@@ -385,7 +396,7 @@
                             <div class="circle"></div>
                             <h4>
                                 谷歌学术文献全文爬虫
-                                <a href="https://github.com/yangguang8112/bio-extract" target="_blank"><i class="icon-link"></i>Site</a>
+                                <a href="https://github.com/yangguang8112/bio-extract" target="_blank"><i class="icon-link"></i>GitHub</a>
                                 <my_span>selenium</my_span>
                             </h4>
                             <p>
@@ -413,7 +424,7 @@
                             <h4>
                                 Python
                                 <my_span>标准库特性</my_span>
-                                <my_span>Flask</my_span>
+                                <my_span>Fastapi</my_span>
                                 <my_span>PyTorch</my_span>
                                 <my_span>scikit-learn</my_span>
 
@@ -445,6 +456,8 @@
                                 <my_span>RNN</my_span>
                                 <my_span>Transformer</my_span>
                                 <my_span>GNN</my_span>
+                                <my_span>Fine-tune</my_span>
+                                <my_span>LoRA</my_span>
                             </h4>
                             <div class="progress-bar">
                                 <div class="progress" style="width: 75%;"></div>
@@ -561,7 +574,7 @@
         </div>
     </div>
     <footer>
-        <p>Copyright © 2023 <a href="https://yangguang8112.github.io/">杨光</a>. All rights reserved.</p>
+        <p>Copyright © 2024 <a href="https://yangguang8112.github.io/about/index.new.bioinfo.html">杨光</a>. All rights reserved.</p>
     </footer>
     <script src="lib/zoom.min.js"></script>
 </body>
