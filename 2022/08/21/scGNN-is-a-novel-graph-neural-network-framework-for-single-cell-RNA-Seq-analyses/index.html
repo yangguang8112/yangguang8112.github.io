@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      scGNN is a novel graph neural network framework for single-cell RNA-Seq analyses | 二十一世纪是生命科学的 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="杨光">
+    
+    
+
+    <meta name="description" content="主要分为三个部分
+LTMG预处理单细胞表达矩阵“转换”信号；
+一个以细胞聚类任务收敛为目的的迭代过程，包括三个部分。1.Feature autoencoder，两个输入：来自第一步的正则化矩阵；初始化迭代来自预处理过的表达矩阵，之后输入就来自迭代最后一部分重构的表达矩阵。2.使用上一步自编码器得到的细胞的embedding构建cell graph然后作为Graph autoencoder的输入，然">
+<meta property="og:type" content="article">
+<meta property="og:title" content="scGNN is a novel graph neural network framework for single-cell RNA-Seq analyses | 二十一世纪是生命科学的">
+<meta property="og:url" content="https://yangguang8112.github.io/2022/08/21/scGNN-is-a-novel-graph-neural-network-framework-for-single-cell-RNA-Seq-analyses/index.html">
+<meta property="og:site_name" content="二十一世纪是生命科学的">
+<meta property="og:description" content="主要分为三个部分
+LTMG预处理单细胞表达矩阵“转换”信号；
+一个以细胞聚类任务收敛为目的的迭代过程，包括三个部分。1.Feature autoencoder，两个输入：来自第一步的正则化矩阵；初始化迭代来自预处理过的表达矩阵，之后输入就来自迭代最后一部分重构的表达矩阵。2.使用上一步自编码器得到的细胞的embedding构建cell graph然后作为Graph autoencoder的输入，然">
+<meta property="og:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776903484921341677769034376.png">
+<meta property="og:updated_time" content="2023-04-10T09:25:36.310Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="scGNN is a novel graph neural network framework for single-cell RNA-Seq analyses | 二十一世纪是生命科学的">
+<meta name="twitter:description" content="主要分为三个部分
+LTMG预处理单细胞表达矩阵“转换”信号；
+一个以细胞聚类任务收敛为目的的迭代过程，包括三个部分。1.Feature autoencoder，两个输入：来自第一步的正则化矩阵；初始化迭代来自预处理过的表达矩阵，之后输入就来自迭代最后一部分重构的表达矩阵。2.使用上一步自编码器得到的细胞的embedding构建cell graph然后作为Graph autoencoder的输入，然">
+<meta name="twitter:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776903484921341677769034376.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+    <!-- 临时修改方案，这行代码会是页面加载的时候强制把http转换成https，以解决博客是https要加载公式js库的时候浏览器阻止http的访问 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">二十一世纪是生命科学的</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/yangguang8112" title="Handsome boy on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+
+
+    <!-- China social icon -->
+    
+    <!--
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+    -->
+      <li class="navigation__item">
+        <a href="http://weibo.com/1994YG?refer_flag=1001030101_&is_hot=1" title="一起下厕所">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">scGNN is a novel graph neural network framework for single-cell RNA-Seq analyses</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2022-08-21" class="post-meta__date date">2022-08-21</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/文献阅读/">文献阅读</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="主要分为三个部分"><a href="#主要分为三个部分" class="headerlink" title="主要分为三个部分"></a>主要分为三个部分</h3><ul>
+<li>LTMG预处理单细胞表达矩阵“转换”信号；</li>
+<li>一个以细胞聚类任务收敛为目的的迭代过程，包括三个部分。1.Feature autoencoder，两个输入：来自第一步的正则化矩阵；初始化迭代来自预处理过的表达矩阵，之后输入就来自迭代最后一部分重构的表达矩阵。2.使用上一步自编码器得到的细胞的embedding构建cell graph然后作为Graph autoencoder的输入，然后使用graph embedding做细胞聚类。3.Cluster autoencoder，重构基因表达值，每个细胞类型中的细胞都有一个单独的cluster自编码器。</li>
+<li>Imputation autoencoder</li>
+</ul>
+<a id="more"></a>
+<p><img src="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776903484921341677769034376.png" alt="20220214-001909.png"></p>
+<h2 id="实验设计"><a href="#实验设计" class="headerlink" title="实验设计"></a>实验设计</h2><p>两个任务+解决一个科学问题</p>
+<h3 id="imputation"><a href="#imputation" class="headerlink" title="imputation"></a>imputation</h3><p>四个带细胞类型标注的标准数据集：Chung, Kolodziejczy, Klein, and Zeisel<br>随机翻转非零表达值为零，模拟dropout<br>和9个imputation软件比较，评估方法有Median L1 distance, cosine similarity, 和 root-mean-square-deviation (RMSE) scores 这些指标均是在imputation后的数据和原始数据之间做。<br>除此之外还比较了DEGs的fold change的变化</p>
+<h3 id="cell-cluster"><a href="#cell-cluster" class="headerlink" title="cell cluster"></a>cell cluster</h3><p>数据集同上。评估方法有10种，正文里显示的结果里是adjusted Rand index (ARI)和Silhouette<br>用了多种可视化方法，UMAP效果最好。<br>另外还用Klein’s timeseries data做了时序上的比较，分别用raw data和经过scGNN的imputation的数据通过monocle做伪时序分析。<br>还提了一下，从scGNN种的cell-cell graph中提取细胞通讯比随机的好（我估计效果好不到哪去，全文没有结果图展示，也没和cci的软件比较）</p>
+<h3 id="老年痴呆神经发育相关研究"><a href="#老年痴呆神经发育相关研究" class="headerlink" title="老年痴呆神经发育相关研究"></a>老年痴呆神经发育相关研究</h3><h4 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h4><p>6个AD+6个对照脑细胞共13214个单细胞（GSE138852）</p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ol>
+<li>用scGNN做聚类，然后根据AD和对照的label可以得出哪些细胞在AD中比例多一点；</li>
+<li>合并六个oligodendrocyte子类与其他细胞类型（总共五类细胞）一起找差异基因（DEGs），其中又用raw data和scGNN处理后的数据做了一个对比，scGNN的差异基因聚类图信号更清晰；</li>
+<li>AD对比对照组做通路富集，在五类细胞上聚类，可以看到前五个正调控的都是AD相关的通路。另外还发现一个很低的通路在microglia细胞上；</li>
+<li>使用一个做cell-type-specific regulon inference的工具IRIS3在这五类细胞上找到21个CTSR(cell-type-specific regulons)，发现了几个被报道过的AD相关的转录因子和目标基因。SP2和SP3，后面应该又去查了相关文献。</li>
+</ol>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>就是上面方法中得到的一些结论“这些发现为SP3在AD中的功能发现提供了一个方向”</p>
+<h2 id="除此之外还做了一些消融实验"><a href="#除此之外还做了一些消融实验" class="headerlink" title="除此之外还做了一些消融实验"></a>除此之外还做了一些消融实验</h2><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li>综合多方面特征。原始表达量、离散化表达量、细胞间关系，训练迭代中使用上一次迭代得到的聚类特征</li>
+<li>无监督</li>
+</ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li>每次训练只针对这一批数据，每次都需要长时间EM迭代训练</li>
+<li>超参数很多，不好调参</li>
+<li>代码优化不好，几乎不用GPU，很慢</li>
+</ol>
+<h3 id="改进"><a href="#改进" class="headerlink" title="改进"></a>改进</h3><ol>
+<li>将scGNN改为自监督的预训练模型；</li>
+<li>在预训练模型基础上加上scGNN的多种特征；</li>
+</ol>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'youngguang'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">SynapseLab &copy; 2016-2024.</span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5ed7e5c6530f805ef5b2f6d9c187ded6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

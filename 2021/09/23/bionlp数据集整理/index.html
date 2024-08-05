@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      BioNLP数据集整理 | 二十一世纪是生命科学的 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="杨光">
+    
+    
+
+    <meta name="description" content="图片来自于“Domain-Specific Language Model Pretraining for Biomedical Natural Language Processing”">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BioNLP数据集整理 | 二十一世纪是生命科学的">
+<meta property="og:url" content="https://yangguang8112.github.io/2021/09/23/bionlp数据集整理/index.html">
+<meta property="og:site_name" content="二十一世纪是生命科学的">
+<meta property="og:description" content="图片来自于“Domain-Specific Language Model Pretraining for Biomedical Natural Language Processing”">
+<meta property="og:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167800228884052021678002288767.png">
+<meta property="og:updated_time" content="2023-04-10T09:25:36.310Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BioNLP数据集整理 | 二十一世纪是生命科学的">
+<meta name="twitter:description" content="图片来自于“Domain-Specific Language Model Pretraining for Biomedical Natural Language Processing”">
+<meta name="twitter:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167800228884052021678002288767.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+    <!-- 临时修改方案，这行代码会是页面加载的时候强制把http转换成https，以解决博客是https要加载公式js库的时候浏览器阻止http的访问 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">二十一世纪是生命科学的</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/yangguang8112" title="Handsome boy on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+
+
+    <!-- China social icon -->
+    
+    <!--
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+    -->
+      <li class="navigation__item">
+        <a href="http://weibo.com/1994YG?refer_flag=1001030101_&is_hot=1" title="一起下厕所">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">BioNLP数据集整理</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2021-09-23" class="post-meta__date date">2021-09-23</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/文献阅读/">文献阅读</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p><img src="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167800228884052021678002288767.png" alt="20210830-151458.png"><br>图片来自于“Domain-Specific Language Model Pretraining for Biomedical Natural Language Processing”</p>
+<a id="more"></a>
+<h2 id="NER"><a href="#NER" class="headerlink" title="NER"></a>NER</h2><ol>
+<li>BC5-chem</li>
+<li>BC5-disease</li>
+<li>NCBI-disease</li>
+<li>BC2GM</li>
+<li>JNLPBA</li>
+</ol>
+<h3 id="BC5-Chemical-amp-BC5-Disease"><a href="#BC5-Chemical-amp-BC5-Disease" class="headerlink" title="BC5-Chemical &amp; BC5-Disease"></a>BC5-Chemical &amp; BC5-Disease</h3><p>本来这个数据集是用来评估drug-disease interactions的做关系抽取的，但是被频繁用来作为chemical (drug) and disease实体识别的语料。该数据集包含1500篇PubMed摘要，被分成三部分，训练集、验证集和测试集。<br>一般来说大家都是按照Crichton et al.[1]的预处理方法，把关系标签丢掉，分别在BC5-Chemical和BC5-Disease上训练chemical和disease的NER模型[2]。</p>
+<h3 id="NCBI-Disease"><a href="#NCBI-Disease" class="headerlink" title="NCBI-Disease"></a>NCBI-Disease</h3><p>包含793篇PubMed摘要，其中有6892个标注疾病，被链接到790个疾病实体。按照Crichton et al.[1]来分割数据集。</p>
+<h3 id="BC2GM"><a href="#BC2GM" class="headerlink" title="BC2GM"></a>BC2GM</h3><p>关于gene的数据集。由含有人工标注的gene and alternative gene entities的PubMed摘要组成。BC2GM中有15000个训练句子和5000个测试句子。按Crichton et al.的做法主要关注gene的标注，并从训练集中取出2500个句子作为验证集。</p>
+<h3 id="JNLPBA"><a href="#JNLPBA" class="headerlink" title="JNLPBA"></a>JNLPBA</h3><p>也是一个基于PubMed的NER数据集，它最早发布在一个biomedical NLP的workshop的shared task。实体类型主要是分子生物学领域，蛋白质、DNA、RNA、cell line和细胞类型。<br>其中有些实体类型的区分不是很有意义，比如，“a gene mention often refers to both the DNA and gene products such as the RNA and protein”，Gu et al[2]认为一个基因通常是指的DNA或基因的产物比如蛋白质或RNA。因此他们把这个数据集只按照是不是实体，而不区分实体类型了。</p>
+<h2 id="RE"><a href="#RE" class="headerlink" title="RE"></a>RE</h2><ol>
+<li>ChemProt</li>
+<li>DDI</li>
+<li>GAD</li>
+</ol>
+<h3 id="ChemProt"><a href="#ChemProt" class="headerlink" title="ChemProt"></a>ChemProt</h3><p>ChemProt基于PubMed摘要，是标注有chemical-protein互作关系的数据集。总共有23种互作类型，更高一级是10类包括无关系。在ChemProt中有关系的实例大部分都是在一个句子里。根据以前的一些工作就只需要考虑句子级别的关系实例。ChemProt作者建议主要关注五类互作类型即，UPREGULATOR (CPR : 3), DOWNREGULATOR (CPR : 4), AGONIST (CPR : 5), ANTAGONIST (CPR : 6), SUBSTRATE (CPR : 9) 以及everything else (false)<br>Chemprot注释并不完全适用于所有的chemical-protein pairs，根据以前的一些工作[3, 4]we expand the training and development sets by assigning a false label for all chemical-protein pairs that occur in a training or development sentence, but do not have an explicit label in the ChemProt corpus. Note that prior work uses slightly different label expansion of the test data.</p>
+<h3 id="DDI"><a href="#DDI" class="headerlink" title="DDI"></a>DDI</h3><p>药物互作数据集，是用来助力研究药物信息抽取的，特别关注在药物安全上。它是基于PubMed摘要的句子级注释。注意一些以前的工作[4, 5]丢弃了90个训练文件，因为作者任务那些对ddi的学习没有用处。</p>
+<h3 id="GAD"><a href="#GAD" class="headerlink" title="GAD"></a>GAD</h3><p>The Genetic Association Database遗传相关数据库，是利用<a href="https://geneticassociationdb.nih.gov/" target="_blank" rel="external">Genetic Association Archive</a>半自动创建。档案包含了一个gene-disease关联列表，对应的句子都是在PubMed摘要上报告了的相关研究。<br>Bravo et al.[6]使用一个生物医学NER工具识别基因和疾病，根据档案里存在的被注释的句子创建了正样本，negative examples from gene-disease co-occurrences that were not annotated in the archive</p>
+<h2 id="BioRelEx-1-0"><a href="#BioRelEx-1-0" class="headerlink" title="BioRelEx 1.0"></a>BioRelEx 1.0</h2><p>待更新……</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] Gamal Crichton, Sampo Pyysalo, Billy Chiu, and Anna Korhonen. 2017. A neural network multi-task learning approach to biomedical named entity recognition. BMC bioinformatics 18, 1 (2017), 368.<br>[2] Gu Y, Tinn R, Cheng H, et al. Domain-specific language model pretraining for biomedical natural language processing[J]. arXiv preprint arXiv:2007.15779, 2020.<br>[3] Jinhyuk Lee, Wonjin Yoon, Sungdong Kim, Donghyeon Kim, Sunkyu Kim, Chan Ho So, and Jaewoo Kang. 2019. BioBERT: a pre-trained biomedical language representation model for biomedical text mining. Bioinformatics (09 2019). <a href="https://doi.org/10.1093/bioinformatics/" target="_blank" rel="external">https://doi.org/10.1093/bioinformatics/</a> btz682<br>[4] Yifan Peng, Shankai Yan, and Zhiyong Lu. 2019. Transfer Learning in Biomedical Natural Language Processing: An Evaluation of BERT and ELMo on Ten Benchmarking Datasets. In Proceedings of the 18th BioNLP Workshop and Shared Task. Association for Computational Linguistics, Florence, Italy, 58–65. <a href="https://doi.org/10.18653/v1/W19-5006" target="_blank" rel="external">https://doi.org/10.18653/v1/W19-5006</a><br>[5] Yijia Zhang, Wei Zheng, Hongfei Lin, Jian Wang, Zhihao Yang, and Michel Dumontier. 2018. Drug–drug interaction extraction via hierarchical RNNs on sequence and shortest dependency paths. Bioinformatics 34, 5 (2018), 828–835.<br>[6] Àlex Bravo, Janet Piñero, Núria Queralt-Rosinach, Michael Rautschka, and Laura I Furlong. 2015. Extraction of relations between genes and diseases from text and large-scale data analysis: implications for translational research. BMC bioinformatics 16, 1 (2015), 55.</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'youngguang'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">SynapseLab &copy; 2016-2024.</span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5ed7e5c6530f805ef5b2f6d9c187ded6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

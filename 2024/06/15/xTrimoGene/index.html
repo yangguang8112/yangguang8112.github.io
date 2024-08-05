@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      xTrimoGene | 二十一世纪是生命科学的 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="杨光">
+    
+    
+
+    <meta name="description" content="xTrimoGene: An Efficient and Scalable Representation Learner for Single-Cell RNA-Seq Data
+摘要随着高通量测序技术的进步，单细胞水平的基因表达测量取得了显著进展。公开可获取的单细胞RNA测序（scRNA-seq）数据已经超过了5000万条人类记录，每条记录测量了2万个基因。这突显了对无监督表示学习的需求，然而传">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xTrimoGene | 二十一世纪是生命科学的">
+<meta property="og:url" content="https://yangguang8112.github.io/2024/06/15/xTrimoGene/index.html">
+<meta property="og:site_name" content="二十一世纪是生命科学的">
+<meta property="og:description" content="xTrimoGene: An Efficient and Scalable Representation Learner for Single-Cell RNA-Seq Data
+摘要随着高通量测序技术的进步，单细胞水平的基因表达测量取得了显著进展。公开可获取的单细胞RNA测序（scRNA-seq）数据已经超过了5000万条人类记录，每条记录测量了2万个基因。这突显了对无监督表示学习的需求，然而传">
+<meta property="og:updated_time" content="2024-08-05T15:51:55.102Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="xTrimoGene | 二十一世纪是生命科学的">
+<meta name="twitter:description" content="xTrimoGene: An Efficient and Scalable Representation Learner for Single-Cell RNA-Seq Data
+摘要随着高通量测序技术的进步，单细胞水平的基因表达测量取得了显著进展。公开可获取的单细胞RNA测序（scRNA-seq）数据已经超过了5000万条人类记录，每条记录测量了2万个基因。这突显了对无监督表示学习的需求，然而传">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+    <!-- 临时修改方案，这行代码会是页面加载的时候强制把http转换成https，以解决博客是https要加载公式js库的时候浏览器阻止http的访问 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">二十一世纪是生命科学的</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/yangguang8112" title="Handsome boy on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+
+
+    <!-- China social icon -->
+    
+    <!--
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+    -->
+      <li class="navigation__item">
+        <a href="http://weibo.com/1994YG?refer_flag=1001030101_&is_hot=1" title="一起下厕所">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">xTrimoGene</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2024-06-15" class="post-meta__date date">2024-06-15</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/文献阅读/">文献阅读</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>xTrimoGene: An Efficient and Scalable Representation Learner for Single-Cell RNA-Seq Data</p>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>随着高通量测序技术的进步，单细胞水平的基因表达测量取得了显著进展。公开可获取的单细胞RNA测序（scRNA-seq）数据已经超过了5000万条人类记录，每条记录测量了2万个基因。这突显了对无监督表示学习的需求，然而传统的Transformer架构在计算和内存方面对于这样的数据训练是具有挑战性的。为了解决这个问题，我们提出了一种新颖的不对称编码器-解码器Transformer模型，称为xTrimoGene，它利用了数据的稀疏特性来扩展预训练。xTrimoGene的可扩展设计相比传统Transformer模型将FLOPs减少了一到两个数量级，同时保持高准确性，使我们能够在目前最大的scRNA-seq数据集上训练最大的Transformer模型。我们的实验证明，xTrimoGene的性能随着模型规模的增加而提高，并且在细胞分类、扰动测序效果预测和药物组合预测等各种下游任务中也达到了最先进的性能。</p>
+<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1 Introduction"></a>1 Introduction</h2><p>直接看看他的贡献</p>
+<p>为了应对与scRNA-seq数据建模相关的挑战并考虑到这些数据的独特性（如第2节中讨论的），我们提出了一种新颖且高效的框架xTrimoGene，用于对大规模scRNA-seq数据进行预训练。我们的框架具有以下关键贡献：</p>
+<ul>
+<li>我们设计了一个非对称的编码器-解码器架构来引导预训练过程，使我们能够为单细胞RNA-seq数据学习一个高容量的模型。与之前的仅解码器模型（如scBERT）相比，我们的模型在预训练速度上实现了3倍以上的提升。</li>
+<li>我们展示了我们模型的效率和可扩展性，使我们能够训练迄今为止最大的单细胞预训练模型，xTrimoGene-100M模型拥有约1亿个参数，使用了我们从公共数据源中整理的约500亿个有效基因标记的scRNA-seq数据集。</li>
+<li>经过预训练的xTrimoGene模型在多个下游任务中取得了显著的成果，包括细胞类型注释、扰动响应预测和协同药物组合预测。</li>
+</ul>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'youngguang'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">SynapseLab &copy; 2016-2024.</span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5ed7e5c6530f805ef5b2f6d9c187ded6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

@@ -7,7 +7,7 @@
     
 
     <title>
-      ggplot2 画图笔记 | Sunshine&#39;s Life 
+      ggplot2 画图笔记 | 二十一世纪是生命科学的 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -22,9 +22,9 @@ location=&quot;https://yangguang8112.github.io/#blog&quot;;
 这是一篇相当随便的笔记，记录最近工作，以及学习到的一些ggplot2的画图技巧图层上加文字geom_text()没用过这种方法
 annotation(“text”,x=,y=,label=,hjust=,vjust=)此函数可以在图层的任意位置添加文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ggplot2 画图笔记 | Sunshine's Life">
-<meta property="og:url" content="http://yoursite.com/2016/11/01/ggplot2-画图笔记/index.html">
-<meta property="og:site_name" content="Sunshine's Life">
+<meta property="og:title" content="ggplot2 画图笔记 | 二十一世纪是生命科学的">
+<meta property="og:url" content="https://yangguang8112.github.io/2016/11/01/ggplot2-画图笔记/index.html">
+<meta property="og:site_name" content="二十一世纪是生命科学的">
 <meta property="og:description" content="alert(&quot;此页面不存在,返回主页面&quot;);
 location=&quot;https://yangguang8112.github.io/#blog&quot;;
 
@@ -32,7 +32,7 @@ location=&quot;https://yangguang8112.github.io/#blog&quot;;
 annotation(“text”,x=,y=,label=,hjust=,vjust=)此函数可以在图层的任意位置添加文">
 <meta property="og:updated_time" content="2021-03-28T16:37:27.588Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ggplot2 画图笔记 | Sunshine's Life">
+<meta name="twitter:title" content="ggplot2 画图笔记 | 二十一世纪是生命科学的">
 <meta name="twitter:description" content="alert(&quot;此页面不存在,返回主页面&quot;);
 location=&quot;https://yangguang8112.github.io/#blog&quot;;
 
@@ -47,7 +47,8 @@ annotation(“text”,x=,y=,label=,hjust=,vjust=)此函数可以在图层的任�
     <link rel="stylesheet" href="/css/highlight.css">
     <link rel="stylesheet" href="/css/archive.css">
     <link rel="stylesheet" href="/css/china-social-icon.css">
-
+    <!-- 临时修改方案，这行代码会是页面加载的时候强制把http转换成https，以解决博客是https要加载公式js库的时候浏览器阻止http的访问 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 <body>
 
@@ -69,7 +70,7 @@ annotation(“text”,x=,y=,label=,hjust=,vjust=)此函数可以在图层的任�
 
         
 
-        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Sunshine&#39;s Life</a></h1>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">二十一世纪是生命科学的</a></h1>
         <hr class="panel-cover__divider" />
 
         
@@ -256,7 +257,7 @@ location="https://yangguang8112.github.io/#blog";
 
             <footer class="footer">
 
-    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    <span class="footer__copyright">SynapseLab &copy; 2016-2024.</span>
     
 </footer>
         </div>
@@ -309,5 +310,20 @@ var _hmt = _hmt || [];
   <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
 <![endif]-->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
     
 
     <title>
-      RoBERTa | Sunshine&#39;s Life 
+      RoBERTa | 二十一世纪是生命科学的 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -18,13 +18,13 @@
 
     <meta name="description" content="主要是训练方法上的创新，该paper认为bert的训练明显不够，他们对超参调优和训练集大小的影响的仔细评估。提出RoBERTa这个recipe来提高BERT的训练效果。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RoBERTa | Sunshine's Life">
-<meta property="og:url" content="http://yoursite.com/2021/01/30/RoBERTa/index.html">
-<meta property="og:site_name" content="Sunshine's Life">
+<meta property="og:title" content="RoBERTa | 二十一世纪是生命科学的">
+<meta property="og:url" content="https://yangguang8112.github.io/2021/01/30/RoBERTa/index.html">
+<meta property="og:site_name" content="二十一世纪是生命科学的">
 <meta property="og:description" content="主要是训练方法上的创新，该paper认为bert的训练明显不够，他们对超参调优和训练集大小的影响的仔细评估。提出RoBERTa这个recipe来提高BERT的训练效果。">
-<meta property="og:updated_time" content="2021-09-07T12:57:38.486Z">
+<meta property="og:updated_time" content="2021-09-07T12:57:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RoBERTa | Sunshine's Life">
+<meta name="twitter:title" content="RoBERTa | 二十一世纪是生命科学的">
 <meta name="twitter:description" content="主要是训练方法上的创新，该paper认为bert的训练明显不够，他们对超参调优和训练集大小的影响的仔细评估。提出RoBERTa这个recipe来提高BERT的训练效果。">
     
     
@@ -35,7 +35,8 @@
     <link rel="stylesheet" href="/css/highlight.css">
     <link rel="stylesheet" href="/css/archive.css">
     <link rel="stylesheet" href="/css/china-social-icon.css">
-
+    <!-- 临时修改方案，这行代码会是页面加载的时候强制把http转换成https，以解决博客是https要加载公式js库的时候浏览器阻止http的访问 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 <body>
 
@@ -57,7 +58,7 @@
 
         
 
-        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Sunshine&#39;s Life</a></h1>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">二十一世纪是生命科学的</a></h1>
         <hr class="panel-cover__divider" />
 
         
@@ -253,7 +254,7 @@ classes that you can use:
 
             <footer class="footer">
 
-    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    <span class="footer__copyright">SynapseLab &copy; 2016-2024.</span>
     
 </footer>
         </div>
@@ -306,5 +307,20 @@ var _hmt = _hmt || [];
   <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
 <![endif]-->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

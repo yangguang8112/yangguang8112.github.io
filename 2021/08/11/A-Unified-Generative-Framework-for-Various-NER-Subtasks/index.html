@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      A Unified Generative Framework for Various NER Subtasks | 二十一世纪是生命科学的 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="杨光">
+    
+    
+
+    <meta name="description" content="核心思想：不做序列标注了，把ner任务转换成文本生成任务，用一个seq2seq模型去生成一个entity span sequence，这样就不需要设计复制的tagging模式了
+seq2seq模型是用的BART
+原文A Unified Generative Framework for Various NER Subtasks">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Unified Generative Framework for Various NER Subtasks | 二十一世纪是生命科学的">
+<meta property="og:url" content="https://yangguang8112.github.io/2021/08/11/A-Unified-Generative-Framework-for-Various-NER-Subtasks/index.html">
+<meta property="og:site_name" content="二十一世纪是生命科学的">
+<meta property="og:description" content="核心思想：不做序列标注了，把ner任务转换成文本生成任务，用一个seq2seq模型去生成一个entity span sequence，这样就不需要设计复制的tagging模式了
+seq2seq模型是用的BART
+原文A Unified Generative Framework for Various NER Subtasks">
+<meta property="og:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167802918331148091678029182457.png">
+<meta property="og:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167802919084449291678029190067.png">
+<meta property="og:updated_time" content="2023-04-10T09:25:36.310Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A Unified Generative Framework for Various NER Subtasks | 二十一世纪是生命科学的">
+<meta name="twitter:description" content="核心思想：不做序列标注了，把ner任务转换成文本生成任务，用一个seq2seq模型去生成一个entity span sequence，这样就不需要设计复制的tagging模式了
+seq2seq模型是用的BART
+原文A Unified Generative Framework for Various NER Subtasks">
+<meta name="twitter:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167802918331148091678029182457.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+    <!-- 临时修改方案，这行代码会是页面加载的时候强制把http转换成https，以解决博客是https要加载公式js库的时候浏览器阻止http的访问 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">二十一世纪是生命科学的</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/yangguang8112" title="Handsome boy on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+
+
+    <!-- China social icon -->
+    
+    <!--
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+    -->
+      <li class="navigation__item">
+        <a href="http://weibo.com/1994YG?refer_flag=1001030101_&is_hot=1" title="一起下厕所">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">A Unified Generative Framework for Various NER Subtasks</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2021-08-11" class="post-meta__date date">2021-08-11</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/文献阅读/">文献阅读</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>核心思想：不做序列标注了，把ner任务转换成文本生成任务，用一个seq2seq模型去生成一个entity span sequence，这样就不需要设计复制的tagging模式了</p>
+<p>seq2seq模型是用的BART</p>
+<h5 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h5><p><a href="https://aclanthology.org/2021.acl-long.451" target="_blank" rel="external">A Unified Generative Framework for Various NER Subtasks</a></p>
+<a id="more"></a>
+<h2 id="创新点"><a href="#创新点" class="headerlink" title="创新点"></a>创新点</h2><p>下图模型架构中，decoder是自回归生成，初始输入一个\<s></s></p>
+<p><img src="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167802918331148091678029182457.png" alt="fig2"></p>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><h3 id="NER-Task"><a href="#NER-Task" class="headerlink" title="NER Task"></a>NER Task</h3><p>输入为$ n $个tokens</p>
+<script type="math/tex; mode=display">X = [x_1,x_2,...,x_n]</script><p>目标序列是</p>
+<script type="math/tex; mode=display">Y = [s_{11},e_{11},...,s_{1j},e_{1j},t_1,...,s_{i1},e_{i1},...,s_{ik},e_{ik},t_i]</script><p>，其中$s,e$分别是span的开始和结束index，$t_i$是entity tag的index，用$G = [g_1,…,g_l]$表示entity tag tokens，这里$g_i$是token，令 $t_i \in (n,n+l]$</p>
+<h3 id="Seq2Seq-for-Unified-Decoding"><a href="#Seq2Seq-for-Unified-Decoding" class="headerlink" title="Seq2Seq for Unified Decoding"></a>Seq2Seq for Unified Decoding</h3><script type="math/tex; mode=display">P(Y|X) = \prod_{t=1}^mP(y_t|X,Y_{<t})\tag{1}</script><p>其中$Y_{&lt;t}$指$t$时刻以前的$Y$作为输入，也就是自回归。$y_t$是一个index不是token，就是一个编号，长度是句子长度加上entities类型的长度，即$n+l$</p>
+<h4 id="Encoder"><a href="#Encoder" class="headerlink" title="Encoder"></a>Encoder</h4><script type="math/tex; mode=display">H^e = Encoder(X)\tag{2}</script><p>其中$H^e \in \mathbb{R}^{n \times d}$，d是隐藏层维数</p>
+<h4 id="Decoder"><a href="#Decoder" class="headerlink" title="Decoder"></a>Decoder</h4><p>for each step $P_t = P(y_t|X,Y_{&lt;t}).$</p>
+<script type="math/tex; mode=display">\hat y_t =
+\begin{cases}
+X_{y_t},& \text{if }y_t \le n,\\
+G_{y_{t-n}},& \text{if }y_t > n\\
+\end{cases}\tag{3}</script><p>简单的说这个式子就是把索引$y_t$转成token，因为前面说过，$[1,n]$是输入$X$的索引，$(n,n+l]$是entity tag索引，表示的是$G$</p>
+<p>得到$\hat Y_{&lt;t} = [\hat y_1,…,\hat y_{t-1}]$，然后经过Decoder后得到最后一层隐藏状态$h_t^d \in \mathbb{R}^d$</p>
+<script type="math/tex; mode=display">h_t^d = Decoder(H^e;\hat Y_{<t}) \tag{4}</script><p>然后通过如下一系列公式得到index的概率分布$P_t$</p>
+<script type="math/tex; mode=display">
+\begin{align}
+E^e &= TokenEmbed(X) \tag{5}\\
+\hat H^e &= MLP(H^e) \tag{6}\\
+\bar H^e &= \alpha * \hat H^e + (1 - \alpha) * E^e \tag{7}\\
+G^d &= TokenEmbed(G) \tag{8}\\
+P_t &= Softmax([\bar H^e \otimes h_t^d;G^d \otimes h_t^d]) \tag{9}
+\end{align}</script><p>就是Fig2中的上面浅色框里的一系列计算过程，其中$TokenEmbed$是编码器解码器共享的，$E^e,\hat H^e,\bar H^e \in \mathbb{R}^{n \times d}$;$\alpha \in \mathbb{R}$是一个超参数；$G^d \in \mathbb{R}^{l \times d}$；$[\cdot ; \cdot]$表示在第一个维度连接(concat)两者；$\otimes$是点乘(dot product)</p>
+<h3 id="Detailed-Entity-Representation-with-BART"><a href="#Detailed-Entity-Representation-with-BART" class="headerlink" title="Detailed Entity Representation with BART"></a>Detailed Entity Representation with BART</h3><p>BART最重要的就是一个tokenization的方法Byte-Pair-Encoding(BPE)，可以把一个token tokenize成几个BPEs<br>本文提出三种指针表示entities在原始句子中位置的方法，以更好地利用BPE，三种entity representation的方法如下：<br>都是BPE切割后，一个word可能形成好几个BPE，然后按顺序编index，见Fig.3</p>
+<h4 id="Span"><a href="#Span" class="headerlink" title="Span"></a>Span</h4><p>把entity的首尾index放进去</p>
+<h4 id="BPE"><a href="#BPE" class="headerlink" title="BPE"></a>BPE</h4><p>把entity的每一个index放进去</p>
+<h4 id="Word"><a href="#Word" class="headerlink" title="Word"></a>Word</h4><p>只放entity含有那个几个words的首位进去</p>
+<p><img src="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167802919084449291678029190067.png" alt="fig3"></p>
+<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>后面实验做了三种entity类型的测试，看本文提出的方法的表现；<br>还看了三种不同entity representations的表现,“Word”表现最好。总结起来，两个原因影响表示方法的表现：1.entity的长度；2.和预训练任务的相似性。</p>
+<p>后面还研究了仅仅用不连续实体样本去做评估、“word”在预测不做限制的条件下犯错误的概率，这里错误是invalid结构错误，以证明学习是有效的、句子中实体出现早晚对预测召回率的影响。</p>
+<p>Results show that the entity representation with a shorter length and more similar to continuous BPE sequences achieves better performance.</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'youngguang'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">SynapseLab &copy; 2016-2024.</span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5ed7e5c6530f805ef5b2f6d9c187ded6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

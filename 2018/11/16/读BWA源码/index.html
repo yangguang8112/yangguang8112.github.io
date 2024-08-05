@@ -7,7 +7,7 @@
     
 
     <title>
-      读BWA源码 | Sunshine&#39;s Life 
+      读BWA源码 | 二十一世纪是生命科学的 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -18,13 +18,13 @@
 
     <meta name="description" content="目前工作主要是读BWA源码，得记录一下，不然以后又忘记了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="读BWA源码 | Sunshine's Life">
-<meta property="og:url" content="http://yoursite.com/2018/11/16/读BWA源码/index.html">
-<meta property="og:site_name" content="Sunshine's Life">
+<meta property="og:title" content="读BWA源码 | 二十一世纪是生命科学的">
+<meta property="og:url" content="https://yangguang8112.github.io/2018/11/16/读BWA源码/index.html">
+<meta property="og:site_name" content="二十一世纪是生命科学的">
 <meta property="og:description" content="目前工作主要是读BWA源码，得记录一下，不然以后又忘记了。">
 <meta property="og:updated_time" content="2021-03-28T16:37:27.601Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="读BWA源码 | Sunshine's Life">
+<meta name="twitter:title" content="读BWA源码 | 二十一世纪是生命科学的">
 <meta name="twitter:description" content="目前工作主要是读BWA源码，得记录一下，不然以后又忘记了。">
     
     
@@ -35,7 +35,8 @@
     <link rel="stylesheet" href="/css/highlight.css">
     <link rel="stylesheet" href="/css/archive.css">
     <link rel="stylesheet" href="/css/china-social-icon.css">
-
+    <!-- 临时修改方案，这行代码会是页面加载的时候强制把http转换成https，以解决博客是https要加载公式js库的时候浏览器阻止http的访问 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 <body>
 
@@ -57,7 +58,7 @@
 
         
 
-        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Sunshine&#39;s Life</a></h1>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">二十一世纪是生命科学的</a></h1>
         <hr class="panel-cover__divider" />
 
         
@@ -234,7 +235,7 @@ classes that you can use:
 
             <footer class="footer">
 
-    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    <span class="footer__copyright">SynapseLab &copy; 2016-2024.</span>
     
 </footer>
         </div>
@@ -287,5 +288,20 @@ var _hmt = _hmt || [];
   <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
 <![endif]-->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

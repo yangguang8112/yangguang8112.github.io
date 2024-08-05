@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Revised JNLPBA Corpus | 二十一世纪是生命科学的 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="杨光">
+    
+    
+
+    <meta name="description" content="本文的动机是JNLPBA语料中有许多错误、漏标，导致下游的关系抽取不好做，所以本文总结了JNLPBA数据集中的错误（这些点也都出现在其他生物医学语料中），并重新纠正标注了这些错误，总结了重新标注的规范。
+原文Revised JNLPBA Corpus: A Revised Version of Biomedical NER Corpus for Relation Extraction Task">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Revised JNLPBA Corpus | 二十一世纪是生命科学的">
+<meta property="og:url" content="https://yangguang8112.github.io/2022/02/20/Revised-JNLPBA-Corpus/index.html">
+<meta property="og:site_name" content="二十一世纪是生命科学的">
+<meta property="og:description" content="本文的动机是JNLPBA语料中有许多错误、漏标，导致下游的关系抽取不好做，所以本文总结了JNLPBA数据集中的错误（这些点也都出现在其他生物医学语料中），并重新纠正标注了这些错误，总结了重新标注的规范。
+原文Revised JNLPBA Corpus: A Revised Version of Biomedical NER Corpus for Relation Extraction Task">
+<meta property="og:updated_time" content="2023-04-10T09:25:36.310Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Revised JNLPBA Corpus | 二十一世纪是生命科学的">
+<meta name="twitter:description" content="本文的动机是JNLPBA语料中有许多错误、漏标，导致下游的关系抽取不好做，所以本文总结了JNLPBA数据集中的错误（这些点也都出现在其他生物医学语料中），并重新纠正标注了这些错误，总结了重新标注的规范。
+原文Revised JNLPBA Corpus: A Revised Version of Biomedical NER Corpus for Relation Extraction Task">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+    <!-- 临时修改方案，这行代码会是页面加载的时候强制把http转换成https，以解决博客是https要加载公式js库的时候浏览器阻止http的访问 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">二十一世纪是生命科学的</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/yangguang8112" title="Handsome boy on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+
+
+    <!-- China social icon -->
+    
+    <!--
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+    -->
+      <li class="navigation__item">
+        <a href="http://weibo.com/1994YG?refer_flag=1001030101_&is_hot=1" title="一起下厕所">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Revised JNLPBA Corpus</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2022-02-20" class="post-meta__date date">2022-02-20</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/文献阅读/">文献阅读</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>本文的动机是JNLPBA语料中有许多错误、漏标，导致下游的关系抽取不好做，所以本文总结了JNLPBA数据集中的错误（这些点也都出现在其他生物医学语料中），并重新纠正标注了这些错误，总结了重新标注的规范。</p>
+<h5 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h5><p><a href="https://arxiv.org/abs/1901.10219" target="_blank" rel="external">Revised JNLPBA Corpus: A Revised Version of Biomedical NER Corpus for Relation Extraction Task</a></p>
+<a id="more"></a>
+<h2 id="JNLPBA标注问题"><a href="#JNLPBA标注问题" class="headerlink" title="JNLPBA标注问题"></a>JNLPBA标注问题</h2><h3 id="Problem-of-general-terms"><a href="#Problem-of-general-terms" class="headerlink" title="Problem of general terms"></a>Problem of general terms</h3><p>会把一些普通的词标注到生物医学实体中去，特定的实体必须是能在数据库里清晰的找到的，而不是一些大的生物医学概念。比如下面<br>_Substitution mutations in this <strong>consensus sequence</strong> eliminate binding of the <strong>inducible factor</strong>._<br>两个标黑的地方分别被误标为DNA和蛋白质了</p>
+<h3 id="Unnecessary-preceding-words"><a href="#Unnecessary-preceding-words" class="headerlink" title="Unnecessary preceding words"></a>Unnecessary preceding words</h3><p>实体前面一些没必要的修饰词，比如<br>_Expression of <strong>dominant negative MAPKK-1</strong> prevents NFAT induction._<br>dominant negative只是一种变异类型，不能和MAPKK-1一起标为蛋白质。不过也有些有必要的修饰词，文中提到human和murine作为物种可以对IL-2在数据库中对应基因ID起决定作用，所以这个中词要被划到实体里（<strong>不过这里我认为，物种应该划为物种的实体，然后物种和基因有从属关系，这样才是细粒度的，对后面关系抽取也有益</strong>）</p>
+<h3 id="Entity-type-confusion"><a href="#Entity-type-confusion" class="headerlink" title="Entity type confusion"></a>Entity type confusion</h3><p>其实就是一些标错的，例子如下：<br>_“… that the type II IL-1R does not mediate gene activation in <strong>Jurkat cells</strong>.”_<br>_“…galectin-3 was shown to activate interleukin-2 production in <strong>Jurkat T cells</strong>.”_<br>这俩应该都是cell line，但是第二个因为多了个T被标为了cell type</p>
+<h3 id="Neglected-adjacent-clues"><a href="#Neglected-adjacent-clues" class="headerlink" title="Neglected adjacent clues"></a>Neglected adjacent clues</h3><p>也是标错的，根据实体周围的一些修饰词可以简单判断标错的<br>_“The 5’ sequences up to nucleotide -120 of the human and murine <strong>IL-16</strong> genes …”_<br>IL-16这里被表为了蛋白质，但是后面有个genes，所以这里应该标为基因</p>
+<h3 id="Missing-annotations"><a href="#Missing-annotations" class="headerlink" title="Missing annotations"></a>Missing annotations</h3><p>漏标，大的语料库很难避免<br>_“Three additional smaller regions show homology to the <strong>ELK-1</strong> and SAP-1 genes…”_<br>通过查询GENIA ontology，发现<strong>ELK-1</strong>被漏标了</p>
+<h2 id="重新标注的Guideline"><a href="#重新标注的Guideline" class="headerlink" title="重新标注的Guideline"></a>重新标注的Guideline</h2><p>本文用了两位有生物+计算机背景的人分别做标注，然后综合结果</p>
+<h3 id="一般规则"><a href="#一般规则" class="headerlink" title="一般规则"></a>一般规则</h3><ol>
+<li><strong>删除普通命名实体</strong>，只要不能被关联到数据库中的任何ID的视为普通实体，比如_“upstream regulatory region”, “60-kDa protein” and “cytokines”_</li>
+<li><strong>增加漏标的实体</strong>，上文提到的</li>
+<li><strong>调整命名实体类型</strong>，上文提到的</li>
+</ol>
+<h3 id="特殊规则"><a href="#特殊规则" class="headerlink" title="特殊规则"></a>特殊规则</h3><p>有很多，最重要的一条是，当命名实体周围没有任何证据证明它的实体类型时，这个实体被标为蛋白质，比如_“An essential role for NF-kappaB in human CD34 ( + ) bone marrow cell survival.”_中，<strong>NF-kappaB</strong>不能根据上下文确定它的类型，则被标为蛋白质。因为执行生命过程的分子是蛋白质。</p>
+<ol>
+<li>形容词规则，同_unnecessary_preceding_words_</li>
+<li>Verb rule Ving Event adjective verb rule，连接词前后有时候当作一个实体，有时候分别和最后一个词组成两个实体</li>
+<li>Preposition rule，介词含在NE里的</li>
+<li>Parenthesis rule，_“tumor necrosis factorprotein (TNFprotein)”_和_“interleukin (IL) -2protein”_</li>
+<li>Conjunction rule，_“IL-1, 2, and 15”_会被标记为“IL-1protein , 2right_partial_protein, and 15right_partial_protein”</li>
+<li>Semantic rule，将_“human gene PAX-5”_标注为_“human gene PAX-5DNA”_（存疑，见_unnecessary_preceding_words_）</li>
+<li>Protein rule，关于蛋白质前后缀的，比如_“motif”、“domain”_是描述蛋白质的部分，而不是全部，所以不包含在蛋白质命名实体内，其他的关键词，如_protein, receptor, antigen, antibody, enzyme, (transcription) factor and kinase_以这些词结尾的都将被标为蛋白质。此外还有一些分子相关的线索的也将被标为蛋白质（应该是符合最重要的那条规则）</li>
+<li>DNA rule，一些明显的描述DNA序列功能的后缀，比如_“enhancer”、“promoter”_是DNA的一部分；另外，比如_“AP-1 enhancer element”, “bcl-2 oncogene”, “gene UL49” and “FasL promoter”_也都是DNA；还有的包含染色体信息的DNA，比如_human chromosome 11p15, 1p36 and 14q11_；还有一些比较隐晦的，比如_“Pax-5 encodes the transcription factor BSAP which plays an essential role …”_，在这个句子中，<strong>Pax-5</strong>只有通过_encodes_推理得出只有DNA才具有编码能力（我估计这里没考虑RNA，或者把RNA和DNA视为一种）；最后还有一种特殊的描述克隆的DNA质粒的方式，比如_“pCD41”, “pIL-5 cDNA”_在实体前都有一个_“p”_</li>
+<li>Cell rule，cell line的规则：1.有明显的cell line描述符号，_“Hela”, “Hep2” and “A549”_；2.常见的细胞名称，或者以关键词_“cell line” or “clone”_结尾的细胞形态、细胞功能描述，都视为cell line，比如_“T cell line”, “granulocytic clones” and “monocytic cell line”_。cell type的规则：提到特定的细胞类型，以_“cell”, “progenitor” or “precursors”_结尾的细胞形态和功能标注为cell type，比如_“thymocytes”, “hematopoietic cells” and “myeloid precursors”_</li>
+<li>Complex rule，_“<protein>/<protein>”_这样的描述被标注为一个蛋白质，比如_“TCR/CD3”_被标注为_“TCR/CD3protein”_</protein></protein></li>
+<li>Amino or DNA sequence rule，氨基酸/DNA序列不被标注为命名实体，比如_“WGATAR consensus motifs” and “GGAAAGTCCC”_</li>
+<li>Group/family protein，虽然蛋白质家族不在Entrez/UniProt数据库中，但是因为他们在RE中很重要，所以本文还是标注出它们</li>
+</ol>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'youngguang'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">SynapseLab &copy; 2016-2024.</span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5ed7e5c6530f805ef5b2f6d9c187ded6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

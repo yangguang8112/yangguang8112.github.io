@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Joint Biomedical Entity and Relation Extraction with Knowledge-Enhanced Collective Inference | 二十一世纪是生命科学的 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="杨光">
+    
+    
+
+    <meta name="description" content="提出一个新的利用外部知识的联合抽取框架KECI (Knowledge-Enhanced Collective Inference)
+要点分三步：
+
+将input text结构化为初始化图(initial span graph)，作为对输入文本的初步理解。在一个span graph里每个node表示一个entity，每条edge表示两个entity的relation
+然后在一个额外的知识库里使用en">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Joint Biomedical Entity and Relation Extraction with Knowledge-Enhanced Collective Inference | 二十一世纪是生命科学的">
+<meta property="og:url" content="https://yangguang8112.github.io/2021/08/27/Joint-Biomedical-Entity-and-Relation-Extraction-with-Knowledge-Enhanced-Collective-Inference/index.html">
+<meta property="og:site_name" content="二十一世纪是生命科学的">
+<meta property="og:description" content="提出一个新的利用外部知识的联合抽取框架KECI (Knowledge-Enhanced Collective Inference)
+要点分三步：
+
+将input text结构化为初始化图(initial span graph)，作为对输入文本的初步理解。在一个span graph里每个node表示一个entity，每条edge表示两个entity的relation
+然后在一个额外的知识库里使用en">
+<meta property="og:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167803168007465281678031679132.png">
+<meta property="og:updated_time" content="2023-04-10T09:25:36.310Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Joint Biomedical Entity and Relation Extraction with Knowledge-Enhanced Collective Inference | 二十一世纪是生命科学的">
+<meta name="twitter:description" content="提出一个新的利用外部知识的联合抽取框架KECI (Knowledge-Enhanced Collective Inference)
+要点分三步：
+
+将input text结构化为初始化图(initial span graph)，作为对输入文本的初步理解。在一个span graph里每个node表示一个entity，每条edge表示两个entity的relation
+然后在一个额外的知识库里使用en">
+<meta name="twitter:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167803168007465281678031679132.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+    <!-- 临时修改方案，这行代码会是页面加载的时候强制把http转换成https，以解决博客是https要加载公式js库的时候浏览器阻止http的访问 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">二十一世纪是生命科学的</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/yangguang8112" title="Handsome boy on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+
+
+    <!-- China social icon -->
+    
+    <!--
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+    -->
+      <li class="navigation__item">
+        <a href="http://weibo.com/1994YG?refer_flag=1001030101_&is_hot=1" title="一起下厕所">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Joint Biomedical Entity and Relation Extraction with Knowledge-Enhanced Collective Inference</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2021-08-27" class="post-meta__date date">2021-08-27</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/文献阅读/">文献阅读</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>提出一个新的利用外部知识的联合抽取框架KECI (Knowledge-Enhanced Collective Inference)</p>
+<h2 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h2><p>分三步：</p>
+<ol>
+<li>将input text结构化为初始化图(initial span graph)，作为对输入文本的初步理解。在一个span graph里每个node表示一个entity，每条edge表示两个entity的relation</li>
+<li>然后在一个额外的知识库里使用entities linker形成一个包含所有潜在有关联的生物医学实体的背景知识图(background knowledge graph)，对于每个entity从上面提到的知识库(KB)里提取它的semantic types，definition sentence以及relational information</li>
+<li>最后KECI使用注意力机制融合上述两个graph成一个更refined的graph</li>
+</ol>
+<a id="more"></a>
+<p><img src="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167803168007465281678031679132.png" alt="overview"></p>
+<p>几个问题：</p>
+<ul>
+<li><del>entities linker是怎么做的</del> 使用了一个工具叫MetaMap</li>
+<li><del>怎么融合的？用的GCN？</del> 是用的注意力机制，soft-align两个graph里的entities</li>
+<li><del>background knowledge graph是啥</del> 是UMLS</li>
+</ul>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><h4 id="span-encoder"><a href="#span-encoder" class="headerlink" title="span encoder"></a>span encoder</h4><p>这里的span有点像是词组或者说就是候选entity，$X = (x_1,…,x_n)$是sciBERT的输出，n是输入的document(D)的token数，$x_n$就是token$~i$对应的向量表示</p>
+<script type="math/tex; mode=display">s_i = FFNN_g([x_{START(i)},x_{END(i)},\hat{x_i},\phi(s_i)])\tag{1}</script><p>其中$s_i \in \mathbb{R}^d$代表一个span的向量表示，$START(i) END(i)$表示$s_i$的开始和结束索引。$\hat{x_i}$就是span里的token的attention-weighted的和，$\phi(s_i)$是span长度的特征向量。$FFNN_g$是一个含有ReLU激活层的ffn</p>
+<h4 id="Initial-Span-Graph-Construction"><a href="#Initial-Span-Graph-Construction" class="headerlink" title="Initial Span Graph Construction"></a>Initial Span Graph Construction</h4><p>然后同时预测每个span的类型以及两个span之间的关系，$E$表示所有的entity类型，$R$表示所有关系类型，都包含了None这种类型在里面。</p>
+<p>首先给span分类：</p>
+<script type="math/tex; mode=display">e_i = Softmax(FFNN_e(s_i))\tag{2}</script><p>$FFNN_e$让维度从d变为E($\mathbb{R}^d \rightarrow \mathbb{R}^E$)，然后使用另一个softmax做span pair的关系分类$\langle s_i,s_j\rangle$</p>
+<script type="math/tex; mode=display">r_{i,j} = Softmax(FFNN_r([s_i,s_j,s_i \circ s_j]))\tag{3}</script><p>$\circ$表示element-wise multiplication</p>
+<p>用$r_{ij}[k]$表示$s_i$和$s_j$是关系$k$的可能性 $\mathbb{R}^{3 \times d} \rightarrow \mathbb{R}^{|R|}$</p>
+<p><strong>以上都是普通的实体识别和关系抽取</strong></p>
+<p>在进行下一步前还做了一个除了，剪枝不太可能的entities以提高计算效率，经过筛选的结果去用GCN做成initial span graph，筛选的策略是只保留有最低non-entity可能性的$\lambda n$个spans，其中$\lambda$是经验值，本文取0.5</p>
+<p>对于每对span$\langle s_i,s_j \rangle$建一个从节点$s_i$到$s_j$之间的有向边$|R|$，每个边表示一种关系类型，边上的权重就是$r_{ij}$</p>
+<p>用$G_s = \{V_s,E_s\}$表示initial span graph，使用双向GCN去迭代更新每个span的表示</p>
+<script type="math/tex; mode=display">\tag{4}</script><p>三个公式迭代多次，然后每个span($s_i$)就包含了整个graph($G_s$)的信息，用$h_i$表示GCN最后一层的特征向量，$h_i \in \mathbb{R}^d$</p>
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><h4 id="Background-Knowledge-Graph-Construction"><a href="#Background-Knowledge-Graph-Construction" class="headerlink" title="Background Knowledge Graph Construction"></a>Background Knowledge Graph Construction</h4><p>本文用的外部知识库是Unified Medical Language System(UMLS)，由三部分组成：</p>
+<blockquote>
+<p>Metathesaurus, Semantic Network, and Specialist Lexicon and Lexical Tools</p>
+</blockquote>
+<p>其中Metathesaurus里有数百万细粒度的生物医学概念以及他们之间的关系，为了统一我们使用UMLS里的概念作为entities。每个entity会被注释成至少一个higher-level semantic types，比如说解剖结构、细胞或者是病毒。除了有entities之间的关系外还有semantic types之间的关系。比如</p>
+<blockquote>
+<p>there is an affects relation from Acquired Abnormality to Physiologic Function</p>
+</blockquote>
+<p>这些信息都是由Semantic Network提供的。</p>
+<p><strong>构建背景知识图的具体操作为</strong>：首先使用MetaMap(UMLS的entity mapping工具)根据输入$D$提取UMLS里的biomedical entities；然后每个entity作为一个节点，每个entity的semantic types作为关联节点；最后在Metathesaurus和Semantic Network中找到相关关系。如fig2中所示，阴影部分就是背景知识图，圆圈是entity节点，方框是关联的semantic types节点。这里跑MetaMap的时候没有调任何参数，所以会map到一些不相关的entity，后面会讲KECI是如何学会忽略这些不相关的实体的。</p>
+<p>用$G_k = \{V_k,E_k\}$表示结构化的background KG，$V_k E_k$分别表示节点和边的集合，使用一个UMLS的预训练embedding[1]初始化$V_k$中每个节点的向量表示。然后使用SciBERT把每个节点在UMLS中的definition sentence编码成一个向量，然后把这个向量连接到前面初始化的向量上。然后就是用GCN迭代整个graph把所有的node都更新一边，这里因为$G_k$是一个异构关系图(heterogeneous relational graph)，所以使用的是一个relational GCN[2]</p>
+<script type="math/tex; mode=display">v_i^{l+1} = ReLU\left(U^{(l)}v^l_i+\sum_{k \in R} \sum_{v_j \in N^k_i}\left(\frac{1}{c_{i,k}}U_k^{(l)}v_j^l\right)\right)\tag{5}</script><p>其中$v_l^i$是$v_i$在l层的特征向量，$N^k_i$是$v_i$在$k \in R$关系下的邻居节点集合，$c_{i,k}$是一个归一化常数，$c_{i,k}=|N^k_i|$</p>
+<p>经过多轮迭代后KG的关系信息会被嵌入到每个节点的表示里，$v_i$表示relational GCN最后一层的特征向量，然后用一个简单的神经网络将$v_i$映射到想同维度的$n_i \in \mathbb{R}$</p>
+<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><h4 id="Final-Span-Graph-Prediction"><a href="#Final-Span-Graph-Prediction" class="headerlink" title="Final Span Graph Prediction"></a>Final Span Graph Prediction</h4><p>现在就是要把两个graph中的entities通过注意力机制soft-align</p>
+<script type="math/tex; mode=display">\alpha_{ij} = FFNN_c\left([h_i,n_j]\right)\tag{6}</script><script type="math/tex; mode=display">\boldsymbol{c_i} = FFNN_s(h_i) \tag{7}</script><script type="math/tex; mode=display">\alpha_i = FFNN_c\left([h_i,\boldsymbol c_i]\right)</script><script type="math/tex; mode=display">Z = exp(\alpha_i) + \sum_{v_z \in C(s_i)}exp(\alpha_{iz})\tag{8}</script><script type="math/tex; mode=display">\beta_i = exp(\alpha_i)/Z ~~and~~ \beta_{ij} = exp(\alpha_{ij})/Z</script><script type="math/tex; mode=display">\boldsymbol f_i = \beta_i\boldsymbol c_i + \sum_{v_z \in C(s_i)}\beta_{ij}\boldsymbol n_j</script><p>最后对于每一个span $s_i$得到最终的knowledge-aware的表示$\boldsymbol f_i$</p>
+<p>然后通过和公式1公式2一样的方法做分类</p>
+<script type="math/tex; mode=display">\widehat{\boldsymbol e_i} = Softmax\left(FFNN_{\widehat{e}}\left(\boldsymbol f_i\right)\right)\tag{9}</script><script type="math/tex; mode=display">\widehat{\boldsymbol r_{ij}} = Softmax\left(FFNN_{\widehat{r}}\left([\boldsymbol f_i,\boldsymbol f_j,\boldsymbol f_i \circ \boldsymbol f_j]\right)\right)</script><p>$\widehat{\boldsymbol e_i}$和$\widehat{\boldsymbol r_{ij}}$就是最终预测结果</p>
+<h4 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h4><script type="math/tex; mode=display">\mathcal{L}_{total} = (\mathcal{L}_1^e + \mathcal{L}_1^r) + 2(\mathcal{L}_2^e + \mathcal{L}_2^r)\tag{10}</script><p>其中 $ \mathcal{L}_*^e $ 表示span分类的cross-entropy的loss</p>
+<p>$ \mathcal{L}_*^r $表示关系分类的cross-entropy的loss，下表1和2分别表示的是公式2、3和公式9</p>
+<p>end-to-end训练只使用了命名实体识别和关系抽取的ground-truth标签，没有使用任何entity linking supervision</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<p>[1] Maldonado, Meliha Yetisgen, and Sanda M. Harabagiu. 2019. Adversarial learning of knowledge embeddings for the unified medical language system. AMIA Joint Summits on Translational Science proceedings. AMIA Joint Summits on Translational Science, 2019:543–552</p>
+<p>[2] Schlichtkrull, Thomas Kipf, P. Bloem, R. V. Berg, Ivan Titov, and M. Welling. 2018. Modeling relational data with graph convolutional networks. ArXiv, abs/1703.06103.</p>
+</blockquote>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'youngguang'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">SynapseLab &copy; 2016-2024.</span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5ed7e5c6530f805ef5b2f6d9c187ded6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

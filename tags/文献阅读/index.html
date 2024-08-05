@@ -7,7 +7,7 @@
     
 
     <title>
-      標籤: 文献阅读 
+      Tag: 文献阅读 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -18,12 +18,12 @@
 
     <meta name="description">
 <meta property="og:type" content="website">
-<meta property="og:title" content="標籤: 文献阅读">
-<meta property="og:url" content="http://yoursite.com/tags/文献阅读/index.html">
-<meta property="og:site_name" content="Sunshine's Life">
+<meta property="og:title" content="Tag: 文献阅读">
+<meta property="og:url" content="https://yangguang8112.github.io/tags/文献阅读/index.html">
+<meta property="og:site_name" content="二十一世纪是生命科学的">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="標籤: 文献阅读">
+<meta name="twitter:title" content="Tag: 文献阅读">
 <meta name="twitter:description">
     
     
@@ -34,7 +34,8 @@
     <link rel="stylesheet" href="/css/highlight.css">
     <link rel="stylesheet" href="/css/archive.css">
     <link rel="stylesheet" href="/css/china-social-icon.css">
-
+    <!-- 临时修改方案，这行代码会是页面加载的时候强制把http转换成https，以解决博客是https要加载公式js库的时候浏览器阻止http的访问 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 <body>
 
@@ -56,7 +57,7 @@
 
         
 
-        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Sunshine&#39;s Life</a></h1>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">二十一世纪是生命科学的</a></h1>
         <hr class="panel-cover__divider" />
 
         
@@ -182,7 +183,7 @@ classes that you can use:
             
 
 
-  <h1 class="archive-title">標籤: 文献阅读</h1>
+  <h1 class="archive-title">Tag: 文献阅读</h1>
   <hr class="post-list__divider" />
 
 
@@ -193,12 +194,12 @@ classes that you can use:
     <li>
 
       <h2 class="post-list__post-title post-title">
-        <a href="/2021/06/15/Knowledge-Enhanced-Contextual-Word-Representations/" title="link to Knowledge Enhanced Contextual Word Representations">Knowledge Enhanced Contextual Word Representations</a>
+        <a href="/2024/06/19/GraphST/" title="link to GraphST">GraphST</a>
       </h2>
 
       <div class="post-list__meta">
 
-        <time datetime="2021-06-15" class="post-list__meta--date date">2021-06-15</time> 
+        <time datetime="2024-06-19" class="post-list__meta--date date">2024-06-19</time> 
       </div>
 
       <div class="excerpt">
@@ -211,20 +212,15 @@ classes that you can use:
     <li>
 
       <h2 class="post-list__post-title post-title">
-        <a href="/2021/05/20/KEPLER/" title="link to KEPLER">KEPLER</a>
+        <a href="/2024/06/15/xTrimoGene/" title="link to xTrimoGene">xTrimoGene</a>
       </h2>
 
       <div class="post-list__meta">
 
-        <time datetime="2021-05-20" class="post-list__meta--date date">2021-05-20</time> 
+        <time datetime="2024-06-15" class="post-list__meta--date date">2024-06-15</time> 
       </div>
 
       <div class="excerpt">
-        
-          <blockquote>
-<p>KEPLER: A Unified Model for Knowledge Embedding and Pre-trained Language Representation</p>
-</blockquote>
-<p>这篇论文提出一种模型能统一知识embedding和预训练语言表示（Knowledge Embeddingand Pre-trained LanguagE Representation (KEPLER)）<br>
         
       </div>
 
@@ -234,17 +230,21 @@ classes that you can use:
     <li>
 
       <h2 class="post-list__post-title post-title">
-        <a href="/2021/04/22/K-ADAPTER/" title="link to K-ADAPTER">K-ADAPTER</a>
+        <a href="/2022/08/21/scGNN-is-a-novel-graph-neural-network-framework-for-single-cell-RNA-Seq-analyses/" title="link to scGNN is a novel graph neural network framework for single-cell RNA-Seq analyses">scGNN is a novel graph neural network framework for single-cell RNA-Seq analyses</a>
       </h2>
 
       <div class="post-list__meta">
 
-        <time datetime="2021-04-22" class="post-list__meta--date date">2021-04-22</time> 
+        <time datetime="2022-08-21" class="post-list__meta--date date">2022-08-21</time> 
       </div>
 
       <div class="excerpt">
         
-          <p>大多数之前的工作通过多任务学习来注入知识和更新模型参数以增强预训练语言模型。不管他们用了哪些方法做知识注入，遇到的共同问题就是对前面知识的灾难性遗忘。figure1a<br>figure1b是我们提出的K-ADAPTER，不同类型的知识被注入到不同的袖珍神经网络模型（比如本文中的adapter），他们之间互相独立，而不是直接注入到预训练模型。这样既能固定预训练模型的原始表示，又支持继续知识注入。adapter是一个含有特定知识的模型，是独立于预训练模型之外的插件。<br>
+          <h3 id="主要分为三个部分"><a href="#主要分为三个部分" class="headerlink" title="主要分为三个部分"></a>主要分为三个部分</h3><ul>
+<li>LTMG预处理单细胞表达矩阵“转换”信号；</li>
+<li>一个以细胞聚类任务收敛为目的的迭代过程，包括三个部分。1.Feature autoencoder，两个输入：来自第一步的正则化矩阵；初始化迭代来自预处理过的表达矩阵，之后输入就来自迭代最后一部分重构的表达矩阵。2.使用上一步自编码器得到的细胞的embedding构建cell graph然后作为Graph autoencoder的输入，然后使用graph embedding做细胞聚类。3.Cluster autoencoder，重构基因表达值，每个细胞类型中的细胞都有一个单独的cluster自编码器。</li>
+<li>Imputation autoencoder</li>
+</ul>
         
       </div>
 
@@ -254,17 +254,17 @@ classes that you can use:
     <li>
 
       <h2 class="post-list__post-title post-title">
-        <a href="/2021/03/10/CoLAKE/" title="link to CoLAKE">CoLAKE</a>
+        <a href="/2022/03/22/Unsupervised-Spatially-Embedded-Deep-Representation-of-Spatial-Transcriptomics/" title="link to Unsupervised Spatially Embedded Deep Representation of Spatial Transcriptomics">Unsupervised Spatially Embedded Deep Representation of Spatial Transcriptomics</a>
       </h2>
 
       <div class="post-list__meta">
 
-        <time datetime="2021-03-10" class="post-list__meta--date date">2021-03-10</time> 
+        <time datetime="2022-03-22" class="post-list__meta--date date">2022-03-22</time> 
       </div>
 
       <div class="excerpt">
         
-          <p>提出了一个方法可以同时做语言和知识的表征，并且在需要知识的任务中有较好的表现，在一些NLU（不太需要知识）的任务也没有降很多。<br>把输入的句子看成是一个全连接的graph，即word graph。然后根据句子中的实体到知识图谱中找一级三元组，只找对应实体的第一层邻居。然后将句子中的实体作为锚点（ancher node），以锚节点为中心抽出sub-knowledge-graph，然后根据锚点将sub-knowledge-graph和word graph合并。这是示意图是这样的，实际操作起来，在输入的时候这些node也是序列摆放，他们的graph结构是通过position embedding和mask矩阵来体现的。<br>
+          <h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>优化转录数据和空间信息的整合，和stlearn类似，stLearn用的形态学信息，stLearn虽然用了卷积提取了图片的语义信息，但是是用的一个通用的预训练模型然后在形态学图片上做的fine-tune<br>空间转录组的数据可以分为三部分：基因表达、空间信息、形态学信息</p>
         
       </div>
 
@@ -274,17 +274,18 @@ classes that you can use:
     <li>
 
       <h2 class="post-list__post-title post-title">
-        <a href="/2021/01/30/RoBERTa/" title="link to RoBERTa">RoBERTa</a>
+        <a href="/2022/02/20/Revised-JNLPBA-Corpus/" title="link to Revised JNLPBA Corpus">Revised JNLPBA Corpus</a>
       </h2>
 
       <div class="post-list__meta">
 
-        <time datetime="2021-01-30" class="post-list__meta--date date">2021-01-30</time> 
+        <time datetime="2022-02-20" class="post-list__meta--date date">2022-02-20</time> 
       </div>
 
       <div class="excerpt">
         
-          <p>主要是训练方法上的创新，该paper认为bert的训练明显不够，他们对超参调优和训练集大小的影响的仔细评估。提出RoBERTa这个recipe来提高BERT的训练效果。<br>
+          <p>本文的动机是JNLPBA语料中有许多错误、漏标，导致下游的关系抽取不好做，所以本文总结了JNLPBA数据集中的错误（这些点也都出现在其他生物医学语料中），并重新纠正标注了这些错误，总结了重新标注的规范。</p>
+<h5 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h5><p><a href="https://arxiv.org/abs/1901.10219">Revised JNLPBA Corpus: A Revised Version of Biomedical NER Corpus for Relation Extraction Task</a></p>
         
       </div>
 
@@ -294,17 +295,105 @@ classes that you can use:
     <li>
 
       <h2 class="post-list__post-title post-title">
-        <a href="/2020/08/06/A-Novel-Cascade-Binary-Tagging-Framework-for-Relational-Triple-Extraction/" title="link to A Novel Cascade Binary Tagging Framework for Relational Triple Extraction">A Novel Cascade Binary Tagging Framework for Relational Triple Extraction</a>
+        <a href="/2021/12/22/Automatic-cell-type-identification-methods-for-single-cell-RNA-sequencing/" title="link to Automatic cell type identification methods for single-cell RNA sequencing">Automatic cell type identification methods for single-cell RNA sequencing</a>
       </h2>
 
       <div class="post-list__meta">
 
-        <time datetime="2020-08-06" class="post-list__meta--date date">2020-08-06</time> 
+        <time datetime="2021-12-22" class="post-list__meta--date date">2021-12-22</time> 
       </div>
 
       <div class="excerpt">
         
-          <p>以一个新的角度去提取关系三元组，以前的工作都是把关系看作一个离散的标签，而本文的框架(CasRel)则将一个句子里的关系建模为subjects到objects的函数。这个方法还能自然解决关系重叠的问题。<br>
+          <h3 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h3><p>Xie B et al(2021)描述了一个unlabel rate以及肿瘤相关的specificity和sensitivity，具体来说是评估一个模型能不能预测unlabel cell type以及，当用正常组织细胞训练，对预测肿瘤细胞做预测，将unlabel的预测结果看作是恶性细胞。</p>
+        
+      </div>
+
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+
+      <h2 class="post-list__post-title post-title">
+        <a href="/2021/09/23/bionlp数据集整理/" title="link to BioNLP数据集整理">BioNLP数据集整理</a>
+      </h2>
+
+      <div class="post-list__meta">
+
+        <time datetime="2021-09-23" class="post-list__meta--date date">2021-09-23</time> 
+      </div>
+
+      <div class="excerpt">
+        
+          <p><img src="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167800228884052021678002288767.png" alt="20210830-151458.png"><br>图片来自于“Domain-Specific Language Model Pretraining for Biomedical Natural Language Processing”</p>
+        
+      </div>
+
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+
+      <h2 class="post-list__post-title post-title">
+        <a href="/2021/08/27/A-Unified-MRC-Framework-for-Named-Entity-Recognition/" title="link to A Unified MRC Framework for Named Entity Recognition">A Unified MRC Framework for Named Entity Recognition</a>
+      </h2>
+
+      <div class="post-list__meta">
+
+        <time datetime="2021-08-27" class="post-list__meta--date date">2021-08-27</time> 
+      </div>
+
+      <div class="excerpt">
+        
+          <p>把ner的序列标注问题做成是一个阅读理解的问题(MRC)。把训练数据变成(上下文，问题，答案)，训练的时候BERT的输入是把问题和上下文连起来用[SEP]分开，前后各加一个[CLS]。这就是为了和BERT保持一致。然后BERT的输出把第一句问题的表示向量给删了，只要后面上下文的表示向量。然后后面接了一个match model</p>
+        
+      </div>
+
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+
+      <h2 class="post-list__post-title post-title">
+        <a href="/2021/08/27/Joint-Biomedical-Entity-and-Relation-Extraction-with-Knowledge-Enhanced-Collective-Inference/" title="link to Joint Biomedical Entity and Relation Extraction with Knowledge-Enhanced Collective Inference">Joint Biomedical Entity and Relation Extraction with Knowledge-Enhanced Collective Inference</a>
+      </h2>
+
+      <div class="post-list__meta">
+
+        <time datetime="2021-08-27" class="post-list__meta--date date">2021-08-27</time> 
+      </div>
+
+      <div class="excerpt">
+        
+          <p>提出一个新的利用外部知识的联合抽取框架KECI (Knowledge-Enhanced Collective Inference)</p>
+<h2 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h2><p>分三步：</p>
+<ol>
+<li>将input text结构化为初始化图(initial span graph)，作为对输入文本的初步理解。在一个span graph里每个node表示一个entity，每条edge表示两个entity的relation</li>
+<li>然后在一个额外的知识库里使用entities linker形成一个包含所有潜在有关联的生物医学实体的背景知识图(background knowledge graph)，对于每个entity从上面提到的知识库(KB)里提取它的semantic types，definition sentence以及relational information</li>
+<li>最后KECI使用注意力机制融合上述两个graph成一个更refined的graph</li>
+</ol>
+        
+      </div>
+
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+
+      <h2 class="post-list__post-title post-title">
+        <a href="/2021/08/11/A-Unified-Generative-Framework-for-Various-NER-Subtasks/" title="link to A Unified Generative Framework for Various NER Subtasks">A Unified Generative Framework for Various NER Subtasks</a>
+      </h2>
+
+      <div class="post-list__meta">
+
+        <time datetime="2021-08-11" class="post-list__meta--date date">2021-08-11</time> 
+      </div>
+
+      <div class="excerpt">
+        
+          <p>核心思想：不做序列标注了，把ner任务转换成文本生成任务，用一个seq2seq模型去生成一个entity span sequence，这样就不需要设计复制的tagging模式了</p>
+<p>seq2seq模型是用的BART</p>
+<h5 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h5><p><a href="https://aclanthology.org/2021.acl-long.451">A Unified Generative Framework for Various NER Subtasks</a></p>
         
       </div>
 
@@ -318,8 +407,10 @@ classes that you can use:
 <nav class="pagination" role="navigation">
     
 
-    <span class="pagination__page-number"> 1 / 1</span>
+    <span class="pagination__page-number"> 1 / 2</span>
     
+    
+        <a class="older-posts pagination__older btn btn-small btn-tertiary" href="/tags/文献阅读/page/2/">Next &rarr;</a>
     
 </nav>
 
@@ -327,7 +418,7 @@ classes that you can use:
 </div>
             <footer class="footer">
 
-    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    <span class="footer__copyright">SynapseLab &copy; 2016-2024.</span>
     
 </footer>
         </div>
@@ -368,5 +459,20 @@ var _hmt = _hmt || [];
   <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
 <![endif]-->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
     
 
     <title>
-      page 3 | 所有文章 | Sunshine&#39;s Life 
+      page 3 | Archives | 二十一世纪是生命科学的 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -18,12 +18,12 @@
 
     <meta name="description">
 <meta property="og:type" content="website">
-<meta property="og:title" content="page 3 | 所有文章 | Sunshine's Life">
-<meta property="og:url" content="http://yoursite.com/archives/page/3/index.html">
-<meta property="og:site_name" content="Sunshine's Life">
+<meta property="og:title" content="page 3 | Archives | 二十一世纪是生命科学的">
+<meta property="og:url" content="https://yangguang8112.github.io/archives/page/3/index.html">
+<meta property="og:site_name" content="二十一世纪是生命科学的">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="page 3 | 所有文章 | Sunshine's Life">
+<meta name="twitter:title" content="page 3 | Archives | 二十一世纪是生命科学的">
 <meta name="twitter:description">
     
     
@@ -34,7 +34,8 @@
     <link rel="stylesheet" href="/css/highlight.css">
     <link rel="stylesheet" href="/css/archive.css">
     <link rel="stylesheet" href="/css/china-social-icon.css">
-
+    <!-- 临时修改方案，这行代码会是页面加载的时候强制把http转换成https，以解决博客是https要加载公式js库的时候浏览器阻止http的访问 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 <body>
 
@@ -56,7 +57,7 @@
 
         
 
-        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Sunshine&#39;s Life</a></h1>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">二十一世纪是生命科学的</a></h1>
         <hr class="panel-cover__divider" />
 
         
@@ -192,17 +193,18 @@ classes that you can use:
     <li>
 
       <h2 class="post-list__post-title post-title">
-        <a href="/2017/02/27/分bin累计算法/" title="link to 分bin累计算法">分bin累计算法</a>
+        <a href="/2018/05/01/天池精准医疗大赛——人工智能辅助糖尿病遗传风险预测复盘/" title="link to 天池精准医疗大赛——人工智能辅助糖尿病遗传风险预测复盘">天池精准医疗大赛——人工智能辅助糖尿病遗传风险预测复盘</a>
       </h2>
 
       <div class="post-list__meta">
 
-        <time datetime="2017-02-27" class="post-list__meta--date date">2017-02-27</time> 
+        <time datetime="2018-05-01" class="post-list__meta--date date">2018-05-01</time> 
       </div>
 
       <div class="excerpt">
         
-          <p>经常在一些文章中看到如下这样的图：<br><img src="\img\guo_2014_nature13544_fig1a.png"><br>这个图里，显然是把每个基因相应的部分都分成了相同的份数，也就是分成了一个个bin，在统计每个bin里所有基因的甲基化位点数的总和，然后再计算成甲基化水平。<br>
+          <h3 id="初赛"><a href="#初赛" class="headerlink" title="初赛"></a>初赛</h3><h4 id="赛题"><a href="#赛题" class="headerlink" title="赛题"></a>赛题</h4><p>大赛初赛数据共包含两个文件，训练文件d_train.csv和测试文件d_test.csv，每个文件第一行是字段名，之后每一行代表一个个体。文件共包含42个字段，包含数值型、字符型、日期型等众多数据类型，部分字段内容在部分人群中有缺失，其中第一列为个体ID号。训练文件的最后一列为标签列，既需要预测的目标血糖值。</p>
+<h4 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h4><p><img src="\img\天池医疗赛p1.png"><br>
         
       </div>
 
@@ -212,17 +214,17 @@ classes that you can use:
     <li>
 
       <h2 class="post-list__post-title post-title">
-        <a href="/2016/12/08/PCA/" title="link to PCA">PCA</a>
+        <a href="/2018/05/01/批量导入微信企业邮箱日历提醒/" title="link to 批量导入腾讯企业邮箱日历提醒">批量导入腾讯企业邮箱日历提醒</a>
       </h2>
 
       <div class="post-list__meta">
 
-        <time datetime="2016-12-08" class="post-list__meta--date date">2016-12-08</time> 
+        <time datetime="2018-05-01" class="post-list__meta--date date">2018-05-01</time> 
       </div>
 
       <div class="excerpt">
         
-          <p>主成份分析 (Principal Component Analysis, PCA) 是一种<a href="https://en.wikipedia.org/wiki/Multivariate_statistics">元分析技术</a> (其它常用的还有回归分析、聚类分析、因子分析等等), 由Karl Pearson于1901年发明。PCA的核心思想在于，在尽可能保留数据的差异的前题下，降低数据的维度，也就是抽象出更少的互不相关的变量来描述各数据。可以想象，数据集是一群在多维空间中的点，在保持这一群点的相对空间位置不变的情况下，旋转到一个新的坐标系（坐标轴就是各PC），使得各点在新的坐标轴上的坐标（投影）的方差最大，而投影方差最大的坐标轴即为PC1，其次为PC2，……，此可以通过此<a href="http://setosa.io/ev/principal-component-analysis/">在线的演示</a>增加理解。主成份分析可通过求取协方差矩阵的本征向量实现，本征值最大的本征向量即为PC1, 比如R的princomp函数采样的就是这种方法；也可通过奇异值分解（singular value decomposition，SVD）来实现，比如R的prcomp函数。</p>
+          <p>最近公司的人力小姐姐问我有没有用过备忘录，可以批量导入的那种。我只在手机自带的那种便利贴之类的APP。我一般会把重要的事情或者要记录的事情放在我的dokuwiki上，可以随时记录。很显然小姐姐是有重复性的工作会议或者什么的需要提醒。我好奇的问了，告诉我是用的腾讯企业邮箱。是在日历功能里有个提醒。我想是可以实现批量导入备忘事件的。<br>原本以为就是几个简单的post就可以搞定，然鹅…..
         
       </div>
 
@@ -232,17 +234,17 @@ classes that you can use:
     <li>
 
       <h2 class="post-list__post-title post-title">
-        <a href="/2016/11/28/lncRNA筛选/" title="link to lncRNA筛选">lncRNA筛选</a>
+        <a href="/2017/07/28/集群无网下载-except应用/" title="link to 集群无网下载--except应用">集群无网下载--except应用</a>
       </h2>
 
       <div class="post-list__meta">
 
-        <time datetime="2016-11-28" class="post-list__meta--date date">2016-11-28</time> 
+        <time datetime="2017-07-28" class="post-list__meta--date date">2017-07-28</time> 
       </div>
 
       <div class="excerpt">
         
-          <p>lncRNA的筛选是lncRNA分析流程中的关键步骤<br>梳理一下流程中的筛选步骤,还有4种编码潜能预测软件<br>
+          <p>集群大部分节点不联外网,自己本地电脑下载,再通过fz上传比较麻烦<br>此工具利用RNA小服务器上的虚拟机与集群交互,自动下载上传集群<br>这样不仅可以免去一些机械的人工操作,而且还能避免本地PC下载中断<br>交互用的就是shell里自带的except,简单粗暴<br>自动登录在集群上登录内网小服务器,此小服务器可联外网,小服务器上下载完毕,scp上传集群,然后删除小服务器上的文件<br>
         
       </div>
 
@@ -252,17 +254,17 @@ classes that you can use:
     <li>
 
       <h2 class="post-list__post-title post-title">
-        <a href="/2016/11/21/碱基含量分布/" title="link to 碱基含量分布">碱基含量分布</a>
+        <a href="/2017/07/08/lncScore-编码潜能预测/" title="link to lncScore:编码潜能预测">lncScore:编码潜能预测</a>
       </h2>
 
       <div class="post-list__meta">
 
-        <time datetime="2016-11-21" class="post-list__meta--date date">2016-11-21</time> 
+        <time datetime="2017-07-08" class="post-list__meta--date date">2017-07-08</time> 
       </div>
 
       <div class="excerpt">
         
-          <p>关于碱基含量分布 (Per Base Sequence Content)图在<a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/4%20Per%20Base%20Sequence%20Content.html">FastQC帮助文档</a>中有比较详细的说明，这里结合个人的见解浅析。<br>
+          <p>这篇文献主要介绍了lncScore，用python写的一个脚本,主要是依赖一个机器学习第三方库scikit-learn。它能够通过开放阅读框,外显子和最大编码子序列等11个特征参数对lncRNA进行筛选。为了加快lncScore的运行速度，主要采用多线程&gt;分析，只需花费2分钟的时间就能够对64,756个转录本进行分类。<br>文章里用gencode数据库里的lncRNA数据做了验证<br>此工具与CPAT, CNCI 和 PLEK类似，我们的lncRNA流程里的编码潜能预测软件用的是CPC CNCI Pfam，貌似CPC也是这个团队开发的。有时间把这几个软件都看一下。<br>
         
       </div>
 
@@ -272,15 +274,17 @@ classes that you can use:
     <li>
 
       <h2 class="post-list__post-title post-title">
-        <a href="/2016/11/02/切克闹——初识滑板/" title="link to 切克闹——初识滑板">切克闹——初识滑板</a>
+        <a href="/2017/06/05/微信提醒打卡小工具/" title="link to 微信提醒打卡小工具">微信提醒打卡小工具</a>
       </h2>
 
       <div class="post-list__meta">
 
-        <time datetime="2016-11-02" class="post-list__meta--date date">2016-11-02</time> 
+        <time datetime="2017-06-05" class="post-list__meta--date date">2017-06-05</time> 
       </div>
 
       <div class="excerpt">
+        
+          <p>在公司辛辛苦苦工作一天，加班到晚上八点，急匆匆赶上最后一辆班车，回到公寓。洗一个热水澡，躺在床上刷微博、知乎，真想大声说一句，”这一刻是最舒服的！”。然而，有时你会触电般惊起，呆坐在床边，心中一万头草泥马飘过，没打卡就回来了呀！！！<br>相信很多同学也遇到过这样的问题，辛苦工作一个月，发工资那天还要看工资条上会扣几百大洋，简直不能忍。<br>
         
       </div>
 
@@ -290,30 +294,12 @@ classes that you can use:
     <li>
 
       <h2 class="post-list__post-title post-title">
-        <a href="/2016/11/01/ggplot2-画图笔记/" title="link to ggplot2 画图笔记">ggplot2 画图笔记</a>
+        <a href="/2017/03/17/Python建站——项目管理系统/" title="link to Python建站——项目管理系统">Python建站——项目管理系统</a>
       </h2>
 
       <div class="post-list__meta">
 
-        <time datetime="2016-11-01" class="post-list__meta--date date">2016-11-01</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/10/31/工作状态和惰性/" title="link to 工作状态和惰性">工作状态和惰性</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-10-31" class="post-list__meta--date date">2016-10-31</time> 
+        <time datetime="2017-03-17" class="post-list__meta--date date">2017-03-17</time> 
       </div>
 
       <div class="excerpt">
@@ -326,12 +312,52 @@ classes that you can use:
     <li>
 
       <h2 class="post-list__post-title post-title">
-        <a href="/2016/10/23/转正——以后要记得常更新/" title="link to 转正——以后要记得常更新">转正——以后要记得常更新</a>
+        <a href="/2017/03/09/测序错误率/" title="link to 测序错误率">测序错误率</a>
       </h2>
 
       <div class="post-list__meta">
 
-        <time datetime="2016-10-23" class="post-list__meta--date date">2016-10-23</time> 
+        <time datetime="2017-03-09" class="post-list__meta--date date">2017-03-09</time> 
+      </div>
+
+      <div class="excerpt">
+        
+          <h3 id="为什么read1和read2前几个碱基的错误率较高？"><a href="#为什么read1和read2前几个碱基的错误率较高？" class="headerlink" title="为什么read1和read2前几个碱基的错误率较高？"></a>为什么read1和read2前几个碱基的错误率较高？</h3><p><del>测序仪先测完read1全长，才跳转测read2，测序仪自身在刚启动或关闭时不太稳定，图像识别质量比较差，尤其是第一个碱基与最后一个碱基，测序质量最差，紧挨着的几个碱基测序质量也偏高，一是测序仪从刚开始的不稳定到稳定，有一个过渡的过程。另外接头空载，也会导致错误率上升。(ILLUMILA工程师的说法)</del><br>
+        
+      </div>
+
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+
+      <h2 class="post-list__post-title post-title">
+        <a href="/2017/03/05/T-test and ANOVA/" title="link to T-test and ANOVA">T-test and ANOVA</a>
+      </h2>
+
+      <div class="post-list__meta">
+
+        <time datetime="2017-03-05" class="post-list__meta--date date">2017-03-05</time> 
+      </div>
+
+      <div class="excerpt">
+        
+          <p>针对目前转录组及lncRNA的分析，我们的信息搜集表大部分都是针对的是两个组别两个样品之间的差异分析，但是对于一些实验设计，两两比较往往不能满足老师的分析要求。比如有的老师会做一个持续时间变化的实验设计，两两比较可以比较两个时间点的差异基因，但是对于一个持续时间段的差异基因的变化。又比如医口项目，老师有几对样品。正常和病变的，两两比较可以看出两个样本之间的差异，但是对于正常和病变两类之间差异比较，也可以选择其他统计学比较检验方式。下面就根据我个人做过的项目售后和个性化的经验，讲解一下曾经用过的几种差异比较的方式;<br>
+        
+      </div>
+
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+
+      <h2 class="post-list__post-title post-title">
+        <a href="/2017/03/04/中国字/" title="link to 中国字">中国字</a>
+      </h2>
+
+      <div class="post-list__meta">
+
+        <time datetime="2017-03-04" class="post-list__meta--date date">2017-03-04</time> 
       </div>
 
       <div class="excerpt">
@@ -344,32 +370,12 @@ classes that you can use:
     <li>
 
       <h2 class="post-list__post-title post-title">
-        <a href="/2016/08/15/linux之shell/" title="link to linux之shell">linux之shell</a>
+        <a href="/2017/03/04/机器学习——学习笔记/" title="link to 机器学习——学习笔记">机器学习——学习笔记</a>
       </h2>
 
       <div class="post-list__meta">
 
-        <time datetime="2016-08-15" class="post-list__meta--date date">2016-08-15</time> 
-      </div>
-
-      <div class="excerpt">
-        
-          <p>本页一定程度上参考了<a href="https://bash.cyberciti.biz/guide/Main_Page">Vivek Gite及其他贡献者</a><br>
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/07/31/入职一个月/" title="link to 入职一个月">入职一个月</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-07-31" class="post-list__meta--date date">2016-07-31</time> 
+        <time datetime="2017-03-04" class="post-list__meta--date date">2017-03-04</time> 
       </div>
 
       <div class="excerpt">
@@ -386,14 +392,14 @@ classes that you can use:
 <nav class="pagination" role="navigation">
     
     	
-          <a class="newer-posts pagination__newer btn btn-small btn-tertiary" href="/archives/page/2/">&larr; 上一頁 </a>
+          <a class="newer-posts pagination__newer btn btn-small btn-tertiary" href="/archives/page/2/">&larr; Prev </a>
         
     
 
-    <span class="pagination__page-number"> 3 / 4</span>
+    <span class="pagination__page-number"> 3 / 5</span>
     
     
-        <a class="older-posts pagination__older btn btn-small btn-tertiary" href="/archives/page/4/">下一頁 &rarr;</a>
+        <a class="older-posts pagination__older btn btn-small btn-tertiary" href="/archives/page/4/">Next &rarr;</a>
     
 </nav>
 
@@ -401,7 +407,7 @@ classes that you can use:
 </div>
             <footer class="footer">
 
-    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    <span class="footer__copyright">SynapseLab &copy; 2016-2024.</span>
     
 </footer>
         </div>
@@ -442,5 +448,20 @@ var _hmt = _hmt || [];
   <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
 <![endif]-->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

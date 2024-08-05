@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Unsupervised Spatially Embedded Deep Representation of Spatial Transcriptomics | 二十一世纪是生命科学的 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="杨光">
+    
+    
+
+    <meta name="description" content="目的优化转录数据和空间信息的整合，和stlearn类似，stLearn用的形态学信息，stLearn虽然用了卷积提取了图片的语义信息，但是是用的一个通用的预训练模型然后在形态学图片上做的fine-tune空间转录组的数据可以分为三部分：基因表达、空间信息、形态学信息">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unsupervised Spatially Embedded Deep Representation of Spatial Transcriptomics | 二十一世纪是生命科学的">
+<meta property="og:url" content="https://yangguang8112.github.io/2022/03/22/Unsupervised-Spatially-Embedded-Deep-Representation-of-Spatial-Transcriptomics/index.html">
+<meta property="og:site_name" content="二十一世纪是生命科学的">
+<meta property="og:description" content="目的优化转录数据和空间信息的整合，和stlearn类似，stLearn用的形态学信息，stLearn虽然用了卷积提取了图片的语义信息，但是是用的一个通用的预训练模型然后在形态学图片上做的fine-tune空间转录组的数据可以分为三部分：基因表达、空间信息、形态学信息">
+<meta property="og:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167803382488030421678033823622.png">
+<meta property="og:updated_time" content="2023-04-10T09:25:36.310Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Unsupervised Spatially Embedded Deep Representation of Spatial Transcriptomics | 二十一世纪是生命科学的">
+<meta name="twitter:description" content="目的优化转录数据和空间信息的整合，和stlearn类似，stLearn用的形态学信息，stLearn虽然用了卷积提取了图片的语义信息，但是是用的一个通用的预训练模型然后在形态学图片上做的fine-tune空间转录组的数据可以分为三部分：基因表达、空间信息、形态学信息">
+<meta name="twitter:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167803382488030421678033823622.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+    <!-- 临时修改方案，这行代码会是页面加载的时候强制把http转换成https，以解决博客是https要加载公式js库的时候浏览器阻止http的访问 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">二十一世纪是生命科学的</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/yangguang8112" title="Handsome boy on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+
+
+    <!-- China social icon -->
+    
+    <!--
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+    -->
+      <li class="navigation__item">
+        <a href="http://weibo.com/1994YG?refer_flag=1001030101_&is_hot=1" title="一起下厕所">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Unsupervised Spatially Embedded Deep Representation of Spatial Transcriptomics</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2022-03-22" class="post-meta__date date">2022-03-22</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/文献阅读/">文献阅读</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>优化转录数据和空间信息的整合，和stlearn类似，stLearn用的形态学信息，stLearn虽然用了卷积提取了图片的语义信息，但是是用的一个通用的预训练模型然后在形态学图片上做的fine-tune<br>空间转录组的数据可以分为三部分：基因表达、空间信息、形态学信息</p>
+<a id="more"></a>
+<p>实验部分</p>
+<ul>
+<li>在human dorsolateral prefrontal cortex data上获得了更好的聚类准确性；还做了轨迹分析</li>
+<li>batch整合</li>
+<li>在human breast cancer data 上做了</li>
+</ul>
+<p>列举了一些方法，BayesianSpace, Giotto, SpaGCN, stLearn，有一个共同特点是，最后都要接上PCA、UMAP和spatial clustering<br>这样导致模型只能表示线性关系， 虽然stLearn有用到深度学习，但是只在图像上处理了形态学数据，模型仍然以来PCA来提取归一化后的表达量特征<br>本文提出的方法除了解决这个问题，产生的结果天然就是联合了基因表达和空间信息的embedding表式</p>
+<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><ul>
+<li>介绍整个处理框架</li>
+<li>和其他软件比较结果（包括聚类、轨迹分析、batch校正），分别用的软件是（Leiden, Monocle3, Harmony）</li>
+<li>用SEDR分析肿瘤异质性和免疫微环境（这里应该是自己的数据）</li>
+<li>最后说SEDR可以处理更高分辨率的空间转录组</li>
+</ul>
+<p><img src="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167803382488030421678033823622.png" alt="20210816-130209.png"></p>
+<h2 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h2><h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><p>Scanpy预处理归一化raw gene expression counts到library sizes，然后筛选掉一些异常高表达的基因，然后用PCA提取前200个pc生成初始的基因表达矩阵</p>
+<h3 id="Graph-construction-for-spatial-transcriptomics-data"><a href="#Graph-construction-for-spatial-transcriptomics-data" class="headerlink" title="Graph construction for spatial transcriptomics data"></a>Graph construction for spatial transcriptomics data</h3><p>用空间坐标计算细胞间的欧式距离，每个细胞选取最近的10个邻居构建一个邻接矩阵$A$是一个对称的，当$i$和$j$是邻居则$A_{ij}=A_{ji}=1$否则等于0</p>
+<h4 id="Deep-autoencoder-for-latent-representation-learning"><a href="#Deep-autoencoder-for-latent-representation-learning" class="headerlink" title="Deep autoencoder for latent representation learning"></a>Deep autoencoder for latent representation learning</h4><p>这个不需要过多的讲，就是一个两层的MLP</p>
+<p>输入是基因表达矩阵$X \in \mathbb{R}^{N \times M}$，经过encoder之后得到每个细胞的低维向量表示$Z_f \in \mathbb{R}^{N \times D_f}$，然后把$Z_f$和$Z_g \in \mathbb{R}^{M \times D_g}$concatenate起来，得到$Z \in \mathbb{R}^{N \times D}$，即$D = D_f + D_g$，最后通过decoder得到还原的$X^{\prime} \in \mathbb{R}^{N \times M}$，最后loss函数是MSE均方误差$\sum (X - X^{\prime})^2$</p>
+<h4 id="Variational-graph-autoencoder-for-spatial-embedding"><a href="#Variational-graph-autoencoder-for-spatial-embedding" class="headerlink" title="Variational graph autoencoder for spatial embedding"></a>Variational graph autoencoder for spatial embedding</h4><h4 id="Batch-effect-correction-for-spatial-transcriptomics"><a href="#Batch-effect-correction-for-spatial-transcriptomics" class="headerlink" title="Batch effect correction for spatial transcriptomics"></a>Batch effect correction for spatial transcriptomics</h4><p>使用的是unsupervised deep embedded clustering (DEC)方法。先用K-means算法从得到的隐变量$Z$中得到一个初始化的聚类中心就是公式中的$\mu_j$，类的个数是个超参数。然后就是迭代优化，分两步：第一步，使用一个t分布计算点$z_i$到中心$\mu_j$的软分配$q_{ij}$，这里t分布的自由度取1，所以公式中简化了。第二步，迭代优化clusters通过学习一个基于$q_{ij}$的辅助分布$p$的高置信分配。loss函数就是$q_{ij}$和$p_{ij}$之间的KL散度</p>
+<h4 id="Evaluation-metrics-for-clustering"><a href="#Evaluation-metrics-for-clustering" class="headerlink" title="Evaluation metrics for clustering"></a>Evaluation metrics for clustering</h4><script type="math/tex; mode=display">ARI = \frac{RI - E[RI]}{max(RI) - E[RI]}</script><script type="math/tex; mode=display">RI = \frac{a + b}{C^2_n}</script><p>$RI$就是unadjusted rand index，预测的label set和真是的label set可以组成$C_n^2$个pairs，$a$表示来自相同集合的正确标注的pairs的数量，$b$表示不在相同集合的pairs的数量。$E[RI]$是random labeling的$RI$的期望。$ARI$越高表示聚类越好。</p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>为了定量评价SEDR和其他方法的好坏，使用human dorsolateral prefrontal cortex (DLPFC) data这个数据。这个数据有清晰的形态学边界，可以作为ground truth。使用标准的Seurat pipeline进行数据预处理和聚类作为baseline，它只用到了基因表达数据。然后再使用stLearn,SpaGCN,BayesSpace以及本文的SEDR<br>据Fig.2A可以看出SEDR表现第二，但是和表现第一的BayesSpace差距不大。并且，后者的聚类算法是被spatial omics优化的，而SEDR只是一个降维的方法可以找到最好的隐藏表示，后面接的是Leiden clustering，没有专门为spatial omics优化的。而且BayesSpace不会产生隐变量用于后续分析。</p>
+<h3 id="肿瘤微环境"><a href="#肿瘤微环境" class="headerlink" title="肿瘤微环境"></a>肿瘤微环境</h3><p>fig4A<br>SEDR聚类更平滑，其他方法边界粗糙。SEDR还能在肿瘤区域发现更多的子类，其他方法倾向于把健康区域划分子类。<br>在肿瘤区域DCIS/LCIS_3中SEDR分离出一个tumor core，图上显示是cluster 3<br>fig4B<br>每个spot得到一个分类可能性，这个可能性可以描述免疫细胞或者成纤维细胞所在的位置<br>fig4C<br>为了进一步描述DCIS/LCIS_3区域的cluster 3 (tumor core) 和 cluster 7 (tumor edge)通过通路富集分析展示了一个差异表达。在cluster 3观察到干扰素(IFIT1, IFITM1, IFITM3 and TAP1)、NK、嗜中性粒细胞(FCGR3B and TNFSF10)的信号通路上调。另外在这个区域RHOB上调表明了转移潜能。cluster 3区域代表这里的肿瘤生长受到免疫反应的抑制。在cluster 7 观察到TAMs、记忆B细胞(IGHG1, IGHG3,IGHG4, IGLC2 and IGLC3)和成纤维细胞(COL1A1, COL1A2, COL3A1, COL5A1,COL6A1, COL6A2 and FN1)的出现。组织蛋白酶(cathepsin)(CTSB, CTSD and CTSZ)活性和受体(C1QA, C1S)通路上调表明在这个区域有ATMs的促癌活性。肌动蛋白细胞骨架(actin cytoskeleton)信号的上调也说明的更高的转移潜能。此外组织蛋白酶激活和金属蛋白酶(metalloproteinase)(TIMP1 and TIMP3)抑制表明 对细胞外基质有完整性的干扰。<br>fig4D<br>很多因素被认为是肿瘤转移的驱动力，包括有pro-tumor微环境和肿瘤内CCI减少。使用PAGA表示肿瘤区域间的灰色线来追踪肿瘤转移过程。图中DCIS_LCIS_3被强烈关联到附近的IDC_6<br>然后用DCIS_LCIS_3去和所有的其他DCIS_LCIS做差异表达分析和富集，如图Sup.C，表明DCIS_LCIS_3有更多的免疫浸润(immune infiltrates)特别是TAMs肿瘤关联巨噬细胞，看fig4B。其他区域就cycling epithelial细胞较多。TAM浸润是总所周知的和实体瘤病人存活率低强相关的。因此我们又做了DCIS_LCIS_3到IDC_6的伪时序分析。因为这两个区域对应于SEDR的3、7、11 cluster，设置3是起点<br>总之，DESR分析可以揭示瘤内的异质性，发现伴随TAM浸润的tumor outer ring (cluster 7)，肿瘤相关的成纤维细胞cancer associated fibroblasts (CAFs),这些都是促进肿瘤生长的。SEDR也能显示从肿瘤核心区到附近侵入区的分子迁移图谱，表明了从pro-inflammatory到immune-suppressive微环境的迁移，这些促进肿瘤转移。</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'youngguang'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">SynapseLab &copy; 2016-2024.</span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5ed7e5c6530f805ef5b2f6d9c187ded6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

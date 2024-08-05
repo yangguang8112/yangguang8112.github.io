@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Automatic cell type identification methods for single-cell RNA sequencing | 二十一世纪是生命科学的 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="杨光">
+    
+    
+
+    <meta name="description" content="任务描述Xie B et al(2021)描述了一个unlabel rate以及肿瘤相关的specificity和sensitivity，具体来说是评估一个模型能不能预测unlabel cell type以及，当用正常组织细胞训练，对预测肿瘤细胞做预测，将unlabel的预测结果看作是恶性细胞。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Automatic cell type identification methods for single-cell RNA sequencing | 二十一世纪是生命科学的">
+<meta property="og:url" content="https://yangguang8112.github.io/2021/12/22/Automatic-cell-type-identification-methods-for-single-cell-RNA-sequencing/index.html">
+<meta property="og:site_name" content="二十一世纪是生命科学的">
+<meta property="og:description" content="任务描述Xie B et al(2021)描述了一个unlabel rate以及肿瘤相关的specificity和sensitivity，具体来说是评估一个模型能不能预测unlabel cell type以及，当用正常组织细胞训练，对预测肿瘤细胞做预测，将unlabel的预测结果看作是恶性细胞。">
+<meta property="og:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776349463640441677763494114.png">
+<meta property="og:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776351912878791677763518912.png">
+<meta property="og:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776352682897811677763526639.png">
+<meta property="og:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776353856792871677763538045.png">
+<meta property="og:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776355196267091677763551727.png">
+<meta property="og:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776374426773791677763744044.png">
+<meta property="og:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776357745729141677763576978.png">
+<meta property="og:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776358582062151677763585284.png">
+<meta property="og:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776359782193951677763597045.png">
+<meta property="og:updated_time" content="2023-04-10T09:25:36.310Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Automatic cell type identification methods for single-cell RNA sequencing | 二十一世纪是生命科学的">
+<meta name="twitter:description" content="任务描述Xie B et al(2021)描述了一个unlabel rate以及肿瘤相关的specificity和sensitivity，具体来说是评估一个模型能不能预测unlabel cell type以及，当用正常组织细胞训练，对预测肿瘤细胞做预测，将unlabel的预测结果看作是恶性细胞。">
+<meta name="twitter:image" content="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776349463640441677763494114.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+    <!-- 临时修改方案，这行代码会是页面加载的时候强制把http转换成https，以解决博客是https要加载公式js库的时候浏览器阻止http的访问 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">二十一世纪是生命科学的</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/yangguang8112" title="Handsome boy on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+
+
+    <!-- China social icon -->
+    
+    <!--
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+    -->
+      <li class="navigation__item">
+        <a href="http://weibo.com/1994YG?refer_flag=1001030101_&is_hot=1" title="一起下厕所">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Automatic cell type identification methods for single-cell RNA sequencing</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2021-12-22" class="post-meta__date date">2021-12-22</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/文献阅读/">文献阅读</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h3><p>Xie B et al(2021)描述了一个unlabel rate以及肿瘤相关的specificity和sensitivity，具体来说是评估一个模型能不能预测unlabel cell type以及，当用正常组织细胞训练，对预测肿瘤细胞做预测，将unlabel的预测结果看作是恶性细胞。</p>
+<a id="more"></a>
+<h3 id="工具比较"><a href="#工具比较" class="headerlink" title="工具比较"></a>工具比较</h3><p>关于上述任务，在Tabula Muris lung data数据集上评估，clustifyr有最高的specificity和sensitivity，但是在正常lung data上表现（F1 score）不是最好的。因为有一些方法不预测unlabel，所以不做这个评估。在正常组织中表现很好的CellFishing.jl在肿瘤评估中不行</p>
+<p><img src="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776349463640441677763494114.png" alt="20211210-132551.png"></p>
+<h3 id="我的实验"><a href="#我的实验" class="headerlink" title="我的实验"></a>我的实验</h3><p>首先对cell-blast和clustifyr做测试，超算上的路径为/lustre/home/acct-medcyn/medcyn-user9/ygWork/scRNA/cell_anno</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
+<li>将unlabel的结果视作恶性细胞是否合理；</li>
+<li></li>
+</ol>
+<h2 id="Probabilistic-cell-type-assignment-of-single-cell-RNA-seq-for-tumor-microenvironment-profiling"><a href="#Probabilistic-cell-type-assignment-of-single-cell-RNA-seq-for-tumor-microenvironment-profiling" class="headerlink" title="Probabilistic cell-type assignment of single-cell RNA-seq for tumor microenvironment profiling"></a>Probabilistic cell-type assignment of single-cell RNA-seq for tumor microenvironment profiling</h2><ol>
+<li>概率模型的核心应该是如何评估marker基因在细胞中的overexpress</li>
+<li>模拟数据是怎么做的，还模拟出了差异表达程度(0.05-0.45)</li>
+<li>Fig2f什么意思</li>
+</ol>
+<h2 id="scmap"><a href="#scmap" class="headerlink" title="scmap"></a>scmap</h2><p>title: scmap: projection of single-cell RNA-seq data across data sets<br>将数据投影到参考数据集上以注释细胞类型。任务目标就是把一个新细胞c比对到参考数据的某一个最相似的cluster上或者某一个细胞上，对应两个方法。<br>_Conceptually, such projections are similar to the popular BLAST2 method, which quickly finds the closest match in a database of nucleotide or amino acid sequences._</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h4 id="scmap-cluster"><a href="#scmap-cluster" class="headerlink" title="scmap-cluster"></a>scmap-cluster</h4><p>搜索一个最相似的cluster到细胞c</p>
+<ol>
+<li>cluster用质心来表示，即cluster内的所有细胞每个基因的中位数构成的一个向量，然后计算和细胞c之间的相似度</li>
+<li>使用无监督学习选取最相关的部分基因来计算相似度；（文中说这样就可以克服批次效应）</li>
+<li>上述特征选取使用三种不同的策略：随机、高频突变基因（HVGs）、genes with a higher number of dropouts (zero expression) than expected (determined using M3Drop)）</li>
+<li>相似度计算：cosine similarity 、 Pearson 和 Spearman correlations，至少两个大于0.7，否则为unassigned</li>
+</ol>
+<h4 id="scmap-cell"><a href="#scmap-cell" class="headerlink" title="scmap-cell"></a>scmap-cell</h4><p>搜索一个最相似的细胞到细胞c</p>
+<ol>
+<li>因为细胞数量很大，上面cluster的直接最近邻的方法不能用，为了加速最近邻细胞搜索，使用quantizer近似加速；</li>
+<li>和上面一样做了特征选择</li>
+<li>近似最近邻搜索，只用cosine similarity来分一个细胞的k近邻，只有当3-NN是相同的细胞类型且最大的相似度大于0.5则认为此细胞是assigned</li>
+</ol>
+<h3 id="实验验证"><a href="#实验验证" class="headerlink" title="实验验证"></a>实验验证</h3><p>使用<a href="https://hemberg-lab.github.io/scRNA.seq.datasets" target="_blank" rel="external">17个公开数据集</a><br>评估方法：Cohen’s κ (ref. 6)，预测结果一致性指标，如果值为1表示预测的细胞类型和原始的完全一致</p>
+<h4 id="self-projection"><a href="#self-projection" class="headerlink" title="self-projection"></a>self-projection</h4><p>We randomly selected 70% of the cells from the original sample for the reference, and projected the remaining 30%, with clusters as defined by the original authors.<br>为了评估特征选择方法好坏<br>最后结论就是dropout-based的特征选择方法表现最好。令人奇怪的是有些随机选择的表现比HVG方法强。<br>然后使用RF和SVM做监督学习分类细胞，在三种特征选择的方法上均略好于scmap cluster/cell</p>
+<h4 id="positive-controls"><a href="#positive-controls" class="headerlink" title="positive controls"></a>positive controls</h4><p>we considered seven pairs of data sets that we expected to correspond well on the basis of similar sample origins.</p>
+<h4 id="negative-controls"><a href="#negative-controls" class="headerlink" title="negative controls"></a>negative controls</h4><p>we projected data sets with origins not related to the reference (e.g., retina onto pancreas</p>
+<h2 id="CellFishing-jl"><a href="#CellFishing-jl" class="headerlink" title="CellFishing.jl"></a>CellFishing.jl</h2><p><strong>速度、准确</strong></p>
+<h3 id="workflow"><a href="#workflow" class="headerlink" title="workflow"></a>workflow</h3><p>digital gene expression (DGE) matrix<br><img src="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776351912878791677763518912.png" alt="20211201-190425.png"><br> 首先用reference cells的表达量构建一个搜索数据库，然后用相似表达模式来查询细胞。</p>
+<h4 id="preprocess"><a href="#preprocess" class="headerlink" title="preprocess"></a>preprocess</h4><p>由五步组成：</p>
+<ol>
+<li>feature (gene) selection</li>
+<li>cell-wise normalization</li>
+<li>variance stabilization</li>
+<li>feature standardization</li>
+<li>dimensionality reduction<h4 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h4><h4 id="index"><a href="#index" class="headerlink" title="index"></a>index</h4></li>
+</ol>
+<h3 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h3><p><img src="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776352682897811677763526639.png" alt="20211201-185731.png"></p>
+<h2 id="Cell-Blast"><a href="#Cell-Blast" class="headerlink" title="Cell Blast"></a>Cell Blast</h2><p>使用参考单细胞转录组数据训练一个非监督模型，可以把高维转录空间映射到低维细胞embedding空间，并且使用adversarial alignment的方法校正intra-reference batch effect<br><img src="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776353856792871677763538045.png" alt="20210624-143842.png"><br>然后在query data的时候，cell blast用预训练好的非监督模型把单个query cell映射成embedding，然后利用在低维空间的后验分布（which characterizes the uncertainty of cell embeddings）去估计cell2cell的相似度<br><img src="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776355196267091677763551727.png" alt="20210624-151043.png"><br>这里没有直接拿cell embedding去和reference做相似度</p>
+<h3 id="ACA"><a href="#ACA" class="headerlink" title="ACA"></a>ACA</h3><p>基于公开的单细胞测序数据集，高质量、统一、高分辨率细胞类型描述，总共包含2989582个细胞。横跨8个物种5个whole-organism atlases覆盖27种器官。上面用的模型就是在整个ACA上训练的。Notably, we found that the model works well in most cases with minimal hyperparameter tuning (cell-embedding visualizations, self-projection coverage and accuracy available on our website, Supplementary Fig. 18b).好像制作了self-projection来评估？<br><img src="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776374426773791677763744044.png" alt="20211202-094022.png"></p>
+<h2 id="Deep-generative-model-embedding-of-single-cell-RNA-Seq-profiles-on-hyperspheres-and-hyperbolic-spaces"><a href="#Deep-generative-model-embedding-of-single-cell-RNA-Seq-profiles-on-hyperspheres-and-hyperbolic-spaces" class="headerlink" title="Deep generative model embedding of single-cell RNA-Seq profiles on hyperspheres and hyperbolic spaces"></a>Deep generative model embedding of single-cell RNA-Seq profiles on hyperspheres and hyperbolic spaces</h2><p><img src="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776357745729141677763576978.png" alt="20211202-100901.png"><br><img src="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776358582062151677763585284.png" alt="20211202-100914.png"></p>
+<h2 id="Efficient-and-precise-single-cell-reference-atlas-mapping-with-Symphony"><a href="#Efficient-and-precise-single-cell-reference-atlas-mapping-with-Symphony" class="headerlink" title="Efficient and precise single-cell reference atlas mapping with Symphony"></a>Efficient and precise single-cell reference atlas mapping with Symphony</h2><p><img src="https://tianchi-public.oss-cn-hangzhou.aliyuncs.com/public/files/forum/167776359782193951677763597045.png" alt="20211202-100804.png"></p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><blockquote>
+<p>Xie B, Jiang Q, Mora A, et al. Automatic cell type identification methods for single-cell RNA sequencing[J]. Computational and Structural Biotechnology Journal, 2021.</p>
+<p>Fu R, Gillen AE, Sheridan RM, Tian C, Daya M, Hao Y, Hesselberth JR, Riemondy KA. clustifyr: an R package for automated single-cell RNA sequencing cluster classification. F1000Res. 2020 Apr 1;9:223. doi: 10.12688/f1000research.22969.2. PMID: 32765839; PMCID: PMC7383722.</p>
+<p>Sato K, Tsuyuzaki K, Shimizu K, Nikaido I. CellFishing.jl: an ultrafast and scalable cell search method for single-cell RNA sequencing. Genome Biol. 2019 Feb 11;20(1):31. doi: 10.1186/s13059-019-1639-x. PMID: 30744683; PMCID: PMC6371477.</p>
+</blockquote>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'youngguang'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">SynapseLab &copy; 2016-2024.</span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5ed7e5c6530f805ef5b2f6d9c187ded6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
