@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>杨光的简历</title>
-    <meta name="description" content="熟练使用Python，Shell，R等脚本语言，熟悉C/C++。熟练使用Linux操作系统。
-    熟练使用numpy，pandas，sklearn，matplotlib等python库进行数据分析。熟悉flask框架，了解web后端开发。
-    阅读NLP最新文献，了解前沿研究方向。
-    吉林大学本科，华东师范大学计算机技术专业研究生，研究方向为生物医学领域命名实体识别和关系抽取。">
-    <meta name="keywords" content="杨光,机器学习,Python,NLP,工作,简历,AIDD,生物信息,AI4Science,分子设计,Protein">
+    <meta name="description" content="具备计算生物与深度学习交叉背景，熟练使用Python/PyTorch进行蛋白质序列与结构建模，具备良好的工程实现能力；
+    当前聚焦抗体工程与蛋白设计，围绕蛋白语言模型与结构建模方法，开展抗体优化、可开发性评估、binder设计及VHH文库设计等工作，
+    并推动相关算法在实际生物药研发流程中的落地应用；硕士期间从事生物医学NLP（实体识别与关系抽取）研究，具备扎实的数据挖掘与知识建模基础。">
+    <meta name="keywords" content="杨光,机器学习,Python,NLP,工作,简历,AIDD,生物信息,计算生物,AI4Science,分子设计,Protein">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="dist/css/style.min.css">
     <link rel="stylesheet" href="dist/css/fontello.min.css">
@@ -136,22 +135,22 @@
                                     </span>
                                 </h4>
                                 <p>
-                                    深度参与构建GenMol计算生物平台，主导平台的分布式计算改造，实现计算集群算力协同与高并发任务管理。基于Docker容器化技术规范算法组件的动态接入流程，先后整合并上线了涵盖蛋白语言模型、结构预测、分子从头生成、可开发性评估与理化性质预测等多个核心方向的标准化计算模型，持续扩展算法与数据库资源，并负责平台的日常高可用运维与用户权限体系设计。此外，尝试性探索了AI Agent调用平台计算模块的自动化工作流，有效沉淀公司AIDD工具与研发经验，强力支撑创新药物的高效研发。
+                                    负责构建GenMol计算生物平台，实现分布式协同计算和高并发任务管理。基于Docker容器化技术规范算法组件的动态接入流程，先后整合并上线了涵盖蛋白语言模型、结构预测、分子从头生成、可开发性评估与理化性质预测等多个核心方向的标准化计算模型，持续扩展算法与数据库资源，并负责平台的日常高可用运维与用户权限体系设计。此外，尝试性探索了AI Agent调用平台计算模块的自动化工作流，有效沉淀公司AIDD工具与研发经验，强力支撑创新药物的高效研发。
                                 </p>
                             </li>
                             <li>
                                 <div class="circle"></div>
                                 <h4>
                                     <span>VHH文库设计与蛋白设计
-                                        <my_span>VHH</my_span>
                                         <my_span>蛋白语言模型</my_span>
-                                        <my_span>文库设计</my_span>
+                                        <my_span>干湿迭代</my_span>
                                         <my_span>多目标优化</my_span>
                                         <my_span>AI药物研发</my_span>
                                     </span>
                                 </h4>
                                 <p>
-                                    面向VHH抗体文库设计，基于蛋白语言模型（如ESM-2、ProtT5）的氨基酸概率分布，融合疏水性、PTM风险等关键可开发性指标，对序列空间进行约束与加权，构建多目标驱动的序列设计策略，从而生成兼顾亲和力与可开发性的高质量候选文库。
+                                    主导多目标驱动的VHH通用合成文库理性设计，基于蛋白语言模型捕捉位点协同进化信息，并利用玻尔兹曼分布融合疏水性、PTM风险等关键可开发性约束，规避传统统计文库的“独立性陷阱”。
+                                    经多个异质性靶点实验筛选验证，AI常规优化库在多个靶点展现出显著的广谱适配性，单靶点VHH结合数较天然库实现数十倍提升；验证了AI理性设计架构的有效性，成功跑通“干湿结合”的数据迭代闭环。
                                 </p>
                                 <p>
                                     面向特定靶点的蛋白设计，结合靶点与表位分析确定关键结合位点，基于突变优化与De novo生成相结合的策略进行序列设计；并从理化性质、结构稳定性、能量及功能等多维度进行综合评估与排序，筛选高潜力候选分子，支持实验验证与迭代优化。
@@ -161,8 +160,10 @@
                                 <div class="circle"></div>
                                 <h4>
                                     <span>蛋白优化算法
-                                        <my_span>蛋白语言模型</my_span>
+                                        <my_span>LoRA</my_span>
                                         <my_span>突变位点</my_span>
+                                        <my_span>Fitness</my_span>
+                                        <my_span>Few-shot</my_span>
                                     </span>
                                 </h4>
                                 <p>
@@ -174,25 +175,26 @@
                                 <h4>
                                     <span>抗体可开发性预测
                                         <my_span>抗体工程</my_span>
-                                        <my_span>可开发性评估</my_span>
+                                        <my_span>风险筛选</my_span>
+                                        <my_span>Developability</my_span>
                                     </span>
                                 </h4>
                                 <p>
-                                    围绕抗体药物可开发性问题，构建多维度in-silico评估与风险筛选方法，适用于单抗、VHH及双抗等多种分子形式；融合理化性质特征（聚集风险、溶解度、pI、PTM位点及TAP相关指标）与进化信息（蛋白语言模型打分），对候选分子的稳定性与开发风险进行联合建模与综合评估，实现高风险序列识别与优选，并支持后续实验验证与优化迭代。
+                                    聚焦抗体药物的成药性瓶颈，主导构建了多维度 in silico 可开发性评估与风险筛选体系，全面兼容单抗、双抗及 VHH 纳米抗体等多种分子形式。该体系深度融合理化性质特征（聚集倾向、溶解度、pI、PTM位点及 TAP 指标）与深层进化信息，实现对候选分子稳定性的联合建模与精准预测。通过高风险序列的早期淘汰与优势分子优选，显著提升抗体早期筛选的成功率与成药转化效率。
                                 </p>
                             </li>
                             <li>
                                 <div class="circle"></div>
                                 <h4>
-                                    <span>生物制药工艺AI优化与高维数据建模
+                                    <span>生物制药工艺优化与高维数据建模
                                         <my_span>机器学习</my_span>
                                         <my_span>多维建模</my_span>
-                                        <my_span>工艺优化(PD/MSAT)</my_span>
+                                        <my_span>工艺优化</my_span>
                                         <my_span>成果转化</my_span>
                                     </span>
                                 </h4>
                                 <p>
-                                    深度参与生物制药上下游工艺优化与大分子配基设计项目，负责核心多维实验数据的清洗、特征工程与机器学习建模。在上游培养基配方设计及下游工艺优化中，通过构建精准预测模型指导关键工艺参数调整，实现了目标产率、细胞生长表现的显著提升，并有效降低了副产物。在亲和层析 Protein A 优化工作中，应用数据驱动方法对核心理化性质进行建模预测，成功提高了层析洗脱率及分子的耐酸、耐碱性能。相关创新成果已成功转化为3项发明专利申请，并发表1篇学术期刊论文，实现了数据建模对工艺开发与干湿实验闭环的深度赋能。
+                                    深度参与生物制药上下游工艺优化与大分子配基设计项目，负责核心多维实验数据的清洗、特征工程与机器学习建模。在上游培养基配方设计及下游工艺优化中，通过构建精准预测模型指导关键工艺参数调整，实现了目标产率、细胞生长表现的显著提升，并有效降低了副产物。相关创新成果已成功转化为3项发明专利申请，并发表1篇学术期刊论文，实现了数据建模对工艺开发与干湿实验闭环的深度赋能。
                                 </p>
                             </li>
                             
@@ -294,109 +296,12 @@
                         <li>
                             <div class="circle"></div>
                             <h4>
-                                生物信息学与多组学分析
-                                <my_span>NGS</my_span>
-                                <my_span>RNA-seq</my_span>
-                                <my_span>Single-Cell</my_span>
-                                <my_span>Stereo-seq</my_span>
-                                <my_span>Variant Calling</my_span>
-                            </h4>
-                            <p>
-                                熟悉常见NGS分析流程（序列比对、表达定量、差异分析等），具备完整数据分析与结果解读能力；
-                                熟练使用BWA、Hisat2、GATK、StringTie等工具，具备流程开发与优化经验。
-                            </p>
-                        </li>
-
-                        <li>
-                            <div class="circle"></div>
-                            <h4>
-                                数据建模与结构化能力
-                                <my_span>特征工程</my_span>
-                                <my_span>多源数据融合</my_span>
-                                <my_span>Pipeline设计</my_span>
-                                <my_span>模型评估</my_span>
-                            </h4>
-                            <p>
-                                擅长将复杂生物问题抽象为结构化数据与建模任务，具备多源数据融合与特征构建经验；
-                                能设计从数据处理→特征表示→模型训练→评估优化的完整建模流程。
-                            </p>
-                        </li>
-
-                        <li>
-                            <div class="circle"></div>
-                            <h4>
-                                深度学习与大模型
-                                <my_span>PyTorch</my_span>
-                                <my_span>Transformer</my_span>
-                                <my_span>GNN</my_span>
-                                <my_span>LoRA / PEFT</my_span>
-                            </h4>
-                            <p>
-                                熟悉主流深度学习模型（CNN/RNN/Transformer/GNN）及其在生物序列与结构建模中的应用；
-                                具备预训练模型微调、多模型融合及表示学习经验。
-                            </p>
-                        </li>
-
-                        <li>
-                            <div class="circle"></div>
-                            <h4>
-                                生信流程与工程能力
-                                <my_span>Pipeline</my_span>
-                                <my_span>Docker</my_span>
-                                <my_span>Singularity</my_span>
-                                <my_span>Linux</my_span>
-                                <my_span>SGE</my_span>
-                                <my_span>Slurm</my_span>
-                            </h4>
-                            <p>
-                                具备生信分析流程开发与模块化经验，熟悉容器化部署（Docker/Singularity）；
-                                熟练使用Linux及Shell进行任务调度与数据处理，支持大规模计算任务。
-                            </p>
-                        </li>
-
-                        <li>
-                            <div class="circle"></div>
-                            <h4>
-                                编程与系统开发
-                                <my_span>Python</my_span>
-                                <my_span>Flask</my_span>
-                                <my_span>scikit-learn</my_span>
-                                <my_span>C++ / CUDA</my_span>
-                            </h4>
-                            <p>
-                                熟练使用Python进行数据处理与建模开发，具备Web服务开发经验（Flask/FastAPI）；
-                                具备一定C++/CUDA基础，能够进行性能优化与底层实现。
-                            </p>
-                        </li>
-
-                        <li>
-                            <div class="circle"></div>
-                            <h4>
-                                数据与系统
-                                <my_span>Neo4j</my_span>
-                                <my_span>SQLite</my_span>
-                                <my_span>知识图谱</my_span>
-                            </h4>
-                            <p>
-                                熟悉结构化与图数据库，具备知识图谱构建与查询经验，支持复杂关系建模与多跳推理。
-                            </p>
-                        </li>
-
-                    </ul>
-                </li>
-<!-- 
-                <li>
-                    <dt><i class="icon-bookmark"></i>Skill. 技能清单</dt>
-                    <ul class="exp">
-                        <li>
-                            <div class="circle"></div>
-                            <h4>
                                 Python
-                                <my_span>标准库特性</my_span>
-                                <my_span>Flask</my_span>
-                                <my_span>PyTorch</my_span>
-                                <my_span>scikit-learn</my_span>
-
+                                <my_span>FastAPI</my_span>
+                                <my_span>Gradio</my_span>
+                                <my_span>NumPy / Pandas</my_span>
+                                <my_span>Multiprocessing</my_span>
+                                <my_span>Scikit-learn</my_span>
                             </h4>
                             <div class="progress-bar">
                                 <div class="progress" style="width: 85%;"></div>
@@ -406,12 +311,11 @@
                             <div class="circle"></div>
                             <h4>
                                 Linux
-                                <my_span>shell</my_span>
-                                <my_span>awk</my_span>
-                                <my_span>gcc</my_span>
-                                <my_span>make</my_span>
+                                <my_span>Shell</my_span>
+                                <my_span>AWK</my_span>
                                 <my_span>Docker</my_span>
                                 <my_span>Singularity</my_span>
+                                <my_span>Slurm</my_span>
                             </h4>
                             <div class="progress-bar">
                                 <div class="progress" style="width: 80%;"></div>
@@ -420,22 +324,25 @@
                         <li>
                             <div class="circle"></div>
                             <h4>
-                                深度学习
-                                <my_span>CNN</my_span>
-                                <my_span>RNN</my_span>
+                                Deep Learning
+                                <my_span>PyTorch</my_span>
                                 <my_span>Transformer</my_span>
-                                <my_span>GNN</my_span>
+                                <my_span>DGL</my_span>
+                                <my_span>Geometric DL</my_span>
+                                <my_span>Diffusion</my_span>
                             </h4>
                             <div class="progress-bar">
                                 <div class="progress" style="width: 70%;"></div>
                             </div>
                         </li>
+                        
                         <li>
                             <div class="circle"></div>
                             <h4>
-                                C++ / CUDA
-                                <my_span>STL</my_span>
-                                <my_span>TensorRT</my_span>
+                                Databases
+                                <my_span>SQLite</my_span>
+                                <my_span>Neo4j</my_span>
+                                <my_span>Faiss</my_span>
                             </h4>
                             <div class="progress-bar">
                                 <div class="progress" style="width: 55%;"></div>
@@ -444,35 +351,33 @@
                         <li>
                             <div class="circle"></div>
                             <h4>
-                                前端开发
-                                <my_span>HTML</my_span>
-                                <my_span>CSS</my_span>
-                                <my_span>JavaScript</my_span>
-                                <my_span>React</my_span>
-                            </h4>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 65%;"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="circle"></div>
-                            <h4>
-                                数据库
-                                <my_span>SQLite</my_span>
-                                <my_span>Neo4j</my_span>
+                                CUDA & Inference
+                                <my_span>TensorRT</my_span>
+                                <my_span>Quantization</my_span>
+                                <my_span>Prefix Caching</my_span>
                             </h4>
                             <div class="progress-bar">
                                 <div class="progress" style="width: 50%;"></div>
                             </div>
                         </li>
-                    </ul>
-                </li> -->
-            </br>
-            </ul>
+                        <li>
+                            <div class="circle"></div>
+                            <h4>
+                                Frontend Development
+                                <my_span>HTML / CSS</my_span>
+                                <my_span>JavaScript</my_span>
+                                <my_span>React</my_span>
+                            </h4>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 35%;"></div>
+                            </div>
+                        </li>
+                </br>
+                </ul>
         </div>
     </div>
     <footer>
-        <p>Copyright © 2023 <a href="https://yangguang8112.github.io/">杨光</a>. All rights reserved.</p>
+        <p>Copyright © 2026 <a href="https://yangguang8112.github.io/">杨光</a>. All rights reserved.</p>
     </footer>
     <script src="lib/zoom.min.js"></script>
 </body>
