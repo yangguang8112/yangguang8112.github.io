@@ -1,0 +1,6 @@
+/* 站点自定义覆盖（不修改主题原文件，便于以后升级主题） */
+
+/* 主题原本按 3 个导航项设计，加入「简历」后折叠面板内会挤成两行 */
+.panel-cover--collapsed .navigation__item a {
+  padding: 10px 14px;
+}
