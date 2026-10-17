@@ -130,8 +130,6 @@
   .hero__name h1 .en { font-size: 13px; font-weight: 500; color: var(--text-mute); letter-spacing: 1.4px; margin-left: 8px; }
   .tagline { color: var(--accent); font-size: 14px; font-weight: 600; margin-top: 2px; }
 
-  .hero__summary { margin-top: 20px; color: var(--text-soft); font-size: 14.5px; line-height: 1.85; }
-
   /* ---------- 胶囊 / 标签 ---------- */
   .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; list-style: none; }
   .chip {
@@ -164,59 +162,35 @@
     border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 22px;
   }
 
-  /* ---------- 基本信息 ---------- */
-  .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px 26px; }
-  .info-item dt { font-size: 12.5px; color: var(--text-mute); letter-spacing: .4px; margin-bottom: 2px; }
-  .info-item dd { font-size: 14.5px; color: var(--text); }
+  /* ---------- 简介 ---------- */
+  .prose p { color: var(--text-soft); font-size: 14.5px; line-height: 1.9; }
+  .prose p + p { margin-top: 12px; }
+  .prose strong { color: var(--text); font-weight: 600; }
 
-  .edu-list { list-style: none; display: grid; gap: 10px; }
-  .edu {
-    display: flex; align-items: center; gap: 12px;
-    padding: 10px 12px; border-radius: 10px; background: var(--surface-2);
+  /* ---------- 关注方向 ---------- */
+  .focus-list { list-style: none; display: grid; gap: 13px; }
+  .focus { display: flex; gap: 12px; }
+  .focus__dot {
+    flex: none; width: 6px; height: 6px; margin-top: 8px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
   }
-  .edu img { width: 34px; height: 34px; object-fit: contain; border-radius: 6px; background: #fff; flex: none; }
-  .edu__main { font-size: 14.5px; font-weight: 600; }
-  .edu__meta { font-size: 12.5px; color: var(--text-mute); }
+  .focus__title { font-size: 14.5px; font-weight: 650; }
+  .focus__desc { color: var(--text-soft); font-size: 14px; line-height: 1.8; }
 
-  /* ---------- 经历时间线 ---------- */
-  .timeline { position: relative; padding-left: 26px; }
-  .timeline::before {
-    content: ""; position: absolute; left: 6px; top: 8px; bottom: 8px;
-    width: 2px; border-radius: 2px;
-    background: linear-gradient(180deg, var(--accent), var(--accent-2), transparent);
-    opacity: .35;
+  /* ---------- 经历 ---------- */
+  .cv-list { list-style: none; display: grid; gap: 10px; }
+  .cv {
+    display: flex; align-items: center; gap: 13px;
+    padding: 11px 13px; border-radius: 10px; background: var(--surface-2);
   }
-  .company { position: relative; margin-bottom: 26px; }
-  .company:last-child { margin-bottom: 0; }
-  .company::before {
-    content: ""; position: absolute; left: -26px; top: 12px;
-    width: 12px; height: 12px; border-radius: 50%;
-    background: var(--surface); border: 3px solid var(--accent);
-  }
-  .company__head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-  .company__logo { height: 30px; width: auto; max-width: 130px; object-fit: contain; flex: none; cursor: zoom-in; }
-  .company__name { font-size: 16.5px; font-weight: 700; }
-  .company__period {
-    display: inline-block; margin-left: 8px; font-size: 12px; font-weight: 500;
-    color: var(--accent); background: var(--accent-soft);
-    padding: 1px 9px; border-radius: 999px; vertical-align: 2px;
-  }
+  .cv__logos { display: flex; align-items: center; gap: 6px; flex: none; width: 74px; }
+  .cv__logos img { height: 28px; width: auto; max-width: 100%; object-fit: contain; border-radius: 5px; background: #fff; }
+  .cv__body { flex: 1; min-width: 0; }
+  .cv__main { font-size: 14.5px; font-weight: 600; }
+  .cv__sub { font-size: 12.5px; color: var(--text-mute); margin-top: 1px; }
+  .cv__period { flex: none; font-size: 12.5px; color: var(--text-mute); font-variant-numeric: tabular-nums; }
 
-  .projects { list-style: none; display: grid; gap: 14px; }
-  .project {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); box-shadow: var(--shadow);
-    padding: 16px 20px; transition: .2s ease;
-  }
-  .project:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: var(--accent); border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); }
-  .project h4 {
-    display: flex; flex-wrap: wrap; align-items: center; gap: 7px;
-    font-size: 15.5px; font-weight: 650; line-height: 1.6; margin-bottom: 8px;
-  }
-  .project h4 .inline-logo { height: 20px; width: auto; object-fit: contain; }
-  .project p { color: var(--text-soft); font-size: 14px; line-height: 1.85; }
-  .project p + p { margin-top: 8px; }
-
+  /* ---------- 标签 ---------- */
   .tag {
     display: inline-block; font-size: 11.5px; font-weight: 500; line-height: 1.7;
     padding: 0 8px; border-radius: 6px; white-space: nowrap;
@@ -224,13 +198,6 @@
   }
   .tag--link { color: var(--accent-2); background: var(--accent-soft); background: color-mix(in srgb, var(--accent-2) 12%, transparent); }
   .tag--link:hover { text-decoration: none; filter: brightness(1.15); }
-  .badge {
-    display: inline-flex; align-items: center; gap: 4px;
-    font-size: 11.5px; font-weight: 600; padding: 1px 8px; border-radius: 999px;
-    color: #b45309; background: #fef3c7; border: 1px solid #fde68a;
-  }
-  html[data-theme="dark"] .badge { color: #fbbf24; background: #3a2f10; border-color: #57430f; }
-  .badge img { width: 14px; height: 14px; object-fit: contain; }
 
   /* ---------- 论文 / 专利 ---------- */
   .pub-list { list-style: none; display: grid; gap: 14px; }
@@ -246,15 +213,10 @@
   .pub__venue { font-style: italic; }
   .pub__link { font-size: 12px; margin-left: 6px; white-space: nowrap; }
 
-  /* ---------- 技能 ---------- */
-  .skill-list { list-style: none; display: grid; gap: 16px; }
-  .skill__head { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin-bottom: 8px; }
-  .skill__name { font-size: 14.5px; font-weight: 650; min-width: 132px; }
-  .bar { height: 7px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border); overflow: hidden; }
-  .bar > i {
-    display: block; height: 100%; border-radius: 999px;
-    background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  }
+  /* ---------- 技术栈 ---------- */
+  .stack-list { list-style: none; display: grid; gap: 13px; }
+  .stack__row { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
+  .stack__name { font-size: 13px; font-weight: 600; color: var(--text-mute); min-width: 86px; }
 
   /* ---------- 页脚 ---------- */
   footer {
@@ -293,11 +255,10 @@
     .hero__name h1 { font-size: 23px; }
     .hero__name h1 .en { display: block; margin: 4px 0 0; }
     .avatar { width: 88px; height: 88px; }
-    .card, .project { padding: 16px 16px; }
-    .company__head { flex-wrap: wrap; }
-    .timeline { padding-left: 20px; }
-    .company::before { left: -20px; }
-    .skill__name { min-width: 0; width: 100%; }
+    .card { padding: 16px 16px; }
+    .cv { flex-wrap: wrap; gap: 10px; }
+    .cv__period { width: 100%; padding-left: 87px; }
+    .stack__name { min-width: 0; width: 100%; }
     .chip { font-size: 12.5px; padding: 4px 10px; }
   }
 
@@ -307,12 +268,12 @@
     body { font-size: 12px; line-height: 1.6; }
     .topbar, .lightbox { display: none !important; }
     .hero { padding-top: 0; }
-    .hero__card, .card, .project { border: none; box-shadow: none; break-inside: avoid; }
+    .hero__card, .card { border: none; box-shadow: none; break-inside: avoid; }
     .hero__banner { display: none; }
     .hero__id { margin-top: 0; }
     .avatar { width: 72px; height: 72px; border-width: 2px; }
     .section { margin-top: 18px; }
-    .project, .company { break-inside: avoid; }
+    .cv, .focus, .pub { break-inside: avoid; }
     a { color: #000; text-decoration: none; }
   }
 </style>
@@ -356,10 +317,6 @@
           </div>
         </div>
 
-        <p class="hero__summary">
-          具备计算生物与深度学习交叉背景，熟练使用 Python / PyTorch 进行蛋白质序列与结构建模，具备良好的工程实现能力；当前聚焦抗体工程与蛋白设计，围绕蛋白语言模型与结构建模方法，开展抗体优化、可开发性评估、binder 设计及 VHH 文库设计等工作，并推动相关算法在实际生物药研发流程中的落地应用；硕士期间从事生物医学 NLP（实体识别与关系抽取）研究，具备扎实的数据挖掘与知识建模基础。
-        </p>
-
         <ul class="chips">
           <li><a class="chip" href="mailto:sunshine1994yg@163.com">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
@@ -393,168 +350,109 @@
     </div>
   </header>
 
-  <!-- ============ 基本信息 / 教育背景 ============ -->
-  <section class="section" id="basic">
-    <h2 class="section__title">基本信息 <span class="en">Basic Info</span></h2>
-    <div class="card">
-      <div class="info-grid">
-        <dl class="info-item">
-          <dt>姓名</dt>
-          <dd>杨光</dd>
-        </dl>
-        <dl class="info-item">
-          <dt>方向</dt>
-          <dd>AI × Biology / 抗体与蛋白设计</dd>
-        </dl>
-      </div>
+  <!-- ============ 简介 ============ -->
+  <section class="section" id="intro">
+    <h2 class="section__title">简介 <span class="en">Intro</span></h2>
+    <div class="card prose">
+      <p>我是杨光，做 AI × Biology 方向的工作，目前聚焦<strong>抗体工程与蛋白设计</strong>。</p>
+      <p>日常围绕蛋白语言模型与结构建模方法，做抗体优化、可开发性评估、binder 设计和 VHH 文库设计；也负责计算生物平台的搭建与运维，把各类模型、数据库接入到真实的研发流程里。相比刷 benchmark，我更在意方法能不能在干湿实验的闭环里真正跑通。</p>
+      <p>走到这个方向绕了一段路：本科在吉林大学读生物技术，硕士在华东师范大学转读计算机技术，方向是生物医学 NLP。毕业后在诺禾致源做了三年 NGS 分析流程与肿瘤早筛建模，之后在华大基因与上海交大联合创新中心继续做生物医学 NLP，其间参加「云上进化」全球 AI 生物智药大赛，在赛道一拿到亚军。2023 年加入金赛药业，转向抗体与蛋白设计。</p>
+      <p>这个博客用来记录看论文、读代码和踩坑的过程。</p>
+    </div>
+  </section>
 
-      <h3 class="skill__name" style="margin:18px 0 10px; font-size:13px; color:var(--text-mute); font-weight:600; letter-spacing:.4px;">教育背景</h3>
-      <ul class="edu-list">
-        <li class="edu">
-          <img src="../img/ecnu.jpg" alt="华东师范大学">
+  <!-- ============ 关注方向 ============ -->
+  <section class="section" id="focus">
+    <h2 class="section__title">关注方向 <span class="en">Focus</span></h2>
+    <div class="card">
+      <ul class="focus-list">
+        <li class="focus">
+          <span class="focus__dot"></span>
           <div>
-            <div class="edu__main">华东师范大学 · 计算机技术 · 硕士</div>
-            <div class="edu__meta">2019.09 – 2022.12</div>
+            <div class="focus__title">蛋白语言模型与结构建模</div>
+            <div class="focus__desc">用序列与结构信息建模蛋白的功能与可开发性</div>
           </div>
         </li>
-        <li class="edu">
-          <img src="../img/jd-xhh.jpg" alt="吉林大学">
+        <li class="focus">
+          <span class="focus__dot"></span>
           <div>
-            <div class="edu__main">吉林大学 · 生物技术 · 本科</div>
-            <div class="edu__meta">2012.09 – 2016.07</div>
+            <div class="focus__title">抗体工程与可开发性评估</div>
+            <div class="focus__desc">抗体优化、成药性风险筛选、binder 设计</div>
+          </div>
+        </li>
+        <li class="focus">
+          <span class="focus__dot"></span>
+          <div>
+            <div class="focus__title">VHH 文库设计</div>
+            <div class="focus__desc">在疏水性、PTM 风险等约束下做多目标的通用合成文库</div>
+          </div>
+        </li>
+        <li class="focus">
+          <span class="focus__dot"></span>
+          <div>
+            <div class="focus__title">干湿实验闭环</div>
+            <div class="focus__desc">让算法在真实实验迭代里可用，而不止于 benchmark 上的分数</div>
+          </div>
+        </li>
+        <li class="focus">
+          <span class="focus__dot"></span>
+          <div>
+            <div class="focus__title">计算生物平台</div>
+            <div class="focus__desc">算法组件化接入、分布式计算与任务调度</div>
           </div>
         </li>
       </ul>
     </div>
   </section>
 
-  <!-- ============ 工作与项目经历 ============ -->
-  <section class="section" id="experience">
-    <h2 class="section__title">工作与项目经历 <span class="en">Experience</span></h2>
-
-    <div class="timeline">
-
-      <!-- 金赛药业 -->
-      <article class="company">
-        <header class="company__head">
-          <img class="company__logo" src="../img/gensci_comlogo01.svg" alt="金赛药业" data-zoom="../img/gensci_comlogo01.svg">
-          <div>
-            <div class="company__name">金赛药业 <span class="company__period">2023.09 – 至今</span></div>
+  <!-- ============ 经历 ============ -->
+  <section class="section" id="cv">
+    <h2 class="section__title">经历 <span class="en">Background</span></h2>
+    <div class="card">
+      <ul class="cv-list">
+        <li class="cv">
+          <div class="cv__logos"><img src="../img/gensci_comlogo01.svg" alt="金赛药业" data-zoom="../img/gensci_comlogo01.svg"></div>
+          <div class="cv__body">
+            <div class="cv__main">金赛药业</div>
+            <div class="cv__sub">AI 计算生物 · 抗体与蛋白设计</div>
           </div>
-        </header>
-        <ul class="projects">
-          <li class="project">
-            <h4>AI 计算生物平台
-              <span class="tag">AIDD</span>
-              <span class="tag">研发平台</span>
-              <img class="inline-logo" src="img/genmol_logo.png" alt="GenMol" data-zoom="img/genmol_logo.png">
-            </h4>
-            <p>负责搭建 GenMol 计算生物平台：分布式协同计算与高并发任务管理，用 Docker 规范算法组件的动态接入流程，已上线蛋白语言模型、结构预测、分子从头生成、可开发性评估等核心模型，并负责算法与数据库资源的持续扩展和日常运维；同时探索了 AI Agent 调用平台计算模块的自动化工作流。</p>
-          </li>
-
-          <li class="project">
-            <h4>VHH 文库设计与蛋白设计
-              <span class="tag">蛋白语言模型</span>
-              <span class="tag">干湿迭代</span>
-              <span class="tag">多目标优化</span>
-              <span class="tag">AI 药物研发</span>
-            </h4>
-            <p>主导多目标驱动的 VHH 通用合成文库设计：用蛋白语言模型捕捉位点协同进化信息，以玻尔兹曼分布融合疏水性、PTM 风险等可开发性约束，规避传统统计文库的“独立性陷阱”；经多个异质性靶点湿实验验证，单靶点 VHH 结合数较传统库提升数十倍。面向特定靶点的设计则结合表位分析确定关键位点，以突变优化与 de novo 生成做序列设计，再从理化性质、结构稳定性、能量与功能多维度评估排序候选分子。</p>
-          </li>
-
-          <li class="project">
-            <h4>蛋白优化算法
-              <span class="tag">LoRA</span>
-              <span class="tag">突变位点</span>
-              <span class="tag">Fitness</span>
-              <span class="tag">Few-shot</span>
-            </h4>
-            <p>面向零样本 / 少样本的蛋白突变效应预测，基于 ProteinGym 等 DMS 数据与内部实验数据训练评估模型，通过多模型融合与参数高效微调（Meta-learning、LoRA）结合进化与能量信息联合建模，提升 fitness 相关性与 Top Hit 识别能力，并搭建支撑干湿迭代的自动化计算流程。</p>
-          </li>
-
-          <li class="project">
-            <h4>抗体可开发性预测
-              <span class="tag">抗体工程</span>
-              <span class="tag">风险筛选</span>
-              <span class="tag">Developability</span>
-            </h4>
-            <p>主导构建多维度 in silico 可开发性评估与风险筛选体系，兼容单抗、双抗及 VHH 纳米抗体；融合理化性质特征（聚集倾向、溶解度、pI、PTM 位点、TAP 指标）与深层进化信息联合建模，通过早期淘汰高风险序列、优选优势分子，提升抗体早期筛选成功率。</p>
-          </li>
-
-          <li class="project">
-            <h4>生物制药工艺优化与高维数据建模
-              <span class="tag">机器学习</span>
-              <span class="tag">多维建模</span>
-              <span class="tag">工艺优化</span>
-              <span class="tag">成果转化</span>
-            </h4>
-            <p>负责生物制药上下游工艺优化与大分子配基设计中的高维数据清洗、特征工程与机器学习建模；在上游培养基配方与下游工艺优化中，用预测模型指导关键参数调整，提升目标产率与细胞生长表现并降低副产物。成果已转化为 3 项发明专利申请与 1 篇学术期刊论文。</p>
-          </li>
-        </ul>
-      </article>
-
-      <!-- 华大基因 & 上海交大 -->
-      <article class="company">
-        <header class="company__head">
-          <img class="company__logo" src="../img/20190131092907932.png" alt="华大基因" data-zoom="../img/20190131092907932.png">
-          <img class="company__logo" src="../img/sjtu-logo.jpg" alt="上海交通大学" data-zoom="../img/sjtu-logo.jpg">
-          <div>
-            <div class="company__name">华大基因 &amp; 上海交大联合创新中心 <span class="company__period">2019.10 – 2023.06</span></div>
+          <div class="cv__period">2023.09 – 至今</div>
+        </li>
+        <li class="cv">
+          <div class="cv__logos">
+            <img src="../img/20190131092907932.png" alt="华大基因" data-zoom="../img/20190131092907932.png">
           </div>
-        </header>
-        <ul class="projects">
-          <li class="project">
-            <h4>“云上进化” 2022 全球 AI 生物智药大赛
-              <span class="badge"><img src="img/icons8-second-place-ribbon-32.png" alt="">亚军</span>
-              <a class="tag tag--link" href="https://tianchi.aliyun.com/competition/entrance/532028/introduction" target="_blank" rel="noopener">Contest</a>
-              <a class="tag tag--link" href="https://yangguang8112.github.io/2023/02/24/“云上进化”2022全球AI生物智药大赛回顾总结/" target="_blank" rel="noopener">Write-up</a>
-              <span class="tag">AI4Science</span>
-            </h4>
-            <p>阿里云与 NVIDIA 联合举办的 AI 抗体设计竞赛（SARS-CoV-2 广谱中和抗体方向）：针对抗体与多变异株的亲和力与活性预测，构建融合序列与结构信息的建模方法，基于多种蛋白预训练模型提取多尺度特征并结合图神经网络跨模态融合，赛道一决赛亚军。</p>
-          </li>
-
-          <li class="project">
-            <h4>生物医学文献结构化抽取系统
-              <a class="tag tag--link" href="http://47.116.188.76:5557/relaxtra" target="_blank" rel="noopener">Demo</a>
-              <span class="tag">NLP</span>
-              <span class="tag">BERT</span>
-              <span class="tag">Neo4j</span>
-              <span class="tag">LangChain</span>
-              <span class="tag">ChatGLM</span>
-            </h4>
-            <p>构建生物医学文献结构化抽取系统：基于 BioBERT 的实体识别与关系抽取辅助 ACMG 解读中的证据检索，Flask 实现实体高亮与文献溯源的查询界面，Neo4j 关联 PrimeKG 知识图谱，并引入 LangChain 与大模型自动生成与问题相关的文献实验证据。</p>
-          </li>
-        </ul>
-      </article>
-
-      <!-- 诺禾致源 -->
-      <article class="company">
-        <header class="company__head">
-          <img class="company__logo" src="img/logo.png" alt="诺禾致源" data-zoom="img/logo.png">
-          <div>
-            <div class="company__name">诺禾致源 <span class="company__period">2016.07 – 2019.08</span></div>
+          <div class="cv__body">
+            <div class="cv__main">华大基因 &amp; 上海交大联合创新中心</div>
+            <div class="cv__sub">生物医学 NLP · 竞赛</div>
           </div>
-        </header>
-        <ul class="projects">
-          <li class="project">
-            <h4>基于表观组学的肿瘤早筛方法研究
-              <span class="tag">机器学习</span>
-              <span class="tag">RNA-seq</span>
-            </h4>
-            <p>基于 RNA-seq 构建肿瘤早筛建模流程，涵盖序列比对、表达定量、差异分析与特征筛选，用 DESeq2 筛选差异基因并构建机器学习分类模型。</p>
-          </li>
-
-          <li class="project">
-            <h4>lncRNA 分析流程
-              <span class="tag">RNA-seq</span>
-              <span class="tag">NGS</span>
-              <span class="tag">Pipeline</span>
-            </h4>
-            <p>负责 <a href="http://www.novogene.com/tech/service/lncRNA/product/" target="_blank" rel="noopener">lncRNA</a> 分析流程开发与维护，构建转录本组装、编码潜能分析、共表达网络等标准化 pipeline，Python 负责任务调度与数据流管理、R 负责可视化与报告；熟练使用 BWA、Hisat2、StringTie、GATK 等工具。</p>
-          </li>
-        </ul>
-      </article>
-
+          <div class="cv__period">2019.10 – 2023.06</div>
+        </li>
+        <li class="cv">
+          <div class="cv__logos"><img src="../img/ecnu.jpg" alt="华东师范大学" data-zoom="../img/ecnu.jpg"></div>
+          <div class="cv__body">
+            <div class="cv__main">华东师范大学</div>
+            <div class="cv__sub">计算机技术 · 硕士</div>
+          </div>
+          <div class="cv__period">2019.09 – 2022.12</div>
+        </li>
+        <li class="cv">
+          <div class="cv__logos"><img src="img/logo.png" alt="诺禾致源" data-zoom="img/logo.png"></div>
+          <div class="cv__body">
+            <div class="cv__main">诺禾致源</div>
+            <div class="cv__sub">NGS 分析流程 · 肿瘤早筛建模</div>
+          </div>
+          <div class="cv__period">2016.07 – 2019.08</div>
+        </li>
+        <li class="cv">
+          <div class="cv__logos"><img src="../img/jd-xhh.jpg" alt="吉林大学" data-zoom="../img/jd-xhh.jpg"></div>
+          <div class="cv__body">
+            <div class="cv__main">吉林大学</div>
+            <div class="cv__sub">生物技术 · 本科</div>
+          </div>
+          <div class="cv__period">2012.09 – 2016.07</div>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -577,7 +475,6 @@
             </div>
           </div>
         </li>
-
         <li class="pub">
           <div class="pub__mark" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6z"/><path d="m9 12 2 2 4-4"/></svg>
@@ -586,13 +483,11 @@
             <span class="pub__title">Patents</span>
             <div>
               <b>Yang, G.</b>, et al. Machine Learning-Based Optimization Methods and Systems for Downstream Biopharmaceutical Processes.
-              <a href="https://patents.google.com/patent/CN121115680A" target="_blank" rel="noopener">CN121115680A</a>, 2025.
-              <span class="badge">Pending</span>
+              <a href="https://patents.google.com/patent/CN121115680A" target="_blank" rel="noopener">CN121115680A</a>, 2025. (Pending)
             </div>
             <div style="margin-top:6px;">
               <b>Yang, G.</b>, et al. Machine learning-based methods, apparatus, equipment, and media for culture medium formulation design.
-              <a href="https://patents.google.com/patent/CN121725924A" target="_blank" rel="noopener">CN121725924A</a>, 2026.
-              <span class="badge">Pending</span>
+              <a href="https://patents.google.com/patent/CN121725924A" target="_blank" rel="noopener">CN121725924A</a>, 2026. (Pending)
             </div>
           </div>
         </li>
@@ -600,70 +495,36 @@
     </div>
   </section>
 
-  <!-- ============ 技能 ============ -->
-  <section class="section" id="skills">
-    <h2 class="section__title">技能清单 <span class="en">Skills</span></h2>
+  <!-- ============ 技术栈 ============ -->
+  <section class="section" id="stack">
+    <h2 class="section__title">技术栈 <span class="en">Toolbox</span></h2>
     <div class="card">
-      <ul class="skill-list">
-        <li>
-          <div class="skill__head">
-            <span class="skill__name">Python</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">Gradio</span>
-            <span class="tag">NumPy / Pandas</span>
-            <span class="tag">Multiprocessing</span>
-            <span class="tag">Scikit-learn</span>
-          </div>
-          <div class="bar"><i style="width:85%"></i></div>
+      <ul class="stack-list">
+        <li class="stack__row">
+          <span class="stack__name">语言与工程</span>
+          <span class="tag">Python</span>
+          <span class="tag">Shell</span>
+          <span class="tag">R</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Gradio</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Slurm</span>
         </li>
-        <li>
-          <div class="skill__head">
-            <span class="skill__name">Linux</span>
-            <span class="tag">Shell</span>
-            <span class="tag">AWK</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Singularity</span>
-            <span class="tag">Slurm</span>
-          </div>
-          <div class="bar"><i style="width:80%"></i></div>
+        <li class="stack__row">
+          <span class="stack__name">深度学习</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">Transformer</span>
+          <span class="tag">DGL</span>
+          <span class="tag">Diffusion</span>
+          <span class="tag">LoRA</span>
         </li>
-        <li>
-          <div class="skill__head">
-            <span class="skill__name">Deep Learning</span>
-            <span class="tag">PyTorch</span>
-            <span class="tag">Transformer</span>
-            <span class="tag">DGL</span>
-            <span class="tag">Geometric DL</span>
-            <span class="tag">Diffusion</span>
-          </div>
-          <div class="bar"><i style="width:70%"></i></div>
-        </li>
-        <li>
-          <div class="skill__head">
-            <span class="skill__name">Databases</span>
-            <span class="tag">SQLite</span>
-            <span class="tag">Neo4j</span>
-            <span class="tag">Faiss</span>
-          </div>
-          <div class="bar"><i style="width:55%"></i></div>
-        </li>
-        <li>
-          <div class="skill__head">
-            <span class="skill__name">CUDA &amp; Inference</span>
-            <span class="tag">TensorRT</span>
-            <span class="tag">Quantization</span>
-            <span class="tag">Prefix Caching</span>
-          </div>
-          <div class="bar"><i style="width:50%"></i></div>
-        </li>
-        <li>
-          <div class="skill__head">
-            <span class="skill__name">Frontend</span>
-            <span class="tag">HTML / CSS</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">React</span>
-          </div>
-          <div class="bar"><i style="width:35%"></i></div>
+        <li class="stack__row">
+          <span class="stack__name">数据与检索</span>
+          <span class="tag">NumPy / Pandas</span>
+          <span class="tag">Scikit-learn</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">Neo4j</span>
+          <span class="tag">Faiss</span>
         </li>
       </ul>
     </div>
