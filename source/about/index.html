@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>杨光 · 关于我</title>
+<title>关于我 · 杨光</title>
 <meta name="description" content="杨光，AI × Biology。具备计算生物与深度学习交叉背景，熟练使用 Python / PyTorch 进行蛋白质序列与结构建模；当前聚焦抗体工程与蛋白设计，围绕蛋白语言模型与结构建模方法，开展抗体优化、可开发性评估、binder 设计及 VHH 文库设计等工作。">
 <meta name="keywords" content="杨光,AI4Science,计算生物,生物信息,蛋白设计,抗体工程,蛋白语言模型,可开发性,深度学习,PyTorch,NLP">
 <meta name="author" content="杨光">
 <meta name="theme-color" content="#0ea5e9">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://yangguang8112.github.io/about/">
-<meta property="og:title" content="杨光 · 关于我">
+<meta property="og:title" content="关于我 · 杨光">
 <meta property="og:description" content="AI × Biology · 蛋白设计与抗体工程">
 <meta property="og:image" content="https://yangguang8112.github.io/about/img/banner.jpg">
 <link rel="canonical" href="https://yangguang8112.github.io/about/">
-<link rel="shortcut icon" href="favicon.ico">
+<link rel="shortcut icon" href="/favicon.ico">
 <script>
   /* 主题：优先本地记忆，其次跟随系统。放在 head 内避免首屏闪白/闪黑 */
   (function () {
@@ -449,7 +449,7 @@
               <span class="tag">研发平台</span>
               <img class="inline-logo" src="img/genmol_logo.png" alt="GenMol" data-zoom="img/genmol_logo.png">
             </h4>
-            <p>负责构建 GenMol 计算生物平台，实现分布式协同计算和高并发任务管理。基于 Docker 容器化技术规范算法组件的动态接入流程，先后整合并上线了涵盖蛋白语言模型、结构预测、分子从头生成、可开发性评估与理化性质预测等多个核心计算模型，持续扩展算法与数据库资源，并负责平台的日常运维。此外，尝试性探索了 AI Agent 调用平台计算模块的自动化工作流，有效沉淀公司 AIDD 工具与研发经验，强力支撑创新药物的高效研发。</p>
+            <p>负责搭建 GenMol 计算生物平台：分布式协同计算与高并发任务管理，用 Docker 规范算法组件的动态接入流程，已上线蛋白语言模型、结构预测、分子从头生成、可开发性评估等核心模型，并负责算法与数据库资源的持续扩展和日常运维；同时探索了 AI Agent 调用平台计算模块的自动化工作流。</p>
           </li>
 
           <li class="project">
@@ -459,8 +459,7 @@
               <span class="tag">多目标优化</span>
               <span class="tag">AI 药物研发</span>
             </h4>
-            <p>主导多目标驱动的 VHH 通用合成文库设计，基于蛋白语言模型捕捉位点协同进化信息，并利用玻尔兹曼分布融合疏水性、PTM 风险等关键可开发性约束，规避传统生信统计文库的“独立性陷阱”。经多个异质性靶点实验筛选验证，AI 优化库在多个靶点展现出显著的广谱适配性，单靶点 VHH 结合数较传统库实现数十倍提升。</p>
-            <p>面向特定靶点的蛋白设计，结合靶点与表位分析确定关键结合位点，基于突变优化与 De novo 生成相结合的策略进行序列设计；并从理化性质、结构稳定性、能量及功能等多维度进行综合评估与排序，筛选高潜力候选分子，支持实验验证与迭代优化。</p>
+            <p>主导多目标驱动的 VHH 通用合成文库设计：用蛋白语言模型捕捉位点协同进化信息，以玻尔兹曼分布融合疏水性、PTM 风险等可开发性约束，规避传统统计文库的“独立性陷阱”；经多个异质性靶点湿实验验证，单靶点 VHH 结合数较传统库提升数十倍。面向特定靶点的设计则结合表位分析确定关键位点，以突变优化与 de novo 生成做序列设计，再从理化性质、结构稳定性、能量与功能多维度评估排序候选分子。</p>
           </li>
 
           <li class="project">
@@ -470,7 +469,7 @@
               <span class="tag">Fitness</span>
               <span class="tag">Few-shot</span>
             </h4>
-            <p>面向真实场景下的蛋白突变效应预测（零样本 / 少样本），基于 DMS 数据（如 ProteinGym）和内部积累实验数据进行模型训练与评估，围绕特征表达、模型结构及数据增强策略提升泛化能力；通过多模型融合与参数高效微调（Meta-learning、LoRA），结合进化与能量信息进行联合建模，有效提升 fitness 相关性与 Top Hit 识别能力；并构建支持干湿实验快速迭代的自动化计算流程。</p>
+            <p>面向零样本 / 少样本的蛋白突变效应预测，基于 ProteinGym 等 DMS 数据与内部实验数据训练评估模型，通过多模型融合与参数高效微调（Meta-learning、LoRA）结合进化与能量信息联合建模，提升 fitness 相关性与 Top Hit 识别能力，并搭建支撑干湿迭代的自动化计算流程。</p>
           </li>
 
           <li class="project">
@@ -479,7 +478,7 @@
               <span class="tag">风险筛选</span>
               <span class="tag">Developability</span>
             </h4>
-            <p>聚焦抗体药物的成药性瓶颈，主导构建了多维度 in silico 可开发性评估与风险筛选体系，全面兼容单抗、双抗及 VHH 纳米抗体等多种分子形式。该体系深度融合理化性质特征（聚集倾向、溶解度、pI、PTM 位点及 TAP 指标）与深层进化信息，实现对候选分子稳定性的联合建模与精准预测。通过高风险序列的早期淘汰与优势分子优选，显著提升抗体早期筛选的成功率与成药转化效率。</p>
+            <p>主导构建多维度 in silico 可开发性评估与风险筛选体系，兼容单抗、双抗及 VHH 纳米抗体；融合理化性质特征（聚集倾向、溶解度、pI、PTM 位点、TAP 指标）与深层进化信息联合建模，通过早期淘汰高风险序列、优选优势分子，提升抗体早期筛选成功率。</p>
           </li>
 
           <li class="project">
@@ -489,7 +488,7 @@
               <span class="tag">工艺优化</span>
               <span class="tag">成果转化</span>
             </h4>
-            <p>深度参与生物制药上下游工艺优化与大分子配基设计项目，负责高维实验数据的清洗、特征工程与机器学习建模。在上游培养基配方设计及下游工艺优化中，通过构建精准预测模型指导关键工艺参数调整，实现了目标产率、细胞生长表现的显著提升，并有效降低了副产物。相关创新成果已成功转化为 3 项发明专利申请，并发表 1 篇学术期刊论文，实现了数据建模对工艺开发与干湿实验闭环的深度赋能。</p>
+            <p>负责生物制药上下游工艺优化与大分子配基设计中的高维数据清洗、特征工程与机器学习建模；在上游培养基配方与下游工艺优化中，用预测模型指导关键参数调整，提升目标产率与细胞生长表现并降低副产物。成果已转化为 3 项发明专利申请与 1 篇学术期刊论文。</p>
           </li>
         </ul>
       </article>
@@ -511,7 +510,7 @@
               <a class="tag tag--link" href="https://yangguang8112.github.io/2023/02/24/“云上进化”2022全球AI生物智药大赛回顾总结/" target="_blank" rel="noopener">Write-up</a>
               <span class="tag">AI4Science</span>
             </h4>
-            <p>参与阿里云与 NVIDIA 联合举办的 AI 抗体设计竞赛（SARS-CoV-2 广谱中和抗体方向），针对抗体与多变异株之间的亲和力与活性预测问题，构建融合序列与结构信息的建模方法；基于多种蛋白预训练模型提取多尺度特征，并结合图神经网络进行跨模态融合，有效提升预测性能，最终在赛道一决赛中获得亚军。</p>
+            <p>阿里云与 NVIDIA 联合举办的 AI 抗体设计竞赛（SARS-CoV-2 广谱中和抗体方向）：针对抗体与多变异株的亲和力与活性预测，构建融合序列与结构信息的建模方法，基于多种蛋白预训练模型提取多尺度特征并结合图神经网络跨模态融合，赛道一决赛亚军。</p>
           </li>
 
           <li class="project">
@@ -523,7 +522,7 @@
               <span class="tag">LangChain</span>
               <span class="tag">ChatGLM</span>
             </h4>
-            <p>构建生物医学文献结构化抽取系统，基于 BioBERT 结合实体识别与关系抽取实现关键信息自动提取，辅助 ACMG 解读流程中的证据检索；结合 Flask 开发可视化查询系统，实现实体高亮与文献溯源展示，并通过 Neo4j 关联生物医学知识图谱（PrimeKG）构建多关系网络；同时引入 LangChain 与大语言模型优化查询流程，自动生成与问题相关的文献实验证据。</p>
+            <p>构建生物医学文献结构化抽取系统：基于 BioBERT 的实体识别与关系抽取辅助 ACMG 解读中的证据检索，Flask 实现实体高亮与文献溯源的查询界面，Neo4j 关联 PrimeKG 知识图谱，并引入 LangChain 与大模型自动生成与问题相关的文献实验证据。</p>
           </li>
         </ul>
       </article>
@@ -542,7 +541,7 @@
               <span class="tag">机器学习</span>
               <span class="tag">RNA-seq</span>
             </h4>
-            <p>基于 RNA-seq 数据构建肿瘤早筛建模流程，涵盖序列比对、表达定量、差异分析与特征筛选等关键步骤。使用统计方法（DESeq2）筛选差异基因，并构建机器学习模型进行分类预测，实现从原始数据到预测结果的完整分析 pipeline。</p>
+            <p>基于 RNA-seq 构建肿瘤早筛建模流程，涵盖序列比对、表达定量、差异分析与特征筛选，用 DESeq2 筛选差异基因并构建机器学习分类模型。</p>
           </li>
 
           <li class="project">
@@ -551,7 +550,7 @@
               <span class="tag">NGS</span>
               <span class="tag">Pipeline</span>
             </h4>
-            <p>负责 <a href="http://www.novogene.com/tech/service/lncRNA/product/" target="_blank" rel="noopener">lncRNA</a> 分析流程开发与维护，构建标准化分析 pipeline（转录本组装、编码潜能分析、共表达网络等）。编写 Python 脚本实现任务调度与数据流管理，并结合 R 进行结果可视化与报告生成。熟练使用 BWA、Hisat2、StringTie、GATK 等工具，具备完整 NGS 数据分析经验。</p>
+            <p>负责 <a href="http://www.novogene.com/tech/service/lncRNA/product/" target="_blank" rel="noopener">lncRNA</a> 分析流程开发与维护，构建转录本组装、编码潜能分析、共表达网络等标准化 pipeline，Python 负责任务调度与数据流管理、R 负责可视化与报告；熟练使用 BWA、Hisat2、StringTie、GATK 等工具。</p>
           </li>
         </ul>
       </article>
