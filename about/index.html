@@ -1,402 +1,693 @@
-<!-- <!DOCTYPE html>
-<html>
-关于我...
-</html> -->
-
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN" data-theme="auto">
 <head>
-    <meta charset="UTF-8">
-    <title>杨光的简历</title>
-    <meta name="description" content="具备计算生物与深度学习交叉背景，熟练使用Python/PyTorch进行蛋白质序列与结构建模，具备良好的工程实现能力；
-    当前聚焦抗体工程与蛋白设计，围绕蛋白语言模型与结构建模方法，开展抗体优化、可开发性评估、binder设计及VHH文库设计等工作，
-    并推动相关算法在实际生物药研发流程中的落地应用；硕士期间从事生物医学NLP（实体识别与关系抽取）研究，具备扎实的数据挖掘与知识建模基础。">
-    <meta name="keywords" content="杨光,机器学习,Python,NLP,工作,简历,AIDD,生物信息,计算生物,AI4Science,分子设计,Protein">
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="dist/css/style.min.css">
-    <link rel="stylesheet" href="dist/css/fontello.min.css">
-    <link rel="stylesheet" href="lib/zoom.css">
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-48084758-4', 'auto');
-        ga('send', 'pageview');
-    </script>
-    <style>
-        .box{
-        width: 900px;
-        height: 170px;
-        background: darkgray;
-        }
-        .left-box,.right-box{
-        width: 50%;
-        height: 100%;
-        float: left;/* 设置两个盒子float:left */
-        }
-        .left-box{
-        background: rgb(255, 255, 255);
-        }
-        .right-box{
-        background: rgb(255, 255, 255);
-        }
-        .right-box img {
-            display: block;
-            margin: 0 auto 30px;
-            width: 70px;
-        }
-        .main my_span {
-            color: #01579B;
-        }
-        h4 my_span,
-        h5 my_span {
-            font-size: 12px;
-            border: 1px solid #01579B;
-            padding: 1px 3px;
-            border-radius: 5px;
-            margin-left: 7px;
-        }
-        .progress-bar {
-            width: 600px;
-            height: 10px;
-            border: 1px solid #ccc;
-            margin: 10px;
-            background-color: #c6c8ca;
-            border-radius: 50px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>关于我 · 杨光</title>
+<meta name="description" content="杨光，AI4Science · Protein Design。用深度学习方法解决生物与药物研发中的计算问题，围绕蛋白语言模型与结构建模方法，开展蛋白与抗体设计、可开发性评估、binder 设计及 VHH 文库设计等工作。">
+<meta name="keywords" content="杨光,AI4Science,计算生物学,计算生物,生物信息,蛋白设计,抗体工程,蛋白语言模型,可开发性,深度学习,PyTorch,NLP">
+<meta name="author" content="杨光">
+<meta name="theme-color" content="#0ea5e9">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://yangguang8112.github.io/about/">
+<meta property="og:title" content="关于我 · 杨光">
+<meta property="og:description" content="AI4Science · Protein Design">
+<meta property="og:image" content="https://yangguang8112.github.io/about/img/banner.jpg">
+<link rel="canonical" href="https://yangguang8112.github.io/about/">
+<link rel="shortcut icon" href="/favicon.ico">
+<script>
+  /* 主题：优先本地记忆，其次跟随系统。放在 head 内避免首屏闪白/闪黑 */
+  (function () {
+    try {
+      var saved = localStorage.getItem('about-theme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    } catch (e) {}
+  })();
+</script>
+<style>
+  :root {
+    --bg: #f4f6f8;
+    --surface: #ffffff;
+    --surface-2: #f8fafc;
+    --border: #e5e9ef;
+    --text: #1b2230;
+    --text-soft: #55607a;
+    --text-mute: #8b95a8;
+    --accent: #0b7fd4;
+    --accent-soft: #e6f3fc;
+    --accent-2: #12b3c7;
+    --shadow: 0 1px 2px rgba(16, 30, 54, .04), 0 8px 24px rgba(16, 30, 54, .06);
+    --shadow-lg: 0 2px 4px rgba(16, 30, 54, .05), 0 18px 44px rgba(16, 30, 54, .10);
+    --radius: 14px;
+    --maxw: 920px;
+  }
+  html[data-theme="dark"] {
+    --bg: #0e1218;
+    --surface: #161b23;
+    --surface-2: #1b212b;
+    --border: #262e3a;
+    --text: #e7ecf3;
+    --text-soft: #a8b3c4;
+    --text-mute: #7c8798;
+    --accent: #4cb8f0;
+    --accent-soft: #14324a;
+    --accent-2: #3fd4e6;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .35);
+    --shadow-lg: 0 2px 4px rgba(0, 0, 0, .35), 0 18px 44px rgba(0, 0, 0, .45);
+  }
 
-        .progress {
-            height: 100%;
-            background-color: #00A1D6;
-            border-radius: 50px;
-        }
-    </style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  img { max-width: 100%; display: block; }
+
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+  /* ---------- 顶部工具条 ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 30;
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    background: var(--surface);
+    background: color-mix(in srgb, var(--surface) 78%, transparent);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar__inner {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; height: 52px;
+  }
+  .topbar__back { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-soft); font-weight: 500; }
+  .topbar__back:hover { color: var(--accent); text-decoration: none; }
+  .topbar__actions { display: flex; align-items: center; gap: 8px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    height: 32px; padding: 0 12px; border-radius: 999px;
+    border: 1px solid var(--border); background: var(--surface);
+    color: var(--text-soft); font-size: 13px; font-weight: 500;
+    cursor: pointer; font-family: inherit; transition: .18s ease;
+  }
+  .btn:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+
+  /* ---------- 头图 ---------- */
+  .hero { padding-top: 24px; }
+  .hero__card {
+    position: relative; background: var(--surface);
+    border: 1px solid var(--border); border-radius: var(--radius);
+    box-shadow: var(--shadow-lg); overflow: hidden;
+  }
+  .hero__banner { position: relative; aspect-ratio: 3 / 1; background: var(--surface-2); }
+  .hero__banner img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; cursor: zoom-in; }
+  .hero__banner::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(6, 20, 40, 0) 45%, rgba(6, 20, 40, .45) 100%);
+    pointer-events: none;
+  }
+  .hero__body { padding: 0 28px 26px; }
+  .hero__id { display: flex; align-items: flex-end; gap: 18px; margin-top: -46px; position: relative; }
+  .avatar {
+    width: 104px; height: 104px; border-radius: 50%;
+    object-fit: cover; object-position: 50% 22%;
+    border: 4px solid var(--surface); box-shadow: var(--shadow);
+    background: var(--surface-2); flex: none;
+  }
+  .hero__name { padding-bottom: 6px; min-width: 0; }
+  .hero__name h1 { font-size: 27px; line-height: 1.25; font-weight: 700; letter-spacing: .2px; }
+  .hero__name h1 .en { font-size: 13px; font-weight: 500; color: var(--text-mute); letter-spacing: 1.4px; margin-left: 8px; }
+  .tagline { color: var(--accent); font-size: 14px; font-weight: 600; margin-top: 2px; }
+
+  /* ---------- 胶囊 / 标签 ---------- */
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; list-style: none; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 12px; border-radius: 999px;
+    background: var(--surface-2); border: 1px solid var(--border);
+    font-size: 13px; color: var(--text-soft); white-space: nowrap;
+  }
+  a.chip:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+  .chip svg { width: 14px; height: 14px; flex: none; opacity: .85; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; list-style: none; }
+  .tags .tag { background: var(--accent-soft); color: var(--accent); border-color: transparent; font-weight: 500; }
+
+  /* ---------- 区块 ---------- */
+  .section { margin-top: 34px; }
+  .section__title {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 17px; font-weight: 700; letter-spacing: .3px;
+    margin-bottom: 16px; color: var(--text);
+  }
+  .section__title::before {
+    content: ""; width: 4px; height: 17px; border-radius: 2px;
+    background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  }
+  .section__title .en { font-size: 12px; font-weight: 500; color: var(--text-mute); letter-spacing: .6px; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 22px;
+  }
+
+  /* ---------- 简介 ---------- */
+  .prose p { color: var(--text-soft); font-size: 14.5px; line-height: 1.9; }
+  .prose p + p { margin-top: 12px; }
+  .prose strong { color: var(--text); font-weight: 600; }
+
+  /* ---------- 关注方向 ---------- */
+  .focus-list { list-style: none; display: grid; gap: 13px; }
+  .focus { display: flex; gap: 12px; }
+  .focus__dot {
+    flex: none; width: 6px; height: 6px; margin-top: 8px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  }
+  .focus__title { font-size: 14.5px; font-weight: 650; }
+  .focus__desc { color: var(--text-soft); font-size: 14px; line-height: 1.8; }
+
+  /* ---------- 经历 ---------- */
+  .cv-list { list-style: none; display: grid; gap: 10px; }
+  .cv {
+    display: flex; align-items: center; gap: 13px;
+    padding: 11px 13px; border-radius: 10px; background: var(--surface-2);
+  }
+  .cv__logos { display: flex; align-items: center; gap: 6px; flex: none; width: 74px; }
+  .cv__logos img { height: 28px; width: auto; max-width: 100%; object-fit: contain; border-radius: 5px; background: #fff; }
+  .cv__body { flex: 1; min-width: 0; }
+  .cv__main { font-size: 14.5px; font-weight: 600; }
+  .cv__sub { font-size: 12.5px; color: var(--text-mute); margin-top: 1px; }
+  .cv__period { flex: none; font-size: 12.5px; color: var(--text-mute); font-variant-numeric: tabular-nums; }
+
+  /* ---------- 标签 ---------- */
+  .tag {
+    display: inline-block; font-size: 11.5px; font-weight: 500; line-height: 1.7;
+    padding: 0 8px; border-radius: 6px; white-space: nowrap;
+    color: var(--accent); background: var(--accent-soft); border: 1px solid transparent;
+  }
+  .tag--link { color: var(--accent-2); background: var(--accent-soft); background: color-mix(in srgb, var(--accent-2) 12%, transparent); }
+  .tag--link:hover { text-decoration: none; filter: brightness(1.15); }
+
+  /* ---------- 论文 / 专利 ---------- */
+  .pub-list { list-style: none; display: grid; gap: 14px; }
+  .pub { display: flex; gap: 14px; align-items: flex-start; }
+  .pub__mark {
+    flex: none; width: 32px; height: 32px; border-radius: 9px;
+    display: grid; place-items: center; font-size: 15px;
+    background: var(--accent-soft); color: var(--accent);
+  }
+  .pub__body { font-size: 14px; color: var(--text-soft); line-height: 1.8; }
+  .pub__body b { color: var(--text); }
+  .pub__title { color: var(--text); font-weight: 600; }
+  .pub__venue { font-style: italic; }
+  .pub__link { font-size: 12px; margin-left: 6px; white-space: nowrap; }
+
+  /* ---------- 获奖经历 ---------- */
+  .award-list { list-style: none; display: grid; gap: 10px; }
+  .award {
+    display: flex; align-items: center; gap: 13px;
+    padding: 10px 13px; border-radius: 10px; background: var(--surface-2);
+  }
+  .award__icon {
+    flex: none; width: 34px; height: 34px; border-radius: 9px;
+    display: grid; place-items: center;
+    background: var(--accent-soft); color: var(--accent);
+    transition: .18s ease;
+  }
+  .award__icon:hover { background: var(--accent); color: #fff; }
+  .award__icon svg { width: 18px; height: 18px; }
+  .award__body { flex: 1; min-width: 0; }
+  .award__name { font-size: 14.5px; font-weight: 600; line-height: 1.6; }
+  .award__name a { color: inherit; }
+  .award__name a:hover { color: var(--accent); text-decoration: none; }
+  .award__rank { flex: none; }
+
+  /* ---------- 技术栈 ---------- */
+  .stack-list { list-style: none; display: grid; gap: 13px; }
+  .stack__row { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
+  .stack__name { font-size: 13px; font-weight: 600; color: var(--text-mute); min-width: 86px; }
+
+  /* ---------- 页脚 ---------- */
+  footer {
+    margin: 40px 0 34px; padding-top: 22px;
+    border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-mute); font-size: 13px;
+  }
+  footer .sep { margin: 0 8px; opacity: .5; }
+
+  /* ---------- 图片灯箱 ---------- */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 100;
+    display: none; place-items: center; padding: 28px;
+    background: rgba(8, 12, 20, .86);
+    backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  }
+  .lightbox.open { display: grid; }
+  .lightbox img { max-width: 100%; max-height: 88vh; border-radius: 10px; box-shadow: 0 24px 60px rgba(0, 0, 0, .55); }
+  .lightbox__close {
+    position: absolute; top: 18px; right: 22px;
+    width: 40px; height: 40px; border-radius: 50%; border: none;
+    background: rgba(255, 255, 255, .14); color: #fff; font-size: 22px; line-height: 1;
+    cursor: pointer;
+  }
+  .lightbox__close:hover { background: rgba(255, 255, 255, .26); }
+  [data-zoom] { cursor: zoom-in; }
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width: 720px) {
+    body { font-size: 14.5px; }
+    .wrap { padding: 0 14px; }
+    .hero { padding-top: 14px; }
+    .hero__body { padding: 0 18px 22px; }
+    .hero__banner { aspect-ratio: 16 / 9; }
+    .hero__id { flex-direction: column; align-items: flex-start; gap: 12px; margin-top: -52px; }
+    .hero__name h1 { font-size: 23px; }
+    .hero__name h1 .en { display: block; margin: 4px 0 0; }
+    .avatar { width: 88px; height: 88px; }
+    .card { padding: 16px 16px; }
+    .cv { flex-wrap: wrap; gap: 10px; }
+    .cv__period { width: 100%; padding-left: 87px; }
+    .award { flex-wrap: wrap; gap: 10px; }
+    .award__rank { width: 100%; padding-left: 47px; }
+    .stack__name { min-width: 0; width: 100%; }
+    .chip { font-size: 12.5px; padding: 4px 10px; }
+  }
+
+  /* ---------- 打印 / 导出 PDF ---------- */
+  @media print {
+    :root { --bg: #fff; --surface: #fff; --surface-2: #fff; --shadow: none; --shadow-lg: none; --text: #000; --text-soft: #222; }
+    body { font-size: 12px; line-height: 1.6; }
+    .topbar, .lightbox { display: none !important; }
+    .hero { padding-top: 0; }
+    .hero__card, .card { border: none; box-shadow: none; break-inside: avoid; }
+    .hero__banner { display: none; }
+    .hero__id { margin-top: 0; }
+    .avatar { width: 72px; height: 72px; border-width: 2px; }
+    .section { margin-top: 18px; }
+    .cv, .focus, .pub { break-inside: avoid; }
+    a { color: #000; text-decoration: none; }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <div class="title">
-                <img src="img/head2026.jpg" data-action="zoom">
-                <h1>杨光的简历</h1>
-            </div>
-            <ul class="side-info">
-                <li class="someRight">
-                    <dt><i class="icon-bookmark"></i>Contact</dt>
-                    <dd><i class="icon-phone-1"></i>电话: 18844199550</dd>
-                    <dd><i class="icon-mail-alt"></i>邮箱: <a href="sunshine1994yg@163.com" target="_blank">sunshine1994yg@163.com</a></dd>
-                    <dd><i class="icon-wechat"></i>微信: yangguang8659</dd>
-                    <dd><i class="icon-qq"></i>QQ: 948398165</dd>
-                </li>
-                <li class="someRight">
-                    <dt><i class="icon-bookmark"></i>Keywords</dt>
-                    <dd>AI × Biology</dd>
-                    <dd>Protein Design</dd>
-                    <dd>Protein Language Model</dd>
-                    <dd>Antibody Developability</dd>
-                    <dd>Deep Learning</dd>
-                    <dd>PyTorch</dd>
-                </li>
-            </ul>
-            <div class="note">
-                <p>
-                    具备计算生物与深度学习交叉背景，熟练使用Python/PyTorch进行蛋白质序列与结构建模，具备良好的工程实现能力；当前聚焦抗体工程与蛋白设计，围绕蛋白语言模型与结构建模方法，开展抗体优化、可开发性评估、binder设计及VHH文库设计等工作，并推动相关算法在实际生物药研发流程中的落地应用；硕士期间从事生物医学NLP（实体识别与关系抽取）研究，具备扎实的数据挖掘与知识建模基础。
-                </p>
-            </div>
-        </div>
-        <div class="main">
-            <ul class="main-info">
-                <li class="someRight">
-                    <dt><i class="icon-bookmark"></i>Basic info. 基本信息</dt>
-                    <div class="box">
-                        <div class="left-box">
-                            <dd><strong>个人信息:</strong> <span>杨光</span></dd>
-                            <!-- <dd><strong>出生日期:</strong> <span>1994年8月</span></dd> -->
-                            <dd><strong>教育背景:</strong> <span>吉林大学&#12288;&#12288;&#12288;生物技术&#12288;&#12288;2012.9-2016.07&#12288;本科</span></dd>
-                            <dd><strong>        </strong> <span>&#12288;&#12288;&#12288;&#12288;&#12288;华东师范大学&#12288;计算机技术&#12288;2019.9-2022.12&#12288;硕士</span></dd>
-                            <!-- <dd><strong>工作年限:</strong> <span id="WorkYear">XX</span><span>年</span></dd> -->
-                            <dd><strong>博&#12288;&#12288;客:</strong> <a href="https://yangguang8112.github.io" target="_blank">https://yangguang8112.github.io</a></dd>
-                            <dd><strong>比&#12288;&#12288;赛:</strong> <a href="https://yangguang8112.github.io/CompTrack" target="_blank">https://yangguang8112.github.io/CompTrack</a></dd>
-                        </div>
-                        <div class="right-box">
-                            <img src="\img\jd-xhh.jpg" data-action="zoom"/>
-                            <img src="\img\ecnu.jpg" data-action="zoom"/>
-                        </div>
-                    </div>
-                    
-                </li>
-                <li>
-                    <dt><i class="icon-bookmark"></i>Experience. 项目与工作经验</dt>
-                    <h3><img src="\img\gensci_comlogo01.svg" data-action="zoom"/><span>金赛药业（2023.09 - ）</span></h3>
-                        <ul class="exp">
-                            <li>
-                                <div class="circle"></div>
-                                <h4>
-                                    <span>AI计算生物平台
-                                        <my_span>AIDD</my_span>
-                                        <my_span>研发平台</my_span>
-                                        <!-- &#12288; -->
-                                        <img src="./img/genmol_logo.png" style="width: 5%; height: 5%;" data-action="zoom" />
-                                    </span>
-                                </h4>
-                                <p>
-                                    负责构建GenMol计算生物平台，实现分布式协同计算和高并发任务管理。基于Docker容器化技术规范算法组件的动态接入流程，先后整合并上线了涵盖蛋白语言模型、结构预测、分子从头生成、可开发性评估与理化性质预测等多个核心计算模型，持续扩展算法与数据库资源，并负责平台的日常运维。此外，尝试性探索了AI Agent调用平台计算模块的自动化工作流，有效沉淀公司AIDD工具与研发经验，强力支撑创新药物的高效研发。
-                                </p>
-                            </li>
-                            <li>
-                                <div class="circle"></div>
-                                <h4>
-                                    <span>VHH文库设计与蛋白设计
-                                        <my_span>蛋白语言模型</my_span>
-                                        <my_span>干湿迭代</my_span>
-                                        <my_span>多目标优化</my_span>
-                                        <my_span>AI药物研发</my_span>
-                                    </span>
-                                </h4>
-                                <p>
-                                    主导多目标驱动的VHH通用合成文库设计，基于蛋白语言模型捕捉位点协同进化信息，并利用玻尔兹曼分布融合疏水性、PTM风险等关键可开发性约束，规避传统生信统计文库的“独立性陷阱”。
-                                    经多个异质性靶点实验筛选验证，AI优化库在多个靶点展现出显著的广谱适配性，单靶点VHH结合数较传统库实现数十倍提升。
-                                </p>
-                                <p>
-                                    面向特定靶点的蛋白设计，结合靶点与表位分析确定关键结合位点，基于突变优化与De novo生成相结合的策略进行序列设计；并从理化性质、结构稳定性、能量及功能等多维度进行综合评估与排序，筛选高潜力候选分子，支持实验验证与迭代优化。
-                                </p>
-                            </li>
-                            <li>
-                                <div class="circle"></div>
-                                <h4>
-                                    <span>蛋白优化算法
-                                        <my_span>LoRA</my_span>
-                                        <my_span>突变位点</my_span>
-                                        <my_span>Fitness</my_span>
-                                        <my_span>Few-shot</my_span>
-                                    </span>
-                                </h4>
-                                <p>
-                                    面向真实场景下的蛋白突变效应预测（零样本/少样本），基于DMS数据（如ProteinGym）和内部积累实验数据进行模型训练与评估，围绕特征表达、模型结构及数据增强策略提升泛化能力；通过多模型融合与参数高效微调（Meta-learning、LoRA），结合进化与能量信息进行联合建模，有效提升fitness相关性与Top Hit识别能力；并构建支持干湿实验快速迭代的自动化计算流程。
-                                </p>
-                            </li>
-                            <li>
-                                <div class="circle"></div>
-                                <h4>
-                                    <span>抗体可开发性预测
-                                        <my_span>抗体工程</my_span>
-                                        <my_span>风险筛选</my_span>
-                                        <my_span>Developability</my_span>
-                                    </span>
-                                </h4>
-                                <p>
-                                    聚焦抗体药物的成药性瓶颈，主导构建了多维度 in silico 可开发性评估与风险筛选体系，全面兼容单抗、双抗及 VHH 纳米抗体等多种分子形式。该体系深度融合理化性质特征（聚集倾向、溶解度、pI、PTM位点及 TAP 指标）与深层进化信息，实现对候选分子稳定性的联合建模与精准预测。通过高风险序列的早期淘汰与优势分子优选，显著提升抗体早期筛选的成功率与成药转化效率。
-                                </p>
-                            </li>
-                            <li>
-                                <div class="circle"></div>
-                                <h4>
-                                    <span>生物制药工艺优化与高维数据建模
-                                        <my_span>机器学习</my_span>
-                                        <my_span>多维建模</my_span>
-                                        <my_span>工艺优化</my_span>
-                                        <my_span>成果转化</my_span>
-                                    </span>
-                                </h4>
-                                <p>
-                                    深度参与生物制药上下游工艺优化与大分子配基设计项目，负责高维实验数据的清洗、特征工程与机器学习建模。在上游培养基配方设计及下游工艺优化中，通过构建精准预测模型指导关键工艺参数调整，实现了目标产率、细胞生长表现的显著提升，并有效降低了副产物。相关创新成果已成功转化为3项发明专利申请，并发表1篇学术期刊论文，实现了数据建模对工艺开发与干湿实验闭环的深度赋能。
-                                </p>
-                            </li>
-                            
-                            
-                        </ul>
-                    <h3><img src="\img\20190131092907932.png" data-action="zoom"/><img src="\img\sjtu-logo.jpg" data-action="zoom"/><span>华大基因&上海交大联合创新中心（2019.10 - 2023.06）</span></h3>
-                    <!-- <h3><img src="\img\ecnu.jpg" data-action="zoom"/><span>华东师范大学（2019.10 - ）</span></h3> -->
-          					<ul class="exp">
-                                <li>
-                                    <div class="circle"></div>
-                                    <h4>
-                                        <span>“云上进化”2022全球AI生物智药大赛
-                                            <a href="https://tianchi.aliyun.com/competition/entrance/532028/introduction" target="_blank"><i class="icon-link"></i>Contest</a>
-                                            <a href="https://yangguang8112.github.io/2023/02/24/“云上进化”2022全球AI生物智药大赛回顾总结/" target="_blank"><i class="icon-link"></i>Write-up</a>
-                                            <my_span>AI4Science</my_span>
-                                            <!-- &#12288; -->
-                                            <img src="./img/icons8-second-place-ribbon-32.png" style="width: 3%; height: 3%;" data-action="zoom" />
-                                        </span>
-                                    </h4>
-                                    <p>
-                                        参与阿里云与NVIDIA联合举办的AI抗体设计竞赛（SARS-CoV-2广谱中和抗体方向），针对抗体与多变异株之间的亲和力与活性预测问题，构建融合序列与结构信息的建模方法；基于多种蛋白预训练模型提取多尺度特征，并结合图神经网络进行跨模态融合，有效提升预测性能，最终在赛道一决赛中获得亚军。
-                                </li>
-                                <li>
-                                    <div class="circle"></div>
-                                    <h4>生物医学文献结构化抽取系统
-                                        <a href="http://47.116.188.76:5557/relaxtra" target="_blank"><i class="icon-link"></i>Demo</a>
-                                        <my_span>NLP</my_span>
-                                        <my_span>Bert</my_span>
-                                        <my_span>Neo4j</my_span>
-                                        <my_span>LangChain</my_span>
-                                        <my_span>chatGLM</my_span>
-                                    </h4>
-                                    <p>
-                                        构建生物医学文献结构化抽取系统，基于BioBERT结合实体识别与关系抽取实现关键信息自动提取，辅助ACMG解读流程中的证据检索；结合Flask开发可视化查询系统，实现实体高亮与文献溯源展示，并通过Neo4j关联生物医学知识图谱（PrimeKG）构建多关系网络；同时引入LangChain与大语言模型优化查询流程，自动生成与问题相关的文献实验证据。
-                                    </p>
-                                    </li>
-                                  
-                            </ul>
 
-                    <h3><img src="img\logo.png" data-action="zoom"/><span>诺禾致源（2016.7 - 2019.8）</span></h3>
-                    <ul class="exp">
-                        <li>
-                            <div class="circle"></div>
-                            <h4>
-                                基于表观组学的肿瘤早筛方法研究
-                                <my_span>机器学习</my_span>
-                                <my_span>RNA-seq</my_span>
-                            </h4>
-                            <p>基于RNA-seq数据构建肿瘤早筛建模流程，涵盖序列比对、表达定量、差异分析与特征筛选等关键步骤。
-                使用统计方法（DESeq2）筛选差异基因，并构建机器学习模型进行分类预测，实现从原始数据到预测结果的完整分析pipeline。</P>
-                        </li>
-                        <li>
-                            <div class="circle"></div>
-                            <h4>
-                                lncRNA分析流程
-                                <my_span>RNA-seq</my_span>
-                                <my_span>NGS</my_span>
-                                <my_span>Pipeline</my_span>
-                            </h4>
-                            <p>
-                                负责<a href="http://www.novogene.com/tech/service/lncRNA/product/" target="_blank">lncRNA</a>分析流程开发与维护，构建标准化分析pipeline（转录本组装、编码潜能分析、共表达网络等）。
-                                编写Python脚本实现任务调度与数据流管理，并结合R进行结果可视化与报告生成。
-                                熟练使用BWA、Hisat2、StringTie、GATK等工具，具备完整NGS数据分析经验。
-                            </p>
-                        </li>
-                    </ul>
-
-
-                </li>
-                <li>
-                    <dt><i class="icon-bookmark"></i>Publications & Patents. </dt>
-                    <ul class="exp">
-                        <li>
-                            <div class="circle"></div>
-                            <h4>Publications</h4>
-                            <p>
-                                Wang, R.Z., Liao, Y.X., …, <b>Yang, G.</b>, …, Kang, Y. K.
-<a href="https://doi.org/10.1080/19420862.2026.2644662">Hybrid AI/ML-mechanistic framework enables intelligent optimization of commercial biopharmaceutical downstream processing.</a>
-<i>mAbs</i>, 2026.
-                            </p>
-                        </li>
-                        <li>
-                            <div class="circle"></div>
-                            <h4>Patents</h4>
-                            <p>
-                                <b>Yang, G.</b>, et al. Machine Learning-Based Optimization Methods and Systems for Downstream Biopharmaceutical Processes. 
-                                <a href="https://patents.google.com/patent/CN121115680A">CN121115680A</a>, 2025. (Pending)
-                            </p>
-                            <p>
-                                <b>Yang, G.</b>, et al. Machine learning-based methods, apparatus, equipment, and media for culture medium formulation design. 
-                                <a href="https://patents.google.com/patent/CN121725924A">CN121725924A</a>, 2026. (Pending)
-                            </p>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <dt><i class="icon-bookmark"></i>Skill. 技能清单</dt>
-                    <ul class="exp">
-                        <li>
-                            <div class="circle"></div>
-                            <h4>
-                                Python
-                                <my_span>FastAPI</my_span>
-                                <my_span>Gradio</my_span>
-                                <my_span>NumPy / Pandas</my_span>
-                                <my_span>Multiprocessing</my_span>
-                                <my_span>Scikit-learn</my_span>
-                            </h4>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 85%;"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="circle"></div>
-                            <h4>
-                                Linux
-                                <my_span>Shell</my_span>
-                                <my_span>AWK</my_span>
-                                <my_span>Docker</my_span>
-                                <my_span>Singularity</my_span>
-                                <my_span>Slurm</my_span>
-                            </h4>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 80%;"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="circle"></div>
-                            <h4>
-                                Deep Learning
-                                <my_span>PyTorch</my_span>
-                                <my_span>Transformer</my_span>
-                                <my_span>DGL</my_span>
-                                <my_span>Geometric DL</my_span>
-                                <my_span>Diffusion</my_span>
-                            </h4>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 70%;"></div>
-                            </div>
-                        </li>
-                        
-                        <li>
-                            <div class="circle"></div>
-                            <h4>
-                                Databases
-                                <my_span>SQLite</my_span>
-                                <my_span>Neo4j</my_span>
-                                <my_span>Faiss</my_span>
-                            </h4>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 55%;"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="circle"></div>
-                            <h4>
-                                CUDA & Inference
-                                <my_span>TensorRT</my_span>
-                                <my_span>Quantization</my_span>
-                                <my_span>Prefix Caching</my_span>
-                            </h4>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 50%;"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="circle"></div>
-                            <h4>
-                                Frontend Development
-                                <my_span>HTML / CSS</my_span>
-                                <my_span>JavaScript</my_span>
-                                <my_span>React</my_span>
-                            </h4>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 35%;"></div>
-                            </div>
-                        </li>
-                    </ul>
-
-                </li>
-            </br>
-            </ul>
-        </div>
+<!-- ============ 顶部工具条 ============ -->
+<div class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="topbar__back" href="/">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      返回博客
+    </a>
+    <div class="topbar__actions">
+      <button class="btn" id="printBtn" type="button" title="打印或另存为 PDF">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+        导出 PDF
+      </button>
+      <button class="btn" id="themeBtn" type="button" title="切换深色 / 浅色">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <span id="themeLabel">主题</span>
+      </button>
     </div>
-    <footer>
-        <p>Copyright © 2026 <a href="https://yangguang8112.github.io/">杨光</a>. All rights reserved.</p>
-    </footer>
-    <script src="lib/zoom.min.js"></script>
-</body>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ============ 头图 + 名片 ============ -->
+  <header class="hero">
+    <div class="hero__card">
+      <div class="hero__banner">
+        <img src="img/banner.jpg" alt="哈尔滨冰雪大世界" data-zoom="img/head2026.jpg">
+      </div>
+      <div class="hero__body">
+        <div class="hero__id">
+          <img class="avatar" src="img/avatar.jpg" alt="杨光" data-zoom="img/avatar.jpg">
+          <div class="hero__name">
+            <h1>杨光 <span class="en">YANG GUANG</span></h1>
+            <p class="tagline">AI4Science · Protein Design</p>
+          </div>
+        </div>
+
+        <ul class="chips">
+          <li><a class="chip" href="mailto:sunshine1994yg@163.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            sunshine1994yg@163.com</a></li>
+          <li><a class="chip" href="tel:18844199550">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+            18844199550</a></li>
+          <li><span class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 3.5A2.5 2.5 0 1 1 6 6a2.5 2.5 0 0 1 2.5-2.5z"/><path d="M15.5 3.5A2.5 2.5 0 1 1 13 6a2.5 2.5 0 0 1 2.5-2.5z"/><path d="M12 10.5c3 0 5 1.6 5 3.5s-2 3-5 3-5-1.1-5-3 2-3.5 5-3.5z"/><path d="M7 16.5 5.5 21M17 16.5 18.5 21"/></svg>
+            微信 yangguang8659</span></li>
+          <li><a class="chip" href="https://github.com/yangguang8112" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.6.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.3 9.3 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.2 10.2 0 0 0 22 12.2C22 6.6 17.5 2 12 2z"/></svg>
+            GitHub</a></li>
+          <li><a class="chip" href="https://yangguang8112.github.io" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20z"/></svg>
+            博客</a></li>
+          <li><a class="chip" href="https://yangguang8112.github.io/CompTrack" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M17 4h3a1 1 0 0 1 1 1v1a4 4 0 0 1-4 4h-.5M7 4H4a1 1 0 0 0-1 1v1a4 4 0 0 0 4 4h.5"/><path d="M7 3h10v6a5 5 0 0 1-10 0z"/></svg>
+            竞赛轨迹 CompTrack</a></li>
+        </ul>
+
+        <ul class="tags">
+          <li class="tag">AI4Science</li>
+          <li class="tag">Protein Design</li>
+          <li class="tag">Protein Language Model</li>
+          <li class="tag">Antibody Developability</li>
+          <li class="tag">Deep Learning</li>
+          <li class="tag">PyTorch</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ 简介 ============ -->
+  <section class="section" id="intro">
+    <h2 class="section__title">简介 <span class="en">Intro</span></h2>
+    <div class="card prose">
+      <p>我是杨光，专注于人工智能与生物医药的交叉领域。</p>
+      <p>目前主要关注蛋白质语言模型、蛋白质结构与序列设计、抗体/蛋白质优化，以及机器学习在生物医药研发中的应用。过去的工作经历横跨生物信息学、医学文本挖掘、知识图谱和计算蛋白质设计，也持续关注生成式 AI 和基础模型在生命科学中的发展。</p>
+      <p>我喜欢把复杂的生物学问题转化为可以计算、建模和验证的问题，也喜欢将新的算法和工具真正落地到研发场景中。</p>
+      <p>简单来说，我希望做的事情是：让 AI 更懂蛋白质，也让计算真正帮助生物医药研发。</p>
+    </div>
+  </section>
+
+  <!-- ============ 关注方向 ============ -->
+  <section class="section" id="focus">
+    <h2 class="section__title">关注方向 <span class="en">Focus</span></h2>
+    <div class="card">
+      <ul class="focus-list">
+        <li class="focus">
+          <span class="focus__dot"></span>
+          <div>
+            <div class="focus__title">蛋白语言模型与结构建模</div>
+            <div class="focus__desc">用序列与结构信息建模蛋白的功能与可开发性</div>
+          </div>
+        </li>
+        <li class="focus">
+          <span class="focus__dot"></span>
+          <div>
+            <div class="focus__title">抗体工程与可开发性评估</div>
+            <div class="focus__desc">抗体优化、成药性风险筛选、binder 设计</div>
+          </div>
+        </li>
+        <li class="focus">
+          <span class="focus__dot"></span>
+          <div>
+            <div class="focus__title">VHH 文库设计</div>
+            <div class="focus__desc">在疏水性、PTM 风险等约束下做多目标的通用合成文库</div>
+          </div>
+        </li>
+        <li class="focus">
+          <span class="focus__dot"></span>
+          <div>
+            <div class="focus__title">干湿实验闭环</div>
+            <div class="focus__desc">让算法在真实实验迭代里可用，而不止于 benchmark 上的分数</div>
+          </div>
+        </li>
+        <li class="focus">
+          <span class="focus__dot"></span>
+          <div>
+            <div class="focus__title">计算生物平台</div>
+            <div class="focus__desc">算法组件化接入、分布式计算与任务调度</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 经历 ============ -->
+  <section class="section" id="cv">
+    <h2 class="section__title">经历 <span class="en">Background</span></h2>
+    <div class="card">
+      <ul class="cv-list">
+        <li class="cv">
+          <div class="cv__logos"><img src="../img/gensci_comlogo01.svg" alt="金赛药业" data-zoom="../img/gensci_comlogo01.svg"></div>
+          <div class="cv__body">
+            <div class="cv__main">金赛药业</div>
+            <div class="cv__sub">AI4Science · 蛋白与抗体设计</div>
+          </div>
+          <div class="cv__period">2023.09 – 至今</div>
+        </li>
+        <li class="cv">
+          <div class="cv__logos">
+            <img src="../img/20190131092907932.png" alt="华大基因" data-zoom="../img/20190131092907932.png">
+          </div>
+          <div class="cv__body">
+            <div class="cv__main">华大基因 &amp; 上海交大联合创新中心</div>
+            <div class="cv__sub">生物医学 NLP · 竞赛</div>
+          </div>
+          <div class="cv__period">2019.10 – 2023.06</div>
+        </li>
+        <li class="cv">
+          <div class="cv__logos"><img src="img/logo.png" alt="诺禾致源" data-zoom="img/logo.png"></div>
+          <div class="cv__body">
+            <div class="cv__main">诺禾致源</div>
+            <div class="cv__sub">NGS 分析流程 · 肿瘤早筛建模</div>
+          </div>
+          <div class="cv__period">早期</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 教育经历 ============ -->
+  <section class="section" id="education">
+    <h2 class="section__title">教育经历 <span class="en">Education</span></h2>
+    <div class="card">
+      <ul class="cv-list">
+        <li class="cv">
+          <div class="cv__logos"><img src="../img/ecnu.jpg" alt="华东师范大学" data-zoom="../img/ecnu.jpg"></div>
+          <div class="cv__body">
+            <div class="cv__main">华东师范大学</div>
+            <div class="cv__sub">计算机技术 · 硕士</div>
+          </div>
+          <div class="cv__period">2019.09 – 2022.12</div>
+        </li>
+        <li class="cv">
+          <div class="cv__logos"><img src="../img/jd-xhh.jpg" alt="吉林大学" data-zoom="../img/jd-xhh.jpg"></div>
+          <div class="cv__body">
+            <div class="cv__main">吉林大学</div>
+            <div class="cv__sub">生物技术 · 本科</div>
+          </div>
+          <div class="cv__period">2012.09 – 2016.07</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 论文与专利 ============ -->
+  <section class="section" id="publications">
+    <h2 class="section__title">论文与专利 <span class="en">Publications &amp; Patents</span></h2>
+    <div class="card">
+      <ul class="pub-list">
+        <li class="pub">
+          <div class="pub__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v18H6a2 2 0 0 1-2-1.5z"/><path d="M8 7h7M8 11h7"/></svg>
+          </div>
+          <div class="pub__body">
+            <span class="pub__title">Publications</span>
+            <div>
+              Wang, R.Z., Liao, Y.X., …, <b>Yang, G.</b>, …, Kang, Y.K.
+              <span class="pub__title">Hybrid AI/ML-mechanistic framework enables intelligent optimization of commercial biopharmaceutical downstream processing.</span>
+              <span class="pub__venue">mAbs</span>, 2026.
+              <a class="pub__link" href="https://doi.org/10.1080/19420862.2026.2644662" target="_blank" rel="noopener">DOI ↗</a>
+            </div>
+          </div>
+        </li>
+        <li class="pub">
+          <div class="pub__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <div class="pub__body">
+            <span class="pub__title">Patents</span>
+            <div>
+              <b>Yang, G.</b>, et al. Machine Learning-Based Optimization Methods and Systems for Downstream Biopharmaceutical Processes.
+              <a href="https://patents.google.com/patent/CN121115680A" target="_blank" rel="noopener">CN121115680A</a>, 2025. (Pending)
+            </div>
+            <div style="margin-top:6px;">
+              <b>Yang, G.</b>, et al. Machine learning-based methods, apparatus, equipment, and media for culture medium formulation design.
+              <a href="https://patents.google.com/patent/CN121725924A" target="_blank" rel="noopener">CN121725924A</a>, 2026. (Pending)
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 获奖经历 ============ -->
+  <section class="section" id="awards">
+    <h2 class="section__title">获奖经历 <span class="en">Awards</span></h2>
+    <div class="card">
+      <ul class="award-list">
+        <li class="award">
+          <a class="award__icon" href="https://tianchi.aliyun.com/competition/entrance/532028" target="_blank" rel="noopener" aria-label="查看赛题：云上进化 2022 全球 AI 生物智药大赛">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="5.5"/><path d="M9.2 10.3 6.5 2.5M14.8 10.3l2.7-7.8"/></svg>
+          </a>
+          <div class="award__body">
+            <div class="award__name"><a href="https://yangguang8112.github.io/2023/02/24/“云上进化”2022全球AI生物智药大赛回顾总结/" target="_blank" rel="noopener">「云上进化」2022 全球 AI 生物智药大赛</a></div>
+          </div>
+          <div class="award__rank"><span class="tag">亚军</span></div>
+        </li>
+        <li class="award">
+          <a class="award__icon" href="https://micos.cngb.org/europe/index.html" target="_blank" rel="noopener" aria-label="查看赛题：Mammoth 2024 组学科学国际竞赛">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="5.5"/><path d="M9.2 10.3 6.5 2.5M14.8 10.3l2.7-7.8"/></svg>
+          </a>
+          <div class="award__body">
+            <div class="award__name">2024 Mammoth International Contest on Omics Sciences in Europe</div>
+          </div>
+          <div class="award__rank"><span class="tag">R5 · 优胜奖</span></div>
+        </li>
+        <li class="award">
+          <a class="award__icon" href="https://tianchi.aliyun.com/competition/entrance/532170" target="_blank" rel="noopener" aria-label="查看赛题：AICAS 2024 大挑战">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="5.5"/><path d="M9.2 10.3 6.5 2.5M14.8 10.3l2.7-7.8"/></svg>
+          </a>
+          <div class="award__body">
+            <div class="award__name">AICAS 2024 大挑战 · 通用算力大模型推理性能优化</div>
+          </div>
+          <div class="award__rank"><span class="tag">R8</span></div>
+        </li>
+        <li class="award">
+          <a class="award__icon" href="http://competition.sais.com.cn/competitionDetail/532230/format" target="_blank" rel="noopener" aria-label="查看赛题：第二届世界科学智能大赛">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="5.5"/><path d="M9.2 10.3 6.5 2.5M14.8 10.3l2.7-7.8"/></svg>
+          </a>
+          <div class="award__body">
+            <div class="award__name">第二届世界科学智能大赛 · siRNA 药效预测</div>
+          </div>
+          <div class="award__rank"><span class="tag">R15 / 2249</span></div>
+        </li>
+        <li class="award">
+          <a class="award__icon" href="https://www.kaggle.com/competitions/leash-BELKA" target="_blank" rel="noopener" aria-label="查看赛题：NeurIPS 2024 BELKA">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="5.5"/><path d="M9.2 10.3 6.5 2.5M14.8 10.3l2.7-7.8"/></svg>
+          </a>
+          <div class="award__body">
+            <div class="award__name">NeurIPS 2024 · BELKA 新药预测</div>
+          </div>
+          <div class="award__rank"><span class="tag">铜牌 · R181 / 1950</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 技术栈 ============ -->
+  <section class="section" id="stack">
+    <h2 class="section__title">技术栈 <span class="en">Toolbox</span></h2>
+    <div class="card">
+      <ul class="stack-list">
+        <li class="stack__row">
+          <span class="stack__name">语言与工程</span>
+          <span class="tag">Python</span>
+          <span class="tag">Shell</span>
+          <span class="tag">R</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Gradio</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Slurm</span>
+        </li>
+        <li class="stack__row">
+          <span class="stack__name">深度学习</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">Transformer</span>
+          <span class="tag">DGL</span>
+          <span class="tag">Diffusion</span>
+          <span class="tag">LoRA</span>
+        </li>
+        <li class="stack__row">
+          <span class="stack__name">数据与检索</span>
+          <span class="tag">NumPy / Pandas</span>
+          <span class="tag">Scikit-learn</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">Neo4j</span>
+          <span class="tag">Faiss</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>Copyright © <span id="year">2026</span> 杨光. All rights reserved.</p>
+  </footer>
+
+</div>
+
+<!-- ============ 图片灯箱 ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="图片预览">
+  <button class="lightbox__close" id="lightboxClose" type="button" aria-label="关闭">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
 <script>
-    var now = new Date()
-    var target = new Date('2016/07/04')
-    var d = now-target
-    d = d/1000
-    var day = d/(24*60*60)
-    var work_year = (day/365).toFixed(2)
-    console.log('不知不觉中杨光已经工作'+work_year+'年了！！！！')
-    document.getElementById("WorkYear").innerHTML=work_year
+(function () {
+  'use strict';
+
+  /* ---- 主题切换 ---- */
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('themeBtn');
+  var themeLabel = document.getElementById('themeLabel');
+  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+
+  function effective() {
+    var t = root.getAttribute('data-theme');
+    if (t === 'dark' || t === 'light') return t;
+    return mq.matches ? 'dark' : 'light';
+  }
+  function renderLabel() {
+    themeLabel.textContent = effective() === 'dark' ? '深色' : '浅色';
+  }
+  themeBtn.addEventListener('click', function () {
+    var next = effective() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('about-theme', next); } catch (e) {}
+    renderLabel();
+  });
+  mq.addEventListener && mq.addEventListener('change', function () {
+    if (!root.getAttribute('data-theme') || root.getAttribute('data-theme') === 'auto') renderLabel();
+  });
+  renderLabel();
+
+  /* ---- 打印 ---- */
+  document.getElementById('printBtn').addEventListener('click', function () { window.print(); });
+
+  /* ---- 图片灯箱 ---- */
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightboxImg');
+  function open(src, alt) {
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    lb.classList.remove('open');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-zoom]');
+    if (t) {
+      open(t.getAttribute('data-zoom') || t.getAttribute('src'), t.getAttribute('alt'));
+      return;
+    }
+    if (e.target === lb || e.target.id === 'lightboxClose') close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lb.classList.contains('open')) close();
+  });
+
+  /* ---- 年份 ---- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
 </script>
+</body>
 </html>
