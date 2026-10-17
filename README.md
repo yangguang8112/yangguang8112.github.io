@@ -16,6 +16,18 @@ hexo g -d        # 生成并推送到 master 分支（GitHub Pages 从这里发�
 #### Note
 使用hexo时注意node的版本，遇到过用v18.7.0的node生成的html都是空的也不报错。推荐使用v12.22.12版本的node，另外推荐使用nvm来管理node的版本。仓库根目录的 `.nvmrc` 已固定为 `12.22.12`，`nvm use` 会自动选中。
 
+#### 依赖与 Dependabot
+依赖仍是 2016 年的 hexo 3.2.0 那一套，所以 Dependabot 会一直报一堆告警。已做的处理：
+
+- `node_modules/` 不再入库（曾经提交了 7159 个文件）
+- 对 `package-lock.json` 跑过 `npm audit fix`（非破坏性），修掉 138 个漏洞
+- `language` 显式设为 `zh-CN`：原本留空会回退到英文 `default.yml`，
+  导致归档标题在「归档 / Archives」之间不确定地漂移，构建产物不可复现
+
+剩下的告警（`qs`、`moment`、`highlight.js`、`ejs`，以及 `request`/`hawk` 那串）
+被 hexo 3.2.0 的依赖范围钉死，只能靠升级 hexo 本体解决。升级是个正经迁移
+（换 markdown 渲染器、改主题里用的老 API、Node 从 12 提到 14+），要做另开一轮。
+
 #### 目录结构
 站点是 Hexo 博客（主题 `themes/huno`）。
 
