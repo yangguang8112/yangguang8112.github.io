@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>关于我 · 杨光</title>
-<meta name="description" content="杨光，AI4Science 方向。用深度学习方法解决生物与药物研发中的计算问题，目前聚焦计算生物学与蛋白设计，围绕蛋白语言模型与结构建模方法，开展抗体优化、可开发性评估、binder 设计及 VHH 文库设计等工作。">
+<meta name="description" content="杨光，AI4Science · Protein Design。用深度学习方法解决生物与药物研发中的计算问题，围绕蛋白语言模型与结构建模方法，开展蛋白与抗体设计、可开发性评估、binder 设计及 VHH 文库设计等工作。">
 <meta name="keywords" content="杨光,AI4Science,计算生物学,计算生物,生物信息,蛋白设计,抗体工程,蛋白语言模型,可开发性,深度学习,PyTorch,NLP">
 <meta name="author" content="杨光">
 <meta name="theme-color" content="#0ea5e9">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://yangguang8112.github.io/about/">
 <meta property="og:title" content="关于我 · 杨光">
-<meta property="og:description" content="AI4Science · 计算生物学与蛋白设计">
+<meta property="og:description" content="AI4Science · Protein Design">
 <meta property="og:image" content="https://yangguang8112.github.io/about/img/banner.jpg">
 <link rel="canonical" href="https://yangguang8112.github.io/about/">
 <link rel="shortcut icon" href="/favicon.ico">
@@ -213,6 +213,26 @@
   .pub__venue { font-style: italic; }
   .pub__link { font-size: 12px; margin-left: 6px; white-space: nowrap; }
 
+  /* ---------- 获奖经历 ---------- */
+  .award-list { list-style: none; display: grid; gap: 10px; }
+  .award {
+    display: flex; align-items: center; gap: 13px;
+    padding: 10px 13px; border-radius: 10px; background: var(--surface-2);
+  }
+  .award__icon {
+    flex: none; width: 34px; height: 34px; border-radius: 9px;
+    display: grid; place-items: center;
+    background: var(--accent-soft); color: var(--accent);
+    transition: .18s ease;
+  }
+  .award__icon:hover { background: var(--accent); color: #fff; }
+  .award__icon svg { width: 18px; height: 18px; }
+  .award__body { flex: 1; min-width: 0; }
+  .award__name { font-size: 14.5px; font-weight: 600; line-height: 1.6; }
+  .award__name a { color: inherit; }
+  .award__name a:hover { color: var(--accent); text-decoration: none; }
+  .award__rank { flex: none; }
+
   /* ---------- 技术栈 ---------- */
   .stack-list { list-style: none; display: grid; gap: 13px; }
   .stack__row { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
@@ -258,6 +278,8 @@
     .card { padding: 16px 16px; }
     .cv { flex-wrap: wrap; gap: 10px; }
     .cv__period { width: 100%; padding-left: 87px; }
+    .award { flex-wrap: wrap; gap: 10px; }
+    .award__rank { width: 100%; padding-left: 47px; }
     .stack__name { min-width: 0; width: 100%; }
     .chip { font-size: 12.5px; padding: 4px 10px; }
   }
@@ -313,7 +335,7 @@
           <img class="avatar" src="img/avatar.jpg" alt="杨光" data-zoom="img/avatar.jpg">
           <div class="hero__name">
             <h1>杨光 <span class="en">YANG GUANG</span></h1>
-            <p class="tagline">AI4Science · 计算生物学与蛋白设计</p>
+            <p class="tagline">AI4Science · Protein Design</p>
           </div>
         </div>
 
@@ -355,9 +377,7 @@
     <h2 class="section__title">简介 <span class="en">Intro</span></h2>
     <div class="card prose">
       <p>我是杨光，一直做 AI4Science 方向，用深度学习方法解决生物与药物研发中的计算问题。</p>
-      <p>目前聚焦计算生物学与蛋白设计：围绕蛋白语言模型与结构建模方法，做抗体优化、可开发性评估、binder 设计和 VHH 文库设计；同时负责计算生物平台的搭建与运维，把各类模型和数据库接入到真实的研发流程里。相比刷 benchmark，我更在意方法能不能在干湿实验的闭环里真正跑通。</p>
-      <p>更早的工作在组学与文本数据上：诺禾致源的 NGS 分析流程与肿瘤早筛建模，以及华大基因与上海交大联合创新中心的生物医学 NLP；其间参加「云上进化」全球 AI 生物智药大赛，在赛道一拿到亚军。</p>
-      <p>这个博客用来记录看论文、读代码和踩坑的过程。</p>
+      <p>主要方向围绕蛋白与抗体：用蛋白语言模型和结构建模方法做序列设计、可开发性评估与分子优化，并把这些方法做成能接入实际研发流程的计算平台。相比刷 benchmark，我更在意方法能不能在干湿实验的闭环里真正跑通。</p>
     </div>
   </section>
 
@@ -499,6 +519,69 @@
               <a href="https://patents.google.com/patent/CN121725924A" target="_blank" rel="noopener">CN121725924A</a>, 2026. (Pending)
             </div>
           </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 获奖经历 ============ -->
+  <section class="section" id="awards">
+    <h2 class="section__title">获奖经历 <span class="en">Awards</span></h2>
+    <div class="card">
+      <ul class="award-list">
+        <li class="award">
+          <a class="award__icon" href="https://tianchi.aliyun.com/competition/entrance/532028" target="_blank" rel="noopener" aria-label="查看赛题：云上进化 2022 全球 AI 生物智药大赛">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="5.5"/><path d="M9.2 10.3 6.5 2.5M14.8 10.3l2.7-7.8"/></svg>
+          </a>
+          <div class="award__body">
+            <div class="award__name"><a href="https://yangguang8112.github.io/2023/02/24/“云上进化”2022全球AI生物智药大赛回顾总结/" target="_blank" rel="noopener">「云上进化」2022 全球 AI 生物智药大赛</a></div>
+          </div>
+          <div class="award__rank"><span class="tag">亚军</span></div>
+        </li>
+        <li class="award">
+          <a class="award__icon" href="https://micos.cngb.org/europe/index.html" target="_blank" rel="noopener" aria-label="查看赛题：Mammoth 2024 组学科学国际竞赛">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="5.5"/><path d="M9.2 10.3 6.5 2.5M14.8 10.3l2.7-7.8"/></svg>
+          </a>
+          <div class="award__body">
+            <div class="award__name">2024 Mammoth International Contest on Omics Sciences in Europe</div>
+          </div>
+          <div class="award__rank"><span class="tag">R5 · 优胜奖</span></div>
+        </li>
+        <li class="award">
+          <a class="award__icon" href="https://tianchi.aliyun.com/competition/entrance/532170" target="_blank" rel="noopener" aria-label="查看赛题：AICAS 2024 大挑战">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="5.5"/><path d="M9.2 10.3 6.5 2.5M14.8 10.3l2.7-7.8"/></svg>
+          </a>
+          <div class="award__body">
+            <div class="award__name">AICAS 2024 大挑战 · 通用算力大模型推理性能优化</div>
+          </div>
+          <div class="award__rank"><span class="tag">R8</span></div>
+        </li>
+        <li class="award">
+          <a class="award__icon" href="http://competition.sais.com.cn/competitionDetail/532230/format" target="_blank" rel="noopener" aria-label="查看赛题：第二届世界科学智能大赛">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="5.5"/><path d="M9.2 10.3 6.5 2.5M14.8 10.3l2.7-7.8"/></svg>
+          </a>
+          <div class="award__body">
+            <div class="award__name">第二届世界科学智能大赛 · siRNA 药效预测</div>
+          </div>
+          <div class="award__rank"><span class="tag">R15 / 2249</span></div>
+        </li>
+        <li class="award">
+          <a class="award__icon" href="https://aistudio.baidu.com/competition/detail/1214/0/task-definition" target="_blank" rel="noopener" aria-label="查看赛题：第二届全球 AI 药物研发算法大赛">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="5.5"/><path d="M9.2 10.3 6.5 2.5M14.8 10.3l2.7-7.8"/></svg>
+          </a>
+          <div class="award__body">
+            <div class="award__name">第二届全球 AI 药物研发算法大赛</div>
+          </div>
+          <div class="award__rank"><span class="tag">R26 / 656</span></div>
+        </li>
+        <li class="award">
+          <a class="award__icon" href="https://www.kaggle.com/competitions/leash-BELKA" target="_blank" rel="noopener" aria-label="查看赛题：NeurIPS 2024 BELKA">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="5.5"/><path d="M9.2 10.3 6.5 2.5M14.8 10.3l2.7-7.8"/></svg>
+          </a>
+          <div class="award__body">
+            <div class="award__name">NeurIPS 2024 · BELKA 新药预测</div>
+          </div>
+          <div class="award__rank"><span class="tag">铜牌 · R181 / 1950</span></div>
         </li>
       </ul>
     </div>
